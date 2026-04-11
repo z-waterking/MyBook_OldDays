@@ -2,20 +2,630 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>MyBook_OldDays</title>
+  <title>旧日之书</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
   <style>
+    /* ============================================
+       旧日之书 · 主题样式
+       aesthetic: ink-wash journal / aged memoir
+       ============================================ */
+
     :root {
-      --theme-color: #4a6fa5;
+      --theme-color: #8b6914;
+      --ink: #2c2416;
+      --ink-light: #4a3f2f;
+      --ink-faint: #6b5d4a;
+      --paper: #f5f0e8;
+      --paper-warm: #f0e9dc;
+      --paper-deep: #e8dfd0;
+      --amber: #8b6914;
+      --amber-light: #c49a2a;
+      --amber-glow: #d4a83420;
+      --amber-soft: #c49a2a18;
+      --rust: #9a4a2a;
+      --sage: #5a6b4a;
+      --seal-red: #c23a2a;
+      --shadow-warm: rgba(44, 36, 22, 0.08);
+      --shadow-deep: rgba(44, 36, 22, 0.15);
+      --border-light: rgba(139, 105, 20, 0.15);
+      --border-faint: rgba(44, 36, 22, 0.08);
+    }
+
+    /* === Global === */
+    * { box-sizing: border-box; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Noto Serif SC', 'Songti SC', 'STSong', 'SimSun', 'Source Han Serif SC', serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Aged paper texture via layered gradients */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(196, 154, 42, 0.04) 0%, transparent 70%),
+        radial-gradient(ellipse at 80% 20%, rgba(154, 74, 42, 0.03) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 80%, rgba(90, 107, 74, 0.03) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* === Custom Scrollbar === */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--paper-deep);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(139, 105, 20, 0.25);
+      border-radius: 4px;
+      border: 2px solid var(--paper-deep);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(139, 105, 20, 0.4);
+    }
+
+    /* === Sidebar === */
+    .sidebar {
+      background: linear-gradient(180deg, #2c2416 0%, #3a3125 40%, #2c2416 100%) !important;
+      border-right: 1px solid rgba(196, 154, 42, 0.2) !important;
+      color: #c9bea8 !important;
+      font-family: 'Noto Serif SC', serif !important;
+    }
+
+    /* Sidebar site name */
+    .sidebar .app-name-link {
+      font-family: 'Ma Shan Zheng', 'ZCOOL XiaoWei', 'Noto Serif SC', serif !important;
+      font-size: 1.6em !important;
+      color: var(--amber-light) !important;
+      letter-spacing: 0.15em !important;
+      text-decoration: none !important;
+      display: block !important;
+      text-align: center !important;
+      padding: 28px 16px 8px !important;
+      line-height: 1.4 !important;
+    }
+
+    /* Decorative line under site name */
+    .sidebar .app-name::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--amber-light), transparent);
+      margin: 12px auto 8px;
+    }
+
+    /* Subtitle under name */
+    .sidebar .app-name {
+      position: relative;
+    }
+
+    .sidebar ul {
+      padding: 0 !important;
+    }
+
+    .sidebar ul > li {
+      margin: 0 !important;
+    }
+
+    .sidebar li > a {
+      color: #b8ad97 !important;
+      font-size: 0.88em !important;
+      padding: 6px 24px !important;
+      display: block !important;
+      transition: all 0.3s ease !important;
+      border-left: 2px solid transparent !important;
+      text-decoration: none !important;
+      line-height: 1.6 !important;
+    }
+
+    .sidebar li > a:hover {
+      color: var(--amber-light) !important;
+      background: rgba(196, 154, 42, 0.08) !important;
+      border-left-color: var(--amber-light) !important;
+    }
+
+    .sidebar li.active > a {
+      color: var(--amber-light) !important;
+      border-left-color: var(--amber-light) !important;
+      background: rgba(196, 154, 42, 0.12) !important;
+      font-weight: 500 !important;
+    }
+
+    .sidebar li > p {
+      color: #8a7e68 !important;
+      font-size: 0.78em !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.15em !important;
+      padding: 18px 24px 6px !important;
+      margin: 0 !important;
+      font-weight: 600 !important;
+    }
+
+    .sidebar li > p > strong {
+      color: #a89878 !important;
+      font-weight: 600 !important;
+    }
+
+    /* Nested list items */
+    .sidebar ul ul a {
+      padding-left: 40px !important;
+      font-size: 0.84em !important;
+    }
+
+    /* Search box in sidebar */
+    .sidebar .search {
+      padding: 12px 16px !important;
+      border-bottom: 1px solid rgba(196, 154, 42, 0.15) !important;
+    }
+
+    .sidebar .search input {
+      background: rgba(255, 255, 255, 0.06) !important;
+      border: 1px solid rgba(196, 154, 42, 0.2) !important;
+      color: #c9bea8 !important;
+      border-radius: 6px !important;
+      padding: 8px 12px !important;
+      font-family: 'Noto Serif SC', serif !important;
+      font-size: 0.85em !important;
+      transition: border-color 0.3s ease !important;
+    }
+
+    .sidebar .search input:focus {
+      border-color: var(--amber-light) !important;
+      outline: none !important;
+      box-shadow: 0 0 0 2px rgba(196, 154, 42, 0.15) !important;
+    }
+
+    .sidebar .search input::placeholder {
+      color: #7a6e58 !important;
+    }
+
+    .sidebar .search .matching-post {
+      border-bottom-color: rgba(196, 154, 42, 0.1) !important;
+    }
+
+    .sidebar .search .matching-post p {
+      color: #a89878 !important;
+    }
+
+    /* Sidebar toggle */
+    .sidebar-toggle {
+      background: var(--paper) !important;
+    }
+
+    /* === Main Content === */
+    .content {
+      padding: 40px 45px 60px !important;
+    }
+
+    .markdown-section {
+      max-width: 820px !important;
+      font-size: 16.5px !important;
+      line-height: 1.95 !important;
+      color: var(--ink) !important;
+      letter-spacing: 0.02em;
+    }
+
+    /* === Paragraph spacing === */
+    .markdown-section p {
+      margin: 0 0 1.4em;
+      text-align: justify;
+    }
+
+    /* === Headings === */
+    .markdown-section h1 {
+      font-family: 'Ma Shan Zheng', 'ZCOOL XiaoWei', 'Noto Serif SC', serif !important;
+      font-size: 2.2em !important;
+      font-weight: 400 !important;
+      color: var(--ink) !important;
+      letter-spacing: 0.08em !important;
+      margin: 1.2em 0 0.6em !important;
+      padding-bottom: 20px !important;
+      border-bottom: none !important;
+      position: relative;
+    }
+
+    .markdown-section h1::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg,
+        var(--amber) 0%,
+        var(--amber-light) 30%,
+        transparent 100%
+      );
+    }
+
+    .markdown-section h2 {
+      font-family: 'Noto Serif SC', serif !important;
+      font-size: 1.55em !important;
+      font-weight: 600 !important;
+      color: var(--ink-light) !important;
+      margin: 2.2em 0 0.8em !important;
+      padding-bottom: 12px !important;
+      border-bottom: 1px solid var(--border-light) !important;
+      letter-spacing: 0.05em;
+      position: relative;
+    }
+
+    .markdown-section h2::before {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--amber);
+    }
+
+    .markdown-section h3 {
+      font-family: 'Noto Serif SC', serif !important;
+      font-size: 1.2em !important;
+      font-weight: 600 !important;
+      color: var(--ink-faint) !important;
+      margin: 1.8em 0 0.6em !important;
+      letter-spacing: 0.03em;
+      padding-left: 14px;
+      border-left: 3px solid var(--amber-light);
+    }
+
+    .markdown-section h4,
+    .markdown-section h5,
+    .markdown-section h6 {
+      font-family: 'Noto Serif SC', serif !important;
+      color: var(--ink-faint) !important;
+      letter-spacing: 0.03em;
+    }
+
+    /* === Links === */
+    .markdown-section a {
+      color: var(--amber) !important;
+      text-decoration: none !important;
+      border-bottom: 1px solid rgba(139, 105, 20, 0.25) !important;
+      transition: all 0.25s ease !important;
+    }
+
+    .markdown-section a:hover {
+      color: var(--rust) !important;
+      border-bottom-color: var(--rust) !important;
+    }
+
+    /* === Blockquotes — the star of the literary gems page === */
+    .markdown-section blockquote {
+      background: linear-gradient(135deg,
+        rgba(245, 240, 232, 0.9) 0%,
+        rgba(240, 233, 220, 0.95) 100%
+      ) !important;
+      border: none !important;
+      border-left: 3px solid var(--amber) !important;
+      border-radius: 0 12px 12px 0 !important;
+      padding: 24px 28px 24px 28px !important;
+      margin: 1.6em 0 !important;
+      position: relative;
+      box-shadow:
+        0 2px 12px var(--shadow-warm),
+        0 1px 3px var(--shadow-warm) !important;
+      font-style: normal !important;
+      overflow: hidden;
+    }
+
+    /* Decorative quote mark */
+    .markdown-section blockquote::before {
+      content: '\201C';
+      position: absolute;
+      top: 8px;
+      left: 14px;
+      font-family: 'Georgia', serif;
+      font-size: 4em;
+      color: rgba(139, 105, 20, 0.1);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .markdown-section blockquote p {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 0.6em !important;
+      color: var(--ink-light) !important;
+      line-height: 1.85 !important;
+    }
+
+    .markdown-section blockquote p:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    .markdown-section blockquote strong {
+      color: var(--ink) !important;
+      font-weight: 600;
+    }
+
+    .markdown-section blockquote a {
+      color: var(--amber) !important;
+      font-size: 0.9em;
+    }
+
+    /* Nested blockquote — for the "镇榜之句" etc. */
+    .markdown-section blockquote blockquote {
+      background: rgba(196, 154, 42, 0.06) !important;
+      border-left-color: var(--amber-light) !important;
+      box-shadow: none !important;
+      border-radius: 0 8px 8px 0 !important;
+      margin: 0.8em 0 !important;
+      padding: 16px 20px !important;
+    }
+
+    .markdown-section blockquote blockquote::before {
+      display: none;
+    }
+
+    /* === Bold text — used for 点评 labels === */
+    .markdown-section > p > strong:first-child {
+      color: var(--amber) !important;
+    }
+
+    /* === Horizontal Rules === */
+    .markdown-section hr {
+      border: none !important;
+      height: auto !important;
+      margin: 3em auto !important;
+      text-align: center;
+      overflow: visible;
+      background: none !important;
+    }
+
+    .markdown-section hr::before {
+      content: '~ \00B7 ~';
+      display: block;
+      color: var(--amber-light);
+      font-size: 1.2em;
+      letter-spacing: 0.5em;
+      opacity: 0.5;
+    }
+
+    /* === Tables === */
+    .markdown-section table {
+      border-collapse: collapse !important;
+      width: 100% !important;
+      margin: 1.5em 0 !important;
+      font-size: 0.92em !important;
+      border: 1px solid var(--border-light) !important;
+      border-radius: 8px !important;
+      overflow: hidden !important;
+    }
+
+    .markdown-section table thead {
+      background: linear-gradient(135deg, #3a3125, #2c2416) !important;
+    }
+
+    .markdown-section table thead th {
+      color: #c9bea8 !important;
+      font-weight: 500 !important;
+      padding: 12px 16px !important;
+      border: none !important;
+      text-align: left !important;
+      letter-spacing: 0.05em;
+      font-size: 0.92em;
+    }
+
+    .markdown-section table tbody td {
+      padding: 10px 16px !important;
+      border-bottom: 1px solid var(--border-faint) !important;
+      border-right: none !important;
+      border-left: none !important;
+      vertical-align: top;
+    }
+
+    .markdown-section table tbody tr {
+      transition: background 0.2s ease;
+    }
+
+    .markdown-section table tbody tr:hover {
+      background: var(--amber-soft) !important;
+    }
+
+    .markdown-section table tbody tr:nth-child(even) {
+      background: rgba(139, 105, 20, 0.03);
+    }
+
+    .markdown-section table tbody tr:nth-child(even):hover {
+      background: var(--amber-soft) !important;
+    }
+
+    /* === Code === */
+    .markdown-section code {
+      background: rgba(139, 105, 20, 0.08) !important;
+      color: var(--ink-light) !important;
+      border-radius: 4px !important;
+      padding: 2px 6px !important;
+      font-size: 0.88em !important;
+      border: 1px solid rgba(139, 105, 20, 0.12);
+    }
+
+    .markdown-section pre {
+      background: #2c2416 !important;
+      border-radius: 8px !important;
+      padding: 20px !important;
+      border: 1px solid rgba(196, 154, 42, 0.15);
+    }
+
+    .markdown-section pre code {
+      background: none !important;
+      color: #c9bea8 !important;
+      border: none !important;
+      padding: 0 !important;
+    }
+
+    /* === Images === */
+    .markdown-section img {
+      border-radius: 8px;
+      box-shadow: 0 4px 20px var(--shadow-deep);
+      margin: 1em 0;
+      max-width: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .markdown-section img:hover {
+      transform: scale(1.01);
+      box-shadow: 0 8px 30px var(--shadow-deep);
+    }
+
+    /* === Content fade-in animation === */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .markdown-section {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* === GitHub corner === */
+    .github-corner svg {
+      fill: var(--ink) !important;
+      color: var(--paper) !important;
+    }
+
+    .github-corner:hover .octo-arm {
+      animation: octocat-wave 560ms ease-in-out !important;
+    }
+
+    /* === Selection color === */
+    ::selection {
+      background: rgba(196, 154, 42, 0.25);
+      color: var(--ink);
+    }
+
+    ::-moz-selection {
+      background: rgba(196, 154, 42, 0.25);
+      color: var(--ink);
+    }
+
+    /* === Docsify-specific overrides === */
+    .docsify-pagination-container {
+      border-top-color: var(--border-light) !important;
+    }
+
+    body .search .input-wrap {
+      border-color: rgba(196, 154, 42, 0.2) !important;
+    }
+
+    /* === Footer-style text at bottom of literary-gems === */
+    .markdown-section p[style*="text-align: center"] {
+      font-family: 'Noto Serif SC', serif !important;
+      letter-spacing: 0.1em !important;
+    }
+
+    /* === Responsive === */
+    @media (max-width: 768px) {
+      .content {
+        padding: 24px 20px 40px !important;
+      }
+
+      .markdown-section {
+        font-size: 15.5px !important;
+        line-height: 1.85 !important;
+      }
+
+      .markdown-section h1 {
+        font-size: 1.7em !important;
+      }
+
+      .markdown-section h2 {
+        font-size: 1.35em !important;
+      }
+
+      .markdown-section blockquote {
+        padding: 18px 20px 18px 20px !important;
+        margin: 1.2em 0 !important;
+        border-radius: 0 8px 8px 0 !important;
+      }
+
+      .markdown-section blockquote::before {
+        font-size: 3em;
+        top: 4px;
+        left: 10px;
+      }
+
+      .markdown-section table {
+        font-size: 0.85em !important;
+      }
+
+      .markdown-section table thead th,
+      .markdown-section table tbody td {
+        padding: 8px 10px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .markdown-section h1 {
+        font-size: 1.45em !important;
+        letter-spacing: 0.04em !important;
+      }
+
+      .markdown-section blockquote {
+        padding: 14px 16px !important;
+      }
+    }
+
+    /* === Print styles === */
+    @media print {
+      .sidebar, .sidebar-toggle, .github-corner { display: none !important; }
+      body { background: white !important; }
+      .content { padding: 0 !important; }
+      .markdown-section blockquote {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+        border-left: 3px solid #999 !important;
+      }
+    }
+
+    /* === Loading state === */
+    #app {
+      font-family: 'Noto Serif SC', serif;
+      color: var(--ink-faint);
+      text-align: center;
+      padding-top: 40vh;
+      font-size: 1.1em;
+      letter-spacing: 0.2em;
+    }
+
+    #app::before {
+      content: '旧日之书';
+      display: block;
+      font-family: 'Ma Shan Zheng', serif;
+      font-size: 2.4em;
+      color: var(--amber);
+      margin-bottom: 16px;
+      letter-spacing: 0.3em;
     }
   </style>
 </head>
 <body>
-  <div id="app">加载中...</div>
+  <div id="app">翻开记忆的扉页...</div>
   <script>
     window.$docsify = {
-      name: 'MyBook_OldDays',
+      name: '<span style="font-family: \'Ma Shan Zheng\', serif; font-size: 1.1em; letter-spacing: 0.15em;">旧日之书</span>',
       repo: 'https://github.com/z-waterking/MyBook_OldDays',
       loadSidebar: true,
       loadNavbar: false,
@@ -27,6 +637,7 @@
         depth: 3
       },
       auto2top: true,
+      nameLink: '/',
     }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
