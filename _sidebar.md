@@ -3,6 +3,7 @@
 - [文章目录](catalog.md)
 - [评分排名](ranking.md)
 - [✨ 佳句榜](literary-gems.md)
+- [📊 趣味榜单](fun-rankings.md)
 
 - **合集**
   - [01 我在河津上幼儿园](articles/合集-01-我在河津上幼儿园/index.md)
