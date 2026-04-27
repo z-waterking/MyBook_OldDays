@@ -1,6 +1,7 @@
 <!-- _sidebar.md -->
 
 - [文章目录](catalog.md)
+- [📖 文集工作区](book/README.md)
 - [评分排名](ranking.md)
 - [✨ 佳句榜](literary-gems.md)
 - [📊 趣味榜单](fun-rankings.md)
