@@ -8,6 +8,7 @@
 """
 
 import argparse
+import ast
 import hashlib
 import io
 import os
@@ -22,7 +23,7 @@ if sys.platform == "win32":
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
-from urllib.parse import urlparse, parse_qs
+from urllib.parse import quote, urlparse, parse_qs
 
 import requests
 from requests.adapters import HTTPAdapter
@@ -75,7 +76,7 @@ class ArticleData:
     original_author: str = ""
     publish_date: str = ""
     content_html: str = ""
-    images: list = field(default_factory=list)
+    images: list[ImageInfo] = field(default_factory=list)
 
     @property
     def safe_title(self) -> str:
@@ -154,6 +155,47 @@ def url_hash(url: str) -> str:
     return hashlib.md5(url.encode()).hexdigest()[:6]
 
 
+def yaml_quote(value: str) -> str:
+    """将字符串写成安全的 YAML 双引号标量"""
+    escaped = str(value).replace("\\", "\\\\").replace('"', '\\"')
+    escaped = escaped.replace("\r", "\\r").replace("\n", "\\n")
+    return f'"{escaped}"'
+
+
+def parse_simple_frontmatter(content: str) -> dict:
+    """解析本工具生成的简单 YAML frontmatter"""
+    meta = {}
+    if not content.startswith("---"):
+        return meta
+
+    parts = content.split("---", 2)
+    if len(parts) < 3:
+        return meta
+
+    for line in parts[1].strip().splitlines():
+        if ":" not in line:
+            continue
+        key, val = line.split(":", 1)
+        val = val.strip()
+        if len(val) >= 2 and val[0] == val[-1] == '"':
+            try:
+                val = ast.literal_eval(val)
+            except (SyntaxError, ValueError):
+                val = val.strip('"')
+        meta[key.strip()] = val
+    return meta
+
+
+def markdown_table_cell(value: str) -> str:
+    """转义 Markdown 表格单元格内容"""
+    return str(value).replace("|", "\\|").replace("\r", " ").replace("\n", " ")
+
+
+def markdown_link_target(path: str) -> str:
+    """为 Markdown 链接编码路径，同时保留斜杠"""
+    return quote(path.replace("\\", "/"), safe="/()_-.")
+
+
 # ─── HTTP 层 ──────────────────────────────────────────────────────────────────
 
 def create_session() -> requests.Session:
@@ -212,6 +254,9 @@ def download_image(session: requests.Session, image_url: str, save_path: Path) -
         }
         resp = session.get(image_url, headers=headers, timeout=30, stream=True)
         resp.raise_for_status()
+        content_type = resp.headers.get("Content-Type", "").lower()
+        if content_type and not content_type.startswith("image/"):
+            raise FetchError(f"响应不是图片: {content_type}")
 
         save_path.parent.mkdir(parents=True, exist_ok=True)
         with open(save_path, "wb") as f:
@@ -325,10 +370,11 @@ def parse_article(html: str, url: str) -> ArticleData:
 
 def clean_content_html(elem: Tag):
     """清理微信文章 HTML"""
-    # 获取所属的 soup 对象用于创建新标签
-    soup = elem.find_parent() or elem
-    while soup.parent:
+    soup = elem if isinstance(elem, BeautifulSoup) else elem.find_parent()
+    while soup and soup.parent:
         soup = soup.parent
+    if soup is None:
+        soup = BeautifulSoup("", "lxml")
 
     # 删除脚本、样式、iframe
     for tag in elem.find_all(["script", "style", "iframe"]):
@@ -371,10 +417,11 @@ def clean_content_html(elem: Tag):
         if re.search(r"font-family\s*:.*?(monospace|Consolas|Courier|Source Code)", style, re.I):
             if tag.name not in ("pre", "code"):
                 code_text = tag.get_text()
-                new_html = f"<pre><code>{code_text}</code></pre>"
-                new_tag = BeautifulSoup(new_html, "lxml").find("pre")
-                if new_tag:
-                    tag.replace_with(new_tag)
+                pre_tag = soup.new_tag("pre")
+                code_tag = soup.new_tag("code")
+                code_tag.string = code_text
+                pre_tag.append(code_tag)
+                tag.replace_with(pre_tag)
 
     # 去除所有剩余的 style, class, data-* 属性（保留 src, alt, href）
     KEEP_ATTRS = {"src", "href", "alt", "colspan", "rowspan"}
@@ -399,13 +446,14 @@ class WeChatMarkdownConverter(markdownify.MarkdownConverter):
     def convert_img(self, el, text, convert_as_inline=False, **kwargs):
         src = el.get("src", "")
         alt = el.get("alt", "")
+        safe_alt = alt.replace("\n", " ").replace("]", "\\]")
 
         # 替换为本地路径
         if src in self.image_map:
             local_path = self.image_map[src]
-            return f"\n\n![{alt}]({local_path})\n\n"
+            return f"\n\n![{safe_alt}]({local_path})\n\n"
 
-        return f"\n\n![{alt}]({src})\n\n"
+        return f"\n\n![{safe_alt}]({src})\n\n"
 
     def convert_section(self, el, text, convert_as_inline=False, **kwargs):
         """section 当作段落处理，前后加空行确保分段"""
@@ -425,6 +473,7 @@ class WeChatMarkdownConverter(markdownify.MarkdownConverter):
         """代码块"""
         code = el.find("code")
         content = code.get_text() if code else el.get_text()
+        content = content.rstrip("\n")
         lang = ""
         if code and code.get("class"):
             classes = code.get("class", [])
@@ -441,15 +490,15 @@ def convert_to_markdown(article: ArticleData, image_map: dict) -> str:
     # YAML frontmatter
     lines = [
         "---",
-        f"title: \"{article.raw_title}\"",
-        f"author: \"{article.author}\"",
+        f"title: {yaml_quote(article.raw_title)}",
+        f"author: {yaml_quote(article.author)}",
     ]
     if article.original_author and article.original_author != article.author:
-        lines.append(f"original_author: \"{article.original_author}\"")
+        lines.append(f"original_author: {yaml_quote(article.original_author)}")
     if article.publish_date:
-        lines.append(f"date: \"{article.publish_date}\"")
-    lines.append(f"source: \"{article.url}\"")
-    lines.append(f"archived: \"{datetime.now().strftime('%Y-%m-%d %H:%M')}\"")
+        lines.append(f"date: {yaml_quote(article.publish_date)}")
+    lines.append(f"source: {yaml_quote(article.url)}")
+    lines.append(f"archived: {yaml_quote(datetime.now().strftime('%Y-%m-%d %H:%M'))}")
     lines.append("---")
     lines.append("")
 
@@ -563,21 +612,16 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
         if not md_file.exists():
             continue
 
-        # 解析 frontmatter
         content = md_file.read_text(encoding="utf-8")
-        meta = {}
-        if content.startswith("---"):
-            parts = content.split("---", 2)
-            if len(parts) >= 3:
-                for line in parts[1].strip().split("\n"):
-                    if ":" in line:
-                        key, val = line.split(":", 1)
-                        meta[key.strip()] = val.strip().strip('"')
+        meta = parse_simple_frontmatter(content)
 
         title = meta.get("title", article_dir.name)
         author = meta.get("author", "")
         date = meta.get("date", "")
-        rel_path = f"articles/{article_dir.name}/index.md"
+        try:
+            rel_path = md_file.relative_to(repo_root).as_posix()
+        except ValueError:
+            rel_path = md_file.resolve().as_posix()
 
         entries.append((date, title, author, rel_path))
 
@@ -596,8 +640,11 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
 
     for i, (date, title, author, rel_path) in enumerate(entries, 1):
         # 转义 Markdown 表格中的竖线
-        safe_md_title = title.replace("|", "\\|")
-        lines.append(f"| {i} | [{safe_md_title}]({rel_path}) | {author} | {date} |")
+        safe_md_title = markdown_table_cell(title)
+        safe_author = markdown_table_cell(author)
+        safe_date = markdown_table_cell(date)
+        safe_rel_path = markdown_link_target(rel_path)
+        lines.append(f"| {i} | [{safe_md_title}]({safe_rel_path}) | {safe_author} | {safe_date} |")
 
     lines.append("")
     lines.append("<!-- 此文件由 save_article.py 自动更新，也可手动编辑 -->")

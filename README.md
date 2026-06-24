@@ -25,6 +25,20 @@ python scripts/save_article.py --force URL
 python scripts/save_article.py --catalog-only
 ```
 
+### Windows 环境
+如果命令行里没有 `python`，先安装 Python 3.12+，并在安装器里勾选
+`Add python.exe to PATH`。安装后重新打开终端，再执行：
+
+```bash
+python --version
+python -m pip install -r requirements.txt
+```
+
+### 测试
+```bash
+python -m unittest discover -s tests
+```
+
 ## 目录结构
 ```
 articles/
