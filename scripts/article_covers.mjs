@@ -189,28 +189,52 @@ function encodePath(path) {
   return encodeURI(path).replace(/#/g, '%23');
 }
 
+function catalogGroup(article) {
+  if (article.dir.startsWith('散篇-')) return '散篇';
+  const match = article.dir.match(/^合集-(\d{2})-/);
+  if (!match) return '其他';
+  const order = Number(match[1]);
+  if (order <= 5) return '合集 · 少年时代';
+  if (order <= 10) return '合集 · 大学四年';
+  return '合集 · 工作与考试';
+}
+
 async function updateCatalog(articles) {
   const lines = [
     '# 文章目录',
     '',
     `> 共 ${articles.length} 篇文章，更新于 ${new Date().toISOString().slice(0, 10)}`,
     '',
-    '<div class="article-cover-list">',
-    '',
   ];
+  const groups = ['散篇', '合集 · 少年时代', '合集 · 大学四年', '合集 · 工作与考试', '其他'];
+  const byGroup = new Map(groups.map((group) => [group, []]));
   for (const article of articles) {
-    lines.push(`<a class="article-cover-row" href="#/${encodePath(articleHref(article))}">`);
-    lines.push(`  <img src="${encodePath(imageHref(article))}" alt="${escapeHtml(article.title)} 封面">`);
-    lines.push('  <span class="article-cover-info">');
-    lines.push(`    <strong>${escapeHtml(article.title)}</strong>`);
-    lines.push(`    <em>${escapeHtml(article.date || '')}</em>`);
-    lines.push(`    <span class="article-cover-excerpt">${escapeHtml(catalogExcerpt(article.excerpt))}</span>`);
-    lines.push('  </span>');
-    lines.push('</a>');
+    const group = catalogGroup(article);
+    if (!byGroup.has(group)) byGroup.set(group, []);
+    byGroup.get(group).push(article);
+  }
+  for (const group of groups) {
+    const groupedArticles = byGroup.get(group) || [];
+    if (!groupedArticles.length) continue;
+    lines.push(`<section class="article-cover-group">`);
+    lines.push(`  <h2>${escapeHtml(group)} <small>${groupedArticles.length} 篇</small></h2>`);
+    lines.push('  <div class="article-cover-list">');
+    lines.push('');
+    for (const article of groupedArticles) {
+      lines.push(`    <a class="article-cover-row" href="#/${encodePath(articleHref(article))}">`);
+      lines.push(`      <img src="${encodePath(imageHref(article))}" alt="${escapeHtml(article.title)} 封面">`);
+      lines.push('      <span class="article-cover-info">');
+      lines.push(`        <strong>${escapeHtml(article.title)}</strong>`);
+      lines.push(`        <em>${escapeHtml(article.date || '')}</em>`);
+      lines.push(`        <span class="article-cover-excerpt">${escapeHtml(catalogExcerpt(article.excerpt))}</span>`);
+      lines.push('      </span>');
+      lines.push('    </a>');
+      lines.push('');
+    }
+    lines.push('  </div>');
+    lines.push('</section>');
     lines.push('');
   }
-  lines.push('</div>');
-  lines.push('');
   lines.push('<!-- 此文件由 scripts/article_covers.mjs 自动更新，也可手动编辑 -->');
   lines.push('');
   await writeFile(CATALOG, lines.join('\n'), 'utf8');

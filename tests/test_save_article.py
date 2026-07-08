@@ -63,7 +63,9 @@ class SaveArticleTests(unittest.TestCase):
             catalog = (root / "catalog.md").read_text(encoding="utf-8")
             self.assertIn("custom_articles/", catalog)
             self.assertIn("%E6%A0%87%E9%A2%98%20A/index.md", catalog)
-            self.assertIn("作者\\|名", catalog)
+            self.assertIn("article-cover-row", catalog)
+            self.assertIn("其他 <small>1 篇</small>", catalog)
+            self.assertIn("标题 A 封面", catalog)
 
     def test_download_image_rejects_html_response(self):
         session = Mock()

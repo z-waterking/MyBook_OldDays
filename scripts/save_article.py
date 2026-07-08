@@ -10,6 +10,7 @@
 import argparse
 import ast
 import hashlib
+import html
 import io
 import os
 import re
@@ -194,6 +195,36 @@ def markdown_table_cell(value: str) -> str:
 def markdown_link_target(path: str) -> str:
     """为 Markdown 链接编码路径，同时保留斜杠"""
     return quote(path.replace("\\", "/"), safe="/()_-.")
+
+
+def markdown_excerpt(content: str, limit: int = 150) -> str:
+    """从文章 Markdown 中提取目录摘要"""
+    body = re.sub(r"^---\r?\n[\s\S]*?\r?\n---", "", content)
+    body = re.sub(r"\*原文链接:[\s\S]*$", "", body, flags=re.MULTILINE)
+    body = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", body)
+    body = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", body)
+    body = re.sub(r"<[^>]+>", "", body)
+    body = re.sub(r"^#.*$", "", body, flags=re.MULTILINE)
+    body = re.sub(r"^>.*$", "", body, flags=re.MULTILINE)
+    body = re.sub(r"^---$", "", body, flags=re.MULTILINE)
+    body = re.sub(r"[*_`~]", "", body)
+    text = re.sub(r"\s+", " ", body).strip()
+    return text if len(text) <= limit else f"{text[:limit]}..."
+
+
+def catalog_group(dir_name: str) -> str:
+    """根据目录名归入网站目录分组"""
+    if dir_name.startswith("散篇-"):
+        return "散篇"
+    match = re.match(r"^合集-(\d{2})-", dir_name)
+    if not match:
+        return "其他"
+    order = int(match.group(1))
+    if order <= 5:
+        return "合集 · 少年时代"
+    if order <= 10:
+        return "合集 · 大学四年"
+    return "合集 · 工作与考试"
 
 
 # ─── HTTP 层 ──────────────────────────────────────────────────────────────────
@@ -622,8 +653,15 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
             rel_path = md_file.relative_to(repo_root).as_posix()
         except ValueError:
             rel_path = md_file.resolve().as_posix()
+        cover_path = article_dir / "images" / "cover.png"
+        try:
+            cover_rel_path = cover_path.relative_to(repo_root).as_posix()
+        except ValueError:
+            cover_rel_path = cover_path.resolve().as_posix()
+        excerpt = markdown_excerpt(content)
+        group = catalog_group(article_dir.name)
 
-        entries.append((date, title, author, rel_path))
+        entries.append((date, title, author, rel_path, cover_rel_path, excerpt, group))
 
     # 按日期倒序排序
     entries.sort(key=lambda x: x[0], reverse=True)
@@ -634,19 +672,36 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
         "",
         f"> 共 {len(entries)} 篇文章，更新于 {datetime.now().strftime('%Y-%m-%d')}",
         "",
-        "| # | 标题 | 作者 | 日期 |",
-        "|---|------|------|------|",
     ]
 
-    for i, (date, title, author, rel_path) in enumerate(entries, 1):
-        # 转义 Markdown 表格中的竖线
-        safe_md_title = markdown_table_cell(title)
-        safe_author = markdown_table_cell(author)
-        safe_date = markdown_table_cell(date)
-        safe_rel_path = markdown_link_target(rel_path)
-        lines.append(f"| {i} | [{safe_md_title}]({safe_rel_path}) | {safe_author} | {safe_date} |")
+    groups = ["散篇", "合集 · 少年时代", "合集 · 大学四年", "合集 · 工作与考试", "其他"]
+    for group in groups:
+        grouped_entries = [entry for entry in entries if entry[6] == group]
+        if not grouped_entries:
+            continue
+        lines.append(f'<section class="article-cover-group">')
+        lines.append(f'  <h2>{html.escape(group)} <small>{len(grouped_entries)} 篇</small></h2>')
+        lines.append('  <div class="article-cover-list">')
+        lines.append("")
+        for date, title, author, rel_path, cover_rel_path, excerpt, _ in grouped_entries:
+            safe_rel_path = markdown_link_target(rel_path)
+            safe_cover_path = markdown_link_target(cover_rel_path)
+            safe_title = html.escape(title)
+            safe_date = html.escape(date)
+            safe_excerpt = html.escape(excerpt)
+            lines.append(f'    <a class="article-cover-row" href="#/{safe_rel_path}">')
+            lines.append(f'      <img src="{safe_cover_path}" alt="{safe_title} 封面">')
+            lines.append('      <span class="article-cover-info">')
+            lines.append(f'        <strong>{safe_title}</strong>')
+            lines.append(f'        <em>{safe_date}</em>')
+            lines.append(f'        <span class="article-cover-excerpt">{safe_excerpt}</span>')
+            lines.append('      </span>')
+            lines.append('    </a>')
+            lines.append("")
+        lines.append('  </div>')
+        lines.append('</section>')
+        lines.append("")
 
-    lines.append("")
     lines.append("<!-- 此文件由 save_article.py 自动更新，也可手动编辑 -->")
     lines.append("")
 
