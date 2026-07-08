@@ -216,23 +216,21 @@ async function updateCatalog(articles) {
   for (const group of groups) {
     const groupedArticles = byGroup.get(group) || [];
     if (!groupedArticles.length) continue;
-    lines.push(`<section class="article-cover-group">`);
-    lines.push(`  <h2>${escapeHtml(group)} <small>${groupedArticles.length} 篇</small></h2>`);
-    lines.push('  <div class="article-cover-list">');
-    lines.push('');
+    lines.push(`<div class="article-cover-group">`);
+    lines.push(`<h2>${escapeHtml(group)} <small>${groupedArticles.length} 篇</small></h2>`);
+    lines.push('<div class="article-cover-list">');
     for (const article of groupedArticles) {
-      lines.push(`    <a class="article-cover-row" href="#/${encodePath(articleHref(article))}">`);
-      lines.push(`      <img src="${encodePath(imageHref(article))}" alt="${escapeHtml(article.title)} 封面">`);
-      lines.push('      <span class="article-cover-info">');
-      lines.push(`        <strong>${escapeHtml(article.title)}</strong>`);
-      lines.push(`        <em>${escapeHtml(article.date || '')}</em>`);
-      lines.push(`        <span class="article-cover-excerpt">${escapeHtml(catalogExcerpt(article.excerpt))}</span>`);
-      lines.push('      </span>');
-      lines.push('    </a>');
-      lines.push('');
+      lines.push(`<a class="article-cover-row" href="#/${encodePath(articleHref(article))}">`);
+      lines.push(`<img src="${encodePath(imageHref(article))}" alt="${escapeHtml(article.title)} 封面">`);
+      lines.push('<span class="article-cover-info">');
+      lines.push(`<strong>${escapeHtml(article.title)}</strong>`);
+      lines.push(`<em>${escapeHtml(article.date || '')}</em>`);
+      lines.push(`<span class="article-cover-excerpt">${escapeHtml(catalogExcerpt(article.excerpt))}</span>`);
+      lines.push('</span>');
+      lines.push('</a>');
     }
-    lines.push('  </div>');
-    lines.push('</section>');
+    lines.push('</div>');
+    lines.push('</div>');
     lines.push('');
   }
   lines.push('<!-- 此文件由 scripts/article_covers.mjs 自动更新，也可手动编辑 -->');

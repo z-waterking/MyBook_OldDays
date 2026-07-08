@@ -226,6 +226,30 @@
       font-weight: 600 !important;
     }
 
+    .sidebar li.sidebar-group-active > strong,
+    .sidebar li.sidebar-group-active > p,
+    .sidebar li.sidebar-group-active > a:first-child {
+      display: block;
+      margin: 6px 8px 4px 0;
+      padding: 6px 10px;
+      border-left: 3px solid #8b6914;
+      border-radius: 0 6px 6px 0;
+      background: #ebe5d8;
+      color: #2d2d2d !important;
+      font-weight: 700 !important;
+    }
+
+    .sidebar li.sidebar-group-active > ul {
+      margin-left: 4px;
+      border-left: 1px solid #ded6c8;
+    }
+
+    .sidebar li.sidebar-group-active li.active > a {
+      background: #fffaf0;
+      border-radius: 4px;
+      box-shadow: inset 3px 0 0 #8b6914;
+    }
+
     /* 手机端字号不缩 */
     @media (max-width: 768px) {
       .markdown-section {
@@ -286,6 +310,19 @@
         depth: 3
       },
       auto2top: true,
+      plugins: [
+        function sidebarGroupState(hook) {
+          hook.doneEach(function () {
+            document.querySelectorAll('.sidebar li.sidebar-group-active').forEach(function (node) {
+              node.classList.remove('sidebar-group-active');
+            });
+            var active = document.querySelector('.sidebar li.active');
+            if (!active) return;
+            var group = active.parentElement && active.parentElement.closest('li');
+            if (group) group.classList.add('sidebar-group-active');
+          });
+        }
+      ],
     }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
