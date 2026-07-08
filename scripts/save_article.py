@@ -709,9 +709,6 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
             lines.append('<div class="article-cover-row">')
             lines.append(f'<a class="article-cover-thumb" href="#/{safe_rel_path}"><img src="{safe_cover_path}" alt="{safe_title} 封面"></a>')
             lines.append('<span class="article-cover-info">')
-            lines.append(f'<a class="article-cover-title" href="#/{safe_rel_path}"><strong>{safe_title}</strong></a>')
-            lines.append(f'<em>{safe_date}</em>')
-            lines.append(f'<span class="article-cover-excerpt">{safe_excerpt}</span>')
             review_links = []
             for filename in reviews:
                 review_path = article_dir / filename
@@ -720,8 +717,15 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
                 except ValueError:
                     review_rel_path = review_path.resolve().as_posix()
                 review_links.append(f'<a href="#/{markdown_link_target(review_rel_path)}">{html.escape(review_label(filename))}</a>')
+            lines.append('<span class="article-cover-head">')
+            lines.append('<span class="article-cover-main">')
+            lines.append(f'<a class="article-cover-title" href="#/{safe_rel_path}"><strong>{safe_title}</strong></a>')
+            lines.append(f'<em>{safe_date}</em>')
+            lines.append('</span>')
             if review_links:
                 lines.append(f'<span class="article-cover-actions"><a href="#/{safe_rel_path}">正文</a>{"".join(review_links)}</span>')
+            lines.append('</span>')
+            lines.append(f'<span class="article-cover-excerpt">{safe_excerpt}</span>')
             lines.append('</span>')
             lines.append('</div>')
         lines.append('</div>')

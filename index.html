@@ -192,6 +192,20 @@
       min-width: 0;
     }
 
+    .article-cover-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .article-cover-main {
+      display: block;
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+
     .article-cover-info strong {
       display: block;
       overflow: hidden;
@@ -226,7 +240,9 @@
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-top: 7px;
+      justify-content: flex-end;
+      flex: 0 1 48%;
+      margin-top: 0;
       line-height: 1.4;
     }
 
@@ -234,7 +250,7 @@
       display: inline-flex;
       align-items: center;
       min-height: 22px;
-      padding: 2px 7px;
+      padding: 1px 7px;
       border: 1px solid #e4ded1;
       border-radius: 4px;
       background: #faf8f3;
@@ -301,6 +317,35 @@
       box-shadow: inset 3px 0 0 #8b6914;
     }
 
+    .sidebar li.sidebar-collapsible > strong,
+    .sidebar li.sidebar-collapsible > p,
+    .sidebar li.sidebar-collapsible > a:first-child {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .sidebar li.sidebar-collapsible > strong::before,
+    .sidebar li.sidebar-collapsible > p::before,
+    .sidebar li.sidebar-collapsible > a:first-child::before {
+      content: "▸";
+      display: inline-block;
+      width: 14px;
+      margin-right: 4px;
+      color: #8b6914;
+      font-size: 12px;
+      transition: transform 0.15s ease;
+    }
+
+    .sidebar li.sidebar-collapsible.sidebar-expanded > strong::before,
+    .sidebar li.sidebar-collapsible.sidebar-expanded > p::before,
+    .sidebar li.sidebar-collapsible.sidebar-expanded > a:first-child::before {
+      transform: rotate(90deg);
+    }
+
+    .sidebar li.sidebar-collapsible.sidebar-collapsed > ul {
+      display: none !important;
+    }
+
     /* 手机端字号不缩 */
     @media (max-width: 768px) {
       .markdown-section {
@@ -334,6 +379,11 @@
         font-size: 14px;
       }
 
+      .article-cover-head {
+        flex-direction: column;
+        gap: 5px;
+      }
+
       .article-cover-info em {
         font-size: 12px;
       }
@@ -345,6 +395,8 @@
       }
 
       .article-cover-actions {
+        justify-content: flex-start;
+        flex-basis: auto;
         gap: 4px;
       }
 
@@ -374,6 +426,14 @@
       auto2top: true,
       plugins: [
         function sidebarGroupState(hook) {
+          var sidebarReady = false;
+
+          function directLabel(item) {
+            return Array.from(item.children).find(function (child) {
+              return child.matches && child.matches('strong, p, a');
+            });
+          }
+
           function markActiveGroup() {
             document.querySelectorAll('.sidebar li.sidebar-group-active').forEach(function (node) {
               node.classList.remove('sidebar-group-active');
@@ -386,11 +446,47 @@
             if (group) group.classList.add('sidebar-group-active');
           }
 
+          function setupCollapsibleSidebar() {
+            var items = document.querySelectorAll('.sidebar li');
+            items.forEach(function (item) {
+              var childList = Array.from(item.children).find(function (child) {
+                return child.tagName === 'UL';
+              });
+              if (!childList) return;
+              item.classList.add('sidebar-collapsible');
+              var label = directLabel(item);
+              if (!label || label.dataset.sidebarToggleBound) return;
+              label.dataset.sidebarToggleBound = 'true';
+              label.addEventListener('click', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+                item.classList.toggle('sidebar-collapsed');
+                item.classList.toggle('sidebar-expanded', !item.classList.contains('sidebar-collapsed'));
+              });
+            });
+          }
+
+          function syncCollapsedState() {
+            var groups = document.querySelectorAll('.sidebar li.sidebar-collapsible');
+            groups.forEach(function (group) {
+              if (!sidebarReady) {
+                var shouldExpand = group.classList.contains('sidebar-group-active');
+                group.classList.toggle('sidebar-expanded', shouldExpand);
+                group.classList.toggle('sidebar-collapsed', !shouldExpand);
+              } else if (!group.classList.contains('sidebar-expanded') && !group.classList.contains('sidebar-collapsed')) {
+                group.classList.add('sidebar-collapsed');
+              }
+            });
+            sidebarReady = true;
+          }
+
           function scheduleMarkActiveGroup() {
+            setupCollapsibleSidebar();
             markActiveGroup();
+            syncCollapsedState();
             setTimeout(markActiveGroup, 0);
-            setTimeout(markActiveGroup, 80);
-            setTimeout(markActiveGroup, 250);
+            setTimeout(function () { setupCollapsibleSidebar(); markActiveGroup(); syncCollapsedState(); }, 80);
+            setTimeout(function () { setupCollapsibleSidebar(); markActiveGroup(); syncCollapsedState(); }, 250);
           }
 
           hook.mounted(function () {

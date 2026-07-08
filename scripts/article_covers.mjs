@@ -247,11 +247,15 @@ async function updateCatalog(articles) {
       lines.push('<div class="article-cover-row">');
       lines.push(`<a class="article-cover-thumb" href="#/${encodePath(articleHref(article))}"><img src="${encodePath(imageHref(article))}" alt="${escapeHtml(article.title)} 封面"></a>`);
       lines.push('<span class="article-cover-info">');
+      const reviewLinks = article.reviews.map((filename) => `<a href="#/${encodePath(reviewHref(article, filename))}">${escapeHtml(reviewLabel(filename))}</a>`);
+      lines.push('<span class="article-cover-head">');
+      lines.push('<span class="article-cover-main">');
       lines.push(`<a class="article-cover-title" href="#/${encodePath(articleHref(article))}"><strong>${escapeHtml(article.title)}</strong></a>`);
       lines.push(`<em>${escapeHtml(article.date || '')}</em>`);
-      lines.push(`<span class="article-cover-excerpt">${escapeHtml(catalogExcerpt(article.excerpt))}</span>`);
-      const reviewLinks = article.reviews.map((filename) => `<a href="#/${encodePath(reviewHref(article, filename))}">${escapeHtml(reviewLabel(filename))}</a>`);
+      lines.push('</span>');
       if (reviewLinks.length) lines.push(`<span class="article-cover-actions"><a href="#/${encodePath(articleHref(article))}">正文</a>${reviewLinks.join('')}</span>`);
+      lines.push('</span>');
+      lines.push(`<span class="article-cover-excerpt">${escapeHtml(catalogExcerpt(article.excerpt))}</span>`);
       lines.push('</span>');
       lines.push('</div>');
     }
