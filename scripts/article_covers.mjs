@@ -81,12 +81,23 @@ function parseArticle(content, dirName) {
   const date = meta.date || '';
   const body = content
     .replace(/^---\r?\n[\s\S]*?\r?\n---/, '')
+    .replace(/\*原文链接:[\s\S]*$/m, '')
     .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
     .replace(/<[^>]+>/g, '')
     .replace(/^#.*$/gm, '')
+    .replace(/^>.*$/gm, '')
+    .replace(/^---$/gm, '')
+    .replace(/[*_`~]/g, '')
     .replace(/\s+/g, ' ')
     .trim();
   return { title, author, date, excerpt: body.slice(0, 650) };
+}
+
+function catalogExcerpt(value) {
+  const text = String(value || '').replace(/\s+/g, ' ').trim();
+  if (text.length <= 150) return text;
+  return `${text.slice(0, 150)}...`;
 }
 
 function coverPrompt(article, dirName) {
@@ -193,6 +204,7 @@ async function updateCatalog(articles) {
     lines.push('  <span class="article-cover-info">');
     lines.push(`    <strong>${escapeHtml(article.title)}</strong>`);
     lines.push(`    <em>${escapeHtml(article.date || '')}</em>`);
+    lines.push(`    <span class="article-cover-excerpt">${escapeHtml(catalogExcerpt(article.excerpt))}</span>`);
     lines.push('  </span>');
     lines.push('</a>');
     lines.push('');
