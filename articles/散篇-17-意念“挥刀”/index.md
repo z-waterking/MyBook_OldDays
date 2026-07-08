@@ -2,7 +2,7 @@
 title: "意念“挥刀”"
 author: "凡复思忖"
 date: "2026-07-08"
-source: "https://mp.weixin.qq.com/s?__biz=MzI4NTkwMzY1MA==&tempkey=MTM4MV9yUnZsbDVrL3AzY2VIbmdKY3dsMFFZOWluQVZldlRnTFZVbTFzNThoTElDbjBodldqcGRITVFFZktSRk9EMHVzYXY4dWhDd1BQX2hOeWRLaTllbjFvZ2ptXzhBemFibFNHa2hNZm1xcVE5QzRlcUh0NTVvVUJOLWloQlNINVhMb2RXUWJWVEFVMERwX1BoWDNPUUhzVE1lQmhpUEpUNUEwc3hmOUJ3fn4%3D&chksm=ebe45cc3dc93d5d5921e28ca6a3d631069d74ca42f73b2e893ed03a2f7798bfb7c89850aa5fb&token=1313163150&lang=zh_CN#rd"
+source: "https://mp.weixin.qq.com/s/WyjIhetObUWZ6S9RwlofjA"
 archived: "2026-07-08 03:21"
 ---
 # 意念“挥刀”
@@ -35,4 +35,4 @@ archived: "2026-07-08 03:21"
 抛开幻想回归现实，现在嘛，已经做好裁员预案了。我连收到裁员消息后，第一时间做什么动作都想好了。 往座位上一摊，脸上止不住的笑意，大腿一拍，两臂呈波浪形扩散往外舒展，”哎呀呀，这怎么就轮到我了呢”，然后笑得愈发大声。
 ![](images/wx_005.png)
 ---
-*原文链接: [查看原文](https://mp.weixin.qq.com/s?__biz=MzI4NTkwMzY1MA==&tempkey=MTM4MV9yUnZsbDVrL3AzY2VIbmdKY3dsMFFZOWluQVZldlRnTFZVbTFzNThoTElDbjBodldqcGRITVFFZktSRk9EMHVzYXY4dWhDd1BQX2hOeWRLaTllbjFvZ2ptXzhBemFibFNHa2hNZm1xcVE5QzRlcUh0NTVvVUJOLWloQlNINVhMb2RXUWJWVEFVMERwX1BoWDNPUUhzVE1lQmhpUEpUNUEwc3hmOUJ3fn4%3D&chksm=ebe45cc3dc93d5d5921e28ca6a3d631069d74ca42f73b2e893ed03a2f7798bfb7c89850aa5fb&token=1313163150&lang=zh_CN#rd)*
+*原文链接: [查看原文](https://mp.weixin.qq.com/s/WyjIhetObUWZ6S9RwlofjA)*
