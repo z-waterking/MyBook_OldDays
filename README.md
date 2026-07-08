@@ -2,6 +2,8 @@
 
 微信公众号文章归档仓库，自动抓取并保存为 Markdown 格式，保留图片。
 
+网站地址：[https://z-waterking.github.io/MyBook_OldDays/](https://z-waterking.github.io/MyBook_OldDays/)
+
 ## 使用方式
 
 ### 通过 Claude Code（推荐）

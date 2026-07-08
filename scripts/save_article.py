@@ -227,6 +227,20 @@ def catalog_group(dir_name: str) -> str:
     return "合集 · 工作与考试"
 
 
+def review_order(filename: str) -> int:
+    if filename == "review.md":
+        return 0
+    match = re.match(r"^review_v(\d+)\.md$", filename)
+    return int(match.group(1)) if match else 999
+
+
+def review_label(filename: str) -> str:
+    if filename == "review.md":
+        return "评价"
+    match = re.match(r"^review_v(\d+)\.md$", filename)
+    return f"评价 v{match.group(1)}" if match else filename.removesuffix(".md")
+
+
 # ─── HTTP 层 ──────────────────────────────────────────────────────────────────
 
 def create_session() -> requests.Session:
@@ -660,8 +674,12 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
             cover_rel_path = cover_path.resolve().as_posix()
         excerpt = markdown_excerpt(content)
         group = catalog_group(article_dir.name)
+        reviews = sorted(
+            [path.name for path in article_dir.glob("review*.md") if re.match(r"^review(?:_v\d+)?\.md$", path.name)],
+            key=lambda name: (review_order(name), name),
+        )
 
-        entries.append((date, title, author, rel_path, cover_rel_path, excerpt, group))
+        entries.append((date, title, author, rel_path, cover_rel_path, excerpt, group, reviews, article_dir))
 
     # 按日期倒序排序
     entries.sort(key=lambda x: x[0], reverse=True)
@@ -682,20 +700,30 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
         lines.append(f'<div class="article-cover-group">')
         lines.append(f'<h2>{html.escape(group)} <small>{len(grouped_entries)} 篇</small></h2>')
         lines.append('<div class="article-cover-list">')
-        for date, title, author, rel_path, cover_rel_path, excerpt, _ in grouped_entries:
+        for date, title, author, rel_path, cover_rel_path, excerpt, _, reviews, article_dir in grouped_entries:
             safe_rel_path = markdown_link_target(rel_path)
             safe_cover_path = markdown_link_target(cover_rel_path)
             safe_title = html.escape(title)
             safe_date = html.escape(date)
             safe_excerpt = html.escape(excerpt)
-            lines.append(f'<a class="article-cover-row" href="#/{safe_rel_path}">')
-            lines.append(f'<img src="{safe_cover_path}" alt="{safe_title} 封面">')
+            lines.append('<div class="article-cover-row">')
+            lines.append(f'<a class="article-cover-thumb" href="#/{safe_rel_path}"><img src="{safe_cover_path}" alt="{safe_title} 封面"></a>')
             lines.append('<span class="article-cover-info">')
-            lines.append(f'<strong>{safe_title}</strong>')
+            lines.append(f'<a class="article-cover-title" href="#/{safe_rel_path}"><strong>{safe_title}</strong></a>')
             lines.append(f'<em>{safe_date}</em>')
             lines.append(f'<span class="article-cover-excerpt">{safe_excerpt}</span>')
+            review_links = []
+            for filename in reviews:
+                review_path = article_dir / filename
+                try:
+                    review_rel_path = review_path.relative_to(repo_root).as_posix()
+                except ValueError:
+                    review_rel_path = review_path.resolve().as_posix()
+                review_links.append(f'<a href="#/{markdown_link_target(review_rel_path)}">{html.escape(review_label(filename))}</a>')
+            if review_links:
+                lines.append(f'<span class="article-cover-actions"><a href="#/{safe_rel_path}">正文</a>{"".join(review_links)}</span>')
             lines.append('</span>')
-            lines.append('</a>')
+            lines.append('</div>')
         lines.append('</div>')
         lines.append('</div>')
         lines.append("")

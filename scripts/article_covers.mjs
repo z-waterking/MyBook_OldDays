@@ -137,7 +137,12 @@ async function listArticles() {
     if (!existsSync(mdPath)) continue;
     const content = await readFile(mdPath, 'utf8');
     const parsed = parseArticle(content, dir.name);
-    articles.push({ dir: dir.name, mdPath, content, ...parsed });
+    const files = await readdir(join(ARTICLES_DIR, dir.name), { withFileTypes: true });
+    const reviews = files
+      .filter((file) => file.isFile() && /^review(?:_v\d+)?\.md$/.test(file.name))
+      .map((file) => file.name)
+      .sort(reviewSort);
+    articles.push({ dir: dir.name, mdPath, content, reviews, ...parsed });
   }
   articles.sort((a, b) => {
     const da = a.date || '';
@@ -154,6 +159,25 @@ function articleHref(article) {
 
 function imageHref(article) {
   return `${relative(ROOT, join(ARTICLES_DIR, article.dir, 'images', 'cover.png')).replace(/\\/g, '/')}`;
+}
+
+function reviewHref(article, filename) {
+  return `${relative(ROOT, join(ARTICLES_DIR, article.dir, filename)).replace(/\\/g, '/')}`;
+}
+
+function reviewSort(a, b) {
+  return reviewOrder(a) - reviewOrder(b) || a.localeCompare(b);
+}
+
+function reviewOrder(filename) {
+  if (filename === 'review.md') return 0;
+  return Number(filename.match(/^review_v(\d+)\.md$/)?.[1] || 999);
+}
+
+function reviewLabel(filename) {
+  if (filename === 'review.md') return '评价';
+  const version = filename.match(/^review_v(\d+)\.md$/)?.[1];
+  return version ? `评价 v${version}` : filename.replace(/\.md$/, '');
 }
 
 function articleLocalCover(article) {
@@ -220,14 +244,16 @@ async function updateCatalog(articles) {
     lines.push(`<h2>${escapeHtml(group)} <small>${groupedArticles.length} 篇</small></h2>`);
     lines.push('<div class="article-cover-list">');
     for (const article of groupedArticles) {
-      lines.push(`<a class="article-cover-row" href="#/${encodePath(articleHref(article))}">`);
-      lines.push(`<img src="${encodePath(imageHref(article))}" alt="${escapeHtml(article.title)} 封面">`);
+      lines.push('<div class="article-cover-row">');
+      lines.push(`<a class="article-cover-thumb" href="#/${encodePath(articleHref(article))}"><img src="${encodePath(imageHref(article))}" alt="${escapeHtml(article.title)} 封面"></a>`);
       lines.push('<span class="article-cover-info">');
-      lines.push(`<strong>${escapeHtml(article.title)}</strong>`);
+      lines.push(`<a class="article-cover-title" href="#/${encodePath(articleHref(article))}"><strong>${escapeHtml(article.title)}</strong></a>`);
       lines.push(`<em>${escapeHtml(article.date || '')}</em>`);
       lines.push(`<span class="article-cover-excerpt">${escapeHtml(catalogExcerpt(article.excerpt))}</span>`);
+      const reviewLinks = article.reviews.map((filename) => `<a href="#/${encodePath(reviewHref(article, filename))}">${escapeHtml(reviewLabel(filename))}</a>`);
+      if (reviewLinks.length) lines.push(`<span class="article-cover-actions"><a href="#/${encodePath(articleHref(article))}">正文</a>${reviewLinks.join('')}</span>`);
       lines.push('</span>');
-      lines.push('</a>');
+      lines.push('</div>');
     }
     lines.push('</div>');
     lines.push('</div>');
