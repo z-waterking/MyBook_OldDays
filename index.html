@@ -288,10 +288,7 @@
     .sidebar li:has(> ul li.active) > p,
     .sidebar li:has(> ul a.active) > p,
     .sidebar li:has(> ul li.active) > a:first-child,
-    .sidebar li:has(> ul a.active) > a:first-child,
-    .sidebar li.sidebar-group-active > strong,
-    .sidebar li.sidebar-group-active > p,
-    .sidebar li.sidebar-group-active > a:first-child {
+    .sidebar li:has(> ul a.active) > a:first-child {
       display: block;
       margin: 6px 8px 4px 0;
       padding: 6px 10px;
@@ -303,8 +300,7 @@
     }
 
     .sidebar li:has(> ul li.active) > ul,
-    .sidebar li:has(> ul a.active) > ul,
-    .sidebar li.sidebar-group-active > ul {
+    .sidebar li:has(> ul a.active) > ul {
       margin-left: 4px;
       border-left: 1px solid #ded6c8;
     }
@@ -315,35 +311,6 @@
       background: #fffaf0;
       border-radius: 4px;
       box-shadow: inset 3px 0 0 #8b6914;
-    }
-
-    .sidebar li.sidebar-collapsible > strong,
-    .sidebar li.sidebar-collapsible > p,
-    .sidebar li.sidebar-collapsible > a:first-child {
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .sidebar li.sidebar-collapsible > strong::before,
-    .sidebar li.sidebar-collapsible > p::before,
-    .sidebar li.sidebar-collapsible > a:first-child::before {
-      content: "▸";
-      display: inline-block;
-      width: 14px;
-      margin-right: 4px;
-      color: #8b6914;
-      font-size: 12px;
-      transition: transform 0.15s ease;
-    }
-
-    .sidebar li.sidebar-collapsible.sidebar-expanded > strong::before,
-    .sidebar li.sidebar-collapsible.sidebar-expanded > p::before,
-    .sidebar li.sidebar-collapsible.sidebar-expanded > a:first-child::before {
-      transform: rotate(90deg);
-    }
-
-    .sidebar li.sidebar-collapsible.sidebar-collapsed > ul {
-      display: none !important;
     }
 
     /* 手机端字号不缩 */
@@ -424,84 +391,6 @@
         depth: 3
       },
       auto2top: true,
-      plugins: [
-        function sidebarGroupState(hook) {
-          var sidebarReady = false;
-
-          function directLabel(item) {
-            return Array.from(item.children).find(function (child) {
-              return child.matches && child.matches('strong, p, a');
-            });
-          }
-
-          function markActiveGroup() {
-            document.querySelectorAll('.sidebar li.sidebar-group-active').forEach(function (node) {
-              node.classList.remove('sidebar-group-active');
-            });
-            var active = document.querySelector('.sidebar li.active, .sidebar a.active');
-            if (!active) return;
-            var activeItem = active.tagName === 'LI' ? active : active.closest('li');
-            if (!activeItem) return;
-            var group = activeItem.parentElement && activeItem.parentElement.closest('li');
-            if (group) group.classList.add('sidebar-group-active');
-          }
-
-          function setupCollapsibleSidebar() {
-            var items = document.querySelectorAll('.sidebar li');
-            items.forEach(function (item) {
-              var childList = Array.from(item.children).find(function (child) {
-                return child.tagName === 'UL';
-              });
-              if (!childList) return;
-              item.classList.add('sidebar-collapsible');
-              var label = directLabel(item);
-              if (!label || label.dataset.sidebarToggleBound) return;
-              label.dataset.sidebarToggleBound = 'true';
-              label.addEventListener('click', function (event) {
-                if (label.tagName !== 'A') event.preventDefault();
-                event.stopPropagation();
-                item.classList.toggle('sidebar-collapsed');
-                item.classList.toggle('sidebar-expanded', !item.classList.contains('sidebar-collapsed'));
-              });
-            });
-          }
-
-          function syncCollapsedState() {
-            var groups = document.querySelectorAll('.sidebar li.sidebar-collapsible');
-            groups.forEach(function (group) {
-              if (!sidebarReady) {
-                var shouldExpand = group.classList.contains('sidebar-group-active');
-                group.classList.toggle('sidebar-expanded', shouldExpand);
-                group.classList.toggle('sidebar-collapsed', !shouldExpand);
-              } else if (!group.classList.contains('sidebar-expanded') && !group.classList.contains('sidebar-collapsed')) {
-                group.classList.add('sidebar-collapsed');
-              }
-            });
-            sidebarReady = true;
-          }
-
-          function scheduleMarkActiveGroup() {
-            setupCollapsibleSidebar();
-            markActiveGroup();
-            syncCollapsedState();
-            setTimeout(markActiveGroup, 0);
-            setTimeout(function () { setupCollapsibleSidebar(); markActiveGroup(); syncCollapsedState(); }, 80);
-            setTimeout(function () { setupCollapsibleSidebar(); markActiveGroup(); syncCollapsedState(); }, 250);
-          }
-
-          hook.mounted(function () {
-            scheduleMarkActiveGroup();
-            var sidebar = document.querySelector('.sidebar');
-            if (!sidebar) return;
-            var observer = new MutationObserver(scheduleMarkActiveGroup);
-            observer.observe(sidebar, { childList: true, subtree: true });
-          });
-
-          hook.doneEach(function () {
-            scheduleMarkActiveGroup();
-          });
-        }
-      ],
     }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
