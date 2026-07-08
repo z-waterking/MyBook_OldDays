@@ -458,7 +458,7 @@
               if (!label || label.dataset.sidebarToggleBound) return;
               label.dataset.sidebarToggleBound = 'true';
               label.addEventListener('click', function (event) {
-                event.preventDefault();
+                if (label.tagName !== 'A') event.preventDefault();
                 event.stopPropagation();
                 item.classList.toggle('sidebar-collapsed');
                 item.classList.toggle('sidebar-expanded', !item.classList.contains('sidebar-collapsed'));
@@ -494,7 +494,7 @@
             var sidebar = document.querySelector('.sidebar');
             if (!sidebar) return;
             var observer = new MutationObserver(scheduleMarkActiveGroup);
-            observer.observe(sidebar, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
+            observer.observe(sidebar, { childList: true, subtree: true });
           });
 
           hook.doneEach(function () {
