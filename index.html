@@ -221,11 +221,18 @@
     }
 
     .sidebar li > a:hover,
-    .sidebar li.active > a {
+    .sidebar li.active > a,
+    .sidebar li > a.active {
       color: #2d2d2d !important;
       font-weight: 600 !important;
     }
 
+    .sidebar li:has(> ul li.active) > strong,
+    .sidebar li:has(> ul a.active) > strong,
+    .sidebar li:has(> ul li.active) > p,
+    .sidebar li:has(> ul a.active) > p,
+    .sidebar li:has(> ul li.active) > a:first-child,
+    .sidebar li:has(> ul a.active) > a:first-child,
     .sidebar li.sidebar-group-active > strong,
     .sidebar li.sidebar-group-active > p,
     .sidebar li.sidebar-group-active > a:first-child {
@@ -239,11 +246,15 @@
       font-weight: 700 !important;
     }
 
+    .sidebar li:has(> ul li.active) > ul,
+    .sidebar li:has(> ul a.active) > ul,
     .sidebar li.sidebar-group-active > ul {
       margin-left: 4px;
       border-left: 1px solid #ded6c8;
     }
 
+    .sidebar li.active > a,
+    .sidebar li > a.active,
     .sidebar li.sidebar-group-active li.active > a {
       background: #fffaf0;
       border-radius: 4px;
@@ -312,14 +323,35 @@
       auto2top: true,
       plugins: [
         function sidebarGroupState(hook) {
-          hook.doneEach(function () {
+          function markActiveGroup() {
             document.querySelectorAll('.sidebar li.sidebar-group-active').forEach(function (node) {
               node.classList.remove('sidebar-group-active');
             });
-            var active = document.querySelector('.sidebar li.active');
+            var active = document.querySelector('.sidebar li.active, .sidebar a.active');
             if (!active) return;
-            var group = active.parentElement && active.parentElement.closest('li');
+            var activeItem = active.tagName === 'LI' ? active : active.closest('li');
+            if (!activeItem) return;
+            var group = activeItem.parentElement && activeItem.parentElement.closest('li');
             if (group) group.classList.add('sidebar-group-active');
+          }
+
+          function scheduleMarkActiveGroup() {
+            markActiveGroup();
+            setTimeout(markActiveGroup, 0);
+            setTimeout(markActiveGroup, 80);
+            setTimeout(markActiveGroup, 250);
+          }
+
+          hook.mounted(function () {
+            scheduleMarkActiveGroup();
+            var sidebar = document.querySelector('.sidebar');
+            if (!sidebar) return;
+            var observer = new MutationObserver(scheduleMarkActiveGroup);
+            observer.observe(sidebar, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
+          });
+
+          hook.doneEach(function () {
+            scheduleMarkActiveGroup();
           });
         }
       ],
