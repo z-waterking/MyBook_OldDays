@@ -118,48 +118,57 @@
       border-radius: 6px;
     }
 
-    .article-cover-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-      gap: 16px;
-      margin: 20px 0 32px;
+    .article-cover-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 18px 0 32px;
     }
 
-    .article-cover-card {
-      display: block;
+    .article-cover-row {
+      display: grid;
+      grid-template-columns: 132px minmax(0, 1fr);
+      gap: 14px;
+      align-items: center;
+      padding: 8px 0;
       color: inherit !important;
       text-decoration: none !important;
+      border-bottom: 1px solid #eeeae2;
     }
 
-    .article-cover-card img {
-      width: 100%;
+    .article-cover-row:hover strong {
+      color: #8b6914;
+    }
+
+    .article-cover-row img {
+      width: 132px;
       aspect-ratio: 3 / 2;
       object-fit: cover;
       border-radius: 6px;
       display: block;
-      margin: 0 0 8px;
+      margin: 0;
       background: #eeeae2;
     }
 
-    .article-cover-meta {
+    .article-cover-info {
       display: block;
-      min-height: 54px;
+      min-width: 0;
     }
 
-    .article-cover-meta strong {
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
+    .article-cover-info strong {
+      display: block;
       overflow: hidden;
-      font-size: 15px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 16px;
       line-height: 1.45;
       font-weight: 600;
       color: #2d2d2d;
     }
 
-    .article-cover-meta em {
+    .article-cover-info em {
       display: block;
-      margin-top: 2px;
+      margin-top: 4px;
       font-size: 13px;
       font-style: normal;
       color: #777;
@@ -188,13 +197,22 @@
         font-size: 17px !important;
       }
 
-      .article-cover-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
+      .article-cover-list {
+        gap: 8px;
       }
 
-      .article-cover-meta strong {
-        font-size: 13px;
+      .article-cover-row {
+        grid-template-columns: 96px minmax(0, 1fr);
+        gap: 10px;
+        padding: 7px 0;
+      }
+
+      .article-cover-row img {
+        width: 96px;
+      }
+
+      .article-cover-info strong {
+        font-size: 14px;
       }
     }
   </style>

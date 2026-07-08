@@ -184,13 +184,13 @@ async function updateCatalog(articles) {
     '',
     `> 共 ${articles.length} 篇文章，更新于 ${new Date().toISOString().slice(0, 10)}`,
     '',
-    '<div class="article-cover-grid">',
+    '<div class="article-cover-list">',
     '',
   ];
   for (const article of articles) {
-    lines.push(`<a class="article-cover-card" href="#/${encodePath(articleHref(article))}">`);
+    lines.push(`<a class="article-cover-row" href="#/${encodePath(articleHref(article))}">`);
     lines.push(`  <img src="${encodePath(imageHref(article))}" alt="${escapeHtml(article.title)} 封面">`);
-    lines.push('  <span class="article-cover-meta">');
+    lines.push('  <span class="article-cover-info">');
     lines.push(`    <strong>${escapeHtml(article.title)}</strong>`);
     lines.push(`    <em>${escapeHtml(article.date || '')}</em>`);
     lines.push('  </span>');
