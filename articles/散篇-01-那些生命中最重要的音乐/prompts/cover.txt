@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 那些生命中最重要的音乐
+Series folder: 散篇-01-那些生命中最重要的音乐
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2025-04-27 最近我听歌时，更加倾向于欣赏一些“经典老歌”，像是《相约98》、《千千阙歌》、《偏爱》、《出山》等。 我感到自己灵魂经过这十多年的熏陶，早已习惯了老歌的旋律。 面对新歌，显得无所适从，仿佛听新歌便是离开了自己的舒适区，于是每当随机到未曾听过的歌曲，我便急不可耐地切换到下一首。 我曾一度怀疑，这是我从积极开放转向因循守旧的开始。 而在深圳，坐在好兄弟的车上，无意间瞥到他的歌单，全是我们高中时经常听的歌。 那一首首熟悉的歌曲名称，瞬间勾起了我上古的回忆。 猛然间发现，原来我并不孤单。在世界的角角落落，也有着像我一样的人，沉浸在老歌的余韵中。 这时我才理解到，“成长过程中接触到的，会融入你灵魂，成为你的一部分”的含义。 我们18岁时听的音乐，也早已融入我们的灵魂。 歌声会将我们带回到自己的18岁，再去领略一遍那无尽题海下的忙里偷闲，再去从记忆中去翻看那课间休息时的动人旋律。 我笑他：“30岁的人了，还听18岁时的歌？”他不语，伸手将歌切换到《素颜》。 在深圳的夜晚，街头，两个30岁的男人“安详”地靠在车座上，随着音乐声起，我们也仿佛进入了那个安静的晚上，像楼下老爷爷一样，把最真实的喜怒哀乐全都埋葬在昨天。 不用“如果有一天”了，即使已过去了N年，我也已不再年轻。但是灵魂中融入的歌曲，依然是我不可分割的部分。 按时间来追溯的话，我记忆中最早的歌曲是小学时看的《迪迦奥特曼》的主题曲-《奇迹再现》。 记得当时追《迪迦奥特曼》时，也幻想自
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

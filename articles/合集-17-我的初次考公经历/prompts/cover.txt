@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 我的初次考公经历
+Series folder: 合集-17-我的初次考公经历
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2025-06-04 2022年7月，我那时还在杭州阿里打黑工。 之所以萌生考公的念头，是源自于那段时间国内互联网发起的无差别裁员，我们底层打工人像是陷入了黑色恐怖，也许第二天早上刚起床就被告知“门禁权限收回，N+1补偿，你可以走了。记得把电脑还回去”。 新员工群里每天都有人统计人数变化，大多数时候人数都是下降的。意味着每天都有人交了电脑走人。 再加上996toICU，程序员考公等github库的流行，带给个人极大的威胁与诱惑：继续当程序员只有死路一条，只有考公才可以安稳度过一生。 我也开始谋划后路，先拿了几个北京的offer保底，同时筹划去考个公。 我看中的岗位是西安那边的单位α，有社会地位，福利待遇好，离家近。决定考公的那一刻起，阿里的工作就与我没有太大关系了，上班的时候能划则划，所有的时间都用在搜集资料上。同时还买了去北京的车票，到海淀遛遛弯，沾染一丝学术气息，获得点buff加持，吃点烤鸭和京酱肉丝，顺便提前适应下工作环境。 回到杭州后不久，我向主管提出了离职，开始走离职的流程，大概一个月。 这段时间我每天去公司的第一件事，就是去喝一瓶农夫山泉的苏打水消暑（这是我在阿里的小确幸），然后提着书找一个空座位开始刷行测，工作的事情再也与我无关。 许多人可能没有接触过公务员考试，会过于神话它。在此解释一下，考试分为笔试和面试。笔试内容一般是两科：行测和申论。 行测的题目包含了语言理解，数学计算，逻辑推断，图形推断，常识，统计分析等等。题目本身都是非
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

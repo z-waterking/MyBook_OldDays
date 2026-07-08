@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 小记二十有九
+Series folder: 散篇-03-小记二十有九
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2023-12-16 这周迎来了自己29岁的生日。生日当天出去骑了街头自行车，冷风呼啸，可以清晰感受到汗水不断地带走体力。速度也比往常慢了许多。去拜访了荣姐，参观了她的大house，吃到了有生以来最豪华的长寿面。 吃完后在超市买了点白菜心，去熟悉的南海子公园喂麋鹿，碰到一群野鸭子，荣姐突发奇想，要试试野鸭吃不吃白菜，于是我们从包里拿出，掰开扔给鸭子。鸭子们都挺识货，捡到就吃，我也请荣姐帮我拍了下面的照片。当掰到最嫩的菜心时，我觉得直接给鸭子吃有些浪费，于是自己先在菜心上咬一口再丢出去。不得不说，快乐。 周一凌晨就落了雪，地上白茫茫一片，感到地铁的客流量变大了。不过我出门的这个时间，还是可以有座位的。一路坐到公司，再约了中午的饭，吃的是顺德菜的无骨头鲫鱼+丝瓜鱼腐锅底。晚上又吃了食堂的麻辣烫，很大一碗，毛肚着实不太好吃。 周二居家办公，谁能想到这周基本就没能去公司呢。 周三老板在群里建议大家没什么大事的话不要去公司了，居家办公。我们只好“含泪听从”。在家里窝着的时候，少了每天2小时的通勤，有更多时间可以做做别的事情。幸好屋里有一点点好吃的，并且我还抽空把王者打上了荣耀段位。 居家两天几乎没有出过门，只是看到外面积了厚厚的一层雪，想起来去年似乎是没有下雪的。不过现在也没有小时候对雪的热情了。以前见着雪都要去抓一把，静静感受它在手中融化。现在想的更多的是，千万不要滑倒，电脑压坏了很麻烦。 直到周四，去西局出去吃了一顿自助烤肉，是之前吃过的暴走的烧肉党。
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

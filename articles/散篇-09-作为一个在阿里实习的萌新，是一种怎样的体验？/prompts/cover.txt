@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 作为一个在阿里实习的萌新，是一种怎样的体验？
+Series folder: 散篇-09-作为一个在阿里实习的萌新，是一种怎样的体验？
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2019-08-14 **当我们在谈实习，我们在谈些什么** 大家好，我是一只实习萌新，在阿里巴巴的AE技术部算法团队“摸爬滚打”了两个多月，回想这两个月的生活，真的是慌张有之，从容有之，偶尔大彻大悟之…… 第一天入职，懵懵懂懂的我就赶上组内的晨会，师兄们在介绍自己手头工作的时候，各种英文单词往外冒，PV, UV, CPM, ROI, GMV……我有点晕，但又不好意思直接在晨会上直接问。只能拿拿着个小本子先默默记下来。等开完会之后，在电脑上偷偷摸摸的查，还特意把屏幕转个方向，生怕被别人看到，感觉怪不好意思的><。 其实呢，这些业务上的基础知识只要肯花时间，是可以在后面的工作中逐渐熟悉掌握的，我是萌新我才不怕到处请教呢，更何况师兄们都是很nice的。 过了一段时间，带我的师兄就给指派了一个要上线的项目，虽然我做的都是一些边边角角的工作，但完整体验了一个算法模型上线的整体流程。我从中了解了，在算法模型上线的整套流程中，算法模型的构建，仅仅是其中的一个小环节。这点几乎是打破了我以往的认知，毕竟在学校的时候，构建算法模型基本上就是工作内容的全部了，而在工业界，算法工程师这个词中工程二字有着十分重要的意义。对于工程师而言，工程实践的能力永远不应该忽视。我也暗下决心，好好打磨自己的工程能力，做一个有想法、能落地的算法工程师！ 隔壁的实习生小姐姐也有话要说： 我一进来就被分配到了AE技术部平台架构组，我慌得不行，不是说好的后台开发吗，为什么突然就要做架构这么高
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

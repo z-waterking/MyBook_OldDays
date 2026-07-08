@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 我在珠海上大学（忽然之间）
+Series folder: 合集-09-我在珠海上大学（忽然之间）
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-03-14 小时候看过全套的《小故事里的大智慧》，主标题之外，它还有个副标题，我记得的有《他山之石》，最喜欢的是《忽然之间》。 珠海的寒冬和酷暑我都未曾经历完全。每次在珠海待一个学期，都会瘦个五斤。学校门口的老火靓汤和炒米粉，怎么吃都吃不胖。放假回家待一两个月，五斤就长上来了。像是热胀冷缩般。 我们学校的治安不是特别好，从大二开始，我丢了两辆自行车。都是停在宿舍楼下丢的。气人的是，到处都是监控，我每次骑自行车出门时，保安都要拦住看学生证，但是根本管不住自行车丢失，不知道那些人给保安塞了多少钱。 HSZ有一次在学生活动中心拿macbook做作业时，出门上了个厕所，回来笔记本就没了。隔壁宿舍更可怕，我们宿舍门口有一个通道，原本是不开放的。那时候为了方便毕业生搬东西，短暂开放了几天，隔壁这个同学去阳台洗了个脸的功夫，东西就丢了。**还有更可怕的是，一对小情侣在校内的湖边，晚上约会时被校外的人持刀抢劫了，手机都给拿走了。从那之后，湖边就有一个巡逻车每晚巡逻了。** 他们总是事后开始亡羊补牢，没有反思过如何能把事情消弭于无形。这也是我觉得这个学校不好的原因之一。而且一些保安的素质我认为是比较差的。以往我从本部回珠海之前，都会把行李放到保安室暂存一个小时，每次保安大哥都会让我们放。**直到有一次，那个保安粗暴地将我赶了出来，说别放这里，丢了还要赖我们。我说以前每次都可以放的，这边也有监控，丢东西了不赖你。可能他觉得自己很聪明吧，说那你直接放门外就好
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

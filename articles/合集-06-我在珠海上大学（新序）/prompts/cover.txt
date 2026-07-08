@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 我在珠海上大学（新序）
+Series folder: 合集-06-我在珠海上大学（新序）
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-03-07 高考失利后，我并没有什么痛苦的感觉，更多的是麻木。我邀请大家一起去华山游玩，有十几个人响应。我们半夜出发，日出时到了山顶，大家都累得气喘吁吁，靠在山壁上休息。山风吹拂，人生的享受不过如此。 出成绩前，我不愿意在家里呆着，于是借了LQJ的钥匙，到了他非常空间的小屋，每天去网吧潇洒。直到出分那天早上，大家伙都需要回一趟学校，陆陆续续外地的同学赶了回来。我也一大早就起身去网吧查成绩。 那年的一本线是530分。我只考了569。其中，理综只考了210分，与平时的成绩大相径庭。数学130+，语文英语一如既往110左右。最低档985守门员，再差点分数连211都上不了的。 现在的我会毫不犹豫地痛骂当时的我是个丢人现眼的蠢材。没有去复读更是不该。只是世上没有后悔药吃。 接着大伙一起去学校，见了高中生涯的最后一面。我在广场散步的时候，JQN把我叫住。一堆老熟人在那边搭伙聊天。讨论着要不要复读。最终爸妈没有选择让我复读。 柴老师还建议过我去读中国海事。我一直把这个记在心头，是因为人生而对未知的好奇，我很想知道如果真的当了海员，每天面对一望无垠的大海，是否能找到梁萧留下的潜龙，万归藏留下的周流六虚功。（做梦了做梦了） SYM，LQJ他们去复读了。直到今天我都觉得这是我的一个遗憾。复读班挺有意思的，而且我一个初中好友ZYT，明明已经考得非常高了，640多，但由于不如平时的水平，毫不犹豫选择了复读，最后跑到了人大读法学，努力有所回报。后来SYM告诉我，
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

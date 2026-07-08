@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 读研读废了是什么体验
+Series folder: 散篇-10-读研读废了是什么体验
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2019-05-10 深刻理解博硕士的毕业要求与毕业难度。 熟练使用微信、微博、QQ、支付宝、淘宝、京东、高德地图等各大APP。 熟练购物、退换货、抢优惠券等流程。 熟练论文查找、编纂、相关软件使用等。 在刺激战场、王者荣耀等竞技类活动中取得不错的名次。 打字与思维切换速度飞快，能同时以不同的身份在微博、微信、豆瓣等社交产品上发表言论。 熟练多显示器的配置、多接口的转换，在书桌布置方面颇有心得。 熟悉开会流程分为四个阶段：开会、挨训、与上次会议内容对比、散会。 熟悉开会采购水果的流程、及散会回收水果的步骤。 熟悉法律中对自己有利的一部分。如中华人民共和国劳动法第三条指出劳动者具有取得劳动报酬的权利。 熟悉马克思哲学的本质思想，熟知客观存在不会以人的意志为转移。 了解社会主义的优越性，及社会主义终将并且必然代替资本主义。 了解各大公司招聘流程、招聘需求及应聘难度。 --- *原文链接: [查看原文](https://mp.weixin.qq.com/s/lPbhd4tjD0l_yjhTceMQsA)*
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

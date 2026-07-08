@@ -46,3 +46,7 @@
   - [11 男朋友不回消息](articles/散篇-11-男朋友不回消息怎么办/index.md)
   - [12 请出示证件](articles/散篇-12-请出示证件/index.md)
   - [13 张雪峰老师之死](articles/散篇-13-从张雪峰老师的死亡所想到的/index.md)
+  - [14 vibe coding虚无感](articles/散篇-14-vibe coding带来的虚无感/index.md)
+  - [15 最后一个leader](articles/散篇-15-我在阿里的最后一个leader/index.md)
+  - [16 我的工位](articles/散篇-16-我舍不得的不是公司，是我的工位/index.md)
+  - [17 意念挥刀](articles/散篇-17-意念“挥刀”/index.md)

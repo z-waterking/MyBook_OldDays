@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 我在河津上小学
+Series folder: 合集-02-我在河津上小学
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-03-19 **我小学时由于搬家，共上过两个学校。那时候还只需要上五年，从2001年到2006年，分别上的是一小的1(2)班，2(6)班，3(2)班，搬家之后，是四小的4(3)班，5(3)班。** **小时候照片镇楼。** **距今已经25年了，我眉头一动，妈妈带我去上一小的那个早上，会再次浮现在脑海。** 从河津博物馆出发，一路经过一个幼儿园，我看幼儿园墙面上画的五颜六色的，就问妈妈这是不是小学？妈妈说不是，一小在前面。将我送进学校后，她继续往前，就到了她自己的工作单位了。河津那时候市区内的1路车和3路车是相反方向的，我们俩上学和上班都可以坐1路车。 小孩子刚进学校，看到这么多人，免不了要走错班级。**老师给我排好座位后，我出去上厕所，回来就走到了1(1)班同一个座位上。还没坐下，就发现周围的人和刚才完全不一样。**我先慌了神，才反应过来自己走错了，赶快灰溜溜地退出去。 一小的操场有一个巨大的攀爬架，很高，无任何保护措施。这么多年来，不知道有没有孩子从上面摔下来。我从小就不敢爬上去。但是当时的同学柴帅，爬上爬下如履平地。那是一个斜着的梯子，上到最高处后，是一个平着的梯子，另一边对称的地方也是同样的梯子，全是镂空道路。不知道当时怎么回事，就敢让孩子们在那里玩。 一年级考试的时候，为了降低学生密度，我们都被安排在大操场上进行。每个小小的我们，抱着凳子，往操场上一坐，顶着太阳就开始写卷子。那个时候的卷子在现在看来完全就是常识，基础中的基础，
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 412之趣言趣闻
+Series folder: 散篇-08-412之趣言趣闻
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2019-09-10 **0** **1** 一凡：站的高尿的远 孩儿们,吃橘子 吃火锅就吃火锅,可不许掀桌子 去摸摸唱 **0** **2** 大飞哥：洗车店说小飞哥吐过的地方有打蜡效果 **0** **3** 思凡 :好纠结，不想去阿里，怕他坑我 我可以周一二去亚马逊,周三去百度,其他时间去头条 国家安全中心可难进了，博士到那都是插U盘的 **0** **4** 荣荣：卡卡师兄，我上次在西安的酒吧看到一个歌手，长的特帅，唱歌好听 卡卡：荣荣，以后找对象可千万别太花痴啊 荣荣: 我C语言都快忘光了，就记得一个cin，cout **0** **5** 小飞哥（喝醉）：思凡，给你介绍我小姨子，我小姨子特靠谱。思凡真的，你如果看上了，你努力一下！ 排版:王荣荣 责编:张思凡 --- *原文链接: [查看原文](https://mp.weixin.qq.com/s/1o3KYwWbKUfVxNTXSuFkFQ)*
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

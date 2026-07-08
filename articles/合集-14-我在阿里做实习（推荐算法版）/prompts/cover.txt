@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 我在阿里做实习（推荐算法版）
+Series folder: 合集-14-我在阿里做实习（推荐算法版）
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-03-06 我的第一份正式的实习，是19年去了杭州阿里总部，推荐算法岗位。 那时我只有25岁，虽然在硕士期间被学术论文摧残，但总的来说还处于意气风发的年纪。脸庞的轮廓还不像现在这样圆润，当时侧脸线条像是刀刻出来的，给人一种英气勃发的感觉。 杭州自古以来便是繁华之地，富饶之乡。南宋时更是有柳永的《望海潮》词为证： 东南形胜，三吴都会，钱塘自古繁华。烟柳画桥，风帘翠幕，参差十万人家。云树绕堤沙，怒涛卷霜雪，天堑无涯。市列珠玑，户盈罗绮，竞豪奢。 重湖叠𪩘清嘉，有三秋桂子，十里荷花。羌管弄晴，菱歌泛夜，嬉嬉钓叟莲娃。千骑拥高牙，乘醉听箫鼓，吟赏烟霞。异日图将好景，归去凤池夸。 我拿到阿里的实习offer时，不知是向往西湖十景里断桥残雪与曲院风荷的美景，还是被《国食》中读到的西湖醋鱼的传说所吸引，抑或是当年阿里势大对我产生的冲击。 总之我仅稍作犹豫，便果断辞去了百度的实习，将字节的实习offer延后到9月份，脑抽地放弃了AWS的实习。期间经过长时间的反复，在牛客上多方发帖咨询，也认识了同校的朋友X，在咖啡馆中商讨后，最终下定决心，排除万难，预备去杭州闯荡一番。 初到杭州时已是7月上旬，阿里总部坐落于余杭区未来科技城旁。附近都是回迁的村民，从名字中带有未来两字也能看出，这里是将来要重点发展的区域。 公司赠与了14天的维也纳酒店房间，我入住后，用最短的时间在福鼎家园租好了两个月的房子，是一个合租房，带外独卫，位于福鼎西门的主干道上。虽然房间不大，
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

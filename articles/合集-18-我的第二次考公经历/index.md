@@ -13,6 +13,11 @@ archived: "2026-03-25 23:17"
 
 > 作者: 凡复思忖 | 日期: 2026-03-13
 
+<p><img class="article-cover" src="articles/合集-18-我的第二次考公经历/images/cover.png" alt="我的第二次考公经历 封面"></p>
+
+
+
+
 **我考公一共考了四次。两次国考，两次省考。其中有一次行测未能及格，剩下三次都考了第一或者第二。成绩斐然。**
 
 第一次考公的经历写在这里。[我的初次考公经历](https://mp.weixin.qq.com/s?__biz=MzI4NTkwMzY1MA==&mid=2247483810&idx=1&sn=79926e4baf550211a3f49fe4a065d95c&scene=21#wechat_redirect)

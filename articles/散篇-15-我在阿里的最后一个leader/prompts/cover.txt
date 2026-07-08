@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 我在阿里的最后一个leader
+Series folder: 散篇-15-我在阿里的最后一个leader
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-06-03 **这篇算是讨伐，不喜勿看。** 原本应该出现在阿里内外的，但我离职时，一心只想快点走掉，也明白一旦发在内外，影响过于恶劣，所以当时作罢。阿里给我留下了许多好的记忆，这是其中比较坏的一个。 在阿里工作的最后一个leader是王兵，花名凌峰，北航毕业。放在金庸武侠中，凌峰这个名字一出，就给人一种剑冲云霄之感，显然应该是个拔剑向天的光明磊落之人，但这个人大大辱没了这个花名。 已经过去了快四年了。这四年偶尔会跟阿里的师兄联系，打听最多的就是，这个人被处理了没。最厌恶的俩人也都出自于阿里。这个排第一。 大约21年中时，阿里的Leader们经历了一波大的调整。凌峰换成了我的leader。开始时大家都不知道这意味着什么，后来回想起，这绝对是命运跟组里的同学开的一场天大的玩笑。 **阿里是有好的leader的，我自己也碰到过。只是恰好这最后一位leader，不太好而已。** 我在此只讲我的感受，因为阿里之前讲的是“有情有义”，所以一般这种纯主观的内容，也是会触发内部调查的。当然，关于此人违规的也有，但不在本文之列。 **1.服从性测试** 我刚入职时跟一个P7的同事起了冲突，原因是那个同事对新人甩锅，我不想惯着他，最后在一众leader面前狠狠批了一顿。原本以为没什么事情了，新来的凌峰听说过这个事，还专门找我聊过，我告诉他既然已经解决了，那么后面就不会再纠缠不放。没想到这个Leader还不放心，在某次开小会时，他突然叫我过去，一进门，就他
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 我在北京大厂实习
+Series folder: 合集-19-我在北京大厂实习
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-04-05 硕士期间，我有几次实习经历。实习的旅程很长，有的是自己面试得来的，有的是通过做项目得来的。经历过**亚马逊AWS，百度，字节，以及阿里。**其中阿里的经历写在[我在阿里做实习（推荐算法版）](https://mp.weixin.qq.com/s?__biz=MzI4NTkwMzY1MA==&mid=2247483850&idx=1&sn=c7acbab1ecff81e54ddefab390794d45&scene=21#wechat_redirect)。 最初是从这里开始。19年跟爸妈姐姐一起去哈尔滨，报了个旅行团去雪乡，期间经过一片雪地摩托营地，团里有人说自己年纪大了，坐不了这么刺激的，可不可以不坐？那边工作人员说，您放心吧，这玩意儿对身体好。我坐在上面，摩托各种甩尾表演特技，差点给我甩下去。他们为了赚钱，胡话张口就来。下山时，接到了字节寒假项目集训的通知。 之前有师兄吐槽过字节，说天天约面试，实际上不招人。那次的项目是抖音团队发起的寒假项目集训，目标是找一些对安卓感兴趣的学生，学习一波，考核不错的话，可以提供字节的实习机会。我跟TY，WRR一起报名了。 培训班就设置在我们信息中心楼下，来了一些字节的工程师教导我们做安卓开发。从最基础的生命周期开始，OnCreated到OnDestroy。每堂课都有相对应的练习。一开始只是简单地在手机上输出一些文字内容，看一看界面的生命周期；后来渐渐加入组件以及动画，做一个小记事本软件；再
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

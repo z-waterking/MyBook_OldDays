@@ -2,44 +2,304 @@
 
 > 共 37 篇文章，更新于 2026-07-08
 
-| # | 标题 | 作者 | 日期 |
-|---|------|------|------|
-| 1 | [意念“挥刀”](articles/%E6%95%A3%E7%AF%87-17-%E6%84%8F%E5%BF%B5%E2%80%9C%E6%8C%A5%E5%88%80%E2%80%9D/index.md) | 凡复思忖 | 2026-07-08 |
-| 2 | [我舍不得的不是公司，是我的工位](articles/%E6%95%A3%E7%AF%87-16-%E6%88%91%E8%88%8D%E4%B8%8D%E5%BE%97%E7%9A%84%E4%B8%8D%E6%98%AF%E5%85%AC%E5%8F%B8%EF%BC%8C%E6%98%AF%E6%88%91%E7%9A%84%E5%B7%A5%E4%BD%8D/index.md) | 凡复思忖 | 2026-07-07 |
-| 3 | [我在阿里的最后一个leader](articles/%E6%95%A3%E7%AF%87-15-%E6%88%91%E5%9C%A8%E9%98%BF%E9%87%8C%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AAleader/index.md) | 凡复思忖 | 2026-06-03 |
-| 4 | [vibe coding带来的虚无感](articles/%E6%95%A3%E7%AF%87-14-vibe%20coding%E5%B8%A6%E6%9D%A5%E7%9A%84%E8%99%9A%E6%97%A0%E6%84%9F/index.md) | 凡复思忖 | 2026-05-29 |
-| 5 | [我在西班牙骑自行车](articles/%E5%90%88%E9%9B%86-20-%E6%88%91%E5%9C%A8%E8%A5%BF%E7%8F%AD%E7%89%99%E9%AA%91%E8%87%AA%E8%A1%8C%E8%BD%A6/index.md) | 凡复思忖 | 2026-04-07 |
-| 6 | [我在北京大厂实习](articles/%E5%90%88%E9%9B%86-19-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%8E%82%E5%AE%9E%E4%B9%A0/index.md) | 凡复思忖 | 2026-04-05 |
-| 7 | [从张雪峰老师的死亡所想到的](articles/%E6%95%A3%E7%AF%87-13-%E4%BB%8E%E5%BC%A0%E9%9B%AA%E5%B3%B0%E8%80%81%E5%B8%88%E7%9A%84%E6%AD%BB%E4%BA%A1%E6%89%80%E6%83%B3%E5%88%B0%E7%9A%84/index.md) | 凡复思忖 | 2026-03-29 |
-| 8 | [我在河津上幼儿园](articles/%E5%90%88%E9%9B%86-01-%E6%88%91%E5%9C%A8%E6%B2%B3%E6%B4%A5%E4%B8%8A%E5%B9%BC%E5%84%BF%E5%9B%AD/index.md) | 凡复思忖 | 2026-03-20 |
-| 9 | [我在河津上小学](articles/%E5%90%88%E9%9B%86-02-%E6%88%91%E5%9C%A8%E6%B2%B3%E6%B4%A5%E4%B8%8A%E5%B0%8F%E5%AD%A6/index.md) | 凡复思忖 | 2026-03-19 |
-| 10 | [我在运中念初中](articles/%E5%90%88%E9%9B%86-03-%E6%88%91%E5%9C%A8%E8%BF%90%E4%B8%AD%E5%BF%B5%E5%88%9D%E4%B8%AD/index.md) | 凡复思忖 | 2026-03-16 |
-| 11 | [我在珠海上大学（忽然之间）](articles/%E5%90%88%E9%9B%86-09-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B4%EF%BC%89/index.md) | 凡复思忖 | 2026-03-14 |
-| 12 | [我的第二次考公经历](articles/%E5%90%88%E9%9B%86-18-%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%80%83%E5%85%AC%E7%BB%8F%E5%8E%86/index.md) | 凡复思忖 | 2026-03-13 |
-| 13 | [大学时的有趣课程（包装工程）](articles/%E5%90%88%E9%9B%86-10-%E5%A4%A7%E5%AD%A6%E6%97%B6%E7%9A%84%E6%9C%89%E8%B6%A3%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8C%85%E8%A3%85%E5%B7%A5%E7%A8%8B%EF%BC%89/index.md) | 凡复思忖 | 2026-03-12 |
-| 14 | [我在闲鱼卖二手](articles/%E5%90%88%E9%9B%86-15-%E6%88%91%E5%9C%A8%E9%97%B2%E9%B1%BC%E5%8D%96%E4%BA%8C%E6%89%8B/index.md) | 凡复思忖 | 2026-03-11 |
-| 15 | [我在珠海上大学（风途）](articles/%E5%90%88%E9%9B%86-08-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E9%A3%8E%E9%80%94%EF%BC%89/index.md) | 凡复思忖 | 2026-03-10 |
-| 16 | [我在广州做游戏](articles/%E5%90%88%E9%9B%86-13-%E6%88%91%E5%9C%A8%E5%B9%BF%E5%B7%9E%E5%81%9A%E6%B8%B8%E6%88%8F/index.md) | 凡复思忖 | 2026-03-09 |
-| 17 | [我在珠海上大学（知欢）](articles/%E5%90%88%E9%9B%86-07-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E7%9F%A5%E6%AC%A2%EF%BC%89/index.md) | 凡复思忖 | 2026-03-08 |
-| 18 | [我在珠海上大学（新序）](articles/%E5%90%88%E9%9B%86-06-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E6%96%B0%E5%BA%8F%EF%BC%89/index.md) | 凡复思忖 | 2026-03-07 |
-| 19 | [我在阿里做实习（推荐算法版）](articles/%E5%90%88%E9%9B%86-14-%E6%88%91%E5%9C%A8%E9%98%BF%E9%87%8C%E5%81%9A%E5%AE%9E%E4%B9%A0%EF%BC%88%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E7%89%88%EF%BC%89/index.md) | 凡复思忖 | 2026-03-06 |
-| 20 | [我在康杰念高中（怀昔）](articles/%E5%90%88%E9%9B%86-05-%E6%88%91%E5%9C%A8%E5%BA%B7%E6%9D%B0%E5%BF%B5%E9%AB%98%E4%B8%AD%EF%BC%88%E6%80%80%E6%98%94%EF%BC%89/index.md) | 凡复思忖 | 2026-03-05 |
-| 21 | [我在康杰念高中（拾初）](articles/%E5%90%88%E9%9B%86-04-%E6%88%91%E5%9C%A8%E5%BA%B7%E6%9D%B0%E5%BF%B5%E9%AB%98%E4%B8%AD%EF%BC%88%E6%8B%BE%E5%88%9D%EF%BC%89/index.md) | 凡复思忖 | 2026-03-04 |
-| 22 | [我在北京住合租屋](articles/%E5%90%88%E9%9B%86-16-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E4%BD%8F%E5%90%88%E7%A7%9F%E5%B1%8B/index.md) | 凡复思忖 | 2026-03-03 |
-| 23 | [我在河津考研究生](articles/%E5%90%88%E9%9B%86-12-%E6%88%91%E5%9C%A8%E6%B2%B3%E6%B4%A5%E8%80%83%E7%A0%94%E7%A9%B6%E7%94%9F/index.md) | 凡复思忖 | 2026-03-02 |
-| 24 | [我的初次考公经历](articles/%E5%90%88%E9%9B%86-17-%E6%88%91%E7%9A%84%E5%88%9D%E6%AC%A1%E8%80%83%E5%85%AC%E7%BB%8F%E5%8E%86/index.md) | 凡复思忖 | 2025-06-04 |
-| 25 | [那些生命中最重要的音乐](articles/%E6%95%A3%E7%AF%87-01-%E9%82%A3%E4%BA%9B%E7%94%9F%E5%91%BD%E4%B8%AD%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E9%9F%B3%E4%B9%90/index.md) | 凡复思忖 | 2025-04-27 |
-| 26 | [我在佛山做家教](articles/%E5%90%88%E9%9B%86-11-%E6%88%91%E5%9C%A8%E4%BD%9B%E5%B1%B1%E5%81%9A%E5%AE%B6%E6%95%99/index.md) | 凡复思忖 | 2025-02-15 |
-| 27 | [圣诞前夕](articles/%E6%95%A3%E7%AF%87-02-%E5%9C%A3%E8%AF%9E%E5%89%8D%E5%A4%95/index.md) | 凡复思忖 | 2023-12-23 |
-| 28 | [小记二十有九](articles/%E6%95%A3%E7%AF%87-03-%E5%B0%8F%E8%AE%B0%E4%BA%8C%E5%8D%81%E6%9C%89%E4%B9%9D/index.md) | 凡复思忖 | 2023-12-16 |
-| 29 | [阿里奇妙之旅](articles/%E6%95%A3%E7%AF%87-04-%E9%98%BF%E9%87%8C%E5%A5%87%E5%A6%99%E4%B9%8B%E6%97%85/index.md) | 凡复思忖 | 2022-10-15 |
-| 30 | [剿贼（一）](articles/%E6%95%A3%E7%AF%87-05-%E5%89%BF%E8%B4%BC%EF%BC%88%E4%B8%80%EF%BC%89/index.md) | 凡复思忖 | 2022-05-09 |
-| 31 | [元亨利](articles/%E6%95%A3%E7%AF%87-06-%E5%85%83%E4%BA%A8%E5%88%A9/index.md) | 凡复思忖 | 2021-04-30 |
-| 32 | [面试的艺术](articles/%E6%95%A3%E7%AF%87-07-%E9%9D%A2%E8%AF%95%E7%9A%84%E8%89%BA%E6%9C%AF/index.md) | 凡复思忖 | 2019-09-25 |
-| 33 | [412之趣言趣闻](articles/%E6%95%A3%E7%AF%87-08-412%E4%B9%8B%E8%B6%A3%E8%A8%80%E8%B6%A3%E9%97%BB/index.md) | 凡复思忖 | 2019-09-10 |
-| 34 | [作为一个在阿里实习的萌新，是一种怎样的体验？](articles/%E6%95%A3%E7%AF%87-09-%E4%BD%9C%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%9C%A8%E9%98%BF%E9%87%8C%E5%AE%9E%E4%B9%A0%E7%9A%84%E8%90%8C%E6%96%B0%EF%BC%8C%E6%98%AF%E4%B8%80%E7%A7%8D%E6%80%8E%E6%A0%B7%E7%9A%84%E4%BD%93%E9%AA%8C%EF%BC%9F/index.md) | 凡复思忖 | 2019-08-14 |
-| 35 | [读研读废了是什么体验](articles/%E6%95%A3%E7%AF%87-10-%E8%AF%BB%E7%A0%94%E8%AF%BB%E5%BA%9F%E4%BA%86%E6%98%AF%E4%BB%80%E4%B9%88%E4%BD%93%E9%AA%8C/index.md) | 凡复思忖 | 2019-05-10 |
-| 36 | [男朋友不回消息怎么办](articles/%E6%95%A3%E7%AF%87-11-%E7%94%B7%E6%9C%8B%E5%8F%8B%E4%B8%8D%E5%9B%9E%E6%B6%88%E6%81%AF%E6%80%8E%E4%B9%88%E5%8A%9E/index.md) | 凡复思忖 | 2019-04-05 |
-| 37 | [请出示证件](articles/%E6%95%A3%E7%AF%87-12-%E8%AF%B7%E5%87%BA%E7%A4%BA%E8%AF%81%E4%BB%B6/index.md) | 凡复思忖 | 2019-02-25 |
+<div class="article-cover-grid">
 
-<!-- 此文件由 save_article.py 自动更新，也可手动编辑 -->
+<a class="article-cover-card" href="#/articles/%E6%95%A3%E7%AF%87-17-%E6%84%8F%E5%BF%B5%E2%80%9C%E6%8C%A5%E5%88%80%E2%80%9D/index.md">
+  <img src="articles/%E6%95%A3%E7%AF%87-17-%E6%84%8F%E5%BF%B5%E2%80%9C%E6%8C%A5%E5%88%80%E2%80%9D/images/cover.png" alt="意念“挥刀” 封面">
+  <span class="article-cover-meta">
+    <strong>意念“挥刀”</strong>
+    <em>2026-07-08</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E6%95%A3%E7%AF%87-16-%E6%88%91%E8%88%8D%E4%B8%8D%E5%BE%97%E7%9A%84%E4%B8%8D%E6%98%AF%E5%85%AC%E5%8F%B8%EF%BC%8C%E6%98%AF%E6%88%91%E7%9A%84%E5%B7%A5%E4%BD%8D/index.md">
+  <img src="articles/%E6%95%A3%E7%AF%87-16-%E6%88%91%E8%88%8D%E4%B8%8D%E5%BE%97%E7%9A%84%E4%B8%8D%E6%98%AF%E5%85%AC%E5%8F%B8%EF%BC%8C%E6%98%AF%E6%88%91%E7%9A%84%E5%B7%A5%E4%BD%8D/images/cover.png" alt="我舍不得的不是公司，是我的工位 封面">
+  <span class="article-cover-meta">
+    <strong>我舍不得的不是公司，是我的工位</strong>
+    <em>2026-07-07</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E6%95%A3%E7%AF%87-15-%E6%88%91%E5%9C%A8%E9%98%BF%E9%87%8C%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AAleader/index.md">
+  <img src="articles/%E6%95%A3%E7%AF%87-15-%E6%88%91%E5%9C%A8%E9%98%BF%E9%87%8C%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AAleader/images/cover.png" alt="我在阿里的最后一个leader 封面">
+  <span class="article-cover-meta">
+    <strong>我在阿里的最后一个leader</strong>
+    <em>2026-06-03</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E6%95%A3%E7%AF%87-14-vibe%20coding%E5%B8%A6%E6%9D%A5%E7%9A%84%E8%99%9A%E6%97%A0%E6%84%9F/index.md">
+  <img src="articles/%E6%95%A3%E7%AF%87-14-vibe%20coding%E5%B8%A6%E6%9D%A5%E7%9A%84%E8%99%9A%E6%97%A0%E6%84%9F/images/cover.png" alt="vibe coding带来的虚无感 封面">
+  <span class="article-cover-meta">
+    <strong>vibe coding带来的虚无感</strong>
+    <em>2026-05-29</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-20-%E6%88%91%E5%9C%A8%E8%A5%BF%E7%8F%AD%E7%89%99%E9%AA%91%E8%87%AA%E8%A1%8C%E8%BD%A6/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-20-%E6%88%91%E5%9C%A8%E8%A5%BF%E7%8F%AD%E7%89%99%E9%AA%91%E8%87%AA%E8%A1%8C%E8%BD%A6/images/cover.png" alt="我在西班牙骑自行车 封面">
+  <span class="article-cover-meta">
+    <strong>我在西班牙骑自行车</strong>
+    <em>2026-04-07</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-19-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%8E%82%E5%AE%9E%E4%B9%A0/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-19-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%8E%82%E5%AE%9E%E4%B9%A0/images/cover.png" alt="我在北京大厂实习 封面">
+  <span class="article-cover-meta">
+    <strong>我在北京大厂实习</strong>
+    <em>2026-04-05</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E6%95%A3%E7%AF%87-13-%E4%BB%8E%E5%BC%A0%E9%9B%AA%E5%B3%B0%E8%80%81%E5%B8%88%E7%9A%84%E6%AD%BB%E4%BA%A1%E6%89%80%E6%83%B3%E5%88%B0%E7%9A%84/index.md">
+  <img src="articles/%E6%95%A3%E7%AF%87-13-%E4%BB%8E%E5%BC%A0%E9%9B%AA%E5%B3%B0%E8%80%81%E5%B8%88%E7%9A%84%E6%AD%BB%E4%BA%A1%E6%89%80%E6%83%B3%E5%88%B0%E7%9A%84/images/cover.png" alt="从张雪峰老师的死亡所想到的 封面">
+  <span class="article-cover-meta">
+    <strong>从张雪峰老师的死亡所想到的</strong>
+    <em>2026-03-29</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-01-%E6%88%91%E5%9C%A8%E6%B2%B3%E6%B4%A5%E4%B8%8A%E5%B9%BC%E5%84%BF%E5%9B%AD/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-01-%E6%88%91%E5%9C%A8%E6%B2%B3%E6%B4%A5%E4%B8%8A%E5%B9%BC%E5%84%BF%E5%9B%AD/images/cover.png" alt="我在河津上幼儿园 封面">
+  <span class="article-cover-meta">
+    <strong>我在河津上幼儿园</strong>
+    <em>2026-03-20</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-02-%E6%88%91%E5%9C%A8%E6%B2%B3%E6%B4%A5%E4%B8%8A%E5%B0%8F%E5%AD%A6/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-02-%E6%88%91%E5%9C%A8%E6%B2%B3%E6%B4%A5%E4%B8%8A%E5%B0%8F%E5%AD%A6/images/cover.png" alt="我在河津上小学 封面">
+  <span class="article-cover-meta">
+    <strong>我在河津上小学</strong>
+    <em>2026-03-19</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-03-%E6%88%91%E5%9C%A8%E8%BF%90%E4%B8%AD%E5%BF%B5%E5%88%9D%E4%B8%AD/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-03-%E6%88%91%E5%9C%A8%E8%BF%90%E4%B8%AD%E5%BF%B5%E5%88%9D%E4%B8%AD/images/cover.png" alt="我在运中念初中 封面">
+  <span class="article-cover-meta">
+    <strong>我在运中念初中</strong>
+    <em>2026-03-16</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-09-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B4%EF%BC%89/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-09-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B4%EF%BC%89/images/cover.png" alt="我在珠海上大学（忽然之间） 封面">
+  <span class="article-cover-meta">
+    <strong>我在珠海上大学（忽然之间）</strong>
+    <em>2026-03-14</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-18-%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%80%83%E5%85%AC%E7%BB%8F%E5%8E%86/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-18-%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%80%83%E5%85%AC%E7%BB%8F%E5%8E%86/images/cover.png" alt="我的第二次考公经历 封面">
+  <span class="article-cover-meta">
+    <strong>我的第二次考公经历</strong>
+    <em>2026-03-13</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-10-%E5%A4%A7%E5%AD%A6%E6%97%B6%E7%9A%84%E6%9C%89%E8%B6%A3%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8C%85%E8%A3%85%E5%B7%A5%E7%A8%8B%EF%BC%89/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-10-%E5%A4%A7%E5%AD%A6%E6%97%B6%E7%9A%84%E6%9C%89%E8%B6%A3%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8C%85%E8%A3%85%E5%B7%A5%E7%A8%8B%EF%BC%89/images/cover.png" alt="大学时的有趣课程（包装工程） 封面">
+  <span class="article-cover-meta">
+    <strong>大学时的有趣课程（包装工程）</strong>
+    <em>2026-03-12</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-15-%E6%88%91%E5%9C%A8%E9%97%B2%E9%B1%BC%E5%8D%96%E4%BA%8C%E6%89%8B/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-15-%E6%88%91%E5%9C%A8%E9%97%B2%E9%B1%BC%E5%8D%96%E4%BA%8C%E6%89%8B/images/cover.png" alt="我在闲鱼卖二手 封面">
+  <span class="article-cover-meta">
+    <strong>我在闲鱼卖二手</strong>
+    <em>2026-03-11</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-08-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E9%A3%8E%E9%80%94%EF%BC%89/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-08-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E9%A3%8E%E9%80%94%EF%BC%89/images/cover.png" alt="我在珠海上大学（风途） 封面">
+  <span class="article-cover-meta">
+    <strong>我在珠海上大学（风途）</strong>
+    <em>2026-03-10</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-13-%E6%88%91%E5%9C%A8%E5%B9%BF%E5%B7%9E%E5%81%9A%E6%B8%B8%E6%88%8F/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-13-%E6%88%91%E5%9C%A8%E5%B9%BF%E5%B7%9E%E5%81%9A%E6%B8%B8%E6%88%8F/images/cover.png" alt="我在广州做游戏 封面">
+  <span class="article-cover-meta">
+    <strong>我在广州做游戏</strong>
+    <em>2026-03-09</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-07-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E7%9F%A5%E6%AC%A2%EF%BC%89/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-07-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E7%9F%A5%E6%AC%A2%EF%BC%89/images/cover.png" alt="我在珠海上大学（知欢） 封面">
+  <span class="article-cover-meta">
+    <strong>我在珠海上大学（知欢）</strong>
+    <em>2026-03-08</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-06-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E6%96%B0%E5%BA%8F%EF%BC%89/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-06-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E6%96%B0%E5%BA%8F%EF%BC%89/images/cover.png" alt="我在珠海上大学（新序） 封面">
+  <span class="article-cover-meta">
+    <strong>我在珠海上大学（新序）</strong>
+    <em>2026-03-07</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-14-%E6%88%91%E5%9C%A8%E9%98%BF%E9%87%8C%E5%81%9A%E5%AE%9E%E4%B9%A0%EF%BC%88%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E7%89%88%EF%BC%89/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-14-%E6%88%91%E5%9C%A8%E9%98%BF%E9%87%8C%E5%81%9A%E5%AE%9E%E4%B9%A0%EF%BC%88%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E7%89%88%EF%BC%89/images/cover.png" alt="我在阿里做实习（推荐算法版） 封面">
+  <span class="article-cover-meta">
+    <strong>我在阿里做实习（推荐算法版）</strong>
+    <em>2026-03-06</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-05-%E6%88%91%E5%9C%A8%E5%BA%B7%E6%9D%B0%E5%BF%B5%E9%AB%98%E4%B8%AD%EF%BC%88%E6%80%80%E6%98%94%EF%BC%89/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-05-%E6%88%91%E5%9C%A8%E5%BA%B7%E6%9D%B0%E5%BF%B5%E9%AB%98%E4%B8%AD%EF%BC%88%E6%80%80%E6%98%94%EF%BC%89/images/cover.png" alt="我在康杰念高中（怀昔） 封面">
+  <span class="article-cover-meta">
+    <strong>我在康杰念高中（怀昔）</strong>
+    <em>2026-03-05</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-04-%E6%88%91%E5%9C%A8%E5%BA%B7%E6%9D%B0%E5%BF%B5%E9%AB%98%E4%B8%AD%EF%BC%88%E6%8B%BE%E5%88%9D%EF%BC%89/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-04-%E6%88%91%E5%9C%A8%E5%BA%B7%E6%9D%B0%E5%BF%B5%E9%AB%98%E4%B8%AD%EF%BC%88%E6%8B%BE%E5%88%9D%EF%BC%89/images/cover.png" alt="我在康杰念高中（拾初） 封面">
+  <span class="article-cover-meta">
+    <strong>我在康杰念高中（拾初）</strong>
+    <em>2026-03-04</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-16-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E4%BD%8F%E5%90%88%E7%A7%9F%E5%B1%8B/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-16-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E4%BD%8F%E5%90%88%E7%A7%9F%E5%B1%8B/images/cover.png" alt="我在北京住合租屋 封面">
+  <span class="article-cover-meta">
+    <strong>我在北京住合租屋</strong>
+    <em>2026-03-03</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-12-%E6%88%91%E5%9C%A8%E6%B2%B3%E6%B4%A5%E8%80%83%E7%A0%94%E7%A9%B6%E7%94%9F/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-12-%E6%88%91%E5%9C%A8%E6%B2%B3%E6%B4%A5%E8%80%83%E7%A0%94%E7%A9%B6%E7%94%9F/images/cover.png" alt="我在河津考研究生 封面">
+  <span class="article-cover-meta">
+    <strong>我在河津考研究生</strong>
+    <em>2026-03-02</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-17-%E6%88%91%E7%9A%84%E5%88%9D%E6%AC%A1%E8%80%83%E5%85%AC%E7%BB%8F%E5%8E%86/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-17-%E6%88%91%E7%9A%84%E5%88%9D%E6%AC%A1%E8%80%83%E5%85%AC%E7%BB%8F%E5%8E%86/images/cover.png" alt="我的初次考公经历 封面">
+  <span class="article-cover-meta">
+    <strong>我的初次考公经历</strong>
+    <em>2025-06-04</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E6%95%A3%E7%AF%87-01-%E9%82%A3%E4%BA%9B%E7%94%9F%E5%91%BD%E4%B8%AD%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E9%9F%B3%E4%B9%90/index.md">
+  <img src="articles/%E6%95%A3%E7%AF%87-01-%E9%82%A3%E4%BA%9B%E7%94%9F%E5%91%BD%E4%B8%AD%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E9%9F%B3%E4%B9%90/images/cover.png" alt="那些生命中最重要的音乐 封面">
+  <span class="article-cover-meta">
+    <strong>那些生命中最重要的音乐</strong>
+    <em>2025-04-27</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E5%90%88%E9%9B%86-11-%E6%88%91%E5%9C%A8%E4%BD%9B%E5%B1%B1%E5%81%9A%E5%AE%B6%E6%95%99/index.md">
+  <img src="articles/%E5%90%88%E9%9B%86-11-%E6%88%91%E5%9C%A8%E4%BD%9B%E5%B1%B1%E5%81%9A%E5%AE%B6%E6%95%99/images/cover.png" alt="我在佛山做家教 封面">
+  <span class="article-cover-meta">
+    <strong>我在佛山做家教</strong>
+    <em>2025-02-15</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E6%95%A3%E7%AF%87-02-%E5%9C%A3%E8%AF%9E%E5%89%8D%E5%A4%95/index.md">
+  <img src="articles/%E6%95%A3%E7%AF%87-02-%E5%9C%A3%E8%AF%9E%E5%89%8D%E5%A4%95/images/cover.png" alt="圣诞前夕 封面">
+  <span class="article-cover-meta">
+    <strong>圣诞前夕</strong>
+    <em>2023-12-23</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E6%95%A3%E7%AF%87-03-%E5%B0%8F%E8%AE%B0%E4%BA%8C%E5%8D%81%E6%9C%89%E4%B9%9D/index.md">
+  <img src="articles/%E6%95%A3%E7%AF%87-03-%E5%B0%8F%E8%AE%B0%E4%BA%8C%E5%8D%81%E6%9C%89%E4%B9%9D/images/cover.png" alt="小记二十有九 封面">
+  <span class="article-cover-meta">
+    <strong>小记二十有九</strong>
+    <em>2023-12-16</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E6%95%A3%E7%AF%87-04-%E9%98%BF%E9%87%8C%E5%A5%87%E5%A6%99%E4%B9%8B%E6%97%85/index.md">
+  <img src="articles/%E6%95%A3%E7%AF%87-04-%E9%98%BF%E9%87%8C%E5%A5%87%E5%A6%99%E4%B9%8B%E6%97%85/images/cover.png" alt="阿里奇妙之旅 封面">
+  <span class="article-cover-meta">
+    <strong>阿里奇妙之旅</strong>
+    <em>2022-10-15</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E6%95%A3%E7%AF%87-05-%E5%89%BF%E8%B4%BC%EF%BC%88%E4%B8%80%EF%BC%89/index.md">
+  <img src="articles/%E6%95%A3%E7%AF%87-05-%E5%89%BF%E8%B4%BC%EF%BC%88%E4%B8%80%EF%BC%89/images/cover.png" alt="剿贼（一） 封面">
+  <span class="article-cover-meta">
+    <strong>剿贼（一）</strong>
+    <em>2022-05-09</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E6%95%A3%E7%AF%87-06-%E5%85%83%E4%BA%A8%E5%88%A9/index.md">
+  <img src="articles/%E6%95%A3%E7%AF%87-06-%E5%85%83%E4%BA%A8%E5%88%A9/images/cover.png" alt="元亨利 封面">
+  <span class="article-cover-meta">
+    <strong>元亨利</strong>
+    <em>2021-04-30</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E6%95%A3%E7%AF%87-07-%E9%9D%A2%E8%AF%95%E7%9A%84%E8%89%BA%E6%9C%AF/index.md">
+  <img src="articles/%E6%95%A3%E7%AF%87-07-%E9%9D%A2%E8%AF%95%E7%9A%84%E8%89%BA%E6%9C%AF/images/cover.png" alt="面试的艺术 封面">
+  <span class="article-cover-meta">
+    <strong>面试的艺术</strong>
+    <em>2019-09-25</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E6%95%A3%E7%AF%87-08-412%E4%B9%8B%E8%B6%A3%E8%A8%80%E8%B6%A3%E9%97%BB/index.md">
+  <img src="articles/%E6%95%A3%E7%AF%87-08-412%E4%B9%8B%E8%B6%A3%E8%A8%80%E8%B6%A3%E9%97%BB/images/cover.png" alt="412之趣言趣闻 封面">
+  <span class="article-cover-meta">
+    <strong>412之趣言趣闻</strong>
+    <em>2019-09-10</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E6%95%A3%E7%AF%87-09-%E4%BD%9C%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%9C%A8%E9%98%BF%E9%87%8C%E5%AE%9E%E4%B9%A0%E7%9A%84%E8%90%8C%E6%96%B0%EF%BC%8C%E6%98%AF%E4%B8%80%E7%A7%8D%E6%80%8E%E6%A0%B7%E7%9A%84%E4%BD%93%E9%AA%8C%EF%BC%9F/index.md">
+  <img src="articles/%E6%95%A3%E7%AF%87-09-%E4%BD%9C%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%9C%A8%E9%98%BF%E9%87%8C%E5%AE%9E%E4%B9%A0%E7%9A%84%E8%90%8C%E6%96%B0%EF%BC%8C%E6%98%AF%E4%B8%80%E7%A7%8D%E6%80%8E%E6%A0%B7%E7%9A%84%E4%BD%93%E9%AA%8C%EF%BC%9F/images/cover.png" alt="作为一个在阿里实习的萌新，是一种怎样的体验？ 封面">
+  <span class="article-cover-meta">
+    <strong>作为一个在阿里实习的萌新，是一种怎样的体验？</strong>
+    <em>2019-08-14</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E6%95%A3%E7%AF%87-10-%E8%AF%BB%E7%A0%94%E8%AF%BB%E5%BA%9F%E4%BA%86%E6%98%AF%E4%BB%80%E4%B9%88%E4%BD%93%E9%AA%8C/index.md">
+  <img src="articles/%E6%95%A3%E7%AF%87-10-%E8%AF%BB%E7%A0%94%E8%AF%BB%E5%BA%9F%E4%BA%86%E6%98%AF%E4%BB%80%E4%B9%88%E4%BD%93%E9%AA%8C/images/cover.png" alt="读研读废了是什么体验 封面">
+  <span class="article-cover-meta">
+    <strong>读研读废了是什么体验</strong>
+    <em>2019-05-10</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E6%95%A3%E7%AF%87-11-%E7%94%B7%E6%9C%8B%E5%8F%8B%E4%B8%8D%E5%9B%9E%E6%B6%88%E6%81%AF%E6%80%8E%E4%B9%88%E5%8A%9E/index.md">
+  <img src="articles/%E6%95%A3%E7%AF%87-11-%E7%94%B7%E6%9C%8B%E5%8F%8B%E4%B8%8D%E5%9B%9E%E6%B6%88%E6%81%AF%E6%80%8E%E4%B9%88%E5%8A%9E/images/cover.png" alt="男朋友不回消息怎么办 封面">
+  <span class="article-cover-meta">
+    <strong>男朋友不回消息怎么办</strong>
+    <em>2019-04-05</em>
+  </span>
+</a>
+
+<a class="article-cover-card" href="#/articles/%E6%95%A3%E7%AF%87-12-%E8%AF%B7%E5%87%BA%E7%A4%BA%E8%AF%81%E4%BB%B6/index.md">
+  <img src="articles/%E6%95%A3%E7%AF%87-12-%E8%AF%B7%E5%87%BA%E7%A4%BA%E8%AF%81%E4%BB%B6/images/cover.png" alt="请出示证件 封面">
+  <span class="article-cover-meta">
+    <strong>请出示证件</strong>
+    <em>2019-02-25</em>
+  </span>
+</a>
+
+</div>
+
+<!-- 此文件由 scripts/article_covers.mjs 自动更新，也可手动编辑 -->

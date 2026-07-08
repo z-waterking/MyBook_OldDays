@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 圣诞前夕
+Series folder: 散篇-02-圣诞前夕
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2023-12-23 终于买了心心念念的人体工学椅，感谢公司元旦福利，不然还不知道要拖到什么时候。之前的椅子我也很喜欢，因为可以盘腿，不用怕摔倒。人体工学椅（智商税）可以提供腰靠和枕头，也算是各有千秋吧。 至于说到这些科技可以帮助人们更好地生活？我更相信靠自律，坐45分钟起来散步15分钟可能更靠谱吧。想不到走到最后，健康合理的作息还是初高中。 周六去东单的大华艺术中心看了脱口秀和魔术表演，表演场次很多，形式多样，我感兴趣的还有戏剧、多人喜剧等，但由于分身乏术，只能选择两个。 脱口秀第一位演员是之前中央人民广播电台音乐之声的主持人，全国不知道有多少人听过他的声音，着实音色很好，文化素养也很高，听他的脱口秀知识面少点还真不一定听得到笑点。 例如说到外国人请他帮忙写中文名字，有一个Jackson，他写了杰克逊；有一个Jordan，他写了乔丹；哎？你为什么英文名叫Dick？没办法，只能写迪克了。 另一个是他讲到之前在国外做卖作业的勾当，后来想想，不如把它发展成一项事业？就叫做作业帮如何？使命是让天下没有难写的作业（阿里：让天下没有难做的生意）。他们写出的段子也还算结合文化与时事，好评。 魔术师也大有来头，刘谦是第一位魔术师的导师。这位魔术师以假鸡蛋变真鸡蛋的魔术，震惊了刘谦，也震惊了我们。 他邀请一位小观众上台，交给观众一条丝巾，跟着他挥舞几次，然后两只手将丝巾拉回手心。魔术师展开手之后，手里的丝巾变成了一颗鸡蛋。 他先揭秘，说这个魔术比较简单，蛋壳本来
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

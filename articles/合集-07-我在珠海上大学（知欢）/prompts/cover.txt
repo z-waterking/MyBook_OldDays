@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 我在珠海上大学（知欢）
+Series folder: 合集-07-我在珠海上大学（知欢）
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-03-08 第一个寒假我还是很期待返回学校的。广东那边美食多，但不油腻，而且量少，我在学校吃了一个学期瘦了5斤。在家过个年就胖回去了。 熟悉学校的环境后，每次我都先回到广州天河石牌校区，直接坐校车返回珠海校区。进宿舍的那一刻，才觉得长途旅行完全结束。那个年代从运城到广州，需要28个小时的卧铺，极其缓慢。刚开始时我在车上还会下床走走，后来就提一瓶水上车，完全不下床，看小说看28个小时。现在想起，都还是极端痛苦的经历。 到了大一下半学期，整个人肉眼可见的变油了。熟悉了老师的教学风格后，上课变得随意，经常在课堂上看小说。一些水课老师也给我们随意上一上，反正大家都知道以后不会用到。但是许多核心专业课，开始让我们接触专业领域的不传之秘了。 这学期也是个分水岭，有些同学对原本的专业不满意，于是从入学就开始刷绩点，以期大二可以换个好专业。说起来也好笑，应该是制度的bug，本专业学得好的人，居然要换到其他专业去了。不喜欢本专业的人，还需要继续学下去。 第一个学期的课还是偏向于高中的，起到承上启下的作用，还是非常简单的，高中知识牢固的话比较好糊弄。但是第二个学期，我们才算是真正地步入了大学校园。高数开始学二重积分，大学物理学到了从未接触过的相对论，工程力学也开始跳出刚体的领域，学习了应力应变。一切的课程难度陡升，一时让人难以适应。 我们当时没有化学实验室，老师带我们集体借用北师大珠海校区的实验室去进行实验。呼呼啦啦一群人像是春游般。同学们这时也照例吐槽说
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: vibe coding带来的虚无感
+Series folder: 散篇-14-vibe coding带来的虚无感
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-05-29 最近vibe coding火热，各行各业的人都参与了进来，三天做个APP等等言论甚嚣尘上，我作为AI工具的骨灰级使用者，脑海里总是浮现出“加入光荣的进化吧”这句台词，同时也有着深深的虚无感。 以前编程还算是一门手艺，我们仿佛是工业革命时期流水线上的工人，现在像是手工纺织被织布机代替一样，我时常感觉到自己的工作也要被AI代替了。 最开始接触编程，是高中时候画流程图。 大学期间学习了C语言程序设计，只记得当时写的程序都非常简单，什么写个循环从1加到100，不成体系，老师也不怎么会，大家都随便糊弄一下。 研究生来到计算机专业，去广州在游戏公司工作之后，对于编程才算是入了门。 **即便如此，研究生期间也是翻了许多书，手写了许多代码，做了许多项目，各种做编程题，写起程序来才算是得心应手。** 工作的前两年，大家虽然也会用一些AI辅助，但也仅限于代码补全，最多也就是从git上下载点代码直接copy过来。 随着这两年AI的发展，vibe coding的概念也变得火热。它主打的是用“自然语言”编程，你把你想要的功能输入AI，全程由AI帮你实现你的想法。以前那种自己琢磨代码，瞬间成了“古法编程”，早不知道扫到哪个垃圾堆里面去了。 俺们公司刚开始推github copilot时，还比较克制，算是试用版本，我先拿它去做了以前经常需要多方研究的爬虫程序，发现它不仅可以快速写出框架，还可以帮忙解析对面的网页结构，维护自己的ip池，把干净的内容保存到本
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 大学时的有趣课程（包装工程）
+Series folder: 合集-10-大学时的有趣课程（包装工程）
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-03-12 我的大学专业是包装工程。跟大多数人一样，我初次听到这个专业名时也是一脸懵。许多吃货都会问我这是包装月饼的吗？我统一回答，是的。这个专业比较强的学校有清华大学，江南大学，暨南大学。江南大学也还罢了，我实在不知道我们专业何德何能可以去碰瓷清华，可事实就是如此。 **到了今天，即使我酗酒失恋下岗失眠后，忍着头痛都能背出它的标准定义：包装工程是为了在产品的运输过程中保护产品，方便储运，促进销售而采取的一系列容器，材料，辅助物的总称，以及在采取这些容器，材料，辅助物的过程中所采用的技术方法。** 上面这坨玩意儿，从大学背到今天，少数也过了几百遍。好歹是这个专业对我的改造。以前我爸爸说，包装工程也还行，社会上不都是包装来包装去的。今天我也品出了一丝意味。什么学历啊，简历啊，工作经历啊，也都是包装，为了促进“销售”。颇具浪漫主义气质。 我们专业学的课程，通识部分跟大部分工科一样，大学语文，物理，高数，C语言，等等。到了专业课部分，着实有几门好课，令我怀念至今。 **首先要讲的是珠院人人都有印象的马原。教授这门课的老师听说是北大毕业的，来珠海教书。这种天才有着过目不忘的能力。**课程我们当然是好好学的。但是他最出名的是点名+挂科。一次上课时，心里正想着他们养猫养狗的弱爆了，我闭个目就能养神，突听身后一阵骚乱，多方打听之下，原来是老师抓到了一个代课的。我还好奇说，这大哥不讲究啊，代课也不知道找个同性的？旁边同学告诉我，就是同性别代课，老师发现
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

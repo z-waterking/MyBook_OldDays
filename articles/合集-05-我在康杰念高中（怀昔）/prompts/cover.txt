@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 我在康杰念高中（怀昔）
+Series folder: 合集-05-我在康杰念高中（怀昔）
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-03-05 触碰到了最底层的记忆。像是老旧的相片匣被打开，积压的照片一瞬间找到了释放的方向，猛地向上弹出，如雪花般四散在空中。 去年今日此门中，人面桃花相映红。人面不知何处去，桃花依旧，笑春风。 可是那个地方已经没有人了。 我的班主任是柴海军老师，语文老师，有一代大儒风范。他刚带完我哥的高三班，转头回来带高二。后续两年都是他带我们。从小到大我第一次见到这种范儿的老师，说话慢条斯理又很有逻辑，嗓音温柔却带着威严，手底下也是真硬，之前带的班里着实出了不少的年级前几。 刚开学时学校举办迎新晚会。当时和我坐得比较近的RLY报名参加了。演的啥我忘了。但我献殷勤给她留了个凳子。以前初中的时候喜欢踢球，每天踢完也没地儿洗澡，两周才能回一次家，回家搓澡时总是一地泥，脖子上一划拉就是一道。当时也对女孩子没什么兴趣，成天就是看书+踢球。得益于厚厚的一层泥膜，也没怎么晒黑。上了高中时，却对RLY产生了很大的兴趣。 老班给我们分配了学习小组，按照成绩从前往后，按照加10的方式选人。例如第一名，第十一名，二十一名，以此类推。第一次我是跟LMX，LN，RLY等人组成的。我是组长。于是我就提议和RLY做同桌。LN也是河津人，也坐我边上。现在想想真挺对不起兄弟们的。 以前年纪小不懂事，不太会追女孩子。在单纯的学校环境下想的也很简单，只要我学习成绩最好，班里最强，不就有一万个理由接近她了嘛。回去还跟LQJ，SYM讲了讲这个事情。 那时候竞选班长，最终HYQ当了正的，我打
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

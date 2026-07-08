@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 我舍不得的不是公司，是我的工位
+Series folder: 散篇-16-我舍不得的不是公司，是我的工位
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-07-07 最近脑海中总是浮现两手托腮仰头看天的画面。很小的时候，喜欢火影中的鹿丸，他最喜欢蹲在树荫底下，幻想自己变成一朵云。**可最后，最渴望闲散的人，反而成了最忙碌的人。** 经常会想起吴谢宇。先不说他的行径有多恶劣，单看他背着案底，购买多张身份证，从福州流窜到河南，辗转上海、深圳，最后在重庆又做培训老师，又做男模这件事，就会让人产生一种很复杂的震动。 这当然不是值得赞美的能力。但它让我意识到：有些人即使被剥离出正常社会系统，仍然能找到缝隙继续生存。而如果是我，离开了履历、公司、工位、社保、招聘网站和那一套标准流程，能想到的选择好像只剩下保安、网约车、众包、扫大街、游戏陪玩、考公考编、教培辅导…… 最近公司裁员的厉害，眼瞅着最后一口气就要吊不上来了。身在其中的我们，也像是被压迫着，肺部产生夸张的形变，缩到两壁紧贴，吐出最后一口浊气。然后作为最后一批员工，随着亚洲分部，一起埋葬在历史的尘埃中。多年后，如果中美重新度蜜月，经济重新上行，我的工位会有新的人坐进来，不知道他是否会好奇，之前的人在这个工位每天都在做什么。 2026.06，我学会了一个新词，叫做IBU（important business update), 实际上就是裁员的变相说法。当时给的是N+7。这波裁员是微软Azure data的延续。上海紫竹工区是重灾区。管你什么背景什么履历，业务不干了，一视同仁，全部裁掉。 事情远没有结束。 经过一个多月的酝酿，终于在昨天，微软又公开
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

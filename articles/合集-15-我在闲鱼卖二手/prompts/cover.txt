@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 我在闲鱼卖二手
+Series folder: 合集-15-我在闲鱼卖二手
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-03-11 硕士之前，我几乎没有用过闲鱼。只知道它是一个买卖二手物品的APP。疫情期间，听说switch的健身环大冒险在闲鱼上可以翻倍卖，那时候才开始注意到这个APP。直到我自己的switch卡带《异度神剑》玩腻后，想出掉游戏卡换其他的游戏，才第一次使用它。 这么些年来，我在闲鱼上已经买卖出了将近3万的二手物品了。期间既是卖家，也是买家，跟很多不同的人打过交道。**有折价卖过自己不用的商品，当然也用高于购入价的价格成交过。** **我发现很多人会走入一个误区，会认为自己愿意出高价格买的东西，别人也会愿意，从而高估自己所拥有的物品的价格，导致发生一些不愉快的事情。** 例如我看到一个大哥，把买家挂到网上，说自己200元买的物品，只是拆封看了一下，挂上来卖，买家上来就问80出不出。描述的时候，这个大哥显然是余怒未消，字里行间都是对那位买家的嘲讽。**我看了他那件东西，是一个丝带，对我来说80都高了，我只愿意出10元。**但我也不会故意去触人家的霉头。这只能说明，厂商指导价是一回事，只有在真正的二手市场，才能看到你这件物品是否流通，值多少钱。 **我初次卖的东西是异度神剑switch卡带，这玩意儿真可以说是硬通货。**我刚挂上去没两天，就有10多个人要买。我原价是215买的，玩完后，挂190元去卖。由于任天堂把卡带做成苦的，防止婴儿误吞，因此买家都会问我舔过没。后来我直接在详情页标注我没有舔过。大伙儿砍价的时候也比较克制，问我185是否可以卖
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 剿贼（一）
+Series folder: 散篇-05-剿贼（一）
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2022-05-09 前言 不如意事常八九，可与语人无二三。2022年开年便想将这两年的感悟以小说的形式记下。 遭逢变故，搁置了一段时间。重启后便希望一鼓作气做完。 世人皆知，一将功成万骨枯。自古以来，能走到大众眼前的，背后不知遭了多少罪，受了多少苦。 即便如此，受苦遭罪也实在不足以将人送入史册。更多的是略一遭逢变故，就死了。 那么什么是世俗意义上的成功的必要条件呢？ 运气。 除此之外，很难解释，为什么大家都从村里起义，就你当了皇帝？大家读同一本圣贤书，就你荣登三甲？大家同入朝为官，心黑手狠，凭什么就你独揽大权？ 运气，或者说，气运，简直是世上最奇妙的东西。功成前，你缺的是它；功成后，望望来时的路，却发现处处有它的身影。 但绝不是所有人都有好的运气。即便现在飞黄腾达，也难保日后风光依旧。 总有人会成功与失败。那么为什么不能是你，是我，是每一个人？ 自秦郡太守李冰修筑都江堰以来，巴蜀之地已成富饶之乡。传至此间，历一千八百余年。 往年风调雨顺时，灌溉四野；便是遇上洪水泛滥，也能蓄洪泄水，保护庄稼。 自成都往青城山的路上，一批农人牵着骡马，拉着牛车，呼喊吆喝着向山里进发。 年久失修的官道，敦得车轮吱吱扭扭响个不停。日头照的走路的人晕沉沉的。 只见为首的黝黑汉子，提起水瓶，往头上一浇，站起来喊道，“爷儿们，都打起精神来。送完这一票，给哥几个回去每人找个婆娘。” 坐在骡车上的婆娘，伸手给自家汉子擦了擦汗。接着喊道，“大伙抓紧，到前面的茶歇处，就能乘乘凉。”
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

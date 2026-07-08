@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 男朋友不回消息怎么办
+Series folder: 散篇-11-男朋友不回消息怎么办
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2019-04-05 可能是消息队列发生了堵塞，建议及时request一下他身边的老板、哥们、红颜知己谁在那里一天到晚老发消息把队列堵上的。 或者轮询一下他的cpu有没有被游戏、Paper等大规模占用计算资源的任务占用了，有的话kill掉。（kill哪个。。。） 最后不行的话只能要求提高自己的优先级或者更换一个性能更加强劲的男朋友了。 --- *原文链接: [查看原文](https://mp.weixin.qq.com/s/WdWyf3HMotpUnsHZdVFuwQ)*
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 阿里奇妙之旅
+Series folder: 散篇-04-阿里奇妙之旅
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2022-10-15 梦从这里开始。 浙江杭州余杭区的阿里巴巴西溪园区，A区，为大家编织了一个美梦。 我刚去时，还是19年的7月。 第一天报道就在雨中跑错了路。巧遇我实验室同学的大学前男友的高中同学，坐一张桌子上吃了午饭。 月内就把园区转了个遍，从一号楼搜刮到八号楼，零食雪糕吃了N顿。 跟几个小伙伴又是健身台球又是唱K火锅，把规章允许的事情足额做全了。 可惜组里的人没认全，成天净顾着傻乐了。 下次去时，隔了一年，到了20年7月了。 起的花名叫思帆。纯粹是懒，但还要给它赋予一个含义，只能现编，还忘了编的啥了。只记得是希望扬帆追逐远方。 还偷偷保留了一个花名，可以叫肥水。以后有机会的话，替换一下。取肥水不流外人田之意（From 田姑娘）。 夔一是带我的师兄，也是山西老乡。分外亲切，工作和生活中都帮了我许多。离职的最后一顿饭，那个场景怕是刻在DNA里了。 映舟一听名字就很有意境，当时只觉得这位师兄很帅。后来又知道，是北大才子。上班路上经常走到岔路口碰见他，对视一眼，是上班准点型选手了。 宁次取自日向宁次之意。跟我讲的第一句话是问我组会在哪里开。有一次晚上专门跟我唠，完了说唠这么多是希望别让我觉得这里不好，用心良苦。 藤非说希望自己之后可以像花名的谐音一样，人生可以腾飞。她离职的时候，我觉得组里的快乐少了一大半。每天能听到她的声音就很安心。 良休的休字也很有趣。时间有尽，我们看到的事情也终有一天会消散。停在该停的地方。挺有禅意。 八尼好像说自己98年的，
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 我在运中念初中
+Series folder: 合集-03-我在运中念初中
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-03-16 我是在运中的初中上的学。小学毕业后，运中招生办来河津招生，在汾滨街的一家宾馆房间，考了我们这些小学生一道题。题目内容是，今天是星期一，3000天后是星期几。**我觉得这道题不伦不类，不知道哪个大聪明出的，你要考试就好好考，要看过往的考试成绩就看。拿一个脑筋急转弯来筛选人？** 我当然是没答出来的。我记得回家路上，在楼道里，妈妈又接到了电话，带我回去把我给录取了。开学后我就要去上运中了。 那年在佳波泳园学游泳时，最后一节课自由活动，玩滑梯时碰到脑壳了。一整个月都头疼，妈妈带我出去各个医院检查，也查不出病因。**后来他们带我去爬华山，凌晨出发，日出登顶，在山上吹着山风喝了碗粥，头疼就莫名其妙的好了。** 初中我就开始住校了，全宿舍一共八个人，ZJJ，JZL来自于永济，以前就互相认识。ZXL，HJW，ZYT都是盐湖区的。JYG是解州的。LH实在是忘了。宿舍里面给配了个卫生间，一个洗手池，楼下还有个公共厕所，即使是八个人住，大家也都不觉得很挤。入门处两边是两排超大柜子，头顶是一个大通柜，住在上铺的人储物空间多到爆炸。 义务教育的最后三年，小孩子们都正处于青春期。身体生长发育的同时，大脑也处于极度活跃的状态，因此当年发生的故事，也给我留下了深刻的印象。 我是0605班的，06年入学。班主任是李百华老师，历史老师。这位老师让我们全班都认识了一个字，“翥”，是她女儿的名字，也是我们班的同学。 我一直在想，每个人也就少数几个孩子，我正好跟年
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

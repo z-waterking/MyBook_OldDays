@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 我的第二次考公经历
+Series folder: 合集-18-我的第二次考公经历
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-03-13 **我考公一共考了四次。两次国考，两次省考。其中有一次行测未能及格，剩下三次都考了第一或者第二。成绩斐然。** 第一次考公的经历写在这里。[我的初次考公经历](https://mp.weixin.qq.com/s?__biz=MzI4NTkwMzY1MA==&mid=2247483810&idx=1&sn=79926e4baf550211a3f49fe4a065d95c&scene=21#wechat_redirect) 时隔一年后，我进行了第二次的考公。虽然第一次已经证明了俺具备不错的行测和申论能力，但是考公毕竟是个马虎不得的事情。 第二次我决定裸考，从而进一步证明我是考公这块料（主要是没时间准备了）。 这一年的岗位选择就不如第一年那么丰富，经历也不如第一次那么离奇。国考的时候我选择了当时计算机能报考的岗位，避开了前一年考过的单位，但是具体选了什么单位我给忘了。这次考试也着实没有在意。 到了考前的一天，我还在犹豫要不要去考。后来想想，钱都交了，不考的话有些浪费。前一天晚上，我在外面一个小酒馆待到凌晨一点，喝了一杯鸡尾酒，回去躺床上时已经快两点了。订好了第二天的闹钟，囫囵睡了6个小时。着急忙慌地起来打车去考场。 一路上司机师傅还在问我这是要去考试吗？我回答说是的，我要去考公。师傅还向我竖起大拇指，说现在这么有志气的年轻人已经不多了。殊不知眼前这位“有志气”的年轻人，昨晚刚喝酒到凌晨呢。 第一门的行测，我就开始头疼。酒精麻痹再
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

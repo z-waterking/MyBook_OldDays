@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 从张雪峰老师的死亡所想到的
+Series folder: 散篇-13-从张雪峰老师的死亡所想到的
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-03-29 2026年03月24日下午，微信群里陆续有消息传来，说张雪峰老师的网络账号头像灰了，怕是有什么不测，并且信誓旦旦地发了截图。我一看，果然是灰的，原本以为是谁随手把图片P成了灰度，想造谣一波。没想到愈传愈烈，直至峰学蔚来发布公告，我才得知，原来张雪峰老师真的猝死了。猝死在健身房中。 得知这个消息的第一时间，我觉得身体的力气像是被抽干了一样，瘫倒在椅子上。并不是如何悲伤，而是十二万分的震惊。上一秒，他还在各个平台，告知我们国内有39所自主划线研究生院校，在公司宣布上四休三，下一秒，他突然倒在了健身房中。一个我们十分熟悉的人，一个只有41岁的人，没抢救过来，猝死了。 我并没有听过张老师的课，但依然为他感到惋惜。在我国你不论做什么，41岁都会被人说太老了。唯有死亡，会被人说年纪轻轻就死了。 网络上有许多网友开始对此发表看法，有说以前张老师就住过院，出院后依然不注意身体，一副拼命三郎的架势；有网友指出直播时其他网友看到张老师嘴唇发紫，提醒他心脏有问题，被张老师大声反驳；有说他劳累过度，又总是跑步，得不到充分的休息；有说他吃的不健康，顿顿高油高盐的外卖；有说他没有培养新人，作为老板事必躬亲，最终累死了。 很快又有网友晒出当天早上张老师的直播，他笑呵呵地跟大家说晚上见。**又有网友晒出公司楼下的花已经堆成了海，各地听过张老师建议的学生们家长们为他“十里相送”。**到这里，我觉得已经可以了，毕竟张老师从事教育这么多年，虽然也有一些疏忽大意的
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

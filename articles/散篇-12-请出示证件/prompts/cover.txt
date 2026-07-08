@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 请出示证件
+Series folder: 散篇-12-请出示证件
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2019-02-25 第01天 “请出示证件。” 时间可真是飞快啊，思绪还停留在上个月的毕业典礼上，校长在毕业典礼上念到我的名字的时候我还在和那些狐朋狗友在操场上偷偷品尝着从医务室偷来的酒精兑水。 要不是小闪这个青梅竹马的邻家姑娘说我生病了替我拿了毕业证，天知道校长大人会不会在台上气的跺脚。 愣过神儿回来，看着面前的护照、单位出差证明、身份证和内务部批准的国际旅行许可证，以及那个在柜台外被寒风吹得瑟瑟发抖的中年男子，我这个出关审核员确实得认认真真干活儿啊。不过话说回来，在这个人人自危的时代，量他也不敢对我这个边检人员怎么着。 看着各种材料，我的思绪在此飘走了。没想到我这种游手好闲的高中毕业生也不知道是走了怎样的狗屎运，居然被分配到了内务部的边检站上班，虽然工资跟那些官员的儿子女儿所进入的仁爱部、富裕部、和平部这些核心机关比起来差了不少，也没啥灰色收入，但是确实难得清闲：每天只需要在向我们司吉劳国元首画像宣誓后，按照指定的班次坐在指定的柜台，根据每天更新的过关审核要求，审核这些需要从我们这个陆地边检站出关的人，最终盖上批准出境和拒绝出境的章就可以了。 就拿这个可怜的中年老男人来说吧，首先把他身份证插进读证机，机器上说，他是百合省大型农用机械厂的采购科科长。同时他提供的出差证明说明了他从我们这个边检站出境去隔壁的欧茨国去采购一批新的煤油——这年头的日子不好过啊，咱们似乎连煤油都不能满足需求了。然后还在有效期内的护照上欧茨国总领事馆也颁发了有效的签证，
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

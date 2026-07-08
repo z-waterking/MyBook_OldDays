@@ -11,6 +11,11 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2019-09-10
 
+<p><img class="article-cover" src="articles/散篇-08-412之趣言趣闻/images/cover.png" alt="412之趣言趣闻 封面"></p>
+
+
+
+
 **0**
 
 **1**

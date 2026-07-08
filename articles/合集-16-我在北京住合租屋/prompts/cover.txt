@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 我在北京住合租屋
+Series folder: 合集-16-我在北京住合租屋
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-03-03 写这篇文，是希望回顾下在北京租房住的时候发生的有趣故事。后半段是一次非常难忘的经历，我一个人与其他三户最多共8位住客爆发了极其激烈的冲突，最终无奈搬走，也反映了几分北漂的无奈吧。 又到一年春天了。冬日里的萧条，已经被吐绿的新芽所取代。那些暗淡无光的岁月，已经成了生命中的养分。我相信，所有的黑暗终将过去，我们必将迎来胜利的曙光。 自从2022年9月再次回到北京之后，我辗转住过几个不同的地方，从北五环昌平的西二旗到北三环的牡丹园，再到南三环丰台区纪家庙，纵跨了40公里，涵盖昌平，海淀和丰台三个大区。 虽然住的地方不同，但经过实测，这几个地儿到俺位于西北三环的公司的通勤时间是一样久的，大约需要40-50分钟，对于北京来说，这个通勤时间也算正常。 在西二旗时住在智学苑，是一个三居合租，出门就是地铁站，从房间望出去可以看到西二旗桥。我住在一个朝南的卧室中， 隔壁是一对情侣，另一间房单独住了一个男生。虽然住了四个人，但基本没有发生过抢占厕所的事情。当时疫情肆虐，我也被封在了楼里。每天昼夜颠倒，不分时间，躺下就睡觉，起来就工作打游戏。饿了点外卖，能出门的时候麻溜跑出门提一只烤鸭回来。 西二旗的住处到期后，我找到了一个牡丹园地铁站附近的房子，由于上一任租客违约了，于是房子低价出租，但是只能租三个月。正好满足了我当时的需求。牡丹园这边离公司会稍微近一些，不过由于需要走比较远的距离才能到地铁，因此整体通勤时间和西二旗一样。 这边也是三居合租。其
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

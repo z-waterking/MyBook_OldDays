@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 我在河津考研究生
+Series folder: 合集-12-我在河津考研究生
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-03-02 每当我坐在软子的大办公室里跟AI斗智斗勇的时候，我准会想起，十年前我在河津的家里备考研究生的那段时光。 那是在佛山做家教和去广州做游戏之前的一段时间，我在家里备考北理工的计算机硕士。最后结果挺好，勉强上岸，又为学生生涯续了三年费。一般情况下，毕业后考研究生的人有两种选择，一种是租住在学校附近，住本科学校或者目标院校附近，在那个大学还可以随便进的年代，进图书馆学习。另一种就是我这种，直接回家，以大毅力，抵抗舒适环境的诱惑，艰难备考。 考研究生就是考英语，政治，数学，以及专业课。一些特殊专业，例如经管类的，会把数学+专业课合起来，考个管综。其中，英语，数学又分成不同的卷子以对应不同的专业类别。我考的工科，是数学一，英语一，政治，专业课是数据结构+组成原理。 我本科只是个羊城小破211，跨专业考取帝都985，已经算是“三跨”考生了。跨专业，跨学校，跨地区。看起来是千难万难，难上加难的。但当时心气儿高，并且有过一次失败经历，自认为有一定的经验，所以还是向此目标发起了冲锋。 除了天赋异禀的那些裸考都能拿下的，俺们这种“其他人”也就是多练，孰能生巧。我住在龙门大道旁边，每天早起第一件事就是拉开窗帘，在窗边盯着楼下的车流，背一个小时英语，用的是朱伟恋恋有词那些材料。（后来他翻车了，开了公司，成了恶龙）背英语毫无技巧，完全是力大飞砖，一页页一行行地读，读完默背。最后再练几道阅读题和写一篇作文，再背下来，英语就算复习完成了。日复一日。 我的英
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

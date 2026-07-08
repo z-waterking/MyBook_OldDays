@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 我在河津上幼儿园
+Series folder: 合集-01-我在河津上幼儿园
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-03-20 我到底是从哪个年纪加入**蓓蕾幼儿园**的？小班，中班，记不清了。那就算作中班吧。上小学前，在这儿经历了中班，大班，学前班。 零碎而古早的记忆。每次想起的时候感受都是，小男孩还挺难杀的。 蓓蕾幼儿园坐落在河津博物馆后面，就在我家门口。出了博物馆门，往后折返，上坡走一小段路就到。 第一天进幼儿园时，其他孩子们在老师的带领下做早操，但我是新人啊，根本不会做操。**我就站在原地，右手抓着左手，使劲地抠。**前几次做操，我都是这样熬下来的，直到学会。 园内发生的事情比较少，我们在学拼音的时候，老师要听写，我没有怎么练好，记得听写到guan的时候，我左思右想绞尽脑汁，终于想出来，g, u, an = guan。写出来后，那次听写就我一人全对。其他小孩子还在教室继续复习的时候，我被允许去院子里面玩跳跳床。**一个人在偌大的蹦床上翻滚，这是伴随一生的快乐。** 语文老师和数学老师两个人一矮一高，每次放学时数学老师总喜欢说我一句，“ZSF可坏了”。现在感觉下来，应该是喜爱多于厌恶，就像女生对男生说，“你坏死了”的感受。但当时不知怎的，在家里随口提了一句，爸妈如临大敌，带我夜访园长办公室。我跟园长的小女儿在门外用蜂窝煤点着粉丝玩，星星点点的火光。后来语文老师嫁给了一个叔叔，成了我们家亲戚。 楼下是一家自行车店，里面的孩子叫CY。我记得他们的店铺，外面全摆了自行车，内屋黑咕隆咚的，睡觉需要爬上楼梯到搭建好的阁楼。过了火车道，有一家汽修/装配店，
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

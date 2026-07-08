@@ -12,6 +12,11 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2019-09-25
 
+<p><img class="article-cover" src="articles/散篇-07-面试的艺术/images/cover.png" alt="面试的艺术 封面"></p>
+
+
+
+
 请欣赏
 
 ![](images/001.png)

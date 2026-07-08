@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 我在珠海上大学（风途）
+Series folder: 合集-08-我在珠海上大学（风途）
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-03-10 如果问我，大学期间最深的记忆是什么，我的回答应该是，佳人相伴，走遍天涯。我们去了凤凰古城，成都，香港，澳门，厦门，桂林，上海，苏州，杭州，武汉等地方，几乎把南方的省份给转遍了。 有了女友之后，我干涸许久的心田第一次得到了雨露的滋润。开学时我偷偷买了一套爱心蜡烛，可以摆出一箭穿心的造型。快递发到学校，我独自一人提着箱子上了我们的“秘密基地”——主教天台。那时候也有人在女生宿舍楼底下摆蜡烛表白，但我觉得太俗气。这种事情当然还是秘密进行比较好。 老板送了我一个点火器，导火管很长，正适合点这些蜡烛。但是非常不好用，十次里有八次打不着。一气之下，我掏出自备的打火机。那个蜡烛跟普通的白蜡烛不一样，引线藏在杯子里，要把火苗伸进去，才能点着。我被蜡泪烫了好几次。蜡烛摆起来也很费劲，我照着图摆弄了很久。 原本我想自己摆好后再叫她过来，后来发现来不及了。于是立刻邀请她上天台。跟我把剩下的蜡烛一起摆好，点燃。我们坐在天台上，吹着晚风，静静地享受那个时刻。 在一起后的第一次国庆，我们决定去湖南的凤凰古城。她妈妈帮我们订了酒店。由于国庆前两天出行的人太多，我们选择了第三天的列车。火车直达吉首，然后坐大巴到古城。那时候吉首挺乱，黑车满天飞，虽然提前查好了攻略，但还是差点坐上了黑面包车。还是LZH眼尖，看到了正规大巴，我们才避免了刚下火车就被宰的命运。 凤凰古城在湖南省湘西土家族苗族自治州，和平遥古城一样，是国内保存最完好的古城之一。那个年代商业化还不是
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.

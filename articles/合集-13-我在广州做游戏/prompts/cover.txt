@@ -1,0 +1,9 @@
+Create a bright, premium editorial cover illustration for a Chinese personal essay.
+Title: 我在广州做游戏
+Series folder: 合集-13-我在广州做游戏
+Essay excerpt for emotional context: > 作者: 凡复思忖 | 日期: 2026-03-09 现在我经常会以“年纪大了”为开头，例如睡不着觉的时候会说：年纪大的人觉就是少了。可是我也曾经22岁过。 那是17年的3月，我在北京参加了研究生的复试，并且知道了成绩以及拟录取这一结果，心理上的负担顿时就消散了。我是一个闲不住的人，既然9月份之后的事情确定了，那么3月到9月的这一段空白，总需要一些事情来填补。由于我是跨专业考研的，面对将来要读的计算机专业，虽然理论知识勉强合格，但我没有任何的实战能力，没有接触过真正的计算机系统。因此我决定，趁这段时间到广州去，找一份正儿八经的编程的工作，养家糊口的同时，增进一下实际的编码能力。 由于当时还不流行线上面试，我必须要先去广州住下来，才能开始逐家进行面试。我想到了去年包吃包住的家教机构，于是向黄老师她们说了我希望回去当辅导老师的念头，可以日常带带学生（主要是为了蹭住）。黄老师表示欢迎，我的第一站就先来到了佛山里水。时隔六个月再来，有一种物是人非之感。住的地方跟上次不一样，房间面积更小了，之前同住的小帅哥也不在，我一个人颇感无聊。每天都疯狂地在网上投递简历，同时联系了在北京复试时认识的C。C在上研究生之前在深圳做过全职的工作，而且工资不低，现在跟我一样，都想着在等待研究生入学的间隙，先找一份工作。 由于没有合适的计算机项目经验，我见到任何跟计算机相关的岗位都会投递，结果也显而易见，简历往往石沉大海。投了一周后，只拿到了一家面试机会。我对这来之不易的机会非常珍惜，即使它位于番禺，我也一大
+Composition: 1536x1024 landscape cover, cinematic magazine/editorial illustration, one clear focal scene, readable at thumbnail size, enough calm negative space for a title overlay but do not render any text.
+Style: polished painterly realism, warm human detail, subtle literary atmosphere, not corporate stock art, not a poster collage.
+Lighting and color: natural daylight or warm evening light, clean contrast, nuanced palette with sky blue, warm gold, soft green or muted red accents as appropriate to the story, no muddy colors.
+Details: concrete objects and places suggested by the essay, Chinese life texture, personal memory, restrained symbolism.
+Avoid: readable text, logos, watermarks, celebrity likenesses, copyrighted character likenesses, gore, explicit violence, distorted hands, extra limbs, clutter.
