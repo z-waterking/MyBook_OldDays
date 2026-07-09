@@ -311,6 +311,7 @@
     .sidebar-nav ul,
     .sidebar-nav li {
       margin: 0 !important;
+      list-style: none !important;
     }
 
     .sidebar-nav > ul > li {
@@ -368,24 +369,26 @@
     }
 
     .sidebar-nav > ul > li.sidebar-branch > p.sidebar-branch-toggle::after {
-      content: "" !important;
-      width: 7px !important;
-      height: 7px !important;
-      margin-right: 2px !important;
-      border-right: 1.5px solid #8a7558 !important;
-      border-bottom: 1.5px solid #8a7558 !important;
-      transform: rotate(45deg) translateY(-2px) !important;
+      content: "▾" !important;
+      width: 14px !important;
+      margin-right: 1px !important;
+      color: #8a7558 !important;
+      font-size: 13px !important;
+      line-height: 1 !important;
+      text-align: center !important;
+      transform: none !important;
       transition: transform 0.16s ease !important;
       flex: 0 0 auto !important;
     }
 
     .sidebar-nav > ul > li.sidebar-branch.is-collapsed > p.sidebar-branch-toggle::after {
-      transform: rotate(-45deg) !important;
+      content: "▸" !important;
+      transform: none !important;
     }
 
     .sidebar-nav > ul > li.sidebar-branch > ul {
       margin: 0 0 8px 8px !important;
-      padding: 4px 0 6px 10px !important;
+      padding: 4px 0 6px 8px !important;
       border-left: 1px solid #d8cfbf !important;
     }
 
@@ -430,12 +433,12 @@
 
     .sidebar-nav > ul > li > ul > li > a {
       display: block !important;
-      min-height: 25px !important;
-      padding: 3px 8px 3px 18px !important;
+      min-height: 27px !important;
+      padding: 4px 8px 4px 12px !important;
       border-radius: 5px !important;
       color: #5b5147 !important;
       font-size: 13px !important;
-      line-height: 1.45 !important;
+      line-height: 1.5 !important;
       text-decoration: none !important;
     }
 
@@ -454,26 +457,27 @@
 
     .sidebar-nav li.sidebar-page-branch > a::after,
     .sidebar-nav li.sidebar-page-branch > p > a::after {
-      content: "" !important;
+      content: "▾" !important;
       position: absolute !important;
       top: 50% !important;
-      right: 10px !important;
-      width: 6px !important;
-      height: 6px !important;
-      border-right: 1.5px solid currentColor !important;
-      border-bottom: 1.5px solid currentColor !important;
-      transform: translateY(-60%) rotate(45deg) !important;
-      transition: transform 0.16s ease !important;
+      right: 9px !important;
+      width: 14px !important;
+      color: currentColor !important;
+      font-size: 13px !important;
+      line-height: 1 !important;
+      text-align: center !important;
+      transform: translateY(-50%) !important;
     }
 
     .sidebar-nav li.sidebar-page-branch.is-collapsed > a::after,
     .sidebar-nav li.sidebar-page-branch.is-collapsed > p > a::after {
-      transform: translateY(-50%) rotate(-45deg) !important;
+      content: "▸" !important;
+      transform: translateY(-50%) !important;
     }
 
     .sidebar-nav .app-sub-sidebar {
-      margin: 3px 0 8px 14px !important;
-      padding: 3px 0 4px 10px !important;
+      margin: 3px 0 8px 10px !important;
+      padding: 3px 0 4px 8px !important;
       border-left: 1px dashed #d8cfbf !important;
     }
 
@@ -483,11 +487,11 @@
     }
 
     .sidebar-nav .app-sub-sidebar li a {
-      min-height: 22px !important;
-      padding: 2px 8px !important;
+      min-height: 26px !important;
+      padding: 3px 8px 3px 12px !important;
       color: #766b61 !important;
-      font-size: 12px !important;
-      line-height: 1.45 !important;
+      font-size: 13px !important;
+      line-height: 1.5 !important;
     }
 
     .sidebar::-webkit-scrollbar {
