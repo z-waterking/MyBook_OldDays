@@ -342,13 +342,86 @@
 
     .sidebar-nav > ul > li > p > strong {
       display: block !important;
-      margin: 17px 0 6px !important;
-      padding: 0 9px 6px !important;
-      border-bottom: 1px solid #e2dbcd !important;
       color: #8a7558 !important;
       font-size: 12px !important;
       font-weight: 700 !important;
       line-height: 1.35 !important;
+    }
+
+    .sidebar-nav > ul > li.sidebar-branch {
+      margin-top: 12px !important;
+    }
+
+    .sidebar-nav > ul > li.sidebar-branch > p.sidebar-branch-toggle {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 8px !important;
+      min-height: 30px !important;
+      margin: 0 0 4px !important;
+      padding: 5px 8px !important;
+      border: 1px solid #e0d7c8 !important;
+      border-radius: 7px !important;
+      background: #f7f2e8 !important;
+      cursor: pointer !important;
+      user-select: none !important;
+    }
+
+    .sidebar-nav > ul > li.sidebar-branch > p.sidebar-branch-toggle::after {
+      content: "" !important;
+      width: 7px !important;
+      height: 7px !important;
+      margin-right: 2px !important;
+      border-right: 1.5px solid #8a7558 !important;
+      border-bottom: 1.5px solid #8a7558 !important;
+      transform: rotate(45deg) translateY(-2px) !important;
+      transition: transform 0.16s ease !important;
+      flex: 0 0 auto !important;
+    }
+
+    .sidebar-nav > ul > li.sidebar-branch.is-collapsed > p.sidebar-branch-toggle::after {
+      transform: rotate(-45deg) !important;
+    }
+
+    .sidebar-nav > ul > li.sidebar-branch > ul {
+      margin: 0 0 8px 8px !important;
+      padding: 4px 0 6px 10px !important;
+      border-left: 1px solid #d8cfbf !important;
+    }
+
+    .sidebar-nav > ul > li.sidebar-branch.sidebar-maintenance {
+      margin-top: 22px !important;
+      padding-top: 12px !important;
+      border-top: 1px dashed #d7cdbb !important;
+    }
+
+    .sidebar-nav > ul > li.sidebar-branch.sidebar-maintenance > p.sidebar-branch-toggle {
+      min-height: 26px !important;
+      padding: 3px 7px !important;
+      border-color: transparent !important;
+      background: transparent !important;
+    }
+
+    .sidebar-nav > ul > li.sidebar-branch.sidebar-maintenance > p.sidebar-branch-toggle > strong {
+      color: #9a8b78 !important;
+      font-size: 11px !important;
+      letter-spacing: 0.04em !important;
+    }
+
+    .sidebar-nav > ul > li.sidebar-branch.sidebar-maintenance > ul {
+      margin-left: 4px !important;
+      padding-left: 8px !important;
+      border-left-style: dashed !important;
+      border-left-color: #ded5c8 !important;
+    }
+
+    .sidebar-nav > ul > li.sidebar-branch.sidebar-maintenance > ul > li > a {
+      color: #8a7f72 !important;
+      font-size: 12px !important;
+    }
+
+    .sidebar-nav > ul > li.sidebar-branch.is-collapsed > ul {
+      display: none !important;
     }
 
     .sidebar-nav > ul > li > ul {
@@ -371,6 +444,50 @@
       background: #ebe5d9 !important;
       color: #2d261d !important;
       font-weight: 600 !important;
+    }
+
+    .sidebar-nav li.sidebar-page-branch > a,
+    .sidebar-nav li.sidebar-page-branch > p > a {
+      position: relative !important;
+      padding-right: 24px !important;
+    }
+
+    .sidebar-nav li.sidebar-page-branch > a::after,
+    .sidebar-nav li.sidebar-page-branch > p > a::after {
+      content: "" !important;
+      position: absolute !important;
+      top: 50% !important;
+      right: 10px !important;
+      width: 6px !important;
+      height: 6px !important;
+      border-right: 1.5px solid currentColor !important;
+      border-bottom: 1.5px solid currentColor !important;
+      transform: translateY(-60%) rotate(45deg) !important;
+      transition: transform 0.16s ease !important;
+    }
+
+    .sidebar-nav li.sidebar-page-branch.is-collapsed > a::after,
+    .sidebar-nav li.sidebar-page-branch.is-collapsed > p > a::after {
+      transform: translateY(-50%) rotate(-45deg) !important;
+    }
+
+    .sidebar-nav .app-sub-sidebar {
+      margin: 3px 0 8px 14px !important;
+      padding: 3px 0 4px 10px !important;
+      border-left: 1px dashed #d8cfbf !important;
+    }
+
+    .sidebar-nav li.sidebar-page-branch.is-collapsed > .app-sub-sidebar,
+    .sidebar-nav li.sidebar-page-branch.is-collapsed > p > .app-sub-sidebar {
+      display: none !important;
+    }
+
+    .sidebar-nav .app-sub-sidebar li a {
+      min-height: 22px !important;
+      padding: 2px 8px !important;
+      color: #766b61 !important;
+      font-size: 12px !important;
+      line-height: 1.45 !important;
     }
 
     .sidebar::-webkit-scrollbar {
@@ -465,6 +582,105 @@
           hook.beforeEach(function (content) {
             return content.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n+/, '');
           });
+        },
+        function enhanceSidebar(hook) {
+          var branchStateKey = 'old-days-sidebar-branches';
+
+          function readBranchState() {
+            try {
+              return JSON.parse(localStorage.getItem(branchStateKey) || '{}');
+            } catch (error) {
+              return {};
+            }
+          }
+
+          function writeBranchState(state) {
+            localStorage.setItem(branchStateKey, JSON.stringify(state));
+          }
+
+          function normalizeHash(value) {
+            return String(value || '')
+              .replace(/^#/, '#')
+              .replace(/\?id=.*$/, '')
+              .replace(/\.md$/, '')
+              .replace(/\/$/, '');
+          }
+
+          function setCollapsed(item, collapsed) {
+            item.classList.toggle('is-collapsed', collapsed);
+            item.classList.toggle('is-expanded', !collapsed);
+            var toggle = item.querySelector(':scope > p.sidebar-branch-toggle');
+            if (toggle) toggle.setAttribute('aria-expanded', String(!collapsed));
+          }
+
+          function setupStaticBranches() {
+            var state = readBranchState();
+            document.querySelectorAll('.sidebar-nav > ul > li').forEach(function (item, index) {
+              var label = item.querySelector(':scope > p > strong');
+              var panel = item.querySelector(':scope > ul');
+              if (!label || !panel) return;
+
+              var toggle = label.parentElement;
+              var key = label.textContent.trim() || 'branch-' + index;
+              var hasActiveChild = Boolean(panel.querySelector('li.active, a.active'));
+              var collapsed = Object.prototype.hasOwnProperty.call(state, key) ? state[key] : !hasActiveChild;
+
+              item.classList.add('sidebar-branch');
+              if (key === '维护') item.classList.add('sidebar-maintenance');
+              toggle.classList.add('sidebar-branch-toggle');
+              toggle.setAttribute('role', 'button');
+              toggle.setAttribute('tabindex', '0');
+              setCollapsed(item, collapsed);
+
+              toggle.onclick = function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+                var nextCollapsed = !item.classList.contains('is-collapsed');
+                state[key] = nextCollapsed;
+                writeBranchState(state);
+                setCollapsed(item, nextCollapsed);
+              };
+              toggle.onkeydown = function (event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  toggle.click();
+                }
+              };
+            });
+          }
+
+          function setupPageBranches() {
+            document.querySelectorAll('.sidebar-nav li').forEach(function (item) {
+              var panel = item.querySelector(':scope > ul.app-sub-sidebar, :scope > p > ul.app-sub-sidebar');
+              var link = item.querySelector(':scope > a, :scope > p > a');
+              if (!panel || !link) return;
+
+              item.classList.add('sidebar-page-branch', 'is-expanded');
+              panel.querySelectorAll('li').forEach(function (listItem) {
+                Array.from(listItem.childNodes).forEach(function (node) {
+                  if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() === '-') {
+                    node.remove();
+                  }
+                });
+              });
+              link.onclick = function (event) {
+                var targetHash = normalizeHash(link.getAttribute('href'));
+                var currentHash = normalizeHash(window.location.hash || '#/');
+                if (targetHash && targetHash === currentHash) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  item.classList.toggle('is-collapsed');
+                  item.classList.toggle('is-expanded');
+                }
+              };
+            });
+          }
+
+          function setupSidebar() {
+            setupStaticBranches();
+            setupPageBranches();
+          }
+
+          hook.doneEach(setupSidebar);
         }
       ],
     }

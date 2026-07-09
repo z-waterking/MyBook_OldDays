@@ -1,8 +1,8 @@
 <!-- _sidebar.md -->
 
-- [文章目录](/)
+- [📚 文章目录](/)
 - [📖 文集工作区](book/README.md)
-- [评分排名](website/ranking.md)
+- [🏅 评分排名](website/ranking.md)
 - [✨ 佳句榜](website/literary-gems.md)
 - [📊 趣味榜单](website/fun-rankings.md)
 
