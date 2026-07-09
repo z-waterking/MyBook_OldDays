@@ -396,6 +396,18 @@
       border-left: 1px solid #d8cfbf !important;
     }
 
+    .sidebar-nav > ul > li.sidebar-branch.sidebar-collection-start {
+      margin-top: 16px !important;
+      padding-top: 12px !important;
+      border-top: 1px solid #ded5c8 !important;
+    }
+
+    .sidebar-nav > ul > li.sidebar-branch.sidebar-collection-end {
+      margin-bottom: 14px !important;
+      padding-bottom: 12px !important;
+      border-bottom: 1px solid #ded5c8 !important;
+    }
+
     .sidebar-nav > ul > li.sidebar-branch.sidebar-maintenance {
       margin-top: 22px !important;
       padding-top: 12px !important;
@@ -635,6 +647,16 @@
             ensureToggleMark(container, className).textContent = collapsed ? '▸' : '▾';
           }
 
+          function isKnownPageBranch(link) {
+            var branchTargets = [
+              '#/book/README',
+              '#/website/ranking',
+              '#/website/literary-gems',
+              '#/website/fun-rankings'
+            ];
+            return branchTargets.indexOf(normalizeHash(link.getAttribute('href'))) !== -1;
+          }
+
           function setCollapsed(item, collapsed) {
             item.classList.toggle('is-collapsed', collapsed);
             item.classList.toggle('is-expanded', !collapsed);
@@ -647,6 +669,7 @@
 
           function setupStaticBranches() {
             var state = readBranchState();
+            var collectionBranches = [];
             document.querySelectorAll('.sidebar-nav > ul > li').forEach(function (item, index) {
               var label = item.querySelector(':scope > p > strong');
               var panel = item.querySelector(':scope > ul');
@@ -659,6 +682,10 @@
 
               item.classList.add('sidebar-branch');
               if (key === '维护') item.classList.add('sidebar-maintenance');
+              if (key.indexOf('合集 ·') === 0) {
+                item.classList.add('sidebar-collection');
+                collectionBranches.push(item);
+              }
               toggle.classList.add('sidebar-branch-toggle');
               toggle.setAttribute('role', 'button');
               toggle.setAttribute('tabindex', '0');
@@ -678,27 +705,41 @@
                 }
               };
             });
+            collectionBranches.forEach(function (item) {
+              item.classList.remove('sidebar-collection-start', 'sidebar-collection-end');
+            });
+            if (collectionBranches.length) {
+              collectionBranches[0].classList.add('sidebar-collection-start');
+              collectionBranches[collectionBranches.length - 1].classList.add('sidebar-collection-end');
+            }
           }
 
           function setupPageBranches() {
             document.querySelectorAll('.sidebar-nav li').forEach(function (item) {
               var panel = item.querySelector(':scope > ul.app-sub-sidebar, :scope > p > ul.app-sub-sidebar');
               var link = item.querySelector(':scope > a, :scope > p > a');
-              if (!panel || !link) return;
+              if (!link) return;
+              if (link.closest('.app-sub-sidebar')) return;
+              var knownPageBranch = isKnownPageBranch(link);
+              if (!panel && !knownPageBranch) return;
 
-              item.classList.add('sidebar-page-branch', 'is-expanded');
-              updateToggleMark(link, false, 'sidebar-page-branch-mark');
-              panel.querySelectorAll('li').forEach(function (listItem) {
-                Array.from(listItem.childNodes).forEach(function (node) {
-                  if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() === '-') {
-                    node.remove();
-                  }
+              item.classList.add('sidebar-page-branch');
+              item.classList.toggle('is-expanded', Boolean(panel));
+              item.classList.toggle('is-collapsed', !panel);
+              updateToggleMark(link, !panel, 'sidebar-page-branch-mark');
+              if (panel) {
+                panel.querySelectorAll('li').forEach(function (listItem) {
+                  Array.from(listItem.childNodes).forEach(function (node) {
+                    if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() === '-') {
+                      node.remove();
+                    }
+                  });
                 });
-              });
+              }
               link.onclick = function (event) {
                 var targetHash = normalizeHash(link.getAttribute('href'));
                 var currentHash = normalizeHash(window.location.hash || '#/');
-                if (targetHash && targetHash === currentHash) {
+                if (panel && targetHash && targetHash === currentHash) {
                   event.preventDefault();
                   event.stopPropagation();
                   item.classList.toggle('is-collapsed');
