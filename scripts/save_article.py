@@ -37,7 +37,9 @@ import markdownify
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 ARTICLES_DIR = REPO_ROOT / "articles"
-CATALOG_FILE = REPO_ROOT / "catalog.md"
+AI_EDITED_DIR = REPO_ROOT / "ai-edited-articles"
+WEBSITE_DIR = REPO_ROOT / "website"
+CATALOG_FILE = WEBSITE_DIR / "catalog.md"
 
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -227,6 +229,21 @@ def catalog_group(dir_name: str) -> str:
     return "合集 · 工作与考试"
 
 
+def group_order(group: str) -> int:
+    """网站目录分组顺序，与侧边栏保持一致"""
+    groups = ["合集 · 少年时代", "合集 · 大学四年", "合集 · 工作与考试", "散篇", "其他"]
+    try:
+        return groups.index(group)
+    except ValueError:
+        return len(groups)
+
+
+def dir_order(dir_name: str) -> int:
+    """从文章目录名提取编号，用于同组内排序"""
+    match = re.match(r"^(?:合集|散篇)-(\d{2})-", dir_name)
+    return int(match.group(1)) if match else 999
+
+
 def review_order(filename: str) -> int:
     if filename == "review.md":
         return 0
@@ -239,6 +256,18 @@ def review_label(filename: str) -> str:
         return "评价"
     match = re.match(r"^review_v(\d+)\.md$", filename)
     return f"评价 v{match.group(1)}" if match else filename.removesuffix(".md")
+
+
+def ai_edited_group(dir_name: str) -> str:
+    if dir_name.startswith("散篇-"):
+        return "散篇"
+    if dir_name.startswith("合集-"):
+        return "合集"
+    return "其他"
+
+
+def ai_edited_path(repo_root: Path, dir_name: str) -> Path:
+    return repo_root / AI_EDITED_DIR.relative_to(REPO_ROOT) / ai_edited_group(dir_name) / dir_name / "index.md"
 
 
 # ─── HTTP 层 ──────────────────────────────────────────────────────────────────
@@ -681,10 +710,9 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
 
         entries.append((date, title, author, rel_path, cover_rel_path, excerpt, group, reviews, article_dir))
 
-    # 按日期倒序排序
-    entries.sort(key=lambda x: x[0], reverse=True)
+    entries.sort(key=lambda x: (group_order(x[6]), dir_order(x[8].name), x[8].name))
 
-    # 生成 catalog.md
+    # 生成网站目录页
     lines = [
         "# 文章目录",
         "",
@@ -692,7 +720,7 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
         "",
     ]
 
-    groups = ["散篇", "合集 · 少年时代", "合集 · 大学四年", "合集 · 工作与考试", "其他"]
+    groups = ["合集 · 少年时代", "合集 · 大学四年", "合集 · 工作与考试", "散篇", "其他"]
     for group in groups:
         grouped_entries = [entry for entry in entries if entry[6] == group]
         if not grouped_entries:
@@ -717,13 +745,21 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
                 except ValueError:
                     review_rel_path = review_path.resolve().as_posix()
                 review_links.append(f'<a href="#/{markdown_link_target(review_rel_path)}">{html.escape(review_label(filename))}</a>')
+            action_links = [f'<a href="#/{safe_rel_path}">正文</a>', *review_links]
+            edited_path = ai_edited_path(repo_root, article_dir.name)
+            if edited_path.exists():
+                try:
+                    edited_rel_path = edited_path.relative_to(repo_root).as_posix()
+                except ValueError:
+                    edited_rel_path = edited_path.resolve().as_posix()
+                action_links.append(f'<a href="#/{markdown_link_target(edited_rel_path)}">AI改稿</a>')
             lines.append('<span class="article-cover-head">')
             lines.append('<span class="article-cover-main">')
             lines.append(f'<a class="article-cover-title" href="#/{safe_rel_path}"><strong>{safe_title}</strong></a>')
             lines.append(f'<em>{safe_date}</em>')
             lines.append('</span>')
-            if review_links:
-                lines.append(f'<span class="article-cover-actions"><a href="#/{safe_rel_path}">正文</a>{"".join(review_links)}</span>')
+            if len(action_links) > 1:
+                lines.append(f'<span class="article-cover-actions">{"".join(action_links)}</span>')
             lines.append('</span>')
             lines.append(f'<span class="article-cover-excerpt">{safe_excerpt}</span>')
             lines.append('</span>')
@@ -735,7 +771,8 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
     lines.append("<!-- 此文件由 save_article.py 自动更新，也可手动编辑 -->")
     lines.append("")
 
-    catalog_path = repo_root / "catalog.md"
+    catalog_path = repo_root / CATALOG_FILE.relative_to(REPO_ROOT)
+    catalog_path.parent.mkdir(parents=True, exist_ok=True)
     catalog_path.write_text("\n".join(lines), encoding="utf-8")
     return len(entries)
 
@@ -836,7 +873,7 @@ def main():
     # 仅重建目录
     if args.catalog_only:
         count = generate_catalog(REPO_ROOT, articles_dir)
-        print(f"📋 目录已更新: catalog.md ({count} 篇文章)")
+        print(f"📋 目录已更新: website/catalog.md ({count} 篇文章)")
         return
 
     # 收集 URL
@@ -900,7 +937,7 @@ def main():
         parts.append(f"{results['failed']} 篇失败")
     print(f"📊 完成: {', '.join(parts)}")
     if count is not None:
-        print(f"📋 目录已更新: catalog.md ({count} 篇文章)")
+        print(f"📋 目录已更新: website/catalog.md ({count} 篇文章)")
 
 
 if __name__ == "__main__":

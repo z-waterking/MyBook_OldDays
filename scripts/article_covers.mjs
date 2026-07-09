@@ -7,7 +7,9 @@ import { stdin, stdout } from 'node:process';
 
 const ROOT = process.cwd();
 const ARTICLES_DIR = join(ROOT, 'articles');
-const CATALOG = join(ROOT, 'catalog.md');
+const AI_EDITED_DIR = join(ROOT, 'ai-edited-articles');
+const WEBSITE_DIR = join(ROOT, 'website');
+const CATALOG = join(WEBSITE_DIR, 'catalog.md');
 const DEFAULT_REST_ENDPOINT = 'https://41626-me2j04fd-eastus2.cognitiveservices.azure.com/openai/deployments/gpt-image-2/images/generations';
 const DEFAULT_API_VERSION = '2024-02-01';
 
@@ -67,6 +69,7 @@ function decodeYamlScalar(value) {
 }
 
 function parseArticle(content, dirName) {
+  content = String(content).replace(/^\uFEFF/, '');
   const meta = {};
   const fm = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
   if (fm) {
@@ -144,25 +147,57 @@ async function listArticles() {
       .sort(reviewSort);
     articles.push({ dir: dir.name, mdPath, content, reviews, ...parsed });
   }
-  articles.sort((a, b) => {
-    const da = a.date || '';
-    const db = b.date || '';
-    if (da !== db) return db.localeCompare(da);
-    return a.dir.localeCompare(b.dir, 'zh-Hans-CN');
-  });
+  articles.sort(articleNavSort);
   return articles;
 }
 
-function articleHref(article) {
-  return `${relative(ROOT, article.mdPath).replace(/\\/g, '/')}`;
+function articleNavSort(a, b) {
+  const groupA = groupOrder(catalogGroup(a));
+  const groupB = groupOrder(catalogGroup(b));
+  if (groupA !== groupB) return groupA - groupB;
+
+  const orderA = dirOrder(a.dir);
+  const orderB = dirOrder(b.dir);
+  if (orderA !== orderB) return orderA - orderB;
+
+  return a.dir.localeCompare(b.dir, 'zh-Hans-CN');
 }
 
-function imageHref(article) {
-  return `${relative(ROOT, join(ARTICLES_DIR, article.dir, 'images', 'cover.png')).replace(/\\/g, '/')}`;
+function groupOrder(group) {
+  const groups = ['合集 · 少年时代', '合集 · 大学四年', '合集 · 工作与考试', '散篇', '其他'];
+  const index = groups.indexOf(group);
+  return index >= 0 ? index : groups.length;
 }
 
-function reviewHref(article, filename) {
-  return `${relative(ROOT, join(ARTICLES_DIR, article.dir, filename)).replace(/\\/g, '/')}`;
+function dirOrder(dirName) {
+  const match = dirName.match(/^(?:合集|散篇)-(\d{2})-/);
+  return match ? Number(match[1]) : 999;
+}
+
+function websiteArticleHref(article) {
+  return relative(ROOT, article.mdPath).replace(/\\/g, '/');
+}
+
+function websiteImageHref(article) {
+  return relative(ROOT, join(ARTICLES_DIR, article.dir, 'images', 'cover.png')).replace(/\\/g, '/');
+}
+
+function websiteReviewHref(article, filename) {
+  return relative(ROOT, join(ARTICLES_DIR, article.dir, filename)).replace(/\\/g, '/');
+}
+
+function aiEditedGroup(dirName) {
+  if (dirName.startsWith('散篇-')) return '散篇';
+  if (dirName.startsWith('合集-')) return '合集';
+  return '其他';
+}
+
+function aiEditedPath(article) {
+  return join(AI_EDITED_DIR, aiEditedGroup(article.dir), article.dir, 'index.md');
+}
+
+function websiteAiEditedHref(article) {
+  return relative(ROOT, aiEditedPath(article)).replace(/\\/g, '/');
 }
 
 function reviewSort(a, b) {
@@ -181,7 +216,7 @@ function reviewLabel(filename) {
 }
 
 function articleLocalCover(article) {
-  return imageHref(article);
+  return relative(ROOT, join(ARTICLES_DIR, article.dir, 'images', 'cover.png')).replace(/\\/g, '/');
 }
 
 function ensureArticleCover(content, article) {
@@ -230,7 +265,7 @@ async function updateCatalog(articles) {
     `> 共 ${articles.length} 篇文章，更新于 ${new Date().toISOString().slice(0, 10)}`,
     '',
   ];
-  const groups = ['散篇', '合集 · 少年时代', '合集 · 大学四年', '合集 · 工作与考试', '其他'];
+  const groups = ['合集 · 少年时代', '合集 · 大学四年', '合集 · 工作与考试', '散篇', '其他'];
   const byGroup = new Map(groups.map((group) => [group, []]));
   for (const article of articles) {
     const group = catalogGroup(article);
@@ -245,15 +280,21 @@ async function updateCatalog(articles) {
     lines.push('<div class="article-cover-list">');
     for (const article of groupedArticles) {
       lines.push('<div class="article-cover-row">');
-      lines.push(`<a class="article-cover-thumb" href="#/${encodePath(articleHref(article))}"><img src="${encodePath(imageHref(article))}" alt="${escapeHtml(article.title)} 封面"></a>`);
+      lines.push(`<a class="article-cover-thumb" href="#/${encodePath(websiteArticleHref(article))}"><img src="${encodePath(websiteImageHref(article))}" alt="${escapeHtml(article.title)} 封面"></a>`);
       lines.push('<span class="article-cover-info">');
-      const reviewLinks = article.reviews.map((filename) => `<a href="#/${encodePath(reviewHref(article, filename))}">${escapeHtml(reviewLabel(filename))}</a>`);
+      const actionLinks = [
+        `<a href="#/${encodePath(websiteArticleHref(article))}">正文</a>`,
+        ...article.reviews.map((filename) => `<a href="#/${encodePath(websiteReviewHref(article, filename))}">${escapeHtml(reviewLabel(filename))}</a>`),
+      ];
+      if (existsSync(aiEditedPath(article))) {
+        actionLinks.push(`<a href="#/${encodePath(websiteAiEditedHref(article))}">AI改稿</a>`);
+      }
       lines.push('<span class="article-cover-head">');
       lines.push('<span class="article-cover-main">');
-      lines.push(`<a class="article-cover-title" href="#/${encodePath(articleHref(article))}"><strong>${escapeHtml(article.title)}</strong></a>`);
+      lines.push(`<a class="article-cover-title" href="#/${encodePath(websiteArticleHref(article))}"><strong>${escapeHtml(article.title)}</strong></a>`);
       lines.push(`<em>${escapeHtml(article.date || '')}</em>`);
       lines.push('</span>');
-      if (reviewLinks.length) lines.push(`<span class="article-cover-actions"><a href="#/${encodePath(articleHref(article))}">正文</a>${reviewLinks.join('')}</span>`);
+      if (actionLinks.length > 1) lines.push(`<span class="article-cover-actions">${actionLinks.join('')}</span>`);
       lines.push('</span>');
       lines.push(`<span class="article-cover-excerpt">${escapeHtml(catalogExcerpt(article.excerpt))}</span>`);
       lines.push('</span>');
@@ -265,6 +306,7 @@ async function updateCatalog(articles) {
   }
   lines.push('<!-- 此文件由 scripts/article_covers.mjs 自动更新，也可手动编辑 -->');
   lines.push('');
+  await mkdir(WEBSITE_DIR, { recursive: true });
   await writeFile(CATALOG, lines.join('\n'), 'utf8');
 }
 
