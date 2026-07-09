@@ -10,6 +10,35 @@
 
 ---
 
+## 2026-07-09 · 补齐 AI 改稿说明与图片索引规则
+
+- **类型：** AI 改稿流程 / 图片资产管理 / 网站索引
+- **关联提交：** 待提交
+
+### 涉及范围
+
+- `ai-edited-articles/**/notes.md`：补齐每篇改稿的 `本版实际改动`。
+- `assets/images/`：新增跨文章共享图片库说明。
+- `website/image-index.md`：新增全库图片索引。
+- `scripts/update_ai_edit_notes.mjs` / `scripts/generate_image_index.mjs`：新增维护脚本。
+- `AGENTS.md` / `README.md` / `ai-edited-articles/AI_EDITING_GUIDE.md` / `website/README.md` / `website/_sidebar.md`：同步协作规则与入口。
+
+### 改动摘要
+
+- 每篇 AI 改稿说明新增 `## 本版实际改动`，记录本版相对原文做了哪些清理、扩写、路径调整和结构处理。
+- 建立 `assets/images/` 作为跨文章复用图片库；原文图片仍留在各自 `articles/<文章目录>/images/` 中，不为了复用而移动。
+- 新增 `website/image-index.md`，集中列出原文图片和共享图片的预览、来源、类型、大小和引用路径。
+- 新增维护命令：`node scripts/update_ai_edit_notes.mjs` 和 `node scripts/generate_image_index.mjs`。
+
+### 验证
+
+- `node scripts/update_ai_edit_notes.mjs`
+- `node scripts/generate_image_index.mjs`
+- `git diff --check`
+- `python -m unittest discover -s tests`
+
+---
+
 ## 2026-07-09 · 修复 GitHub Pages 根地址反复刷新
 
 - **类型：** 部署入口修复 / 路由兼容

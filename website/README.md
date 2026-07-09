@@ -10,6 +10,7 @@
 - `ranking.md`：评分排名。
 - `literary-gems.md`：佳句榜。
 - `fun-rankings.md`：趣味榜单。
+- `image-index.md`：图片索引，由脚本自动生成。
 - `maintenance-log.md`：网站维护日志，记录结构、导航、榜单、脚本和内容入口等重大改动。
 
 ## 路径约定
@@ -31,6 +32,14 @@ python scripts/save_article.py --catalog-only
 ```
 
 两个命令都应生成 `website/catalog.md`。
+
+## 图片索引
+
+```bash
+node scripts/generate_image_index.mjs
+```
+
+该命令扫描 `articles/*/images/` 和 `assets/images/`，生成 `website/image-index.md`。跨文章复用图片应放入 `assets/images/`，原文归档图片保留在各自文章目录中。
 
 ## 维护日志
 

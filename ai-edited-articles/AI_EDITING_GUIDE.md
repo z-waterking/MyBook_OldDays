@@ -9,6 +9,7 @@
 3. 每篇至少包含 `index.md` 和 `notes.md`。
 4. `index.md` 放可阅读的改稿正文，不要只放建议。
 5. `notes.md` 记录改稿目标、主要改动、保留意见和下一轮可继续处理的点。
+6. `notes.md` 必须包含 `## 本版实际改动`，逐条写清这版相对原文做了什么。
 
 ## 改稿前必须读
 
@@ -59,9 +60,16 @@ edited: "YYYY-MM-DD"
 `notes.md` 建议包含：
 
 - 选择/改稿理由
+- 本版实际改动
 - 本轮主要改动
 - 保留的原文亮点
 - 下一轮继续精修建议
+
+批量补齐实际改动清单可运行：
+
+```bash
+node scripts/update_ai_edit_notes.mjs
+```
 
 ## 更新网站入口
 
@@ -90,3 +98,14 @@ node scripts/generate_ai_edit_drafts.mjs --refresh-generated
 ```
 
 该参数只覆盖带 `edit_round: "v1"` 的脚本初稿，会跳过手工精修稿。`--force` 会覆盖所有已有稿件，只有在明确确认后才使用。
+
+## 图片引用
+
+- AI 改稿不要复制图片到 `ai-edited-articles/`。
+- 原文图片使用仓库根路径引用，例如 `articles/<文章目录>/images/001.jpg`。
+- 多篇文章共用的新图片放到 `assets/images/`，再在正文中引用。
+- 图片索引位于 `website/image-index.md`，由下面命令生成：
+
+```bash
+node scripts/generate_image_index.mjs
+```

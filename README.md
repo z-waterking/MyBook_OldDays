@@ -8,6 +8,7 @@
 
 ```text
 articles/                 原始文章归档，每篇文章一个目录
+assets/images/            跨文章复用图片库
 ai-edited-articles/       AI 修改稿工作区，与 articles/ 一一对应
 book/                     成书规划与卷目整理
 website/                  Docsify 网站入口、侧边栏、榜单和目录
@@ -58,6 +59,7 @@ node scripts/article_covers.mjs --mode markdown
 - `website/ranking.md`：评分排名。
 - `website/literary-gems.md`：佳句榜。
 - `website/fun-rankings.md`：趣味榜单。
+- `website/image-index.md`：图片索引，自动生成。
 
 完整 Docsify 站点入口是根目录 `index.html`，用于 GitHub Pages 原地址。网页相关 Markdown 仍统一放在 `website/`。`website/index.html` 只保留为旧 `/website/` 地址的兼容跳回页，并会保留当前 hash 路由。文章正文和图片仍保留在 `articles/`，网站页面按仓库根目录路径访问 `articles/...`。
 
@@ -95,6 +97,22 @@ node scripts/generate_ai_edit_drafts.mjs --refresh-generated
 
 默认命令不会覆盖已有稿，`--refresh-generated` 也会跳过手工精修稿。
 
+每篇 `notes.md` 应写清“本版实际改动”。批量补齐可运行：
+
+```bash
+node scripts/update_ai_edit_notes.mjs
+```
+
+## 图片索引
+
+原文图片仍保留在 `articles/<文章目录>/images/`。如果图片要给多篇文章、AI 改稿或成书区共同引用，复制到 `assets/images/`，然后运行：
+
+```bash
+node scripts/generate_image_index.mjs
+```
+
+生成结果在 `website/image-index.md`。正文引用图片时优先使用仓库根路径，例如 `articles/.../images/001.jpg` 或 `assets/images/.../name.png`。
+
 ## 成书工作区
 
 `book/` 用来整理《旧日之书》的成书结构，包括总序、时间线、写作规划和各卷目录。这里可以重排、删选、补写，但不直接替代 `articles/` 的归档版本。
@@ -121,3 +139,4 @@ python -m unittest discover -s tests
 2. `website/` 是网页展示层，目录和榜单可以维护。
 3. `ai-edited-articles/` 是 AI 改稿区，保持与原文一一对应。
 4. `book/` 是成书工作区，用于最终选稿、编排和补写。
+5. `assets/images/` 是共享图片库，跨文章复用图片先入库再引用。
