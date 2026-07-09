@@ -231,6 +231,7 @@
       overflow: hidden;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
+      line-clamp: 2;
       font-size: 14px;
       line-height: 1.7;
       color: #666;
@@ -481,17 +482,36 @@
       border-left: 1px dashed #d8cfbf !important;
     }
 
+    .sidebar-nav .app-sub-sidebar ul {
+      margin: 0 !important;
+      padding: 0 !important;
+      border-left: 0 !important;
+    }
+
+    .sidebar-nav .app-sub-sidebar li {
+      display: block !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      position: static !important;
+    }
+
     .sidebar-nav li.sidebar-page-branch.is-collapsed > .app-sub-sidebar,
     .sidebar-nav li.sidebar-page-branch.is-collapsed > p > .app-sub-sidebar {
       display: none !important;
     }
 
     .sidebar-nav .app-sub-sidebar li a {
+      display: block !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      margin-left: 0 !important;
       min-height: 26px !important;
       padding: 3px 8px 3px 12px !important;
       color: #766b61 !important;
       font-size: 13px !important;
       line-height: 1.5 !important;
+      left: auto !important;
+      transform: none !important;
     }
 
     .sidebar::-webkit-scrollbar {
