@@ -11,17 +11,19 @@
 - `articles/`：原始文章归档。每篇文章一个目录，通常包含 `index.md`、`images/`、`prompts/` 和若干 `review*.md`。正文原文尽量只追加和归档，不直接改写。
 - `ai-edited-articles/`：AI 修改稿工作区。改稿不能覆盖 `articles/` 原文，目录关系记录在 `ai-edited-articles/mapping.md`。
 - `book/`：成书工作区。可用于重排、删选、补写和分卷规划，但不替代原文归档。
-- `website/`：Docsify 展示层。目录页、评分榜、佳句榜、趣味榜单等网页 Markdown 都放这里。
+- `website/`：Docsify 展示层内容目录。目录页、评分榜、佳句榜、趣味榜单等网页 Markdown 都放这里。
 - `scripts/`：维护脚本。当前实际存在 `save_article.py` 和 `article_covers.mjs`。
 - `tests/`：Python 单元测试，主要覆盖文章抓取、Markdown 转换和目录生成逻辑。
-- 根目录 `index.html`：GitHub Pages 根地址跳转入口。完整站点入口是 `website/index.html`。
+- 根目录 `index.html`：GitHub Pages / Docsify 正式入口。
 
 ## 关键路径约定
 
 - 网站页面统一放在 `website/`，不要再把 `catalog.md`、`ranking.md`、`literary-gems.md`、`fun-rankings.md` 散放到根目录。
-- `website/index.html` 设置了 `<base href="../">`，因此网站页里的文章链接按仓库根路径写，例如 `articles/合集-01-我在河津上幼儿园/index.md`。
+- `website/index.html` 只是旧 `/website/` 地址的兼容跳回页，正式入口不要放到 `website/` 下。
+- 网站页里的文章链接按仓库根路径写，例如 `articles/合集-01-我在河津上幼儿园/index.md`。
 - `website/catalog.md` 是自动生成目录，可由 `save_article.py` 或 `article_covers.mjs` 更新。
 - `website/ranking.md`、`website/literary-gems.md`、`website/fun-rankings.md` 是人工整理榜单，新增文章后必须手动复评并同步。
+- `website/maintenance-log.md` 是网站维护日志。凡影响网站结构、导航入口、目录生成、榜单统计、文章归档流程、AI 改稿入口或部署入口的大改动，都要追加一条 Log。
 - 文章目录命名遵循 `合集-01-标题` 或 `散篇-01-标题`。新增文章不要随意改变已有编号体系。
 
 ## 常用命令
@@ -101,6 +103,7 @@ python -m unittest discover -s tests
 - `website/fun-rankings.md` 是人工趣味索引。新增文章若带来新城市、人物、食物、游戏、职业、受伤、名场面、预案或文体类型，要同步相关榜单。
 - 修改榜单后检查底部“共 N 篇/共 N 句”等数字是否与正文一致。
 - 榜单链接应指向实际存在的 `articles/.../index.md` 或 `review*.md`。
+- 若榜单、站点导航、目录生成规则或文章入口发生大改动，同步更新 `website/maintenance-log.md`。
 
 ## AI 修改稿流程
 

@@ -5,6 +5,7 @@
 - [评分排名](website/ranking.md)
 - [✨ 佳句榜](website/literary-gems.md)
 - [📊 趣味榜单](website/fun-rankings.md)
+- [网站维护日志](website/maintenance-log.md)
 
 - **合集 · 少年时代**
   - [01 河津上幼儿园](articles/合集-01-我在河津上幼儿园/index.md)

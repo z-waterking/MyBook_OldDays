@@ -13,7 +13,7 @@ book/                     成书规划与卷目整理
 website/                  Docsify 网站入口、侧边栏、榜单和目录
 scripts/                  抓取、目录生成、封面处理等脚本
 tests/                    自动化测试
-index.html                GitHub Pages 兼容跳转入口
+index.html                GitHub Pages / Docsify 正式入口
 requirements.txt          Python 依赖
 ```
 
@@ -59,7 +59,7 @@ node scripts/article_covers.mjs --mode markdown
 - `website/literary-gems.md`：佳句榜。
 - `website/fun-rankings.md`：趣味榜单。
 
-完整 Docsify 站点入口是 `website/index.html`。根目录 `index.html` 只负责跳转到 `website/`，用来保持 GitHub Pages 根地址可用。文章正文和图片仍保留在 `articles/`，网站页面通过 `<base href="../">` 按仓库根目录路径访问 `articles/...`。
+完整 Docsify 站点入口是根目录 `index.html`，用于 GitHub Pages 原地址。网页相关 Markdown 仍统一放在 `website/`。`website/index.html` 只保留为旧 `/website/` 地址的兼容跳回页，并会保留当前 hash 路由。文章正文和图片仍保留在 `articles/`，网站页面按仓库根目录路径访问 `articles/...`。
 
 ## AI 修改稿
 
