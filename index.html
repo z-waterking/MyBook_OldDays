@@ -267,19 +267,119 @@
 
     /* 侧边栏 */
     .sidebar {
-      background: #f5f4f1 !important;
-      border-right: 1px solid #e8e6e2 !important;
+      background: linear-gradient(180deg, #f8f6f0 0%, #f1efe8 100%) !important;
+      border-right: 1px solid #e2dccf !important;
+      color: #3a332a !important;
     }
 
-    .sidebar li > a {
-      color: #555 !important;
-      font-size: 14px !important;
+    .sidebar h1.app-name {
+      margin: 18px 16px 10px !important;
+      padding-bottom: 12px !important;
+      border-bottom: 1px solid #ded7ca !important;
+      font-size: 22px !important;
+      line-height: 1.25 !important;
+      text-align: left !important;
     }
 
-    .sidebar li > a:hover,
-    .sidebar li.active > a {
+    .sidebar h1.app-name a {
+      color: #2d261d !important;
+      font-weight: 700 !important;
+      text-decoration: none !important;
+    }
+
+    .sidebar .search {
+      margin: 0 14px 14px !important;
+      padding: 0 0 12px !important;
+      border-bottom: 1px solid #e5ded2 !important;
+    }
+
+    .sidebar .search input {
+      width: 100% !important;
+      height: 34px !important;
+      padding: 0 10px !important;
+      border: 1px solid #d8cfbf !important;
+      border-radius: 6px !important;
+      background: #fffdf8 !important;
       color: #2d2d2d !important;
+      font-size: 13px !important;
+    }
+
+    .sidebar-nav {
+      padding: 0 12px 28px !important;
+    }
+
+    .sidebar-nav ul,
+    .sidebar-nav li {
+      margin: 0 !important;
+    }
+
+    .sidebar-nav > ul > li {
+      margin: 0 0 2px !important;
+    }
+
+    .sidebar-nav > ul > li > p {
+      margin: 0 !important;
+    }
+
+    .sidebar-nav > ul > li > p > a {
+      display: flex !important;
+      align-items: center !important;
+      min-height: 30px !important;
+      padding: 4px 9px !important;
+      border-radius: 6px !important;
+      color: #4b4033 !important;
+      font-size: 13px !important;
       font-weight: 600 !important;
+      line-height: 1.35 !important;
+      text-decoration: none !important;
+    }
+
+    .sidebar-nav > ul > li > p > a:hover,
+    .sidebar-nav > ul > li.active > p > a {
+      background: #e9e1d2 !important;
+      color: #241d16 !important;
+    }
+
+    .sidebar-nav > ul > li > p > strong {
+      display: block !important;
+      margin: 17px 0 6px !important;
+      padding: 0 9px 6px !important;
+      border-bottom: 1px solid #e2dbcd !important;
+      color: #8a7558 !important;
+      font-size: 12px !important;
+      font-weight: 700 !important;
+      line-height: 1.35 !important;
+    }
+
+    .sidebar-nav > ul > li > ul {
+      padding: 0 0 6px !important;
+    }
+
+    .sidebar-nav > ul > li > ul > li > a {
+      display: block !important;
+      min-height: 25px !important;
+      padding: 3px 8px 3px 18px !important;
+      border-radius: 5px !important;
+      color: #5b5147 !important;
+      font-size: 13px !important;
+      line-height: 1.45 !important;
+      text-decoration: none !important;
+    }
+
+    .sidebar-nav > ul > li > ul > li > a:hover,
+    .sidebar-nav > ul > li > ul > li.active > a {
+      background: #ebe5d9 !important;
+      color: #2d261d !important;
+      font-weight: 600 !important;
+    }
+
+    .sidebar::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .sidebar::-webkit-scrollbar-thumb {
+      border-radius: 999px;
+      background: #d7cdbb;
     }
 
     /* 手机端字号不缩 */

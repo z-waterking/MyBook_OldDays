@@ -1,11 +1,10 @@
 <!-- _sidebar.md -->
 
-- [文章目录](website/catalog.md)
+- [文章目录](/)
 - [📖 文集工作区](book/README.md)
 - [评分排名](website/ranking.md)
 - [✨ 佳句榜](website/literary-gems.md)
 - [📊 趣味榜单](website/fun-rankings.md)
-- [网站维护日志](website/maintenance-log.md)
 
 - **合集 · 少年时代**
   - [01 河津上幼儿园](articles/合集-01-我在河津上幼儿园/index.md)
@@ -52,3 +51,6 @@
   - [16 我的工位](articles/散篇-16-我舍不得的不是公司，是我的工位/index.md)
   - [17 意念挥刀](articles/散篇-17-意念“挥刀”/index.md)
   - [18 丧尸躲避指南](articles/散篇-18-丧尸躲避指南/index.md)
+
+- **维护**
+  - [网站维护日志](website/maintenance-log.md)
