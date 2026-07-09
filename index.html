@@ -369,22 +369,25 @@
       user-select: none !important;
     }
 
-    .sidebar-nav > ul > li.sidebar-branch > p.sidebar-branch-toggle::after {
-      content: "▾" !important;
+    .sidebar-toggle-mark {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
       width: 14px !important;
+      margin-left: 6px !important;
       margin-right: 1px !important;
       color: #8a7558 !important;
       font-size: 13px !important;
       line-height: 1 !important;
-      text-align: center !important;
-      transform: none !important;
-      transition: transform 0.16s ease !important;
       flex: 0 0 auto !important;
     }
 
-    .sidebar-nav > ul > li.sidebar-branch.is-collapsed > p.sidebar-branch-toggle::after {
-      content: "▸" !important;
-      transform: none !important;
+    .sidebar-page-branch-mark {
+      position: absolute !important;
+      top: 50% !important;
+      right: 9px !important;
+      transform: translateY(-50%) !important;
+      color: currentColor !important;
     }
 
     .sidebar-nav > ul > li.sidebar-branch > ul {
@@ -456,29 +459,9 @@
       padding-right: 24px !important;
     }
 
-    .sidebar-nav li.sidebar-page-branch > a::after,
-    .sidebar-nav li.sidebar-page-branch > p > a::after {
-      content: "▾" !important;
-      position: absolute !important;
-      top: 50% !important;
-      right: 9px !important;
-      width: 14px !important;
-      color: currentColor !important;
-      font-size: 13px !important;
-      line-height: 1 !important;
-      text-align: center !important;
-      transform: translateY(-50%) !important;
-    }
-
-    .sidebar-nav li.sidebar-page-branch.is-collapsed > a::after,
-    .sidebar-nav li.sidebar-page-branch.is-collapsed > p > a::after {
-      content: "▸" !important;
-      transform: translateY(-50%) !important;
-    }
-
     .sidebar-nav .app-sub-sidebar {
-      margin: 3px 0 8px 10px !important;
-      padding: 3px 0 4px 8px !important;
+      margin: 2px 0 6px 10px !important;
+      padding: 2px 0 2px 8px !important;
       border-left: 1px dashed #d8cfbf !important;
     }
 
@@ -493,6 +476,13 @@
       margin: 0 !important;
       padding: 0 !important;
       position: static !important;
+      line-height: 1.25 !important;
+    }
+
+    .sidebar-nav .app-sub-sidebar li::before,
+    .sidebar-nav .app-sub-sidebar li::after {
+      content: none !important;
+      display: none !important;
     }
 
     .sidebar-nav li.sidebar-page-branch.is-collapsed > .app-sub-sidebar,
@@ -505,11 +495,11 @@
       width: 100% !important;
       box-sizing: border-box !important;
       margin-left: 0 !important;
-      min-height: 26px !important;
-      padding: 3px 8px 3px 12px !important;
+      min-height: 21px !important;
+      padding: 1px 8px 1px 12px !important;
       color: #766b61 !important;
       font-size: 13px !important;
-      line-height: 1.5 !important;
+      line-height: 1.45 !important;
       left: auto !important;
       transform: none !important;
     }
@@ -630,11 +620,29 @@
               .replace(/\/$/, '');
           }
 
+          function ensureToggleMark(container, className) {
+            var mark = container.querySelector(':scope > .' + className);
+            if (!mark) {
+              mark = document.createElement('span');
+              mark.className = 'sidebar-toggle-mark ' + className;
+              mark.setAttribute('aria-hidden', 'true');
+              container.appendChild(mark);
+            }
+            return mark;
+          }
+
+          function updateToggleMark(container, collapsed, className) {
+            ensureToggleMark(container, className).textContent = collapsed ? '▸' : '▾';
+          }
+
           function setCollapsed(item, collapsed) {
             item.classList.toggle('is-collapsed', collapsed);
             item.classList.toggle('is-expanded', !collapsed);
             var toggle = item.querySelector(':scope > p.sidebar-branch-toggle');
-            if (toggle) toggle.setAttribute('aria-expanded', String(!collapsed));
+            if (toggle) {
+              toggle.setAttribute('aria-expanded', String(!collapsed));
+              updateToggleMark(toggle, collapsed, 'sidebar-branch-mark');
+            }
           }
 
           function setupStaticBranches() {
@@ -679,6 +687,7 @@
               if (!panel || !link) return;
 
               item.classList.add('sidebar-page-branch', 'is-expanded');
+              updateToggleMark(link, false, 'sidebar-page-branch-mark');
               panel.querySelectorAll('li').forEach(function (listItem) {
                 Array.from(listItem.childNodes).forEach(function (node) {
                   if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() === '-') {
@@ -694,6 +703,7 @@
                   event.stopPropagation();
                   item.classList.toggle('is-collapsed');
                   item.classList.toggle('is-expanded');
+                  updateToggleMark(link, item.classList.contains('is-collapsed'), 'sidebar-page-branch-mark');
                 }
               };
             });
