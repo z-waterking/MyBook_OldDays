@@ -66,8 +66,7 @@ function isGeneratedDraft(content) {
 }
 
 function latestReviewName(files) {
-  const order = ['review_v4.md', 'review_v3.md', 'review_v2.md', 'review.md', 'review_v1.md'];
-  return order.find((name) => files.includes(name));
+  return files.includes('review.md') ? 'review.md' : undefined;
 }
 
 function sectionAfter(review, headings) {

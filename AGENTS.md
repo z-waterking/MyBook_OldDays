@@ -8,7 +8,7 @@
 
 ## 目录结构与职责
 
-- `articles/`：原始文章归档。每篇文章一个目录，通常包含 `index.md`、`images/`、`prompts/` 和若干 `review*.md`。正文原文尽量只追加和归档，不直接改写。
+- `articles/`：原始文章归档。每篇文章一个目录，通常包含 `index.md`、`images/`、`prompts/` 和唯一的规范评价文件 `review.md`。正文原文尽量只追加和归档，不直接改写。
 - `assets/images/`：跨文章、AI 改稿、成书区共用的图片库。原文图片不要为了复用而移动，可复制到这里再引用。
 - `ai-edited-articles/`：AI 修改稿工作区。改稿不能覆盖 `articles/` 原文，目录关系记录在 `ai-edited-articles/mapping.md`。
 - `book/`：成书工作区。可用于重排、删选、补写和分卷规划，但不替代原文归档。
@@ -97,7 +97,7 @@ python -m unittest discover -s tests
 
 ## 文章评价规则
 
-- 优先读正文，再看已有 `review*.md`。复评时通常以最新版本为参考，常见顺序是 `review_v4.md`、`review_v3.md`、`review_v2.md`、`review.md`。
+- 优先读正文，再看唯一的规范评价文件 `review.md`；复评时直接更新该文件，不创建其他评价版本文件。
 - 评价要具体到文章的结构、场景、人物、语言、情感和主题，不要只写泛泛夸奖。
 - 对回忆录，要关注时间线、场景密度、人物是否立住、结尾是否有回响。
 - 对小说或虚构短篇，要关注人物动机、冲突推进、语体稳定和结尾力度。
@@ -110,7 +110,7 @@ python -m unittest discover -s tests
 - `website/literary-gems.md` 是佳句榜。只收真正能代表全书语言质量的句子；宁可少收，不要把普通总结句都放进去。
 - `website/fun-rankings.md` 是人工趣味索引。新增文章若带来新城市、人物、食物、游戏、职业、受伤、名场面、预案或文体类型，要同步相关榜单。
 - 修改榜单后检查底部“共 N 篇/共 N 句”等数字是否与正文一致。
-- 榜单链接应指向实际存在的 `articles/.../index.md` 或 `review*.md`。
+- 榜单链接应指向实际存在的 `articles/.../index.md` 或 `articles/.../review.md`。
 - 若榜单、站点导航、目录生成规则或文章入口发生大改动，同步更新 `website/maintenance-log.md`。
 
 ## AI 修改稿流程

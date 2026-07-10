@@ -103,6 +103,14 @@ function catalogExcerpt(value) {
   return `${text.slice(0, 150)}...`;
 }
 
+function localDate() {
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
 function coverPrompt(article, dirName) {
   return `Create a bright, premium editorial cover illustration for a Chinese personal essay.\n` +
     `Title: ${article.title}\n` +
@@ -142,9 +150,8 @@ async function listArticles() {
     const parsed = parseArticle(content, dir.name);
     const files = await readdir(join(ARTICLES_DIR, dir.name), { withFileTypes: true });
     const reviews = files
-      .filter((file) => file.isFile() && /^review(?:_v\d+)?\.md$/.test(file.name))
-      .map((file) => file.name)
-      .sort(reviewSort);
+      .filter((file) => file.isFile() && file.name === 'review.md')
+      .map((file) => file.name);
     articles.push({ dir: dir.name, mdPath, content, reviews, ...parsed });
   }
   articles.sort(articleNavSort);
@@ -200,27 +207,13 @@ function websiteAiEditedHref(article) {
   return relative(ROOT, aiEditedPath(article)).replace(/\\/g, '/');
 }
 
-function reviewSort(a, b) {
-  return reviewOrder(a) - reviewOrder(b) || a.localeCompare(b);
-}
-
-function reviewOrder(filename) {
-  if (filename === 'review.md') return 0;
-  return Number(filename.match(/^review_v(\d+)\.md$/)?.[1] || 999);
-}
-
-function reviewLabel(filename) {
-  if (filename === 'review.md') return '评价';
-  const version = filename.match(/^review_v(\d+)\.md$/)?.[1];
-  return version ? `评价 v${version}` : filename.replace(/\.md$/, '');
-}
-
 function articleLocalCover(article) {
   return relative(ROOT, join(ARTICLES_DIR, article.dir, 'images', 'cover.png')).replace(/\\/g, '/');
 }
 
 function ensureArticleCover(content, article) {
   const coverBlock = `<p><img class="article-cover" src="${articleLocalCover(article)}" alt="${escapeHtml(article.title)} 封面"></p>`;
+  if (content.includes(coverBlock)) return content;
   let next = content.replace(/\n?<p><img class="article-cover"[\s\S]*?<\/p>\n?/m, '\n');
   const metaLine = next.match(/^> .*$/m);
   if (metaLine) {
@@ -233,7 +226,7 @@ function ensureArticleCover(content, article) {
       next = `${next.slice(0, idx)}\n\n${coverBlock}${next.slice(idx)}`;
     }
   }
-  return next.replace(/\n{4,}/g, '\n\n\n');
+  return next.replace(/(?:\r?\n){4,}/g, '\n\n\n');
 }
 
 function escapeHtml(value) {
@@ -262,7 +255,7 @@ async function updateCatalog(articles) {
   const lines = [
     '# 文章目录',
     '',
-    `> 共 ${articles.length} 篇文章，更新于 ${new Date().toISOString().slice(0, 10)}`,
+    `> 共 ${articles.length} 篇文章，更新于 ${localDate()}`,
     '',
   ];
   const groups = ['合集 · 少年时代', '合集 · 大学四年', '合集 · 工作与考试', '散篇', '其他'];
@@ -284,7 +277,7 @@ async function updateCatalog(articles) {
       lines.push('<span class="article-cover-info">');
       const actionLinks = [
         `<a href="#/${encodePath(websiteArticleHref(article))}">正文</a>`,
-        ...article.reviews.map((filename) => `<a href="#/${encodePath(websiteReviewHref(article, filename))}">${escapeHtml(reviewLabel(filename))}</a>`),
+        ...article.reviews.map((filename) => `<a href="#/${encodePath(websiteReviewHref(article, filename))}">评价</a>`),
       ];
       if (existsSync(aiEditedPath(article))) {
         actionLinks.push(`<a href="#/${encodePath(websiteAiEditedHref(article))}">AI改稿</a>`);

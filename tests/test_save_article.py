@@ -60,6 +60,8 @@ class SaveArticleTests(unittest.TestCase):
             edited_dir = root / "ai-edited-articles" / "其他" / "标题 A"
             edited_dir.mkdir(parents=True)
             (edited_dir / "index.md").write_text("# 标题 A 改稿\n", encoding="utf-8")
+            (article_dir / "review.md").write_text("# 当前评价\n", encoding="utf-8")
+            (article_dir / "review_v2.md").write_text("# 历史评价\n", encoding="utf-8")
 
             generate_catalog(root, articles)
 
@@ -72,6 +74,10 @@ class SaveArticleTests(unittest.TestCase):
             self.assertIn("标题 A 封面", catalog)
             self.assertIn("ai-edited-articles/%E5%85%B6%E4%BB%96/%E6%A0%87%E9%A2%98%20A/index.md", catalog)
             self.assertIn("AI改稿", catalog)
+            self.assertIn("review.md", catalog)
+            self.assertIn(">评价</a>", catalog)
+            self.assertNotIn("review_v2.md", catalog)
+            self.assertNotIn("评价 v2", catalog)
 
     def test_download_image_rejects_html_response(self):
         session = Mock()

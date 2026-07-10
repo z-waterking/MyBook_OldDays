@@ -10,6 +10,36 @@
 
 ---
 
+## 2026-07-11 · 全库统一复评与评价入口收敛
+
+- **类型：** 全库复评 / 榜单重建 / 目录与维护流程更新
+- **关联提交：** 待提交
+
+### 涉及范围
+
+- `articles/*/review.md`：重新阅读并评价全部 38 篇原文。
+- `articles/*/review_v*.md`：删除 132 个历史评价版本。
+- `website/ranking.md` / `website/literary-gems.md` / `website/fun-rankings.md`：按本轮评价和原文重新整理。
+- `website/catalog.md`：重建目录，所有文章统一只保留一个“评价”入口。
+- `scripts/article_covers.mjs` / `scripts/save_article.py` / `scripts/generate_ai_edit_drafts.mjs`：统一只识别规范评价文件 `review.md`。
+- `AGENTS.md` / `ai-edited-articles/AI_EDITING_GUIDE.md` / `ai-edited-articles/**/notes.md`：同步唯一评价文件约定。
+
+### 改动摘要
+
+- 每篇评价统一包含“总体印象、亮点分析、写作建议、金句摘录、综合评分、综合评价”，评分重新按 38 篇全库横向校准。
+- 新评分总榜覆盖 38 篇文章；全库平均分为 7.83，合集平均分为 8.21，散篇平均分为 7.41。
+- 佳句榜重新核验原文并精选 32 句；趣味榜复核事实、人物出场、近期文章和金句密度统计。
+- 目录生成和文章抓取脚本不再展示或寻找 `review_v1.md`、`review_v2.md` 等历史版本；封面块已存在时不再无意义重写原文。
+
+### 验证
+
+- 38 篇文章均恰有一个 `review.md`，六个规定章节完整，且不存在 `review_v*.md`。
+- `node scripts/article_covers.mjs --mode markdown`
+- `python -m unittest discover -s tests`
+- `git diff --check`
+
+---
+
 ## 2026-07-09 · 补齐 AI 改稿说明与图片索引规则
 
 - **类型：** AI 改稿流程 / 图片资产管理 / 网站索引

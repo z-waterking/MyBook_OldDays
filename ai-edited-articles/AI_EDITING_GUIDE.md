@@ -16,7 +16,7 @@
 按优先级阅读：
 
 1. `articles/<文章目录>/index.md`
-2. 最新评价，优先 `review_v4.md`，其次 `review_v3.md`、`review_v2.md`、`review.md`
+2. 唯一的规范评价文件 `articles/<文章目录>/review.md`
 3. `website/ranking.md` 中对应文章的评分和核心评价
 4. 已存在的 `ai-edited-articles/<分类>/<文章目录>/notes.md`
 

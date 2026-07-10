@@ -244,20 +244,6 @@ def dir_order(dir_name: str) -> int:
     return int(match.group(1)) if match else 999
 
 
-def review_order(filename: str) -> int:
-    if filename == "review.md":
-        return 0
-    match = re.match(r"^review_v(\d+)\.md$", filename)
-    return int(match.group(1)) if match else 999
-
-
-def review_label(filename: str) -> str:
-    if filename == "review.md":
-        return "评价"
-    match = re.match(r"^review_v(\d+)\.md$", filename)
-    return f"评价 v{match.group(1)}" if match else filename.removesuffix(".md")
-
-
 def ai_edited_group(dir_name: str) -> str:
     if dir_name.startswith("散篇-"):
         return "散篇"
@@ -703,10 +689,7 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
             cover_rel_path = cover_path.resolve().as_posix()
         excerpt = markdown_excerpt(content)
         group = catalog_group(article_dir.name)
-        reviews = sorted(
-            [path.name for path in article_dir.glob("review*.md") if re.match(r"^review(?:_v\d+)?\.md$", path.name)],
-            key=lambda name: (review_order(name), name),
-        )
+        reviews = ["review.md"] if (article_dir / "review.md").is_file() else []
 
         entries.append((date, title, author, rel_path, cover_rel_path, excerpt, group, reviews, article_dir))
 
@@ -744,7 +727,7 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
                     review_rel_path = review_path.relative_to(repo_root).as_posix()
                 except ValueError:
                     review_rel_path = review_path.resolve().as_posix()
-                review_links.append(f'<a href="#/{markdown_link_target(review_rel_path)}">{html.escape(review_label(filename))}</a>')
+                review_links.append(f'<a href="#/{markdown_link_target(review_rel_path)}">评价</a>')
             action_links = [f'<a href="#/{safe_rel_path}">正文</a>', *review_links]
             edited_path = ai_edited_path(repo_root, article_dir.name)
             if edited_path.exists():
