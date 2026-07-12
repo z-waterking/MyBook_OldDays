@@ -10,6 +10,39 @@
 
 ---
 
+## 2026-07-12 · 全站审阅、故障降级与维护体系
+
+- **类型：** 全站审阅 / 可访问性 / 性能与韧性 / 维护自动化
+- **状态：** 已完成
+- **关联提交：** 本条所在提交 · `feat: harden site and document maintenance`
+
+### 涉及范围
+
+- `index.html` / `website/footprints.md`：经典蓝色地图视觉、按路由加载、地点档案优先渲染、双层失败降级、键盘焦点、跳到正文和减少动效支持。
+- `scripts/check_site.py`：新增文章、评价、目录、本地链接、足迹与插画的一体化巡检。
+- `.github/workflows/site-check.yml`：在主分支推送和 Pull Request 上自动运行巡检。
+- `website/MAINTENANCE.md`：新增网站维护、生成、验证、发布、降级和回滚的权威操作手册。
+- `README.md` / `AGENTS.md` / `website/README.md` / `website/_sidebar.md`：统一维护入口和目录生成职责。
+
+### 审阅结论与改动
+
+- 修复地图数据或 Leaflet 失败时地点列表可能为空的问题；地点 JSON 成功后先渲染档案，再异步加载地图库。
+- Leaflet CSS/JS 不再由所有页面无条件加载，只在首次进入足迹页时请求。
+- 足迹页从棕灰地图配色切换为经典蓝；范围按钮、路线、六类蓝色标记、图例、弹窗与地点档案使用统一的地图色阶。
+- 地图范围切换改用带 `aria-pressed` 的原生按钮组；数据失败时自动展开带来源文章的静态地点索引。
+- 增加首个键盘焦点“跳到正文”、统一 `focus-visible` 轮廓、搜索框标签及 `prefers-reduced-motion` 支持。
+- 明确 `article_covers.mjs --mode markdown` 是目录与封面的完整发布命令，`save_article.py --catalog-only` 仅用于快速目录重建。
+- 网站维护从人工清单升级为本地脚本与 CI 共用的一套可执行规则。
+
+### 验证
+
+- `python -m py_compile scripts/save_article.py scripts/check_site.py`
+- `python scripts/check_site.py`：38 篇文章/目录、567 个本地链接与图片、31+4 个足迹记录、50 张插画全部通过。
+- Playwright 主动阻断 Leaflet：31 条动态地点档案仍可读；主动阻断足迹 JSON：静态索引自动展开。
+- 桌面和 390px 移动端检查蓝色地图；中国/世界按钮、31/4 个标记、路线、图例和地点列表同步切换。
+- 六个核心路由桌面冒烟检查；首页、目录、地图和维护手册 390px 移动端及减少动效检查。
+- 键盘 Tab 首焦点、跳到正文、断图、空白页面、横向溢出、内联 JavaScript 语法和 `git diff --check` 检查。
+
 ## 2026-07-12 · 强化足迹入口与长页导航
 
 - **类型：** 读者入口 / 地图体验 / 长页导航

@@ -64,6 +64,7 @@ node scripts/article_covers.mjs --mode markdown
 - `website/fun-rankings.md`：趣味榜单。
 - `website/footprints.md`：中国与世界足迹地图、地点档案。
 - `website/image-index.md`：图片索引，自动生成。
+- `website/MAINTENANCE.md`：网站生成、验证、发布、降级与回滚手册。
 
 完整 Docsify 站点入口是根目录 `index.html`，用于 GitHub Pages 原地址。网页相关 Markdown 仍统一放在 `website/`。`website/index.html` 只保留为旧 `/website/` 地址的兼容跳回页，并会保留当前 hash 路由。文章正文保留在 `articles/`，文章图片统一放在 `assets/images/articles/`。
 
@@ -145,6 +146,14 @@ Windows 如果没有 `python`，先安装 Python 3.12+，并在安装器里勾�
 ```bash
 python -m py_compile scripts/save_article.py
 ```
+
+检查网站文章、目录、链接、足迹和插画完整性：
+
+```bash
+python scripts/check_site.py
+```
+
+网站维护与发布的完整步骤见 [website/MAINTENANCE.md](website/MAINTENANCE.md)。
 
 ## 维护约定
 

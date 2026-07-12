@@ -12,6 +12,7 @@
 - `literary-gems.md`：佳句榜。
 - `fun-rankings.md`：趣味榜单。
 - `image-index.md`：图片索引，由脚本自动生成。
+- `MAINTENANCE.md`：网站维护手册，包含生成、验证、发布、降级和回滚流程。
 - `maintenance-log.md`：网站维护日志，记录结构、导航、榜单、脚本和内容入口等重大改动。
 
 ## 路径约定
@@ -20,21 +21,27 @@
 
 `website/index.html` 只负责把旧 `/website/` 地址跳回根入口，并保留 hash 路由。
 
+## 维护入口
+
+完整维护方法见 [网站维护手册](website/MAINTENANCE.md)。每次网站或内容变更后至少运行：
+
+```bash
+python scripts/check_site.py
+```
+
 ## 生成目录
 
 ```bash
 node scripts/article_covers.mjs --mode markdown
 ```
 
-或：
+这是完整发布命令，会刷新目录缩略图、首页派生图片、文章封面块和网站目录。仅需快速重建目录且明确不刷新图片时，可运行：
 
 ```bash
 python scripts/save_article.py --catalog-only
 ```
 
-两个命令都应生成 `website/catalog.md`。
-
-Node 命令还会刷新 `assets/images/_generated/` 下的目录缩略图、首页主视觉和 favicon。
+两个命令都会生成 `website/catalog.md`，但完整发布以 Node 命令为准。
 
 ## 图片索引
 

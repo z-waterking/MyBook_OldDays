@@ -13,7 +13,6 @@
   <link rel="canonical" href="https://z-waterking.github.io/MyBook_OldDays/">
   <link rel="icon" type="image/png" href="assets/images/_generated/favicon.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
   <style>
     :root {
       --theme-color: #5a4a3a;
@@ -22,6 +21,33 @@
     body {
       background: #fafaf8;
       color: #2d2d2d;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 2000;
+      top: 8px;
+      left: 8px;
+      min-height: 38px;
+      padding: 0 14px;
+      border: 2px solid #5a4a3a;
+      border-radius: 4px;
+      background: #fffdf8;
+      color: #3e3328;
+      cursor: pointer;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      transform: translateY(-150%);
+    }
+
+    .skip-link:focus-visible {
+      transform: translateY(0);
+    }
+
+    :where(a, button, input, select, summary, [tabindex]):focus-visible {
+      outline: 3px solid #a66338 !important;
+      outline-offset: 3px !important;
     }
 
     /* 正文 */
@@ -561,20 +587,26 @@
     }
 
     .footprints-page {
+      --map-blue-900: #123f66;
+      --map-blue-700: #1f6299;
+      --map-blue-600: #2f75b5;
+      --map-blue-500: #3388ff;
+      --map-blue-200: #a7cbe8;
+      --map-blue-100: #e8f3fb;
       margin-top: 24px;
     }
 
     .footprints-summary {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      border-top: 1px solid #ddd5c8;
-      border-bottom: 1px solid #ddd5c8;
+      border-top: 1px solid var(--map-blue-200);
+      border-bottom: 1px solid var(--map-blue-200);
     }
 
     .footprints-summary span {
       padding: 17px 18px;
-      border-right: 1px solid #e8e2d8;
-      color: #756b61;
+      border-right: 1px solid #d8e7f2;
+      color: #58748a;
       font-size: 13px;
       text-align: center;
     }
@@ -585,7 +617,7 @@
 
     .footprints-summary strong {
       margin-right: 5px;
-      color: #3a3128;
+      color: var(--map-blue-700);
       font-size: 21px;
     }
 
@@ -598,19 +630,30 @@
     .footprints-tabs button {
       min-height: 36px;
       padding: 0 14px;
-      border: 1px solid #d8cfbf;
+      border: 1px solid var(--map-blue-200);
       border-radius: 4px;
-      background: #fffdf8;
-      color: #615546;
+      background: #f7fbff;
+      color: var(--map-blue-700);
       cursor: pointer;
       font: inherit;
       font-size: 13px;
+      transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
     }
 
     .footprints-tabs button.is-active {
-      border-color: #6d5d49;
-      background: #6d5d49;
+      border-color: var(--map-blue-600);
+      background: var(--map-blue-600);
       color: #fff;
+    }
+
+    .footprints-tabs button:not(:disabled):not(.is-active):hover {
+      border-color: var(--map-blue-600);
+      background: var(--map-blue-100);
+    }
+
+    .footprints-tabs button:disabled {
+      cursor: wait;
+      opacity: 0.58;
     }
 
     .footprints-map-shell {
@@ -621,9 +664,9 @@
       width: 100%;
       height: 620px;
       overflow: hidden;
-      border: 1px solid #dcd4c6;
+      border: 1px solid var(--map-blue-200);
       border-radius: 6px;
-      background: #ece9e2;
+      background: var(--map-blue-100);
     }
 
     .footprints-map-hint {
@@ -633,11 +676,11 @@
       right: 14px;
       margin: 0 !important;
       padding: 7px 10px;
-      border: 1px solid rgba(102, 86, 65, 0.28);
+      border: 1px solid rgba(47, 117, 181, 0.34);
       border-radius: 4px;
-      background: rgba(255, 253, 248, 0.92);
-      box-shadow: 0 3px 12px rgba(47, 39, 30, 0.13);
-      color: #594b3b;
+      background: rgba(247, 251, 255, 0.94);
+      box-shadow: 0 3px 12px rgba(31, 98, 153, 0.16);
+      color: var(--map-blue-900);
       font-size: 12px;
       font-weight: 700;
       line-height: 1.4;
@@ -646,8 +689,19 @@
 
     .footprints-map-note {
       margin: 8px 0 0 !important;
-      color: #8b8176;
+      color: #5d7891;
       font-size: 12px;
+    }
+
+    .footprints-map-status {
+      display: grid;
+      min-height: 100%;
+      place-items: center;
+      margin: 0 !important;
+      padding: 24px;
+      color: #466a89;
+      font-size: 14px;
+      text-align: center;
     }
 
     .footprints-marker {
@@ -655,20 +709,30 @@
       height: 14px;
       border: 2px solid #fff;
       border-radius: 50%;
-      background: #7d6a51;
-      box-shadow: 0 1px 5px rgba(31, 27, 22, 0.35);
+      background: var(--map-blue-500);
+      box-shadow: 0 1px 6px rgba(18, 63, 102, 0.46);
     }
 
-    .footprints-marker[data-kind="life"] { background: #a64f42; }
-    .footprints-marker[data-kind="study"] { background: #426f8f; }
-    .footprints-marker[data-kind="work"] { background: #7d6430; }
-    .footprints-marker[data-kind="choice"] { background: #745484; }
-    .footprints-marker[data-kind="travel"] { background: #3f7a62; }
-    .footprints-marker[data-kind="transit"] { background: #8b8176; }
+    .footprints-marker[data-kind="life"] { background: #0f4c81; }
+    .footprints-marker[data-kind="study"] { background: #1e6fb1; }
+    .footprints-marker[data-kind="work"] { background: #2f86c1; }
+    .footprints-marker[data-kind="choice"] { background: #5b8fc5; }
+    .footprints-marker[data-kind="travel"] { background: #168aad; }
+    .footprints-marker[data-kind="transit"] { background: #7aa7c7; }
+
+    .footprints-map .leaflet-control-zoom a {
+      color: var(--map-blue-700);
+    }
+
+    .footprints-map .leaflet-control-zoom,
+    .footprints-map .leaflet-control-layers {
+      border-color: rgba(47, 117, 181, 0.32);
+    }
 
     .leaflet-popup-content-wrapper {
+      border: 1px solid #c5d9e8;
       border-radius: 5px;
-      box-shadow: 0 5px 20px rgba(35, 30, 24, 0.2);
+      box-shadow: 0 5px 20px rgba(18, 63, 102, 0.22);
     }
 
     .footprints-popup strong,
@@ -679,24 +743,24 @@
     }
 
     .footprints-popup strong {
-      color: #302921;
+      color: var(--map-blue-900);
       font-size: 14px;
     }
 
     .footprints-popup small {
       margin-top: 2px;
-      color: #8a7c6c;
+      color: #617b91;
     }
 
     .footprints-popup span {
       margin-top: 6px;
-      color: #5a524a;
+      color: #3f566a;
       line-height: 1.55;
     }
 
     .footprints-popup a {
       margin-top: 7px;
-      color: #745b3e !important;
+      color: #1d6fa5 !important;
     }
 
     .footprints-legend {
@@ -704,7 +768,7 @@
       flex-wrap: wrap;
       gap: 8px 15px;
       margin-top: 16px;
-      color: #70665d;
+      color: #526f88;
       font-size: 12px;
     }
 
@@ -714,16 +778,16 @@
       height: 9px;
       margin-right: 6px;
       border-radius: 50%;
-      background: #7d6a51;
+      background: var(--map-blue-500);
       content: "";
     }
 
-    .footprints-legend span[data-kind="life"]::before { background: #a64f42; }
-    .footprints-legend span[data-kind="study"]::before { background: #426f8f; }
-    .footprints-legend span[data-kind="work"]::before { background: #7d6430; }
-    .footprints-legend span[data-kind="choice"]::before { background: #745484; }
-    .footprints-legend span[data-kind="travel"]::before { background: #3f7a62; }
-    .footprints-legend span[data-kind="transit"]::before { background: #8b8176; }
+    .footprints-legend span[data-kind="life"]::before { background: #0f4c81; }
+    .footprints-legend span[data-kind="study"]::before { background: #1e6fb1; }
+    .footprints-legend span[data-kind="work"]::before { background: #2f86c1; }
+    .footprints-legend span[data-kind="choice"]::before { background: #5b8fc5; }
+    .footprints-legend span[data-kind="travel"]::before { background: #168aad; }
+    .footprints-legend span[data-kind="transit"]::before { background: #7aa7c7; }
 
     .footprints-list-section {
       margin-top: 48px;
@@ -735,18 +799,18 @@
       justify-content: space-between;
       gap: 16px;
       padding-bottom: 10px;
-      border-bottom: 1px solid #dcd4c6;
+      border-bottom: 1px solid var(--map-blue-200);
     }
 
     .footprints-list-head p {
       margin: 0 !important;
-      color: #3a3128;
+      color: var(--map-blue-700);
       font-size: 20px;
       font-weight: 700;
     }
 
     .footprints-list-head label {
-      color: #7b7066;
+      color: #58748a;
       font-size: 12px;
     }
 
@@ -754,10 +818,10 @@
       min-height: 32px;
       margin-left: 7px;
       padding: 0 8px;
-      border: 1px solid #d8cfbf;
+      border: 1px solid var(--map-blue-200);
       border-radius: 4px;
-      background: #fffdf8;
-      color: #4d443a;
+      background: #f7fbff;
+      color: var(--map-blue-700);
     }
 
     .footprints-list {
@@ -771,7 +835,7 @@
       grid-template-columns: 82px minmax(0, 1fr);
       gap: 12px;
       padding: 18px 0;
-      border-bottom: 1px solid #ebe6dd;
+      border-bottom: 1px solid #dce9f2;
     }
 
     .footprints-item-meta small,
@@ -780,20 +844,20 @@
     }
 
     .footprints-item-meta small {
-      color: #9a8260;
+      color: #5e87a6;
       font-size: 11px;
     }
 
     .footprints-item-meta strong {
       margin-top: 3px;
-      color: #3c342c;
+      color: #214f72;
       font-size: 14px;
       line-height: 1.45;
     }
 
     .footprints-item p {
       margin: 0 !important;
-      color: #6c645c;
+      color: #4b6274;
       font-size: 13px;
       line-height: 1.65;
     }
@@ -801,9 +865,39 @@
     .footprints-item a {
       display: inline-block;
       margin-top: 5px;
-      color: #775f42 !important;
+      color: #176ca4 !important;
       font-size: 12px;
       text-decoration: none !important;
+    }
+
+    .footprints-static-index {
+      margin-top: 28px;
+      padding: 12px 16px;
+      border: 1px solid #c9dce9;
+      border-radius: 5px;
+      background: #f3f9fd;
+      color: #4b667b;
+      font-size: 13px;
+    }
+
+    .footprints-static-index summary {
+      color: #214f72;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .footprints-static-index[open] summary {
+      margin-bottom: 12px;
+    }
+
+    .footprints-static-index p {
+      margin: 7px 0 !important;
+      line-height: 1.75;
+    }
+
+    .footprints-static-index.is-fallback {
+      border-color: #6da4cb;
+      background: #edf7fd;
     }
 
     /* 长榜单章节导航 */
@@ -1137,6 +1231,17 @@
       opacity: 1;
       pointer-events: auto;
       transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
 
     .sidebar-nav > ul > li > p > strong {
@@ -1619,6 +1724,7 @@
   </style>
 </head>
 <body>
+  <button class="skip-link" type="button">跳到正文</button>
   <div id="app">加载中...</div>
   <script>
     window.$docsify = {
@@ -1638,6 +1744,17 @@
       },
       auto2top: true,
       plugins: [
+        function enhanceAccessibility(hook) {
+          hook.doneEach(function () {
+            var content = document.querySelector('.content');
+            if (content) {
+              content.id = 'main-content';
+              content.setAttribute('tabindex', '-1');
+            }
+            var search = document.querySelector('.search input');
+            if (search) search.setAttribute('aria-label', '搜索站内文章');
+          });
+        },
         function hideFrontMatter(hook) {
           hook.beforeEach(function (content) {
             return content.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n+/, '');
@@ -1699,7 +1816,8 @@
             select.onchange = function () {
               var target = document.getElementById(select.value);
               if (!target) return;
-              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+              target.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
               var baseHash = window.location.hash.replace(/\?id=.*$/, '');
               window.history.replaceState(null, '', baseHash + '?id=' + encodeURIComponent(target.id));
             };
@@ -1720,6 +1838,49 @@
         },
         function renderFootprints(hook) {
           var footprintMap;
+          var leafletPromise;
+
+          function loadResource(element, parent) {
+            return new Promise(function (resolve, reject) {
+              element.onload = resolve;
+              element.onerror = function () { reject(new Error('无法加载 ' + (element.href || element.src))); };
+              parent.appendChild(element);
+            });
+          }
+
+          function loadLeaflet() {
+            if (window.L) return Promise.resolve(window.L);
+            if (leafletPromise) return leafletPromise;
+
+            var stylesheet = document.createElement('link');
+            stylesheet.id = 'leaflet-styles';
+            stylesheet.rel = 'stylesheet';
+            stylesheet.href = 'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css';
+
+            var script = document.createElement('script');
+            script.id = 'leaflet-script';
+            script.src = 'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js';
+
+            var resources = Promise.all([
+              loadResource(stylesheet, document.head),
+              loadResource(script, document.body)
+            ]).then(function () {
+              if (!window.L) throw new Error('Leaflet 初始化失败');
+              return window.L;
+            });
+
+            var timeout = new Promise(function (_, reject) {
+              setTimeout(function () { reject(new Error('Leaflet 加载超时')); }, 10000);
+            });
+
+            leafletPromise = Promise.race([resources, timeout]).catch(function (error) {
+              document.getElementById('leaflet-styles')?.remove();
+              document.getElementById('leaflet-script')?.remove();
+              leafletPromise = null;
+              throw error;
+            });
+            return leafletPromise;
+          }
 
           function escapeHtml(value) {
             return String(value || '')
@@ -1764,39 +1925,47 @@
           }
 
           hook.doneEach(function () {
+            if (footprintMap) {
+              footprintMap.remove();
+              footprintMap = null;
+            }
             var page = document.querySelector('.footprints-page');
             if (!page) return;
             var mapElement = document.getElementById('footprints-map');
             var listElement = document.getElementById('footprints-list');
             var filterElement = document.getElementById('footprints-filter');
+            var staticIndex = document.getElementById('footprints-static-index');
+
+            function showMapStatus(message) {
+              mapElement.innerHTML = '<p class="footprints-map-status" role="status">' + escapeHtml(message) + '</p>';
+              mapElement.setAttribute('aria-busy', 'false');
+            }
+
             fetch(page.dataset.source)
               .then(function (response) {
                 if (!response.ok) throw new Error('Footprint data HTTP ' + response.status);
                 return response.json();
               })
               .then(function (data) {
-                if (typeof L === 'undefined') {
-                  mapElement.innerHTML = '<p style="padding:24px;color:#746b62">地图暂时无法加载，请使用下方地点列表。</p>';
-                  renderList(listElement, data.china, 'all');
-                  filterElement.onchange = function () {
-                    renderList(listElement, data.china, filterElement.value);
-                  };
-                  return;
-                }
-                if (footprintMap) footprintMap.remove();
-                footprintMap = L.map(mapElement, { scrollWheelZoom: false, zoomControl: true });
-                L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-                  maxZoom: 18,
-                  attribution: 'Tiles &copy; Esri'
-                }).addTo(footprintMap);
+                if (!document.body.contains(page)) return;
                 var currentScope = 'china';
                 var layers = [];
 
                 function showScope(scope) {
                   currentScope = scope;
+                  var items = data[scope];
+                  filterElement.value = 'all';
+                  renderList(listElement, items, 'all');
+                  listElement.setAttribute('aria-busy', 'false');
+                  document.querySelectorAll('[data-map-tab]').forEach(function (button) {
+                    var active = button.dataset.mapTab === scope;
+                    button.classList.toggle('is-active', active);
+                    button.setAttribute('aria-pressed', String(active));
+                  });
+                  if (!footprintMap) return;
+
                   layers.forEach(function (layer) { footprintMap.removeLayer(layer); });
                   layers = [];
-                  var items = data[scope];
                   items.forEach(function (item) {
                     var marker = L.marker([item.lat, item.lng], { icon: markerIcon(item.kind) })
                       .bindPopup(popupHtml(item))
@@ -1806,35 +1975,56 @@
                   var route = scope === 'china' ? data.routes.china : data.routes.spain;
                   if (route && route.length) {
                     var line = L.polyline(route, {
-                      color: scope === 'china' ? '#8a6b45' : '#3f6f8e',
-                      weight: 2,
-                      opacity: 0.55,
+                      color: '#2f75b5',
+                      weight: 3,
+                      opacity: 0.78,
                       dashArray: '6 7'
                     }).addTo(footprintMap);
                     layers.push(line);
                   }
                   var bounds = L.latLngBounds(items.map(function (item) { return [item.lat, item.lng]; }));
                   footprintMap.fitBounds(bounds, { padding: [28, 28], maxZoom: scope === 'china' ? 5 : 4 });
-                  filterElement.value = 'all';
-                  renderList(listElement, items, 'all');
-                  document.querySelectorAll('[data-map-tab]').forEach(function (button) {
-                    var active = button.dataset.mapTab === scope;
-                    button.classList.toggle('is-active', active);
-                    button.setAttribute('aria-selected', String(active));
-                  });
                   setTimeout(function () { footprintMap.invalidateSize(); }, 0);
                 }
 
                 document.querySelectorAll('[data-map-tab]').forEach(function (button) {
+                  button.disabled = false;
                   button.onclick = function () { showScope(button.dataset.mapTab); };
                 });
+                filterElement.disabled = false;
                 filterElement.onchange = function () {
                   renderList(listElement, data[currentScope], filterElement.value);
                 };
                 showScope('china');
+
+                loadLeaflet()
+                  .then(function () {
+                    if (!document.body.contains(page)) return;
+                    mapElement.innerHTML = '';
+                    footprintMap = L.map(mapElement, { scrollWheelZoom: false, zoomControl: true });
+                    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+                      maxZoom: 18,
+                      attribution: 'Tiles &copy; Esri'
+                    }).addTo(footprintMap);
+                    mapElement.setAttribute('aria-busy', 'false');
+                    showScope(currentScope);
+                  })
+                  .catch(function (error) {
+                    if (document.body.contains(page)) {
+                      showMapStatus('地图暂时无法加载，地点档案仍可正常阅读。');
+                    }
+                    console.warn(error);
+                  });
               })
               .catch(function (error) {
-                mapElement.innerHTML = '<p style="padding:24px;color:#746b62">地图暂时无法加载，请使用下方地点列表。</p>';
+                showMapStatus('地点数据暂时无法加载，请使用下方静态地点索引。');
+                listElement.innerHTML = '<p class="footprints-map-status" role="status">动态地点档案暂时不可用。</p>';
+                listElement.setAttribute('aria-busy', 'false');
+                filterElement.disabled = true;
+                if (staticIndex) {
+                  staticIndex.open = true;
+                  staticIndex.classList.add('is-fallback');
+                }
                 console.error(error);
               });
           });
@@ -1993,18 +2183,23 @@
       ],
     }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
   <button class="back-to-top" type="button" aria-label="回到顶部" title="回到顶部">↑</button>
   <script>
-    (function setupBackToTop() {
+    (function setupPageUtilities() {
+      var skipLink = document.querySelector('.skip-link');
       var button = document.querySelector('.back-to-top');
+      skipLink.addEventListener('click', function () {
+        var content = document.getElementById('main-content');
+        if (content) content.focus();
+      });
       function sync() {
         button.classList.toggle('is-visible', window.scrollY > 700);
       }
       button.addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
       });
       window.addEventListener('scroll', sync, { passive: true });
       sync();

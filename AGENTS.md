@@ -14,7 +14,7 @@
 - `ai-edited-articles/`：AI 修改稿工作区。改稿不能覆盖 `articles/` 原文，目录关系记录在 `ai-edited-articles/mapping.md`。
 - `book/`：成书工作区。可用于重排、删选、补写和分卷规划，但不替代原文归档。
 - `website/`：Docsify 展示层内容目录。目录页、评分榜、佳句榜、趣味榜单等网页 Markdown 都放这里。
-- `scripts/`：维护脚本。当前实际存在 `save_article.py` 和 `article_covers.mjs`。
+- `scripts/`：文章抓取、封面、图片索引、插画和网站巡检脚本。
 - 根目录 `index.html`：GitHub Pages / Docsify 正式入口。
 
 ## 关键路径约定
@@ -22,10 +22,11 @@
 - 网站页面统一放在 `website/`，不要再把 `catalog.md`、`ranking.md`、`literary-gems.md`、`fun-rankings.md` 散放到根目录。
 - `website/index.html` 只是旧 `/website/` 地址的兼容跳回页，正式入口不要放到 `website/` 下。
 - 网站页里的文章链接按仓库根路径写，例如 `articles/合集-01-我在河津上幼儿园/index.md`。
-- `website/catalog.md` 是自动生成目录，可由 `save_article.py` 或 `article_covers.mjs` 更新。
+- `website/catalog.md` 是自动生成目录。完整发布以 `article_covers.mjs --mode markdown` 为准；`save_article.py --catalog-only` 只用于不刷新图片的快速重建。
 - `website/ranking.md`、`website/literary-gems.md`、`website/fun-rankings.md` 是人工整理榜单，新增文章后必须手动复评并同步。
 - `website/image-index.md` 是图片索引，由 `scripts/generate_image_index.mjs` 生成，记录文章图片和其他共享图片的引用路径。
 - `website/maintenance-log.md` 是网站维护日志。凡影响网站结构、导航入口、目录生成、榜单统计、文章归档流程、AI 改稿入口或部署入口的大改动，都要追加一条 Log。
+- `website/MAINTENANCE.md` 是网站生成、验证、发布、降级和回滚的权威操作手册。
 - 文章目录命名遵循 `合集-01-标题` 或 `散篇-01-标题`。新增文章不要随意改变已有编号体系。
 
 ## 常用命令
@@ -78,6 +79,12 @@ node scripts/generate_image_index.mjs
 
 ```bash
 python -m py_compile scripts/save_article.py
+```
+
+检查网站完整性：
+
+```bash
+python scripts/check_site.py
 ```
 
 ## 新增文章完整流程
@@ -140,6 +147,7 @@ python -m py_compile scripts/save_article.py
 - `scripts/update_ai_edit_notes.mjs` 会根据原文和 AI 改稿生成每篇 `notes.md` 的实际改动清单。
 - `scripts/generate_site_illustrations.ps1` 按 `scripts/illustration_manifest.json` 调用全局 Azure GPT Image skill，生成佳句榜和趣味榜缺失插画；默认跳过已有文件。
 - `scripts/prepare_site_illustrations.py` 将插画原图转为 960×640 WebP，并按清单把图片块注入 `website/literary-gems.md` 和 `website/fun-rankings.md`。
+- `scripts/check_site.py` 检查文章与评价、目录条目、本地链接、足迹数据和插画资产之间的一致性。
 - `save_article.py` 和 `article_covers.mjs` 都可能改动 `website/catalog.md`，后者在 `--mode markdown` 下还会改动多篇 `articles/*/index.md` 的封面块。
 
 ## 图片索引与复用规则
@@ -162,6 +170,7 @@ python -m py_compile scripts/save_article.py
 
 ## 验证清单
 
+- 网站或内容改动后运行 `python scripts/check_site.py`。
 - Python 逻辑改动后运行 `python -m py_compile scripts/save_article.py`，并执行对应命令做行为验证。
 - 目录、封面、AI 改稿入口变化后运行 `node scripts/article_covers.mjs --mode markdown`。
 - 图片新增、复制或路径规则变化后运行 `node scripts/generate_image_index.mjs`。

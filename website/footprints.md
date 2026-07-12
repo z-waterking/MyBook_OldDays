@@ -9,13 +9,15 @@
     <span><strong>6</strong> 类人生足迹</span>
   </div>
 
-  <div class="footprints-tabs" role="tablist" aria-label="地图范围">
-    <button type="button" class="is-active" data-map-tab="china" role="tab" aria-selected="true">中国足迹</button>
-    <button type="button" data-map-tab="world" role="tab" aria-selected="false">世界足迹</button>
+  <div class="footprints-tabs" role="group" aria-label="地图范围">
+    <button type="button" class="is-active" data-map-tab="china" aria-pressed="true" disabled>中国足迹</button>
+    <button type="button" data-map-tab="world" aria-pressed="false" disabled>世界足迹</button>
   </div>
 
   <div class="footprints-map-shell">
-    <div id="footprints-map" class="footprints-map" role="region" aria-label="作者足迹交互地图"></div>
+    <div id="footprints-map" class="footprints-map" role="region" aria-label="作者足迹交互地图" aria-busy="true">
+      <p class="footprints-map-status" role="status">正在加载地图与地点档案…</p>
+    </div>
     <p class="footprints-map-hint">点击标记，打开背后的文章</p>
   </div>
   <p class="footprints-map-note">点击标记查看地点、时期和来源文章。地图需要联网加载底图；下方列表始终可读。</p>
@@ -33,7 +35,7 @@
     <div class="footprints-list-head">
       <p>地点档案</p>
       <label>筛选
-        <select id="footprints-filter">
+        <select id="footprints-filter" disabled>
           <option value="all">全部足迹</option>
           <option value="life">长期生活</option>
           <option value="study">求学</option>
@@ -44,18 +46,15 @@
         </select>
       </label>
     </div>
-    <div id="footprints-list" class="footprints-list" aria-live="polite"></div>
+    <div id="footprints-list" class="footprints-list" aria-live="polite" aria-busy="true"></div>
   </section>
 </div>
 
-<noscript>
-
-## 无脚本阅读
-
-- **山西：** 河津、运城、康杰中学、平遥古城、皇城相府
-- **粤港澳：** 珠海、东澳岛、斗门、中山、佛山里水、广州、深圳、香港、澳门
-- **北京与杭州：** 北京、798、杭州
-- **旅途：** 华山、西安、凤凰、武汉、成都、青城山、峨眉山、厦门、阳朔、济南、上海、苏州
-- **西班牙：** 马拉加、希布拉法罗城堡、内尔哈方向
-
-</noscript>
+<details id="footprints-static-index" class="footprints-static-index">
+  <summary>静态地点索引（离线或地图不可用时展开）</summary>
+  <p><strong>山西：</strong><a href="#/articles/合集-01-我在河津上幼儿园/index.md">河津</a>、<a href="#/articles/合集-03-我在运中念初中/index.md">运城</a>、<a href="#/articles/合集-05-我在康杰念高中（怀昔）/index.md">康杰中学</a>、<a href="#/articles/合集-08-我在珠海上大学（风途）/index.md">平遥古城、皇城相府</a></p>
+  <p><strong>粤港澳：</strong><a href="#/articles/合集-06-我在珠海上大学（新序）/index.md">珠海、东澳岛</a>、<a href="#/articles/合集-08-我在珠海上大学（风途）/index.md">斗门、中山、深圳、香港、澳门</a>、<a href="#/articles/合集-11-我在佛山做家教/index.md">佛山里水</a>、<a href="#/articles/合集-13-我在广州做游戏/index.md">广州</a></p>
+  <p><strong>工作与生活：</strong><a href="#/articles/合集-14-我在阿里做实习（推荐算法版）/index.md">杭州</a>、<a href="#/articles/合集-16-我在北京住合租屋/index.md">北京</a>、<a href="#/articles/合集-19-我在北京大厂实习/index.md">北京 798</a></p>
+  <p><strong>国内旅途：</strong><a href="#/articles/合集-08-我在珠海上大学（风途）/index.md">华山、凤凰、武汉、成都、青城山、峨眉山、厦门、阳朔、上海、苏州、昆山与重庆</a>、<a href="#/articles/合集-09-我在珠海上大学（忽然之间）/index.md">济南</a>、<a href="#/articles/合集-18-我的第二次考公经历/index.md">西安</a></p>
+  <p><strong>西班牙：</strong><a href="#/articles/合集-20-我在西班牙骑自行车/index.md">马拉加、希布拉法罗城堡、内尔哈方向</a></p>
+</details>

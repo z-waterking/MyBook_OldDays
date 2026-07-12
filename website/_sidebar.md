@@ -55,5 +55,6 @@
   - [18 丧尸躲避指南](articles/散篇-18-丧尸躲避指南/index.md)
 
 - **维护**
+  - [网站维护手册](website/MAINTENANCE.md)
   - [成书工作区](book/README.md)
   - [网站维护日志](website/maintenance-log.md)
