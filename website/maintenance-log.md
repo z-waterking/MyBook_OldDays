@@ -10,6 +10,33 @@
 
 ---
 
+## 2026-07-12 · 新增书籍首页并优化目录性能
+
+- **类型：** 读者入口 / 信息架构 / 页面性能
+- **状态：** 已完成
+- **关联提交：** 本条所在提交 · `feat: add reader-oriented book homepage`
+
+### 涉及范围
+
+- `website/home.md`：新增书籍扉页式首页、人生路径、推荐阅读与专题入口。
+- `website/_sidebar.md`：改用“首页、全部文章、按卷阅读、编辑精选、佳句选读、趣味索引”等读者语言。
+- `index.html`：根路由切换到首页，新增主页样式、分享元信息、canonical 和 favicon。
+- `scripts/generate_cover_thumbnails.py` / `scripts/article_covers.mjs`：生成并使用轻量 WebP 缩略图。
+
+### 改动摘要
+
+- 根地址不再直接展示 38 篇全目录；全部文章保留为二级页。
+- 首页以总序已有文字和代表性封面为核心，提供从头阅读、编辑精选、全部文章及按人生阶段进入的路径。
+- 目录封面从 38 张原图约 86.6 MB，改为 38 张 480×320 WebP 并启用懒加载；全部网站派生图片约 0.87 MB。
+- 更新成书工作区中过时的文章、评价和 AI 改稿统计。
+
+### 验证
+
+- `python scripts/generate_cover_thumbnails.py`
+- `node scripts/article_covers.mjs --mode markdown`
+- 桌面与移动端 Playwright 截图、布局和断链检查
+- 目录图片请求量与资源大小检查
+
 ## 2026-07-12 · 文章图片集中迁移到共享资产目录
 
 - **类型：** 图片资产结构 / 归档流程 / AI 改稿引用

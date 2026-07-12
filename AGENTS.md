@@ -66,6 +66,8 @@ python scripts/save_article.py --catalog-only
 node scripts/article_covers.mjs --mode markdown
 ```
 
+该命令会先运行 `scripts/generate_cover_thumbnails.py`，刷新目录缩略图和首页派生图片。
+
 重建图片索引：
 
 ```bash
@@ -131,8 +133,9 @@ python -m py_compile scripts/save_article.py
 ## 脚本说明
 
 - `scripts/save_article.py` 负责抓取微信公众号文章、下载图片、转换 Markdown、生成 `website/catalog.md`。
-- `scripts/article_covers.mjs --mode markdown` 会给每篇文章插入或刷新封面 `<img class="article-cover">` 块，并重建 `website/catalog.md`。
+- `scripts/article_covers.mjs --mode markdown` 会刷新轻量封面缩略图、给每篇文章插入或刷新封面 `<img class="article-cover">` 块，并重建 `website/catalog.md`。
 - `scripts/article_covers.mjs --mode generate` 会调用 Azure OpenAI 图片接口生成封面，需要 `AZURE_OPENAI_API_KEY` 或交互输入 API key；不要在日志或回复中暴露密钥。
+- `scripts/generate_cover_thumbnails.py` 会从文章原始封面生成目录 WebP、首页主视觉和 favicon；依赖 Pillow。
 - `scripts/generate_image_index.mjs` 会扫描 `assets/images/articles/` 和其他 `assets/images/` 子目录，生成 `website/image-index.md`。
 - `scripts/update_ai_edit_notes.mjs` 会根据原文和 AI 改稿生成每篇 `notes.md` 的实际改动清单。
 - 两个脚本都可能改动 `website/catalog.md`，`article_covers.mjs --mode markdown` 还会改动多篇 `articles/*/index.md` 的封面块。

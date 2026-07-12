@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <title>旧日之书</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="从小城少年到互联网打工人，三十八篇文章记录地方、学校、工作、关系与选择如何塑造一个普通人。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="旧日之书">
+  <meta property="og:description" content="那些旧日确实发生过，而现在的我，也确实是从那里走来的。">
+  <meta property="og:image" content="https://z-waterking.github.io/MyBook_OldDays/assets/images/_generated/home-hero.webp">
+  <meta property="og:url" content="https://z-waterking.github.io/MyBook_OldDays/">
+  <link rel="canonical" href="https://z-waterking.github.io/MyBook_OldDays/">
+  <link rel="icon" type="image/png" href="assets/images/_generated/favicon.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
     :root {
@@ -116,6 +124,362 @@
       object-fit: cover;
       margin: 12px 0 28px;
       border-radius: 6px;
+    }
+
+    /* 首页 */
+    .markdown-section:has(.book-home) {
+      max-width: 1080px !important;
+      padding-top: 32px !important;
+    }
+
+    .book-home {
+      letter-spacing: 0;
+    }
+
+    .book-home-hero {
+      position: relative;
+      display: flex;
+      min-height: 520px;
+      align-items: flex-end;
+      overflow: hidden;
+      border-radius: 6px;
+      background: #20221d;
+      color: #fff;
+    }
+
+    .book-home-hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0 !important;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 0 !important;
+    }
+
+    .book-home-hero::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background: linear-gradient(90deg, rgba(19, 19, 16, 0.78) 0%, rgba(19, 19, 16, 0.42) 48%, rgba(19, 19, 16, 0.04) 78%);
+      pointer-events: none;
+    }
+
+    .book-home-hero-copy {
+      position: relative;
+      z-index: 1;
+      width: min(650px, 72%);
+      padding: 42px 46px 44px;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.8);
+    }
+
+    .book-home-kicker,
+    .book-home-section-label {
+      margin: 0 0 8px !important;
+      color: #8b6914;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0 !important;
+    }
+
+    .book-home-kicker {
+      color: #fff7dd;
+    }
+
+    .book-home h1 {
+      margin: 0 0 14px !important;
+      padding: 0 !important;
+      border: 0 !important;
+      color: #fff !important;
+      font-family: "STKaiti", "KaiTi", "FangSong", serif;
+      font-size: 58px !important;
+      font-weight: 700 !important;
+      line-height: 1.08 !important;
+      letter-spacing: 0 !important;
+    }
+
+    .book-home-lead {
+      max-width: 560px;
+      margin: 0 !important;
+      color: #fff !important;
+      font-family: "STKaiti", "KaiTi", "FangSong", serif;
+      font-size: 22px;
+      line-height: 1.7;
+    }
+
+    .book-home-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .book-home-actions a {
+      display: inline-flex;
+      min-height: 38px;
+      align-items: center;
+      padding: 0 15px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 4px;
+      color: #fff !important;
+      background: rgba(28, 28, 24, 0.42);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none !important;
+      text-shadow: none;
+    }
+
+    .book-home-actions a:hover,
+    .book-home-actions .book-home-primary {
+      border-color: #fff;
+      background: #fff;
+      color: #2d261d !important;
+    }
+
+    .book-home-intro {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 42px;
+      padding: 48px 34px 28px;
+      border-bottom: 1px solid #e5dfd4;
+    }
+
+    .book-home-intro p {
+      margin: 0 !important;
+      color: #49433b;
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .book-home-path,
+    .book-home-featured,
+    .book-home-explore {
+      margin-top: 58px;
+    }
+
+    .book-home-timeline {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      margin-top: 16px;
+      border-top: 1px solid #dcd4c6;
+      border-bottom: 1px solid #dcd4c6;
+    }
+
+    .book-home-timeline a {
+      display: block;
+      min-width: 0;
+      padding: 18px 14px 20px;
+      border-right: 1px solid #e8e2d8;
+      color: #332d26 !important;
+      text-decoration: none !important;
+    }
+
+    .book-home-timeline a:last-child {
+      border-right: 0;
+    }
+
+    .book-home-timeline a:hover {
+      background: #f3f0e9;
+    }
+
+    .book-home-timeline span,
+    .book-home-timeline small,
+    .book-home-timeline strong {
+      display: block;
+    }
+
+    .book-home-timeline span {
+      color: #a38d6d;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .book-home-timeline strong {
+      margin-top: 5px;
+      overflow-wrap: anywhere;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .book-home-timeline small {
+      margin-top: 4px;
+      color: #83786c;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .book-home-section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #dcd4c6;
+    }
+
+    .book-home-section-head h2 {
+      margin: 0 !important;
+      padding: 0 !important;
+      border: 0 !important;
+      font-size: 25px !important;
+    }
+
+    .book-home-section-head > a {
+      color: #6c5c47 !important;
+      font-size: 13px;
+      text-decoration: none !important;
+    }
+
+    .book-home-featured-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .book-home-feature {
+      display: grid;
+      grid-template-columns: 152px minmax(0, 1fr);
+      min-height: 118px;
+      overflow: hidden;
+      border: 1px solid #e2dcd1;
+      border-radius: 6px;
+      background: #fff;
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+
+    .book-home-feature:hover {
+      border-color: #c2b49c;
+    }
+
+    .book-home-feature img {
+      width: 152px;
+      height: 100%;
+      min-height: 118px;
+      margin: 0 !important;
+      object-fit: cover;
+      border-radius: 0 !important;
+    }
+
+    .book-home-feature span {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      justify-content: center;
+      padding: 15px 17px;
+    }
+
+    .book-home-feature small,
+    .book-home-feature strong,
+    .book-home-feature em {
+      display: block;
+      letter-spacing: 0;
+    }
+
+    .book-home-feature small {
+      color: #94764b;
+      font-size: 11px;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .book-home-feature strong {
+      margin-top: 4px;
+      color: #2d2924;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .book-home-feature em {
+      margin-top: 5px;
+      color: #746d65;
+      font-size: 12px;
+      font-style: normal;
+      line-height: 1.55;
+    }
+
+    .book-home-feature-wide {
+      grid-column: 1 / -1;
+      grid-template-columns: 270px minmax(0, 1fr);
+      min-height: 170px;
+    }
+
+    .book-home-feature-wide img {
+      width: 270px;
+      min-height: 170px;
+    }
+
+    .book-home-feature-wide strong {
+      font-size: 20px;
+    }
+
+    .book-home-quote {
+      margin: 64px 0 0;
+      padding: 42px 20px;
+      border-top: 1px solid #dcd4c6;
+      border-bottom: 1px solid #dcd4c6;
+      text-align: center;
+    }
+
+    .book-home-quote p {
+      margin: 0 !important;
+      color: #332d26;
+      font-family: "STKaiti", "KaiTi", "FangSong", serif;
+      font-size: 27px;
+      line-height: 1.7;
+    }
+
+    .book-home-quote a {
+      display: inline-block;
+      margin-top: 12px;
+      color: #826b4b !important;
+      font-size: 13px;
+      text-decoration: none !important;
+    }
+
+    .book-home-explore {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+      margin-bottom: 46px;
+      border-top: 1px solid #dcd4c6;
+      border-bottom: 1px solid #dcd4c6;
+    }
+
+    .book-home-explore a {
+      display: block;
+      min-width: 0;
+      padding: 22px 20px;
+      border-right: 1px solid #e2dcd1;
+      color: #2d2924 !important;
+      text-decoration: none !important;
+    }
+
+    .book-home-explore a:last-child {
+      border-right: 0;
+    }
+
+    .book-home-explore a:hover {
+      background: #f3f0e9;
+    }
+
+    .book-home-explore small,
+    .book-home-explore strong {
+      display: block;
+    }
+
+    .book-home-explore small {
+      color: #92764e;
+      font-size: 12px;
+    }
+
+    .book-home-explore strong {
+      margin-top: 5px;
+      overflow-wrap: anywhere;
+      font-size: 15px;
+      line-height: 1.45;
     }
 
     .article-cover-list {
@@ -584,6 +948,153 @@
         padding: 1px 6px;
         font-size: 11px;
       }
+
+      .markdown-section:has(.book-home) {
+        padding: 12px 12px 30px !important;
+      }
+
+      .book-home-hero {
+        min-height: 500px;
+      }
+
+      .book-home-hero-image {
+        object-position: 54% center;
+      }
+
+      .book-home-hero::after {
+        background: linear-gradient(0deg, rgba(18, 18, 15, 0.82) 0%, rgba(18, 18, 15, 0.38) 58%, rgba(18, 18, 15, 0.08) 100%);
+      }
+
+      .book-home-hero-copy {
+        width: 100%;
+        padding: 28px 24px 30px;
+      }
+
+      .book-home h1 {
+        font-size: 42px !important;
+      }
+
+      .book-home-lead {
+        max-width: 330px;
+        font-size: 18px;
+        line-height: 1.65;
+      }
+
+      .book-home-actions {
+        gap: 7px;
+        margin-top: 18px;
+      }
+
+      .book-home-actions a {
+        min-height: 36px;
+        padding: 0 11px;
+        font-size: 13px;
+      }
+
+      .book-home-intro {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 30px 8px 22px;
+      }
+
+      .book-home-intro p {
+        font-size: 15px;
+        line-height: 1.85;
+      }
+
+      .book-home-path,
+      .book-home-featured,
+      .book-home-explore {
+        margin-top: 42px;
+      }
+
+      .book-home-timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .book-home-timeline a {
+        display: grid;
+        grid-template-columns: 34px minmax(0, 1fr) auto;
+        align-items: center;
+        padding: 11px 6px;
+        border-right: 0;
+        border-bottom: 1px solid #ebe5dc;
+      }
+
+      .book-home-timeline a:last-child {
+        border-bottom: 0;
+      }
+
+      .book-home-timeline strong,
+      .book-home-timeline small {
+        margin: 0;
+      }
+
+      .book-home-section-head {
+        align-items: flex-start;
+      }
+
+      .book-home-section-head h2 {
+        font-size: 21px !important;
+      }
+
+      .book-home-featured-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .book-home-feature,
+      .book-home-feature-wide {
+        grid-column: auto;
+        grid-template-columns: 112px minmax(0, 1fr);
+        min-height: 112px;
+      }
+
+      .book-home-feature img,
+      .book-home-feature-wide img {
+        width: 112px;
+        min-height: 112px;
+      }
+
+      .book-home-feature span {
+        padding: 12px 13px;
+      }
+
+      .book-home-feature strong,
+      .book-home-feature-wide strong {
+        font-size: 14px;
+      }
+
+      .book-home-feature em {
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+      }
+
+      .book-home-quote {
+        margin-top: 46px;
+        padding: 32px 12px;
+      }
+
+      .book-home-quote p {
+        font-size: 22px;
+      }
+
+      .book-home-explore {
+        grid-template-columns: 1fr;
+      }
+
+      .book-home-explore a {
+        padding: 16px 8px;
+        border-right: 0;
+        border-bottom: 1px solid #e2dcd1;
+      }
+
+      .book-home-explore a:last-child {
+        border-bottom: 0;
+      }
     }
   </style>
 </head>
@@ -594,8 +1105,11 @@
       name: '旧日之书',
       repo: 'https://github.com/z-waterking/MyBook_OldDays',
       loadSidebar: 'website/_sidebar.md',
+      alias: {
+        '/.*/website/_sidebar.md': '/website/_sidebar.md'
+      },
       loadNavbar: false,
-      homepage: 'website/catalog.md',
+      homepage: 'website/home.md',
       subMaxLevel: 2,
       search: {
         placeholder: '搜索文章...',
@@ -607,6 +1121,13 @@
         function hideFrontMatter(hook) {
           hook.beforeEach(function (content) {
             return content.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n+/, '');
+          });
+        },
+        function keepHomepageTitle(hook) {
+          hook.doneEach(function () {
+            if (!window.location.hash || window.location.hash === '#/') {
+              document.title = '旧日之书';
+            }
           });
         },
         function enhanceSidebar(hook) {

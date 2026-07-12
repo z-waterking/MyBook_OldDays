@@ -685,6 +685,9 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
         except ValueError:
             rel_path = md_file.resolve().as_posix()
         cover_path = repo_root / "assets" / "images" / "articles" / article_dir.name / "cover.png"
+        thumbnail_path = repo_root / "assets" / "images" / "_generated" / "catalog-covers" / f"{article_dir.name}.webp"
+        if thumbnail_path.is_file():
+            cover_path = thumbnail_path
         try:
             cover_rel_path = cover_path.relative_to(repo_root).as_posix()
         except ValueError:
@@ -720,7 +723,7 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
             safe_date = html.escape(date)
             safe_excerpt = html.escape(excerpt)
             lines.append('<div class="article-cover-row">')
-            lines.append(f'<a class="article-cover-thumb" href="#/{safe_rel_path}"><img src="{safe_cover_path}" alt="{safe_title} 封面"></a>')
+            lines.append(f'<a class="article-cover-thumb" href="#/{safe_rel_path}"><img src="{safe_cover_path}" alt="{safe_title} 封面" loading="lazy" decoding="async" width="480" height="320"></a>')
             lines.append('<span class="article-cover-info">')
             review_links = []
             for filename in reviews:
@@ -730,7 +733,7 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
                 except ValueError:
                     review_rel_path = review_path.resolve().as_posix()
                 review_links.append(f'<a href="#/{markdown_link_target(review_rel_path)}">评价</a>')
-            action_links = [f'<a href="#/{safe_rel_path}">正文</a>', *review_links]
+            action_links = [*review_links]
             edited_path = ai_edited_path(repo_root, article_dir.name)
             if edited_path.exists():
                 try:
@@ -743,7 +746,7 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
             lines.append(f'<a class="article-cover-title" href="#/{safe_rel_path}"><strong>{safe_title}</strong></a>')
             lines.append(f'<em>{safe_date}</em>')
             lines.append('</span>')
-            if len(action_links) > 1:
+            if action_links:
                 lines.append(f'<span class="article-cover-actions">{"".join(action_links)}</span>')
             lines.append('</span>')
             lines.append(f'<span class="article-cover-excerpt">{safe_excerpt}</span>')

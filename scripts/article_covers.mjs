@@ -2,12 +2,14 @@
 
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
 import { basename, dirname, join, relative } from 'node:path';
 import { stdin, stdout } from 'node:process';
 
 const ROOT = process.cwd();
 const ARTICLES_DIR = join(ROOT, 'articles');
 const ARTICLE_IMAGES_DIR = join(ROOT, 'assets', 'images', 'articles');
+const CATALOG_COVERS_DIR = join(ROOT, 'assets', 'images', '_generated', 'catalog-covers');
 const AI_EDITED_DIR = join(ROOT, 'ai-edited-articles');
 const WEBSITE_DIR = join(ROOT, 'website');
 const CATALOG = join(WEBSITE_DIR, 'catalog.md');
@@ -112,6 +114,21 @@ function localDate() {
   return `${year}-${month}-${day}`;
 }
 
+function refreshCoverThumbnails() {
+  const script = join(ROOT, 'scripts', 'generate_cover_thumbnails.py');
+  const candidates = [process.env.PYTHON, 'python', 'python3'].filter(Boolean);
+  for (const executable of candidates) {
+    const result = spawnSync(executable, [script], { cwd: ROOT, encoding: 'utf8' });
+    if (result.error?.code === 'ENOENT') continue;
+    if (result.status !== 0) {
+      throw new Error(result.stderr?.trim() || `Thumbnail generator exited with ${result.status}.`);
+    }
+    if (result.stdout?.trim()) console.log(result.stdout.trim());
+    return;
+  }
+  throw new Error('Python was not found. Install Python and dependencies from requirements.txt.');
+}
+
 function coverPrompt(article, dirName) {
   return `Create a bright, premium editorial cover illustration for a Chinese personal essay.\n` +
     `Title: ${article.title}\n` +
@@ -187,7 +204,9 @@ function websiteArticleHref(article) {
 }
 
 function websiteImageHref(article) {
-  return relative(ROOT, join(ARTICLE_IMAGES_DIR, article.dir, 'cover.png')).replace(/\\/g, '/');
+  const thumbnail = join(CATALOG_COVERS_DIR, `${article.dir}.webp`);
+  const imagePath = existsSync(thumbnail) ? thumbnail : join(ARTICLE_IMAGES_DIR, article.dir, 'cover.png');
+  return relative(ROOT, imagePath).replace(/\\/g, '/');
 }
 
 function websiteReviewHref(article, filename) {
@@ -274,10 +293,9 @@ async function updateCatalog(articles) {
     lines.push('<div class="article-cover-list">');
     for (const article of groupedArticles) {
       lines.push('<div class="article-cover-row">');
-      lines.push(`<a class="article-cover-thumb" href="#/${encodePath(websiteArticleHref(article))}"><img src="${encodePath(websiteImageHref(article))}" alt="${escapeHtml(article.title)} 封面"></a>`);
+      lines.push(`<a class="article-cover-thumb" href="#/${encodePath(websiteArticleHref(article))}"><img src="${encodePath(websiteImageHref(article))}" alt="${escapeHtml(article.title)} 封面" loading="lazy" decoding="async" width="480" height="320"></a>`);
       lines.push('<span class="article-cover-info">');
       const actionLinks = [
-        `<a href="#/${encodePath(websiteArticleHref(article))}">正文</a>`,
         ...article.reviews.map((filename) => `<a href="#/${encodePath(websiteReviewHref(article, filename))}">评价</a>`),
       ];
       if (existsSync(aiEditedPath(article))) {
@@ -288,7 +306,7 @@ async function updateCatalog(articles) {
       lines.push(`<a class="article-cover-title" href="#/${encodePath(websiteArticleHref(article))}"><strong>${escapeHtml(article.title)}</strong></a>`);
       lines.push(`<em>${escapeHtml(article.date || '')}</em>`);
       lines.push('</span>');
-      if (actionLinks.length > 1) lines.push(`<span class="article-cover-actions">${actionLinks.join('')}</span>`);
+      if (actionLinks.length > 0) lines.push(`<span class="article-cover-actions">${actionLinks.join('')}</span>`);
       lines.push('</span>');
       lines.push(`<span class="article-cover-excerpt">${escapeHtml(catalogExcerpt(article.excerpt))}</span>`);
       lines.push('</span>');
@@ -333,6 +351,7 @@ async function main() {
   }
 
   if (mode === 'markdown' || mode === 'all') {
+    refreshCoverThumbnails();
     for (const article of articles) {
       const fresh = await readFile(article.mdPath, 'utf8');
       await writeFile(article.mdPath, ensureArticleCover(fresh, article), 'utf8');

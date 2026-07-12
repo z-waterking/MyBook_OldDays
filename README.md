@@ -50,10 +50,13 @@ python scripts/save_article.py --catalog-only
 node scripts/article_covers.mjs --mode markdown
 ```
 
+该命令同时刷新轻量封面缩略图、文章封面块和网站目录。
+
 ## 网站目录
 
 网页相关 Markdown 统一放在 `website/`：
 
+- `website/home.md`：读者首页与阅读导览。
 - `website/catalog.md`：文章目录，自动生成。
 - `website/_sidebar.md`：Docsify 侧边栏。
 - `website/ranking.md`：评分排名。

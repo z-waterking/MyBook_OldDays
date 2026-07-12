@@ -5,6 +5,7 @@
 ## 文件说明
 
 - `index.html`：旧 `/website/` 地址的兼容跳回页，正式入口在根目录 `index.html`。
+- `home.md`：读者首页，提供全书导览、人生路径和推荐阅读。
 - `_sidebar.md`：侧边栏导航。
 - `catalog.md`：文章目录，由脚本自动生成。
 - `ranking.md`：评分排名。
@@ -32,6 +33,8 @@ python scripts/save_article.py --catalog-only
 ```
 
 两个命令都应生成 `website/catalog.md`。
+
+Node 命令还会刷新 `assets/images/_generated/` 下的目录缩略图、首页主视觉和 favicon。
 
 ## 图片索引
 

@@ -91,7 +91,7 @@ async function listSharedImages() {
     : [];
   const imagePaths = [];
   for (const entry of entries) {
-    if (entry.name === 'articles') continue;
+    if (entry.name === 'articles' || entry.name === '_generated') continue;
     const full = join(SHARED_IMAGES_DIR, entry.name);
     if (entry.isDirectory()) imagePaths.push(...await walkImages(full));
     else if (entry.isFile() && IMAGE_EXTS.has(extname(entry.name).toLowerCase())) imagePaths.push(full);

@@ -1,10 +1,11 @@
 <!-- _sidebar.md -->
 
-- [📚 文章目录](/)
-- [📖 文集工作区](book/README.md)
-- [🏅 评分排名](website/ranking.md)
-- [✨ 佳句榜](website/literary-gems.md)
-- [📊 趣味榜单](website/fun-rankings.md)
+- [首页](/)
+- [全部文章](website/catalog.md)
+- [按卷阅读](book/01-成书目录.md)
+- [编辑精选](website/ranking.md)
+- [佳句选读](website/literary-gems.md)
+- [趣味索引](website/fun-rankings.md)
 
 - **合集 · 少年时代**
   - [01 河津上幼儿园](articles/合集-01-我在河津上幼儿园/index.md)
@@ -53,4 +54,5 @@
   - [18 丧尸躲避指南](articles/散篇-18-丧尸躲避指南/index.md)
 
 - **维护**
+  - [成书工作区](book/README.md)
   - [网站维护日志](website/maintenance-log.md)
