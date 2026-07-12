@@ -1511,8 +1511,8 @@
       display: none !important;
     }
 
-    .sidebar-nav li.sidebar-page-branch.is-collapsed > .app-sub-sidebar,
-    .sidebar-nav li.sidebar-page-branch.is-collapsed > p > .app-sub-sidebar {
+    .sidebar-nav li.sidebar-page-branch.is-collapsed > ul,
+    .sidebar-nav li.sidebar-page-branch.is-collapsed > p > ul {
       display: none !important;
     }
 
@@ -2425,7 +2425,10 @@
 
           function setupPageBranches() {
             document.querySelectorAll('.sidebar-nav li').forEach(function (item) {
-              var panel = item.querySelector(':scope > ul.app-sub-sidebar, :scope > p > ul.app-sub-sidebar');
+              var generatedPanel = item.querySelector(':scope > ul.app-sub-sidebar, :scope > p > ul.app-sub-sidebar');
+              var staticPanel = item.querySelector(':scope > ul:not(.app-sub-sidebar)');
+              if (generatedPanel && staticPanel) generatedPanel.remove();
+              var panel = staticPanel || generatedPanel;
               var link = item.querySelector(':scope > a, :scope > p > a');
               if (!link) return;
               if (link.closest('.app-sub-sidebar')) return;
