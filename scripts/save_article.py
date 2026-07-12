@@ -632,8 +632,10 @@ def save_article_to_disk(
     # 下载图片
     image_map = {}
     if article.images and not no_images:
-        images_dir = article_dir / "images"
-        images_dir.mkdir(exist_ok=True)
+        repo_root = articles_dir.resolve().parent
+        images_dir = repo_root / "assets" / "images" / "articles" / safe_title
+        images_dir.mkdir(parents=True, exist_ok=True)
+        image_link_root = images_dir.relative_to(repo_root).as_posix()
 
         for i, img in enumerate(article.images):
             save_path = images_dir / img.local_filename
@@ -641,7 +643,7 @@ def save_article_to_disk(
             img.downloaded = success
 
             if success:
-                image_map[img.original_url] = f"images/{img.local_filename}"
+                image_map[img.original_url] = f"{image_link_root}/{img.local_filename}"
             else:
                 image_map[img.original_url] = img.original_url  # 保留原始 URL
 
@@ -682,7 +684,7 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
             rel_path = md_file.relative_to(repo_root).as_posix()
         except ValueError:
             rel_path = md_file.resolve().as_posix()
-        cover_path = article_dir / "images" / "cover.png"
+        cover_path = repo_root / "assets" / "images" / "articles" / article_dir.name / "cover.png"
         try:
             cover_rel_path = cover_path.relative_to(repo_root).as_posix()
         except ValueError:

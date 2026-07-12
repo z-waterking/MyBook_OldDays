@@ -7,6 +7,7 @@ import { stdin, stdout } from 'node:process';
 
 const ROOT = process.cwd();
 const ARTICLES_DIR = join(ROOT, 'articles');
+const ARTICLE_IMAGES_DIR = join(ROOT, 'assets', 'images', 'articles');
 const AI_EDITED_DIR = join(ROOT, 'ai-edited-articles');
 const WEBSITE_DIR = join(ROOT, 'website');
 const CATALOG = join(WEBSITE_DIR, 'catalog.md');
@@ -186,7 +187,7 @@ function websiteArticleHref(article) {
 }
 
 function websiteImageHref(article) {
-  return relative(ROOT, join(ARTICLES_DIR, article.dir, 'images', 'cover.png')).replace(/\\/g, '/');
+  return relative(ROOT, join(ARTICLE_IMAGES_DIR, article.dir, 'cover.png')).replace(/\\/g, '/');
 }
 
 function websiteReviewHref(article, filename) {
@@ -208,7 +209,7 @@ function websiteAiEditedHref(article) {
 }
 
 function articleLocalCover(article) {
-  return relative(ROOT, join(ARTICLES_DIR, article.dir, 'images', 'cover.png')).replace(/\\/g, '/');
+  return relative(ROOT, join(ARTICLE_IMAGES_DIR, article.dir, 'cover.png')).replace(/\\/g, '/');
 }
 
 function ensureArticleCover(content, article) {
@@ -317,7 +318,7 @@ async function main() {
     const apiKey = process.env.AZURE_OPENAI_API_KEY || await promptHidden('Azure OpenAI API key: ');
     if (!apiKey) throw new Error('Missing API key.');
     for (const [index, article] of articles.entries()) {
-      const coverPath = join(ARTICLES_DIR, article.dir, 'images', 'cover.png');
+      const coverPath = join(ARTICLE_IMAGES_DIR, article.dir, 'cover.png');
       const promptPath = join(ARTICLES_DIR, article.dir, 'prompts', 'cover.txt');
       const prompt = coverPrompt(article, article.dir);
       await mkdir(dirname(promptPath), { recursive: true });

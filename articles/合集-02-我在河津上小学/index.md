@@ -13,7 +13,7 @@ archived: "2026-03-25 23:17"
 
 > 作者: 凡复思忖 | 日期: 2026-03-19
 
-<p><img class="article-cover" src="articles/合集-02-我在河津上小学/images/cover.png" alt="我在河津上小学 封面"></p>
+<p><img class="article-cover" src="assets/images/articles/合集-02-我在河津上小学/cover.png" alt="我在河津上小学 封面"></p>
 
 
 
@@ -22,7 +22,7 @@ archived: "2026-03-25 23:17"
 
 **小时候照片镇楼。**
 
-![](images/001.jpg)
+![](assets/images/articles/合集-02-我在河津上小学/001.jpg)
 
 **距今已经25年了，我眉头一动，妈妈带我去上一小的那个早上，会再次浮现在脑海。**
 

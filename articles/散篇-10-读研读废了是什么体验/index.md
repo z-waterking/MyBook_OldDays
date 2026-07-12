@@ -12,7 +12,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2019-05-10
 
-<p><img class="article-cover" src="articles/散篇-10-读研读废了是什么体验/images/cover.png" alt="读研读废了是什么体验 封面"></p>
+<p><img class="article-cover" src="assets/images/articles/散篇-10-读研读废了是什么体验/cover.png" alt="读研读废了是什么体验 封面"></p>
 
 
 

@@ -12,14 +12,14 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2019-09-25
 
-<p><img class="article-cover" src="articles/散篇-07-面试的艺术/images/cover.png" alt="面试的艺术 封面"></p>
+<p><img class="article-cover" src="assets/images/articles/散篇-07-面试的艺术/cover.png" alt="面试的艺术 封面"></p>
 
 
 
 
 请欣赏
 
-![](images/001.png)
+![](assets/images/articles/散篇-07-面试的艺术/001.png)
 
 ---
 *原文链接: [查看原文](https://mp.weixin.qq.com/s/SDLt15vPQlM4ibvHA_m_cg)*

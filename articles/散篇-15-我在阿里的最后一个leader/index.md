@@ -11,7 +11,7 @@ archived: "2026-06-03 15:11"
 
 > 作者: 凡复思忖 | 日期: 2026-06-03
 
-<p><img class="article-cover" src="articles/散篇-15-我在阿里的最后一个leader/images/cover.png" alt="我在阿里的最后一个leader 封面"></p>
+<p><img class="article-cover" src="assets/images/articles/散篇-15-我在阿里的最后一个leader/cover.png" alt="我在阿里的最后一个leader 封面"></p>
 
 
 

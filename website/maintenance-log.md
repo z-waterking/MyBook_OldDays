@@ -10,6 +10,31 @@
 
 ---
 
+## 2026-07-12 · 文章图片集中迁移到共享资产目录
+
+- **类型：** 图片资产结构 / 归档流程 / AI 改稿引用
+- **状态：** 已完成
+- **关联提交：** 本条所在提交 · `chore: centralize article image assets`
+
+### 涉及范围
+
+- `assets/images/articles/`：按文章目录集中存放全部文章图片。
+- `articles/*/index.md` / `ai-edited-articles/**/index.md`：统一改用共享资产路径。
+- `scripts/save_article.py` / `scripts/article_covers.mjs` / `scripts/generate_image_index.mjs` / `scripts/generate_ai_edit_drafts.mjs`：统一图片写入、封面生成、索引和改稿路径规则。
+
+### 改动摘要
+
+- 将原 `articles/<文章目录>/images/` 中的图片迁移至 `assets/images/articles/<文章目录>/`，原文与 AI 改稿引用同一份文件。
+- 新保存文章和新生成封面直接写入共享资产目录。
+- 清理四个内容完全重复且未引用的图片副本、两个失去作用的 `.gitkeep`、`tests/` 和本地缓存。
+
+### 验证
+
+- `node scripts/article_covers.mjs --mode markdown`
+- `node scripts/generate_image_index.mjs`
+- `python -m py_compile scripts/save_article.py`
+- 全库图片引用目标检查与 `git diff --check`
+
 ## 2026-07-11 · 全库统一复评与评价入口收敛
 
 - **类型：** 全库复评 / 榜单重建 / 目录与维护流程更新

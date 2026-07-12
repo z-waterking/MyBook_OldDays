@@ -11,7 +11,7 @@ archived: "2026-04-08 17:52"
 
 > 作者: 凡复思忖 | 日期: 2026-03-29
 
-<p><img class="article-cover" src="articles/散篇-13-从张雪峰老师的死亡所想到的/images/cover.png" alt="从张雪峰老师的死亡所想到的 封面"></p>
+<p><img class="article-cover" src="assets/images/articles/散篇-13-从张雪峰老师的死亡所想到的/cover.png" alt="从张雪峰老师的死亡所想到的 封面"></p>
 
 
 

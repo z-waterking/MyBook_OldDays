@@ -13,7 +13,7 @@ archived: "2026-03-25 23:17"
 
 > 作者: 凡复思忖 | 日期: 2025-02-15
 
-<p><img class="article-cover" src="articles/合集-11-我在佛山做家教/images/cover.png" alt="我在佛山做家教 封面"></p>
+<p><img class="article-cover" src="assets/images/articles/合集-11-我在佛山做家教/cover.png" alt="我在佛山做家教 封面"></p>
 
 
 

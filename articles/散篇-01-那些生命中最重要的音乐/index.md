@@ -12,7 +12,7 @@ archived: "2026-03-25 23:20"
 
 > 作者: 凡复思忖 | 日期: 2025-04-27
 
-<p><img class="article-cover" src="articles/散篇-01-那些生命中最重要的音乐/images/cover.png" alt="那些生命中最重要的音乐 封面"></p>
+<p><img class="article-cover" src="assets/images/articles/散篇-01-那些生命中最重要的音乐/cover.png" alt="那些生命中最重要的音乐 封面"></p>
 
 
 

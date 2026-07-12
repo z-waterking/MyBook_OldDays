@@ -13,7 +13,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2026-03-07
 
-<p><img class="article-cover" src="articles/合集-06-我在珠海上大学（新序）/images/cover.png" alt="我在珠海上大学（新序） 封面"></p>
+<p><img class="article-cover" src="assets/images/articles/合集-06-我在珠海上大学（新序）/cover.png" alt="我在珠海上大学（新序） 封面"></p>
 
 
 

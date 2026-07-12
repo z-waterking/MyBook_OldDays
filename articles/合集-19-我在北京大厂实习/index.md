@@ -11,7 +11,7 @@ archived: "2026-04-08 17:52"
 
 > 作者: 凡复思忖 | 日期: 2026-04-05
 
-<p><img class="article-cover" src="articles/合集-19-我在北京大厂实习/images/cover.png" alt="我在北京大厂实习 封面"></p>
+<p><img class="article-cover" src="assets/images/articles/合集-19-我在北京大厂实习/cover.png" alt="我在北京大厂实习 封面"></p>
 
 
 
@@ -28,9 +28,9 @@ archived: "2026-04-08 17:52"
 
 **最终的汇报，我们的三人小组，毫无疑问地得了最佳**。完成度最高，界面丝滑流畅，由我上去讲解，TY负责演示。后来WRR在上班时，碰到同校的同学，还有人记得我这个小项目。通过这次作业，我们直接得到了字节的实习名额。这个比面试简单一些。但我当时还没有想去做安卓， 于是跟HR讲要拖到9月份。
 
-![img](images/001.gif)
+![img](assets/images/articles/合集-19-我在北京大厂实习/001.gif)
 
-![img](images/002.gif)
+![img](assets/images/articles/合集-19-我在北京大厂实习/002.gif)
 
 我们投递实习时，都是海投，第一个通过的面试是亚马逊AWS。单位在酒仙桥那边，过去时需要坐地铁+公交，折腾一个多小时。亚马逊的电商虽然是撤出中国了，但是AWS作为全球第一的云服务厂商，还在国内有办公地点。
 

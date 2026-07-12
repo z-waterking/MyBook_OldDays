@@ -12,7 +12,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2019-04-05
 
-<p><img class="article-cover" src="articles/散篇-11-男朋友不回消息怎么办/images/cover.png" alt="男朋友不回消息怎么办 封面"></p>
+<p><img class="article-cover" src="assets/images/articles/散篇-11-男朋友不回消息怎么办/cover.png" alt="男朋友不回消息怎么办 封面"></p>
 
 
 

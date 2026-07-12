@@ -11,7 +11,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2019-09-10
 
-<p><img class="article-cover" src="articles/散篇-08-412之趣言趣闻/images/cover.png" alt="412之趣言趣闻 封面"></p>
+<p><img class="article-cover" src="assets/images/articles/散篇-08-412之趣言趣闻/cover.png" alt="412之趣言趣闻 封面"></p>
 
 
 
@@ -20,7 +20,7 @@ archived: "2026-03-25 23:18"
 
 **1**
 
-![](images/005.png)
+![](assets/images/articles/散篇-08-412之趣言趣闻/005.png)
 
 一凡：站的高尿的远
 
@@ -34,7 +34,7 @@ archived: "2026-03-25 23:18"
 
 **2**
 
-![](images/005.png)
+![](assets/images/articles/散篇-08-412之趣言趣闻/005.png)
 
 大飞哥：洗车店说小飞哥吐过的地方有打蜡效果
 
@@ -42,7 +42,7 @@ archived: "2026-03-25 23:18"
 
 **3**
 
-![](images/005.png)
+![](assets/images/articles/散篇-08-412之趣言趣闻/005.png)
 
 思凡 :好纠结，不想去阿里，怕他坑我
 
@@ -54,7 +54,7 @@ archived: "2026-03-25 23:18"
 
 **4**
 
-![](images/005.png)
+![](assets/images/articles/散篇-08-412之趣言趣闻/005.png)
 
 荣荣：卡卡师兄，我上次在西安的酒吧看到一个歌手，长的特帅，唱歌好听
 
@@ -66,7 +66,7 @@ archived: "2026-03-25 23:18"
 
 **5**
 
-![](images/005.png)
+![](assets/images/articles/散篇-08-412之趣言趣闻/005.png)
 
 小飞哥（喝醉）：思凡，给你介绍我小姨子，我小姨子特靠谱。思凡真的，你如果看上了，你努力一下！
 

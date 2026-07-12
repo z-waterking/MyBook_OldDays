@@ -8,12 +8,12 @@
 
 ```text
 articles/                 原始文章归档，每篇文章一个目录
-assets/images/            跨文章复用图片库
+assets/images/articles/   文章图片库，按文章目录分组
+assets/images/            其他跨文章复用图片
 ai-edited-articles/       AI 修改稿工作区，与 articles/ 一一对应
 book/                     成书规划与卷目整理
 website/                  Docsify 网站入口、侧边栏、榜单和目录
 scripts/                  抓取、目录生成、封面处理等脚本
-tests/                    自动化测试
 index.html                GitHub Pages / Docsify 正式入口
 requirements.txt          Python 依赖
 ```
@@ -61,7 +61,7 @@ node scripts/article_covers.mjs --mode markdown
 - `website/fun-rankings.md`：趣味榜单。
 - `website/image-index.md`：图片索引，自动生成。
 
-完整 Docsify 站点入口是根目录 `index.html`，用于 GitHub Pages 原地址。网页相关 Markdown 仍统一放在 `website/`。`website/index.html` 只保留为旧 `/website/` 地址的兼容跳回页，并会保留当前 hash 路由。文章正文和图片仍保留在 `articles/`，网站页面按仓库根目录路径访问 `articles/...`。
+完整 Docsify 站点入口是根目录 `index.html`，用于 GitHub Pages 原地址。网页相关 Markdown 仍统一放在 `website/`。`website/index.html` 只保留为旧 `/website/` 地址的兼容跳回页，并会保留当前 hash 路由。文章正文保留在 `articles/`，文章图片统一放在 `assets/images/articles/`。
 
 ## AI 修改稿
 
@@ -105,13 +105,13 @@ node scripts/update_ai_edit_notes.mjs
 
 ## 图片索引
 
-原文图片仍保留在 `articles/<文章目录>/images/`。如果图片要给多篇文章、AI 改稿或成书区共同引用，复制到 `assets/images/`，然后运行：
+文章图片统一放在 `assets/images/articles/<文章目录>/`，原文和 AI 改稿引用同一份文件。其他跨文章或成书区共用图片放在 `assets/images/<主题>/`。新增、移动图片后运行：
 
 ```bash
 node scripts/generate_image_index.mjs
 ```
 
-生成结果在 `website/image-index.md`。正文引用图片时优先使用仓库根路径，例如 `articles/.../images/001.jpg` 或 `assets/images/.../name.png`。
+生成结果在 `website/image-index.md`。正文使用仓库根路径，例如 `assets/images/articles/合集-05-我在康杰念高中（怀昔）/001.jpg`。
 
 ## 成书工作区
 
@@ -127,10 +127,10 @@ python -m pip install -r requirements.txt
 
 Windows 如果没有 `python`，先安装 Python 3.12+，并在安装器里勾选 `Add python.exe to PATH`。
 
-运行测试：
+检查 Python 脚本语法：
 
 ```bash
-python -m unittest discover -s tests
+python -m py_compile scripts/save_article.py
 ```
 
 ## 维护约定
@@ -139,4 +139,4 @@ python -m unittest discover -s tests
 2. `website/` 是网页展示层，目录和榜单可以维护。
 3. `ai-edited-articles/` 是 AI 改稿区，保持与原文一一对应。
 4. `book/` 是成书工作区，用于最终选稿、编排和补写。
-5. `assets/images/` 是共享图片库，跨文章复用图片先入库再引用。
+5. `assets/images/articles/` 是文章图片的唯一存储区，原文和 AI 改稿共享引用。

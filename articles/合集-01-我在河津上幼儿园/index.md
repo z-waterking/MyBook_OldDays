@@ -13,7 +13,7 @@ archived: "2026-03-25 23:17"
 
 > 作者: 凡复思忖 | 日期: 2026-03-20
 
-<p><img class="article-cover" src="articles/合集-01-我在河津上幼儿园/images/cover.png" alt="我在河津上幼儿园 封面"></p>
+<p><img class="article-cover" src="assets/images/articles/合集-01-我在河津上幼儿园/cover.png" alt="我在河津上幼儿园 封面"></p>
 
 
 

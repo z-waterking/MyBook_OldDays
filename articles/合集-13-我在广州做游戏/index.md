@@ -13,7 +13,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2026-03-09
 
-<p><img class="article-cover" src="articles/合集-13-我在广州做游戏/images/cover.png" alt="我在广州做游戏 封面"></p>
+<p><img class="article-cover" src="assets/images/articles/合集-13-我在广州做游戏/cover.png" alt="我在广州做游戏 封面"></p>
 
 
 

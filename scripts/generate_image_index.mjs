@@ -7,6 +7,7 @@ import { basename, extname, join, relative } from 'node:path';
 const ROOT = process.cwd();
 const ARTICLES_DIR = join(ROOT, 'articles');
 const SHARED_IMAGES_DIR = join(ROOT, 'assets', 'images');
+const ARTICLE_IMAGES_DIR = join(SHARED_IMAGES_DIR, 'articles');
 const WEBSITE_DIR = join(ROOT, 'website');
 const OUTPUT = join(WEBSITE_DIR, 'image-index.md');
 const IMAGE_EXTS = new Set(['.png', '.jpg', '.jpeg', '.webp', '.gif']);
@@ -61,7 +62,7 @@ async function listArticleImages() {
   const rows = [];
   for (const dirName of dirs) {
     const articlePath = join(ARTICLES_DIR, dirName, 'index.md');
-    const imagesDir = join(ARTICLES_DIR, dirName, 'images');
+    const imagesDir = join(ARTICLE_IMAGES_DIR, dirName);
     if (!existsSync(articlePath) || !existsSync(imagesDir)) continue;
     const meta = parseMeta(await readFile(articlePath, 'utf8'), dirName.replace(/^(合集|散篇)-\d{2}-/, ''));
     const images = (await walkImages(imagesDir)).sort((a, b) => a.localeCompare(b, 'zh-Hans-CN'));
@@ -85,7 +86,17 @@ async function listArticleImages() {
 
 async function listSharedImages() {
   const rows = [];
-  for (const imagePath of await walkImages(SHARED_IMAGES_DIR)) {
+  const entries = existsSync(SHARED_IMAGES_DIR)
+    ? await readdir(SHARED_IMAGES_DIR, { withFileTypes: true })
+    : [];
+  const imagePaths = [];
+  for (const entry of entries) {
+    if (entry.name === 'articles') continue;
+    const full = join(SHARED_IMAGES_DIR, entry.name);
+    if (entry.isDirectory()) imagePaths.push(...await walkImages(full));
+    else if (entry.isFile() && IMAGE_EXTS.has(extname(entry.name).toLowerCase())) imagePaths.push(full);
+  }
+  for (const imagePath of imagePaths) {
     const stats = await stat(imagePath);
     const rel = relative(ROOT, imagePath).replace(/\\/g, '/');
     rows.push({
@@ -128,10 +139,9 @@ async function main() {
     '',
     '## 引用规则',
     '',
-    '- 原文归档图片继续保留在 `articles/<文章目录>/images/`，不要为了复用而移动原图。',
-    '- 多篇文章、AI 改稿或成书区共同使用的新图片，放入 `assets/images/`，再在本索引中检索引用。',
-    '- Markdown 中优先使用仓库根路径，例如 `![](articles/合集-05-我在康杰念高中（怀昔）/images/001.jpg)` 或 `![](assets/images/.../name.png)`。',
-    '- 如果某张原文图片需要跨文章复用，可以先复制到 `assets/images/<主题>/`，保留原文目录中的档案副本。',
+    '- 所有文章图片统一存放在 `assets/images/articles/<文章目录>/`，原文和 AI 改稿引用同一份文件。',
+    '- 其他跨文章、成书区共用图片放入 `assets/images/<主题>/`。',
+    '- Markdown 使用仓库根路径，例如 `![](assets/images/articles/合集-05-我在康杰念高中（怀昔）/001.jpg)`。',
     '',
     '## 共享图片库',
     '',
@@ -145,7 +155,7 @@ async function main() {
     lines.push('暂无共享图片。新增跨文章复用图片时，放入 `assets/images/` 后重新运行 `node scripts/generate_image_index.mjs`。');
   }
 
-  lines.push('', '## 原文图片', '', '| 预览 | 来源 | 类型 | 文件 | 大小 | 引用路径 |', '|------|------|------|------|------|----------|');
+  lines.push('', '## 文章图片', '', '| 预览 | 来源 | 类型 | 文件 | 大小 | 引用路径 |', '|------|------|------|------|------|----------|');
   lines.push(...renderRows(articleRows));
   lines.push('', '<!-- 此文件由 scripts/generate_image_index.mjs 自动生成。 -->', '');
 

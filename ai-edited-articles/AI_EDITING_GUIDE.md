@@ -102,8 +102,8 @@ node scripts/generate_ai_edit_drafts.mjs --refresh-generated
 ## 图片引用
 
 - AI 改稿不要复制图片到 `ai-edited-articles/`。
-- 原文图片使用仓库根路径引用，例如 `articles/<文章目录>/images/001.jpg`。
-- 多篇文章共用的新图片放到 `assets/images/`，再在正文中引用。
+- 文章图片使用仓库根路径引用，例如 `assets/images/articles/<文章目录>/001.jpg`。
+- 其他跨文章共用图片放到 `assets/images/<主题>/`，再在正文中引用。
 - 图片索引位于 `website/image-index.md`，由下面命令生成：
 
 ```bash

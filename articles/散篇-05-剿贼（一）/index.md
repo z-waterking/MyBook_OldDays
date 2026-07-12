@@ -12,7 +12,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2022-05-09
 
-<p><img class="article-cover" src="articles/散篇-05-剿贼（一）/images/cover.png" alt="剿贼（一） 封面"></p>
+<p><img class="article-cover" src="assets/images/articles/散篇-05-剿贼（一）/cover.png" alt="剿贼（一） 封面"></p>
 
 
 

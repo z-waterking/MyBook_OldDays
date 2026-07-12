@@ -8,13 +8,13 @@
 
 ## 目录结构与职责
 
-- `articles/`：原始文章归档。每篇文章一个目录，通常包含 `index.md`、`images/`、`prompts/` 和唯一的规范评价文件 `review.md`。正文原文尽量只追加和归档，不直接改写。
-- `assets/images/`：跨文章、AI 改稿、成书区共用的图片库。原文图片不要为了复用而移动，可复制到这里再引用。
+- `articles/`：原始文章归档。每篇文章一个目录，通常包含 `index.md`、`prompts/` 和唯一的规范评价文件 `review.md`。正文原文尽量只追加和归档，不直接改写。
+- `assets/images/articles/`：文章图片统一存储区，按文章目录分组；原文和 AI 改稿引用同一份文件。
+- `assets/images/`：除文章图片外的跨文章、成书区共用图片库。
 - `ai-edited-articles/`：AI 修改稿工作区。改稿不能覆盖 `articles/` 原文，目录关系记录在 `ai-edited-articles/mapping.md`。
 - `book/`：成书工作区。可用于重排、删选、补写和分卷规划，但不替代原文归档。
 - `website/`：Docsify 展示层内容目录。目录页、评分榜、佳句榜、趣味榜单等网页 Markdown 都放这里。
 - `scripts/`：维护脚本。当前实际存在 `save_article.py` 和 `article_covers.mjs`。
-- `tests/`：Python 单元测试，主要覆盖文章抓取、Markdown 转换和目录生成逻辑。
 - 根目录 `index.html`：GitHub Pages / Docsify 正式入口。
 
 ## 关键路径约定
@@ -24,7 +24,7 @@
 - 网站页里的文章链接按仓库根路径写，例如 `articles/合集-01-我在河津上幼儿园/index.md`。
 - `website/catalog.md` 是自动生成目录，可由 `save_article.py` 或 `article_covers.mjs` 更新。
 - `website/ranking.md`、`website/literary-gems.md`、`website/fun-rankings.md` 是人工整理榜单，新增文章后必须手动复评并同步。
-- `website/image-index.md` 是图片索引，由 `scripts/generate_image_index.mjs` 生成，记录原文图片和共享图片库的引用路径。
+- `website/image-index.md` 是图片索引，由 `scripts/generate_image_index.mjs` 生成，记录文章图片和其他共享图片的引用路径。
 - `website/maintenance-log.md` 是网站维护日志。凡影响网站结构、导航入口、目录生成、榜单统计、文章归档流程、AI 改稿入口或部署入口的大改动，都要追加一条 Log。
 - 文章目录命名遵循 `合集-01-标题` 或 `散篇-01-标题`。新增文章不要随意改变已有编号体系。
 
@@ -72,10 +72,10 @@ node scripts/article_covers.mjs --mode markdown
 node scripts/generate_image_index.mjs
 ```
 
-运行测试：
+检查 Python 脚本语法：
 
 ```bash
-python -m unittest discover -s tests
+python -m py_compile scripts/save_article.py
 ```
 
 ## 新增文章完整流程
@@ -92,7 +92,7 @@ python -m unittest discover -s tests
 8. 更新 `website/literary-gems.md`：判断新金句是否进入佳句榜；若进入，补条目、点评、来源链接和底部总数。
 9. 更新 `website/fun-rankings.md`：检查新文章是否影响美食榜、名场面榜、催泪榜、足迹榜、人物榜、文体榜、游戏榜、职业经历、预案榜、AI 焦虑榜、受伤榜、金句密度榜等。
 10. 运行 `node scripts/article_covers.mjs --mode markdown`，让目录页和封面块保持最新。
-11. 运行 `python -m unittest discover -s tests`。若只改了 Markdown，也至少检查相关链接、条目数和页面统计是否一致。
+11. 运行 `python -m py_compile scripts/save_article.py`，并检查相关链接、条目数和页面统计是否一致。
 12. 最后询问用户是否需要 git commit；不要主动提交，除非用户明确要求。
 
 ## 文章评价规则
@@ -133,17 +133,17 @@ python -m unittest discover -s tests
 - `scripts/save_article.py` 负责抓取微信公众号文章、下载图片、转换 Markdown、生成 `website/catalog.md`。
 - `scripts/article_covers.mjs --mode markdown` 会给每篇文章插入或刷新封面 `<img class="article-cover">` 块，并重建 `website/catalog.md`。
 - `scripts/article_covers.mjs --mode generate` 会调用 Azure OpenAI 图片接口生成封面，需要 `AZURE_OPENAI_API_KEY` 或交互输入 API key；不要在日志或回复中暴露密钥。
-- `scripts/generate_image_index.mjs` 会扫描 `articles/*/images/` 和 `assets/images/`，生成 `website/image-index.md`。
+- `scripts/generate_image_index.mjs` 会扫描 `assets/images/articles/` 和其他 `assets/images/` 子目录，生成 `website/image-index.md`。
 - `scripts/update_ai_edit_notes.mjs` 会根据原文和 AI 改稿生成每篇 `notes.md` 的实际改动清单。
 - 两个脚本都可能改动 `website/catalog.md`，`article_covers.mjs --mode markdown` 还会改动多篇 `articles/*/index.md` 的封面块。
 
 ## 图片索引与复用规则
 
-- 原文图片继续放在 `articles/<文章目录>/images/`，这是归档副本，默认不移动、不改名。
-- 需要给不同文章共同引用的图片，复制到 `assets/images/<主题>/`，再用仓库根路径引用。
-- 所有 Markdown 中优先使用仓库根路径，例如 `articles/<文章目录>/images/001.jpg` 或 `assets/images/<主题>/name.png`。
+- 文章图片放在 `assets/images/articles/<文章目录>/`，目录名与 `articles/` 保持一致，文件默认不改名。
+- 其他跨文章或成书区共用图片放在 `assets/images/<主题>/`。
+- 所有 Markdown 使用仓库根路径，例如 `assets/images/articles/<文章目录>/001.jpg` 或 `assets/images/<主题>/name.png`。
 - 新增、复制、移动图片后运行 `node scripts/generate_image_index.mjs`，并检查 `website/image-index.md`。
-- AI 改稿引用原文图片时，优先沿用原文图片；引用共享图片时，使用 `assets/images/` 路径，不要把图片复制进 `ai-edited-articles/`。
+- AI 改稿直接引用 `assets/images/articles/<文章目录>/` 中的文章图片，不要把图片复制进 `ai-edited-articles/`。
 
 ## 脚本失败时的备用方案
 
@@ -152,12 +152,12 @@ python -m unittest discover -s tests
 1. 用网页抓取工具获取文章 HTML。
 2. 手动提取标题、作者、日期、正文和图片。
 3. 按现有 `articles/<文章目录>/index.md` 的 frontmatter 和正文格式写入。
-4. 原文图片放入 `articles/<文章目录>/images/`；需要跨文章复用的图片复制到 `assets/images/`；正文使用仓库根路径引用。
+4. 文章图片放入 `assets/images/articles/<文章目录>/`；其他跨文章图片放入 `assets/images/<主题>/`；正文使用仓库根路径引用。
 5. 完成后仍要补 `review.md`、更新三个榜单、重建目录并验证。
 
 ## 验证清单
 
-- Python 逻辑改动后运行 `python -m unittest discover -s tests`。
+- Python 逻辑改动后运行 `python -m py_compile scripts/save_article.py`，并执行对应命令做行为验证。
 - 目录、封面、AI 改稿入口变化后运行 `node scripts/article_covers.mjs --mode markdown`。
 - 图片新增、复制或路径规则变化后运行 `node scripts/generate_image_index.mjs`。
 - 榜单改动后检查编号、排名、统计数字和链接目标。

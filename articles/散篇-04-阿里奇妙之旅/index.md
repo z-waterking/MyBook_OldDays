@@ -12,7 +12,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2022-10-15
 
-<p><img class="article-cover" src="articles/散篇-04-阿里奇妙之旅/images/cover.png" alt="阿里奇妙之旅 封面"></p>
+<p><img class="article-cover" src="assets/images/articles/散篇-04-阿里奇妙之旅/cover.png" alt="阿里奇妙之旅 封面"></p>
 
 
 

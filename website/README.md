@@ -39,7 +39,7 @@ python scripts/save_article.py --catalog-only
 node scripts/generate_image_index.mjs
 ```
 
-该命令扫描 `articles/*/images/` 和 `assets/images/`，生成 `website/image-index.md`。跨文章复用图片应放入 `assets/images/`，原文归档图片保留在各自文章目录中。
+该命令扫描 `assets/images/articles/` 和其他 `assets/images/` 子目录，生成 `website/image-index.md`。文章图片按文章目录分组，供原文和 AI 改稿共同引用。
 
 ## 维护日志
 

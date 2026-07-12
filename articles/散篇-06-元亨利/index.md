@@ -12,7 +12,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2021-04-30
 
-<p><img class="article-cover" src="articles/散篇-06-元亨利/images/cover.png" alt="元亨利 封面"></p>
+<p><img class="article-cover" src="assets/images/articles/散篇-06-元亨利/cover.png" alt="元亨利 封面"></p>
 
 
 

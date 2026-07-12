@@ -71,8 +71,8 @@ function classifyChanges({ dirName, sourceBody, draftBody, sourceImages, draftIm
     changes.push('清理原文页头、作者日期栏和封面块，只保留可直接阅读的正文。');
   }
 
-  if (draftBody.includes(`articles/${dirName}/images/`)) {
-    changes.push('将正文图片路径统一改为仓库根路径，便于 Docsify、AI 改稿区和成书区复用。');
+  if (draftBody.includes(`assets/images/articles/${dirName}/`)) {
+    changes.push('将正文图片统一引用共享资产目录，便于原文、AI 改稿区和成书区复用。');
   }
 
   if (draftImages >= sourceImages && draftImages > 0) {

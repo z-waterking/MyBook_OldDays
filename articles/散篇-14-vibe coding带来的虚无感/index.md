@@ -11,7 +11,7 @@ archived: "2026-06-03 15:11"
 
 > 作者: 凡复思忖 | 日期: 2026-05-29
 
-<p><img class="article-cover" src="articles/散篇-14-vibe coding带来的虚无感/images/cover.png" alt="vibe coding带来的虚无感 封面"></p>
+<p><img class="article-cover" src="assets/images/articles/散篇-14-vibe coding带来的虚无感/cover.png" alt="vibe coding带来的虚无感 封面"></p>
 
 
 

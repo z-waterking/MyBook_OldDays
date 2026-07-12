@@ -13,7 +13,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2026-03-03
 
-<p><img class="article-cover" src="articles/合集-16-我在北京住合租屋/images/cover.png" alt="我在北京住合租屋 封面"></p>
+<p><img class="article-cover" src="assets/images/articles/合集-16-我在北京住合租屋/cover.png" alt="我在北京住合租屋 封面"></p>
 
 
 
