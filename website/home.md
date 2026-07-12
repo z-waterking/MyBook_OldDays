@@ -6,7 +6,7 @@
       <h1>旧日之书</h1>
       <p class="book-home-lead">那些旧日确实发生过，而现在的我，也确实是从那里走来的。</p>
       <div class="book-home-actions">
-        <a class="book-home-primary" href="#/articles/合集-01-我在河津上幼儿园/index.md">从头开始</a>
+        <a class="book-home-primary" href="#/book/部一-小城与少年.md">从头开始</a>
         <a href="#/website/footprints.md">足迹地图</a>
         <a href="#/website/catalog.md">全部文章</a>
       </div>
@@ -21,11 +21,13 @@
   <section class="book-home-path">
     <p class="book-home-section-label">沿时间进入</p>
     <div class="book-home-timeline" aria-label="人生阶段">
-      <a href="#/articles/合集-01-我在河津上幼儿园/index.md"><span>01</span><strong>小城少年</strong><small>河津 · 运城</small></a>
-      <a href="#/articles/合集-06-我在珠海上大学（新序）/index.md"><span>02</span><strong>南方大学</strong><small>珠海 · 远行</small></a>
-      <a href="#/articles/合集-11-我在佛山做家教/index.md"><span>03</span><strong>漂泊与考研</strong><small>佛山 · 广州</small></a>
-      <a href="#/articles/合集-14-我在阿里做实习（推荐算法版）/index.md"><span>04</span><strong>互联网初入场</strong><small>杭州 · 北京</small></a>
-      <a href="#/articles/合集-16-我在北京住合租屋/index.md"><span>05</span><strong>成年选择</strong><small>北京 · 西安 · 西班牙</small></a>
+      <a href="#/book/部一-小城与少年.md"><span>01</span><strong>小城与少年</strong><small>河津 · 运城</small></a>
+      <a href="#/book/部二-海风吹开的四年.md"><span>02</span><strong>海风吹开的四年</strong><small>珠海 · 远行</small></a>
+      <a href="#/book/部三-毕业以后没有下一站.md"><span>03</span><strong>毕业以后没有下一站</strong><small>佛山 · 广州</small></a>
+      <a href="#/book/部四-实验室没有标准答案.md"><span>04</span><strong>实验室没有标准答案</strong><small>北京 · 读研</small></a>
+      <a href="#/book/部五-闪亮公司与错误答案.md"><span>05</span><strong>闪亮公司与错误答案</strong><small>杭州 · 北京</small></a>
+      <a href="#/book/部六-稳定的代价.md"><span>06</span><strong>稳定的代价</strong><small>北京 · 西班牙</small></a>
+      <a href="#/book/部七-工位与云.md"><span>07</span><strong>工位与云</strong><small>AI · 裁员</small></a>
     </div>
   </section>
 
@@ -74,7 +76,7 @@
   </section>
 
   <section class="book-home-explore">
-    <a href="#/book/01-成书目录.md"><small>按卷阅读</small><strong>看见七卷人生结构</strong></a>
+    <a href="#/book/01-成书目录.md"><small>成书阅读</small><strong>沿七部人生结构连续阅读</strong></a>
     <a href="#/website/literary-gems.md"><small>佳句选读</small><strong>从一句话进入旧日</strong></a>
     <a href="#/website/fun-rankings.md"><small>趣味索引</small><strong>食物、人物、足迹与名场面</strong></a>
   </section>

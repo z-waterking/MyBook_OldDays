@@ -10,6 +10,36 @@
 
 ---
 
+## 2026-07-12 · 七部成书结构与连续阅读
+
+- **类型：** 成书编排 / 读者导航 / 生成流程 / 持续集成
+- **状态：** 已完成
+- **关联提交：** 本条所在提交 · `feat: structure seven-part book edition`
+
+### 涉及范围
+
+- `book/reading-order.json`：新增七部、附录及 33 篇入选文章的唯一结构化阅读顺序。
+- `book/01-成书目录.md` / `book/部*.md` / `book/附录-别调与想象.md`：重建面向读者的成书目录、分部导言与章节入口。
+- `book/02-时间线.md` / `book/03-写作规划.md` / `book/04-候选题目库.md`：整理阶段覆盖、关键缺章、出版路径及各阶段备选题目。
+- `scripts/build_book_manuscript.py` / `book/manuscript.md`：新增可重复构建的连续工作书稿。
+- `index.html` / `website/home.md` / `website/_sidebar.md`：新增七部人生路径、章节进度及跨分部上一篇/下一篇导航。
+- `scripts/check_site.py` / `.github/workflows/site-check.yml`：校验阅读清单、公开入口和连续书稿的一致性。
+
+### 改动摘要
+
+- 成书结构由旧有规划卷目收敛为七部时间主线与一组附录，网站文章档案仍保留全部 38 篇，纸书当前精选 33 篇。
+- 公开阅读页与内部编辑规划分离；研究生阶段的关键缺章和全书结尾明确留给作者补写，不用生成内容替代真实经历。
+- 删除重复且相互冲突的旧卷目页，所有公开章节顺序统一由 `reading-order.json` 驱动并接受机器校验。
+- 文章页显示全书进度和相邻章节，跨分部阅读保持连续；桌面首页使用七列时间线，移动端自动收为单列。
+- `book/manuscript.md` 从当前 AI 修改稿拼合，修改选篇、分部导言或入选稿件后必须重新生成，不做长期手工修改。
+
+### 验证
+
+- `python scripts/build_book_manuscript.py` 与 `python scripts/build_book_manuscript.py --check`：33 篇连续书稿可重复生成。
+- `python scripts/check_site.py`：成书目录、八个分部页面、章节顺序、站内链接及原有文章数据检查通过。
+- 桌面与 390px 移动端检查：首页七部时间线无横向溢出，文章页进度与上一篇/下一篇正确衔接。
+- 全部 Python/Node.js 脚本语法检查及 `git diff --check`。
+
 ## 2026-07-12 · 工程原则收敛与全库自动校验
 
 - **类型：** 仓库规范 / 生成流程 / 持续集成 / 数据一致性

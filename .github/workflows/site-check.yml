@@ -40,5 +40,11 @@ jobs:
           node scripts/generate_image_index.mjs
           git diff --exit-code -- website/catalog.md website/image-index.md
 
+      - name: Check generated book manuscript
+        run: |
+          python scripts/build_book_manuscript.py
+          python scripts/build_book_manuscript.py --check
+          git diff --exit-code -- book/manuscript.md
+
       - name: Check site integrity
         run: python scripts/check_site.py

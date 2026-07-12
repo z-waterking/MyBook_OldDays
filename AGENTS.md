@@ -12,7 +12,7 @@
 - `assets/images/articles/`：文章图片统一存储区，按文章目录分组；原文和 AI 改稿引用同一份文件。
 - `assets/images/`：除文章图片外的跨文章、成书区共用图片库。
 - `ai-edited-articles/`：AI 修改稿工作区。改稿不能覆盖 `articles/` 原文，目录关系记录在 `ai-edited-articles/mapping.md`。
-- `book/`：成书工作区。可用于重排、删选、补写和分卷规划，但不替代原文归档。
+- `book/`：成书工作区。维护七部时间主线、附录、补写计划、题目库和生成书稿，但不替代原文归档。
 - `website/`：Docsify 展示层内容目录。目录页、评分榜、佳句榜、趣味榜单等网页 Markdown 都放这里。
 - `scripts/`：文章抓取、封面、图片索引、插画和网站巡检脚本。
 - 根目录 `index.html`：GitHub Pages / Docsify 正式入口。
@@ -27,6 +27,8 @@
 - `website/image-index.md` 是图片索引，由 `scripts/generate_image_index.mjs` 生成，记录文章图片和其他共享图片的引用路径。
 - `website/maintenance-log.md` 是网站维护日志。凡影响网站结构、导航入口、目录生成、榜单统计、文章归档流程、AI 改稿入口或部署入口的大改动，都要追加一条 Log。
 - `website/MAINTENANCE.md` 是网站生成、验证、发布、降级和回滚的权威操作手册。
+- `book/reading-order.json` 是成书选篇、分部和阅读顺序的唯一结构化来源；公开目录、分部页、网站章节导航和生成书稿必须与其一致。
+- `book/manuscript.md` 由 `scripts/build_book_manuscript.py` 生成，不做无法复现的手工修改。
 - 文章目录命名遵循 `合集-01-标题` 或 `散篇-01-标题`。新增文章不要随意改变已有编号体系。
 
 ## 常用命令
@@ -77,10 +79,17 @@ node scripts/article_covers.mjs --mode markdown
 node scripts/generate_image_index.mjs
 ```
 
+生成并检查当前连续书稿：
+
+```bash
+python scripts/build_book_manuscript.py
+python scripts/build_book_manuscript.py --check
+```
+
 检查 Python 脚本语法：
 
 ```bash
-python -m py_compile scripts/save_article.py scripts/check_site.py scripts/generate_cover_thumbnails.py scripts/prepare_site_illustrations.py
+python -m py_compile scripts/save_article.py scripts/check_site.py scripts/build_book_manuscript.py scripts/generate_cover_thumbnails.py scripts/prepare_site_illustrations.py
 ```
 
 检查 Node.js 脚本语法：
@@ -156,10 +165,11 @@ python scripts/check_site.py
 - `scripts/article_covers.mjs --mode generate` 会调用 Azure OpenAI 图片接口生成封面，需要 `AZURE_OPENAI_API_KEY` 或交互输入 API key；不要在日志或回复中暴露密钥。
 - `scripts/generate_cover_thumbnails.py` 会从文章原始封面生成目录 WebP、首页主视觉和 favicon；依赖 Pillow。
 - `scripts/generate_image_index.mjs` 会扫描 `assets/images/articles/` 和其他 `assets/images/` 子目录，生成 `website/image-index.md`。
+- `scripts/build_book_manuscript.py` 按 `book/reading-order.json` 从当前 AI 修改稿或原始档案稿生成连续书稿；默认输出为 `book/manuscript.md`。
 - `scripts/update_ai_edit_notes.mjs` 会根据原文和 AI 改稿生成每篇 `notes.md` 的实际改动清单。
 - `scripts/generate_site_illustrations.ps1` 按 `scripts/illustration_manifest.json` 调用全局 Azure GPT Image skill，生成佳句榜和趣味榜缺失插画；默认跳过已有文件。
 - `scripts/prepare_site_illustrations.py` 将插画原图转为 960×640 WebP，并按清单把图片块注入 `website/literary-gems.md` 和 `website/fun-rankings.md`。
-- `scripts/check_site.py` 检查唯一评价与六节结构、评分榜统计、文章/目录/AI 改稿映射、本地链接、足迹数据和插画资产之间的一致性。
+- `scripts/check_site.py` 检查唯一评价与六节结构、评分榜统计、文章/目录/AI 改稿映射、成书阅读顺序、本地链接、足迹数据和插画资产之间的一致性。
 - `save_article.py` 和 `article_covers.mjs` 都可能触发 `website/catalog.md` 更新，但目录 HTML 只由前者渲染；后者在 `--mode markdown` 下还会改动多篇 `articles/*/index.md` 的封面块。
 
 ## 图片索引与复用规则
@@ -186,6 +196,7 @@ python scripts/check_site.py
 - Python 逻辑改动后检查全部 `scripts/*.py` 语法，并执行对应命令做行为验证。
 - Node.js 逻辑改动后对全部 `scripts/*.mjs` 运行 `node --check`，并执行对应命令做行为验证。
 - 目录、封面、AI 改稿入口变化后运行 `node scripts/article_covers.mjs --mode markdown`。
+- 成书选篇、顺序、分部导言或入选 AI 改稿变化后运行 `python scripts/build_book_manuscript.py`，再运行 `python scripts/build_book_manuscript.py --check`。
 - 图片新增、复制或路径规则变化后运行 `node scripts/generate_image_index.mjs`。
 - 榜单改动后检查编号、排名、统计数字和链接目标。
 - Markdown 页面链接使用仓库根路径，优先确认目标文件存在。

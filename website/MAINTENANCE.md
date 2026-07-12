@@ -13,6 +13,8 @@
 - `website/fun-rankings.md`：趣味榜单；插画块由脚本维护，榜单内容人工复核。
 - `website/footprints.md`：足迹页结构和静态降级索引。
 - `website/footprints-data.json`：足迹坐标、类型、故事和来源文章的唯一数据源。
+- `book/reading-order.json`：成书选篇、分部和阅读顺序的唯一结构化数据源。
+- `book/01-成书目录.md`、`book/部*.md`、`book/附录-别调与想象.md`：面向读者的成书目录与分部页。
 - `index.html`：Docsify 配置、全站样式和交互插件。
 - `website/maintenance-log.md`：影响读者入口、统计、生成流程或部署的变更记录。
 
@@ -20,6 +22,7 @@
 
 - `website/catalog.md`：文章目录。
 - `website/image-index.md`：图片索引。
+- `book/manuscript.md`：按阅读清单与当前 AI 修改稿拼合的连续工作书稿。
 - `assets/images/_generated/catalog-covers/`：目录封面 WebP。
 - `assets/images/_generated/illustrations/`：榜单插画 WebP。
 - `assets/images/_generated/home-hero.webp` 和 `favicon.png`：首页主视觉与站点图标。
@@ -58,10 +61,11 @@ python scripts/check_site.py
 - `website/catalog.md` 条目集合与文章集合一致，并带有规范生成声明。
 - AI 改稿、`source_article`、`notes.md` 和 `mapping.md` 与原文一一对应。
 - `website/*.md` 中的本地页面、图片和 Docsify 路由目标存在。
+- `book/*.md` 本地链接有效，成书目录、八个分部页面与 `reading-order.json` 的章节集合和顺序一致。
 - 足迹 JSON 结构、坐标范围、来源链接和路线有效。
 - 插画清单、页面插画块、JPEG 原图和 WebP 派生图一一对应，并通过尺寸与像素差异检查确认派生图已同步。
 
-同一检查由 `.github/workflows/site-check.yml` 在推送到 `main` 和 Pull Request 时自动执行。CI 还会检查全部 Python/Node.js 脚本语法，重建目录与图片索引，并要求生成结果无差异。新增约束时应优先扩展 `scripts/check_site.py`，让本地与 CI 使用同一套规则。
+同一检查由 `.github/workflows/site-check.yml` 在推送到 `main` 和 Pull Request 时自动执行。CI 还会检查全部 Python/Node.js 脚本语法，重建目录、图片索引和连续书稿，并要求生成结果无差异。新增约束时应优先扩展 `scripts/check_site.py`，让本地与 CI 使用同一套规则。
 
 ## 三、按改动类型维护
 
@@ -71,7 +75,8 @@ python scripts/check_site.py
 | 修改评价或评分 | 同步评分榜、佳句榜和受影响的趣味榜 | `check_site.py` + 人工核对统计 |
 | 新增或修改文章图片 | 更新共享图片路径，重建图片索引 | `generate_image_index.mjs` + `check_site.py` |
 | 新增 AI 改稿 | 更新映射与说明，刷新目录中的 AI 改稿入口 | `article_covers.mjs` + `check_site.py` |
-| 修改首页、侧栏或 Docsify | 更新维护日志 | 五页浏览器冒烟检查 |
+| 修改成书选篇、分部或顺序 | 同步阅读清单、公开目录和分部页，重建书稿 | `build_book_manuscript.py` + `check_site.py` |
+| 修改首页、侧栏或 Docsify | 更新维护日志 | 六类页面浏览器冒烟检查 |
 | 修改足迹 | 同步 JSON 与静态地点索引 | `check_site.py` + 地图双视图检查 |
 | 修改佳句/趣味插画 | 更新 manifest，生成原图并准备 WebP | `prepare_site_illustrations.py` + `check_site.py` |
 
@@ -96,6 +101,19 @@ node scripts/generate_image_index.mjs
 ```
 
 文章图片只存放在 `assets/images/articles/<文章目录>/`；AI 改稿直接引用同一份图片，不复制副本。
+
+### 成书阅读与连续书稿
+
+`book/reading-order.json` 控制七部、附录及全部入选章节的顺序。调整它时，必须同步检查 `book/01-成书目录.md`、对应分部页和网站侧栏；`scripts/check_site.py` 会核对这些入口是否一致。
+
+从当前 AI 修改稿重建连续书稿并检查生成结果：
+
+```bash
+python scripts/build_book_manuscript.py
+python scripts/build_book_manuscript.py --check
+```
+
+默认生成 `book/manuscript.md`。该文件只作为可重复构建的工作书稿，不直接手改，也不代替尚待作者补写的研究生阶段和全书收束。需要对照原文时，可用 `--source original --output <路径>` 生成单独文件。
 
 ### 佳句与趣味榜插画
 
@@ -124,7 +142,7 @@ python scripts/prepare_site_illustrations.py
 ### 自动检查
 
 ```bash
-python -m py_compile scripts/save_article.py scripts/check_site.py scripts/generate_cover_thumbnails.py scripts/prepare_site_illustrations.py
+python -m py_compile scripts/save_article.py scripts/check_site.py scripts/build_book_manuscript.py scripts/generate_cover_thumbnails.py scripts/prepare_site_illustrations.py
 node --check scripts/article_covers.mjs
 node --check scripts/generate_ai_edit_drafts.mjs
 node --check scripts/generate_image_index.mjs
@@ -132,6 +150,9 @@ node --check scripts/update_ai_edit_notes.mjs
 python scripts/save_article.py --catalog-only
 node scripts/generate_image_index.mjs
 git diff --exit-code -- website/catalog.md website/image-index.md
+python scripts/build_book_manuscript.py
+python scripts/build_book_manuscript.py --check
+git diff --exit-code -- book/manuscript.md
 python scripts/check_site.py
 git diff --check
 ```
@@ -140,11 +161,12 @@ git diff --check
 
 桌面和约 390px 移动宽度各检查一次：
 
-1. 首页：主视觉、三个主操作、地图专题和四篇入口。
+1. 首页：主视觉、三个主操作、七部人生路径、地图专题和四篇入口。
 2. 全部文章：目录、封面、评价与 AI 改稿入口。
-3. 佳句选读：章节导航、插画和来源链接。
-4. 趣味索引：全部榜单、章节导航和表格移动端宽度。
-5. 足迹地图：中国/世界切换、筛选、标记弹窗、来源文章和静态索引。
+3. 成书阅读：目录、七部与附录入口、章节进度、上一篇与下一篇跨部衔接。
+4. 佳句选读：章节导航、插画和来源链接。
+5. 趣味索引：全部榜单、章节导航和表格移动端宽度。
+6. 足迹地图：中国/世界切换、筛选、标记弹窗、来源文章和静态索引。
 
 同时用键盘 Tab 检查“跳到正文”、侧栏、表单控件与回到顶部的焦点是否可见，页面不应出现横向滚动。
 
@@ -172,7 +194,7 @@ git diff --check
 ## 八、定期维护
 
 - 每次内容或网站变更：运行 `python scripts/check_site.py`。
-- 每月：抽查线上五个核心页面、移动端布局和地图降级提示。
+- 每月：抽查线上六类核心页面、移动端布局和地图降级提示。
 - 新增 5 篇文章或一次大规模复评后：重算榜单统计并检查首页推荐入口。
 - 更换 Docsify、Leaflet 或地图服务版本时：记录版本、失败降级和桌面/移动端验证结果。
 - 结构、导航、统计、生成流程或部署入口变化时：追加 `website/maintenance-log.md`。

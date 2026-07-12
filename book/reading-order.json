@@ -1,0 +1,103 @@
+{
+  "title": "旧日之书",
+  "version": 1,
+  "parts": [
+    {
+      "id": "part-1",
+      "number": "01",
+      "title": "小城与少年",
+      "page": "book/部一-小城与少年.md",
+      "chapters": [
+        { "title": "我在河津上幼儿园", "path": "articles/合集-01-我在河津上幼儿园/index.md" },
+        { "title": "我在河津上小学", "path": "articles/合集-02-我在河津上小学/index.md" },
+        { "title": "我在运中念初中", "path": "articles/合集-03-我在运中念初中/index.md" },
+        { "title": "我在康杰念高中（拾初）", "path": "articles/合集-04-我在康杰念高中（拾初）/index.md" },
+        { "title": "我在康杰念高中（怀昔）", "path": "articles/合集-05-我在康杰念高中（怀昔）/index.md" }
+      ]
+    },
+    {
+      "id": "part-2",
+      "number": "02",
+      "title": "海风吹开的四年",
+      "page": "book/部二-海风吹开的四年.md",
+      "chapters": [
+        { "title": "我在珠海上大学（新序）", "path": "articles/合集-06-我在珠海上大学（新序）/index.md" },
+        { "title": "我在珠海上大学（知欢）", "path": "articles/合集-07-我在珠海上大学（知欢）/index.md" },
+        { "title": "我在珠海上大学（风途）", "path": "articles/合集-08-我在珠海上大学（风途）/index.md" },
+        { "title": "我在珠海上大学（忽然之间）", "path": "articles/合集-09-我在珠海上大学（忽然之间）/index.md" },
+        { "title": "大学时的有趣课程（包装工程）", "path": "articles/合集-10-大学时的有趣课程（包装工程）/index.md" }
+      ]
+    },
+    {
+      "id": "part-3",
+      "number": "03",
+      "title": "毕业以后没有下一站",
+      "page": "book/部三-毕业以后没有下一站.md",
+      "chapters": [
+        { "title": "我在佛山做家教", "path": "articles/合集-11-我在佛山做家教/index.md" },
+        { "title": "我在河津考研究生", "path": "articles/合集-12-我在河津考研究生/index.md" },
+        { "title": "我在广州做游戏", "path": "articles/合集-13-我在广州做游戏/index.md" },
+        { "title": "那些生命中最重要的音乐", "path": "articles/散篇-01-那些生命中最重要的音乐/index.md" }
+      ]
+    },
+    {
+      "id": "part-4",
+      "number": "04",
+      "title": "实验室没有标准答案",
+      "page": "book/部四-实验室没有标准答案.md",
+      "chapters": [
+        { "title": "读研读废了是什么体验", "path": "articles/散篇-10-读研读废了是什么体验/index.md" }
+      ]
+    },
+    {
+      "id": "part-5",
+      "number": "05",
+      "title": "闪亮公司与错误答案",
+      "page": "book/部五-闪亮公司与错误答案.md",
+      "chapters": [
+        { "title": "我在阿里做实习（推荐算法版）", "path": "articles/合集-14-我在阿里做实习（推荐算法版）/index.md" },
+        { "title": "我在北京大厂实习", "path": "articles/合集-19-我在北京大厂实习/index.md" },
+        { "title": "阿里奇妙之旅", "path": "articles/散篇-04-阿里奇妙之旅/index.md" },
+        { "title": "我在阿里的最后一个 leader", "path": "articles/散篇-15-我在阿里的最后一个leader/index.md" }
+      ]
+    },
+    {
+      "id": "part-6",
+      "number": "06",
+      "title": "稳定的代价",
+      "page": "book/部六-稳定的代价.md",
+      "chapters": [
+        { "title": "我在闲鱼卖二手", "path": "articles/合集-15-我在闲鱼卖二手/index.md" },
+        { "title": "我在北京住合租屋", "path": "articles/合集-16-我在北京住合租屋/index.md" },
+        { "title": "我的初次考公经历", "path": "articles/合集-17-我的初次考公经历/index.md" },
+        { "title": "我的第二次考公经历", "path": "articles/合集-18-我的第二次考公经历/index.md" },
+        { "title": "圣诞前夕", "path": "articles/散篇-02-圣诞前夕/index.md" },
+        { "title": "小记二十有九", "path": "articles/散篇-03-小记二十有九/index.md" },
+        { "title": "我在西班牙骑自行车", "path": "articles/合集-20-我在西班牙骑自行车/index.md" },
+        { "title": "从张雪峰老师的死亡所想到的", "path": "articles/散篇-13-从张雪峰老师的死亡所想到的/index.md" }
+      ]
+    },
+    {
+      "id": "part-7",
+      "number": "07",
+      "title": "工位与云",
+      "page": "book/部七-工位与云.md",
+      "chapters": [
+        { "title": "vibe coding 带来的虚无感", "path": "articles/散篇-14-vibe%20coding带来的虚无感/index.md" },
+        { "title": "意念“挥刀”", "path": "articles/散篇-17-意念“挥刀”/index.md" },
+        { "title": "我舍不得的不是公司，是我的工位", "path": "articles/散篇-16-我舍不得的不是公司，是我的工位/index.md" }
+      ]
+    },
+    {
+      "id": "appendix",
+      "number": "附",
+      "title": "别调与想象",
+      "page": "book/附录-别调与想象.md",
+      "chapters": [
+        { "title": "元亨利", "path": "articles/散篇-06-元亨利/index.md" },
+        { "title": "请出示证件", "path": "articles/散篇-12-请出示证件/index.md" },
+        { "title": "丧尸暴发后，普通人该如何躲避", "path": "articles/散篇-18-丧尸躲避指南/index.md" }
+      ]
+    }
+  ]
+}

@@ -11,7 +11,7 @@ articles/                 原始文章归档，每篇文章一个目录
 assets/images/articles/   文章图片库，按文章目录分组
 assets/images/            其他跨文章复用图片
 ai-edited-articles/       AI 修改稿工作区，与 articles/ 一一对应
-book/                     成书规划与卷目整理
+book/                     七部阅读结构、编辑规划与连续书稿
 website/                  Docsify 网站入口、侧边栏、榜单和目录
 scripts/                  抓取、目录生成、封面处理等脚本
 index.html                GitHub Pages / Docsify 正式入口
@@ -131,7 +131,21 @@ python scripts/prepare_site_illustrations.py
 
 ## 成书工作区
 
-`book/` 用来整理《旧日之书》的成书结构，包括总序、时间线、写作规划和各卷目录。这里可以重排、删选、补写，但不直接替代 `articles/` 的归档版本。
+`book/` 维护《旧日之书》的七部时间主线、附录、时间线、题目库和出版规划。公开阅读顺序由 `book/reading-order.json` 统一控制，当前从 38 篇档案中选取 33 篇；这里可以重排、删选和规划补写，但不直接替代 `articles/` 的归档版本。
+
+从当前 AI 修改稿生成连续工作书稿：
+
+```bash
+python scripts/build_book_manuscript.py
+```
+
+输出为 `book/manuscript.md`。检查已提交书稿是否与选篇清单、分部导言和文章源文件一致：
+
+```bash
+python scripts/build_book_manuscript.py --check
+```
+
+`book/manuscript.md` 不手工修改；应调整源文件后重新构建。需要临时对照原始归档稿时，可用 `--source original --output <路径>` 另行输出。
 
 ## 本地环境
 
@@ -151,14 +165,14 @@ Windows 如果没有 `python` 或 `node`，安装后重新打开终端并确认�
 检查全部维护脚本语法：
 
 ```bash
-python -m py_compile scripts/save_article.py scripts/check_site.py scripts/generate_cover_thumbnails.py scripts/prepare_site_illustrations.py
+python -m py_compile scripts/save_article.py scripts/check_site.py scripts/build_book_manuscript.py scripts/generate_cover_thumbnails.py scripts/prepare_site_illustrations.py
 node --check scripts/article_covers.mjs
 node --check scripts/generate_ai_edit_drafts.mjs
 node --check scripts/generate_image_index.mjs
 node --check scripts/update_ai_edit_notes.mjs
 ```
 
-检查网站文章、目录、链接、足迹和插画完整性：
+检查网站文章、成书阅读顺序、目录、链接、足迹和插画完整性：
 
 ```bash
 python scripts/check_site.py
@@ -173,5 +187,5 @@ python scripts/check_site.py
 3. `ai-edited-articles/` 是 AI 改稿区，保持与原文一一对应。
 4. `book/` 是成书工作区，用于最终选稿、编排和补写。
 5. `assets/images/articles/` 是文章图片的唯一存储区，原文和 AI 改稿共享引用。
-6. 自动生成的目录、图片索引和 `_generated/` 派生图不直接手改，应修改源文件后重新运行生成脚本。
+6. 自动生成的网站目录、图片索引、`book/manuscript.md` 和 `_generated/` 派生图不直接手改，应修改源文件后重新运行生成脚本。
 7. 本地密钥只通过环境变量或安全交互输入，不提交 `.env`；文本格式遵循 `.editorconfig`。

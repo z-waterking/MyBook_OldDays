@@ -16,6 +16,7 @@ from PIL import Image, ImageChops, ImageOps, ImageStat, UnidentifiedImageError
 
 ROOT = Path(__file__).resolve().parents[1]
 WEBSITE = ROOT / "website"
+BOOK = ROOT / "book"
 AI_EDITED = ROOT / "ai-edited-articles"
 FOOTPRINT_KINDS = {"life", "study", "work", "choice", "travel", "transit"}
 ILLUSTRATION_SIZE = (1536, 1024)
@@ -99,7 +100,8 @@ def repository_target(raw_target: str, source: Path) -> Path | None:
 def check_site_links() -> int:
     checked: set[tuple[Path, str]] = set()
     link_count = 0
-    for source in sorted(WEBSITE.glob("*.md")):
+    sources = sorted([*WEBSITE.glob("*.md"), *BOOK.glob("*.md")])
+    for source in sources:
         content = source.read_text(encoding="utf-8")
         for pattern in (MARKDOWN_LINK_RE, HTML_LINK_RE):
             for match in pattern.finditer(content):
@@ -120,6 +122,94 @@ def check_site_links() -> int:
                         display_target = str(target)
                     report_error(f"{source.relative_to(ROOT).as_posix()}:{line} 目标不存在: {display_target}")
     return link_count
+
+
+def markdown_article_targets(path: Path) -> list[str]:
+    content = path.read_text(encoding="utf-8")
+    return [
+        unquote(html.unescape(match.group("target").strip().strip("<>")))
+        for match in MARKDOWN_LINK_RE.finditer(content)
+        if match.group("target").strip().strip("<>").startswith("articles/")
+    ]
+
+
+def check_book_reading_order(article_count: int) -> tuple[int, int]:
+    manifest_path = BOOK / "reading-order.json"
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        report_error(f"无法读取成书阅读顺序: {error}")
+        return 0, 0
+
+    parts = manifest.get("parts")
+    require(isinstance(parts, list), "成书阅读顺序缺少 parts 数组")
+    if not isinstance(parts, list):
+        return 0, 0
+
+    require(len(parts) == 8, f"成书阅读顺序应为七部加附录，当前为 {len(parts)} 个部分")
+    part_ids: list[str] = []
+    part_pages: list[str] = []
+    selected_targets: list[str] = []
+    for part in parts:
+        if not isinstance(part, dict):
+            report_error("成书阅读顺序包含非对象部分")
+            continue
+        part_id = str(part.get("id", ""))
+        page = unquote(str(part.get("page", "")))
+        chapters = part.get("chapters")
+        part_ids.append(part_id)
+        part_pages.append(page)
+        require(bool(part_id), "成书阅读部分缺少 id")
+        require(bool(part.get("number")), f"成书阅读部分缺少 number: {part_id or '未知'}")
+        require(bool(part.get("title")), f"成书阅读部分缺少 title: {part_id or '未知'}")
+        require(isinstance(chapters, list) and bool(chapters), f"成书阅读部分没有章节: {part_id or '未知'}")
+        page_path = ROOT / page
+        require(page_path.is_file(), f"成书阅读部分页面不存在: {page}")
+        if not isinstance(chapters, list):
+            continue
+
+        part_targets: list[str] = []
+        for chapter in chapters:
+            if not isinstance(chapter, dict):
+                report_error(f"成书阅读部分包含非对象章节: {part_id}")
+                continue
+            target = unquote(str(chapter.get("path", "")))
+            require(bool(chapter.get("title")), f"成书阅读章节缺少标题: {target or part_id}")
+            require(target.startswith("articles/") and target.endswith("/index.md"), f"成书阅读章节路径格式错误: {target}")
+            require((ROOT / target).is_file(), f"成书阅读章节不存在: {target}")
+            part_targets.append(target)
+            selected_targets.append(target)
+
+        if page_path.is_file():
+            require(
+                markdown_article_targets(page_path) == part_targets,
+                f"成书分部页面与阅读顺序不一致: {page}",
+            )
+
+    require(len(part_ids) == len(set(part_ids)), "成书阅读部分 id 重复")
+    require(len(part_pages) == len(set(part_pages)), "成书阅读部分页面重复")
+    require(part_ids == [f"part-{number}" for number in range(1, 8)] + ["appendix"], "成书阅读部分顺序错误")
+    require(len(selected_targets) == 33, f"成书阅读版应选 33 篇，当前为 {len(selected_targets)} 篇")
+    require(len(selected_targets) == len(set(selected_targets)), "成书阅读版存在重复文章")
+    require(len(selected_targets) <= article_count, "成书阅读版篇数超过文章档案总数")
+
+    contents_path = BOOK / "01-成书目录.md"
+    require(contents_path.is_file(), "缺少公开成书阅读目录")
+    if contents_path.is_file():
+        require(
+            markdown_article_targets(contents_path) == selected_targets,
+            "公开成书目录与 reading-order.json 顺序不一致",
+        )
+
+    legacy_volumes = sorted(path.name for path in BOOK.glob("卷*.md"))
+    require(not legacy_volumes, f"成书区仍有旧卷文件: {', '.join(legacy_volumes)}")
+    legacy_links = [
+        path.name
+        for path in BOOK.glob("*.md")
+        if "../articles/" in path.read_text(encoding="utf-8")
+    ]
+    require(not legacy_links, f"成书区仍使用旧相对文章链接: {', '.join(legacy_links)}")
+    return len(parts), len(selected_targets)
 
 
 def check_articles_and_catalog() -> tuple[list[Path], int, dict[str, float]]:
@@ -481,6 +571,12 @@ def check_required_files() -> None:
         "website/footprints.md",
         "website/footprints-data.json",
         "website/MAINTENANCE.md",
+        "book/README.md",
+        "book/01-成书目录.md",
+        "book/02-时间线.md",
+        "book/03-写作规划.md",
+        "book/04-候选题目库.md",
+        "book/reading-order.json",
         "ai-edited-articles/AI_EDITING_GUIDE.md",
         "ai-edited-articles/mapping.md",
     ]
@@ -493,6 +589,7 @@ def check_required_files() -> None:
 def main() -> int:
     check_required_files()
     articles, catalog_count, review_scores = check_articles_and_catalog()
+    book_part_count, book_chapter_count = check_book_reading_order(len(articles))
     ranking_count = check_ranking(review_scores)
     ai_edit_count = check_ai_edits(articles)
     link_count = check_site_links()
@@ -509,6 +606,7 @@ def main() -> int:
     print("网站巡检通过")
     print(f"- 文章 / 目录 / 排名 / AI 改稿：{len(articles)} / {catalog_count} / {ranking_count} / {ai_edit_count}")
     print(f"- 已检查本地链接与图片：{link_count}")
+    print(f"- 成书阅读：{book_part_count} 个部分，{book_chapter_count} 篇入选文章")
     print(f"- 足迹：中国 {china_count}，世界视图 {world_count}")
     print(f"- 插画原图与派生图：{illustration_count}")
     return 0

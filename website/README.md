@@ -7,6 +7,7 @@
 - `index.html`：旧 `/website/` 地址的兼容跳回页，正式入口在根目录 `index.html`。
 - `home.md`：读者首页，提供全书导览、人生路径和推荐阅读。
 - `_sidebar.md`：侧边栏导航。
+- `../book/01-成书目录.md` 与 `../book/部*.md`：七部成书阅读入口，由侧边栏直接访问。
 - `catalog.md`：文章目录，由脚本自动生成。
 - `ranking.md`：评分排名。
 - `literary-gems.md`：佳句榜。
@@ -42,6 +43,17 @@ python scripts/save_article.py --catalog-only
 ```
 
 两个命令都会触发 `website/catalog.md` 更新，但目录 HTML 只由 `save_article.py` 渲染；完整发布以 Node 命令为准。
+
+## 成书阅读
+
+成书选篇和章节顺序统一维护在 `book/reading-order.json`，公开目录、八个分部页面及网站上一篇/下一篇导航都应与它一致。重建连续工作书稿：
+
+```bash
+python scripts/build_book_manuscript.py
+python scripts/build_book_manuscript.py --check
+```
+
+生成的 `book/manuscript.md` 不直接手改。调整选篇、分部导言或入选文章后重新运行命令，并用 `python scripts/check_site.py` 检查所有阅读入口。
 
 ## 图片索引
 

@@ -288,7 +288,7 @@
 
     .book-home-timeline {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(7, minmax(0, 1fr));
       margin-top: 16px;
       border-top: 1px solid #dcd4c6;
       border-bottom: 1px solid #dcd4c6;
@@ -578,6 +578,118 @@
       margin-top: 5px;
       overflow-wrap: anywhere;
       font-size: 15px;
+      line-height: 1.45;
+    }
+
+    /* 成书阅读 */
+    .markdown-section.book-index-page,
+    .markdown-section.book-part-page {
+      max-width: 900px !important;
+    }
+
+    .book-part-page > h1,
+    .book-index-page > h1 {
+      color: #3b332b;
+      font-family: "STKaiti", "KaiTi", "FangSong", serif;
+    }
+
+    .book-part-page > blockquote:first-of-type {
+      margin-top: 0 !important;
+      padding: 9px 0 9px 16px !important;
+      border-left-color: #9d8462 !important;
+      background: transparent !important;
+      color: #766754 !important;
+      font-size: 14px !important;
+    }
+
+    .book-part-progress {
+      margin: -6px 0 30px !important;
+      color: #927b5c;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .book-reading-context {
+      margin: 0 0 30px;
+      padding: 13px 0 12px;
+      border-top: 1px solid #d8cfbf;
+      border-bottom: 1px solid #d8cfbf;
+    }
+
+    .book-reading-context-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .book-reading-context a {
+      color: #6b563c !important;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none !important;
+    }
+
+    .book-reading-context span {
+      color: #8d8275;
+      font-size: 12px;
+    }
+
+    .book-reading-progress-track {
+      height: 3px;
+      margin-top: 10px;
+      overflow: hidden;
+      background: #e9e3d9;
+    }
+
+    .book-reading-progress-value {
+      display: block;
+      height: 100%;
+      background: #8a6d49;
+    }
+
+    .book-chapter-nav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin: 54px 0 18px;
+      border-top: 1px solid #d8cfbf;
+      border-bottom: 1px solid #d8cfbf;
+    }
+
+    .book-chapter-nav a {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      justify-content: center;
+      padding: 17px 18px;
+      color: #332d26 !important;
+      text-decoration: none !important;
+    }
+
+    .book-chapter-nav a + a {
+      border-left: 1px solid #e3ddd3;
+      text-align: right;
+    }
+
+    .book-chapter-nav a:hover {
+      background: #f4f1ea;
+    }
+
+    .book-chapter-nav small,
+    .book-chapter-nav strong {
+      display: block;
+      overflow-wrap: anywhere;
+    }
+
+    .book-chapter-nav small {
+      color: #9a8364;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .book-chapter-nav strong {
+      margin-top: 4px;
+      font-size: 14px;
       line-height: 1.45;
     }
 
@@ -1432,6 +1544,14 @@
       .book-home-explore {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+
+      .book-home-timeline {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .book-home-timeline a {
+        border-bottom: 1px solid #e8e2d8;
+      }
     }
 
     @media (max-width: 768px) {
@@ -1657,6 +1777,26 @@
 
       .book-home-explore a:last-child {
         border-bottom: 0;
+      }
+
+      .book-reading-context-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .book-chapter-nav {
+        grid-template-columns: 1fr;
+        margin-top: 42px;
+      }
+
+      .book-chapter-nav a {
+        padding: 14px 8px;
+      }
+
+      .book-chapter-nav a + a {
+        border-top: 1px solid #e3ddd3;
+        border-left: 0;
       }
 
       .footprints-summary {
@@ -2029,6 +2169,149 @@
               });
           });
         },
+        function enhanceBookReading(hook) {
+          var manifestPromise;
+
+          function loadManifest() {
+            if (!manifestPromise) {
+              manifestPromise = fetch('book/reading-order.json')
+                .then(function (response) {
+                  if (!response.ok) throw new Error('成书阅读顺序 HTTP ' + response.status);
+                  return response.json();
+                })
+                .catch(function (error) {
+                  manifestPromise = null;
+                  throw error;
+                });
+            }
+            return manifestPromise;
+          }
+
+          function routeKey(value) {
+            var route = String(value || '').replace(/^#\/?/, '').split('?')[0];
+            try {
+              route = decodeURI(route);
+            } catch (error) {
+              // Keep malformed routes comparable without interrupting reading.
+            }
+            return route.replace(/\.md$/, '').replace(/\/$/, '');
+          }
+
+          function routeHref(path) {
+            var normalized = path;
+            try {
+              normalized = decodeURI(path);
+            } catch (error) {
+              // Preserve the original manifest path when decoding fails.
+            }
+            return '#/' + encodeURI(normalized);
+          }
+
+          function createChapterLink(entry, direction) {
+            var link = document.createElement('a');
+            var label = document.createElement('small');
+            var title = document.createElement('strong');
+            if (entry) {
+              link.href = routeHref(entry.path);
+              label.textContent = direction === 'previous' ? '上一篇' : '下一篇';
+              title.textContent = entry.title;
+            } else {
+              link.href = '#/book/01-成书目录.md';
+              label.textContent = direction === 'previous' ? '回到' : '读完';
+              title.textContent = '《旧日之书》阅读目录';
+            }
+            link.appendChild(label);
+            link.appendChild(title);
+            return link;
+          }
+
+          hook.doneEach(function () {
+            var content = document.querySelector('.markdown-section');
+            if (!content) return;
+
+            content.classList.remove('book-index-page', 'book-part-page', 'book-chapter-page');
+            content.querySelectorAll('.book-reading-context, .book-chapter-nav, .book-part-progress').forEach(function (element) {
+              element.remove();
+            });
+
+            var currentRoute = routeKey(window.location.hash);
+            if (currentRoute === routeKey('book/01-成书目录.md')) {
+              content.classList.add('book-index-page');
+            }
+
+            loadManifest().then(function (manifest) {
+              if (currentRoute !== routeKey(window.location.hash)) return;
+              var parts = manifest.parts || [];
+              var currentPart = parts.find(function (part) {
+                return routeKey(part.page) === currentRoute;
+              });
+
+              if (currentPart) {
+                content.classList.add('book-part-page');
+                var heading = content.querySelector('h1');
+                if (heading) {
+                  var partProgress = document.createElement('p');
+                  partProgress.className = 'book-part-progress';
+                  partProgress.textContent = currentPart.number + ' · ' + currentPart.chapters.length + ' 篇入选文章';
+                  heading.insertAdjacentElement('afterend', partProgress);
+                }
+              }
+
+              var chapters = [];
+              parts.forEach(function (part) {
+                (part.chapters || []).forEach(function (chapter) {
+                  chapters.push({
+                    title: chapter.title,
+                    path: chapter.path,
+                    part: part
+                  });
+                });
+              });
+              var chapterIndex = chapters.findIndex(function (chapter) {
+                return routeKey(chapter.path) === currentRoute;
+              });
+              if (chapterIndex < 0) return;
+
+              content.classList.add('book-chapter-page');
+              var chapter = chapters[chapterIndex];
+              var context = document.createElement('nav');
+              context.className = 'book-reading-context';
+              context.setAttribute('aria-label', '成书阅读进度');
+
+              var contextRow = document.createElement('div');
+              contextRow.className = 'book-reading-context-row';
+              var partLink = document.createElement('a');
+              partLink.href = routeHref(chapter.part.page);
+              partLink.textContent = chapter.part.number + ' · ' + chapter.part.title;
+              var counter = document.createElement('span');
+              counter.textContent = '全书第 ' + (chapterIndex + 1) + ' / ' + chapters.length + ' 篇';
+              contextRow.appendChild(partLink);
+              contextRow.appendChild(counter);
+
+              var progressTrack = document.createElement('div');
+              progressTrack.className = 'book-reading-progress-track';
+              progressTrack.setAttribute('aria-hidden', 'true');
+              var progressValue = document.createElement('span');
+              progressValue.className = 'book-reading-progress-value';
+              progressValue.style.width = ((chapterIndex + 1) / chapters.length * 100).toFixed(2) + '%';
+              progressTrack.appendChild(progressValue);
+              context.appendChild(contextRow);
+              context.appendChild(progressTrack);
+
+              var firstHeading = content.querySelector('h1');
+              if (firstHeading) firstHeading.before(context);
+
+              var chapterNav = document.createElement('nav');
+              chapterNav.className = 'book-chapter-nav';
+              chapterNav.setAttribute('aria-label', '上一篇和下一篇');
+              chapterNav.appendChild(createChapterLink(chapters[chapterIndex - 1], 'previous'));
+              chapterNav.appendChild(createChapterLink(chapters[chapterIndex + 1], 'next'));
+              content.appendChild(chapterNav);
+            }).catch(function (error) {
+              console.warn('成书阅读导航未加载', error);
+            });
+          });
+        },
         function enhanceSidebar(hook) {
           var branchStateKey = 'old-days-sidebar-branches';
 
@@ -2045,7 +2328,12 @@
           }
 
           function normalizeHash(value) {
-            return String(value || '')
+            var normalized = String(value || '');
+            try {
+              normalized = decodeURI(normalized);
+            } catch (error) {
+            }
+            return normalized
               .replace(/^#/, '#')
               .replace(/\?id=.*$/, '')
               .replace(/\.md$/, '')
@@ -2070,6 +2358,7 @@
           function isKnownPageBranch(link) {
             var branchTargets = [
               '#/book/README',
+              '#/book/01-成书目录',
               '#/website/ranking',
               '#/website/literary-gems',
               '#/website/fun-rankings'
