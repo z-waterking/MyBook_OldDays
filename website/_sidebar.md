@@ -6,6 +6,7 @@
 - [编辑精选](website/ranking.md)
 - [佳句选读](website/literary-gems.md)
 - [趣味索引](website/fun-rankings.md)
+- [足迹地图](website/footprints.md)
 
 - **合集 · 少年时代**
   - [01 河津上幼儿园](articles/合集-01-我在河津上幼儿园/index.md)

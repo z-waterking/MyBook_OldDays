@@ -10,6 +10,34 @@
 
 ---
 
+## 2026-07-12 · 佳句与趣味榜插画、足迹地图
+
+- **类型：** 视觉内容 / 专题页面 / 地图交互
+- **状态：** 已完成
+- **关联提交：** 本条所在提交 · `feat: illustrate curated pages and add footprint map`
+
+### 涉及范围
+
+- `website/literary-gems.md` / `website/fun-rankings.md`：为 32 条佳句和 18 个趣味榜单分别加入场景插画。
+- `assets/images/illustrations/` / `assets/images/_generated/illustrations/`：保存 1536×1024 JPEG 原图与 960×640 WebP 网页派生图。
+- `scripts/illustration_manifest.json` / `scripts/generate_site_illustrations.ps1` / `scripts/prepare_site_illustrations.py`：维护场景清单、断点续生、压缩和页面注入。
+- `website/footprints.md` / `website/footprints-data.json`：新增中国与世界足迹地图、地点列表和来源说明。
+- `index.html` / `website/_sidebar.md` / `website/home.md`：新增 Leaflet 地图、响应式插画样式和读者入口。
+
+### 改动摘要
+
+- 50 张插画使用统一的 3:2 纪实电影感方向，但按每条佳句或榜单主题分别还原具体场景。
+- 页面只加载约 2.39 MB 的 WebP 派生图，使用懒加载；高质量 JPEG 原图保留用于后续再加工。
+- 足迹页包含 31 个中国地点、3 个西班牙地点和 6 类足迹；坐标、路线与文章来源由本地 JSON 驱动。
+- 地图使用 Leaflet 和 Esri 世界街道底图；底图不可用时仍展示本地点档案列表。
+
+### 验证
+
+- 50 张原图均为 1536×1024 JPEG，50 张派生图均为 960×640 WebP，文件哈希无重复。
+- `python scripts/prepare_site_illustrations.py` 重复运行无重复插入。
+- 地点 JSON、坐标范围、35 条地点记录与来源链接检查。
+- 桌面及 390px 移动端 Playwright 检查：插画比例、地图瓦片、标记、筛选、列表和横向溢出。
+
 ## 2026-07-12 · 新增书籍首页并优化目录性能
 
 - **类型：** 读者入口 / 信息架构 / 页面性能

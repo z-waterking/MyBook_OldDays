@@ -66,5 +66,6 @@
     <a href="#/book/01-成书目录.md"><small>按卷阅读</small><strong>看见七卷人生结构</strong></a>
     <a href="#/website/literary-gems.md"><small>佳句选读</small><strong>从三十二句话进入旧日</strong></a>
     <a href="#/website/fun-rankings.md"><small>趣味索引</small><strong>食物、人物、足迹与名场面</strong></a>
+    <a href="#/website/footprints.md"><small>足迹地图</small><strong>从河津到地中海</strong></a>
   </section>
 </div>

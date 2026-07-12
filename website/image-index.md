@@ -1,6 +1,6 @@
 # 图片索引
 
-> 共 134 张图片，更新于 2026-07-12。
+> 共 184 张图片，更新于 2026-07-12。
 
 ## 引用规则
 
@@ -10,7 +10,58 @@
 
 ## 共享图片库
 
-暂无共享图片。新增跨文章复用图片时，放入 `assets/images/` 后重新运行 `node scripts/generate_image_index.mjs`。
+| 预览 | 来源 | 类型 | 文件 | 大小 | 引用路径 |
+|------|------|------|------|------|----------|
+| <img src="assets/images/illustrations/fun-rankings/01-food.jpg" alt="共享图片库 01-food.jpg" width="96"> | 共享图片库 | shared | 01-food.jpg | 262 KB | `assets/images/illustrations/fun-rankings/01-food.jpg` |
+| <img src="assets/images/illustrations/fun-rankings/02-funny-scenes.jpg" alt="共享图片库 02-funny-scenes.jpg" width="96"> | 共享图片库 | shared | 02-funny-scenes.jpg | 227 KB | `assets/images/illustrations/fun-rankings/02-funny-scenes.jpg` |
+| <img src="assets/images/illustrations/fun-rankings/03-tearful.jpg" alt="共享图片库 03-tearful.jpg" width="96"> | 共享图片库 | shared | 03-tearful.jpg | 167 KB | `assets/images/illustrations/fun-rankings/03-tearful.jpg` |
+| <img src="assets/images/illustrations/fun-rankings/04-footprints.jpg" alt="共享图片库 04-footprints.jpg" width="96"> | 共享图片库 | shared | 04-footprints.jpg | 260 KB | `assets/images/illustrations/fun-rankings/04-footprints.jpg` |
+| <img src="assets/images/illustrations/fun-rankings/05-people.jpg" alt="共享图片库 05-people.jpg" width="96"> | 共享图片库 | shared | 05-people.jpg | 262 KB | `assets/images/illustrations/fun-rankings/05-people.jpg` |
+| <img src="assets/images/illustrations/fun-rankings/06-genres.jpg" alt="共享图片库 06-genres.jpg" width="96"> | 共享图片库 | shared | 06-genres.jpg | 264 KB | `assets/images/illustrations/fun-rankings/06-genres.jpg` |
+| <img src="assets/images/illustrations/fun-rankings/07-games.jpg" alt="共享图片库 07-games.jpg" width="96"> | 共享图片库 | shared | 07-games.jpg | 195 KB | `assets/images/illustrations/fun-rankings/07-games.jpg` |
+| <img src="assets/images/illustrations/fun-rankings/08-work.jpg" alt="共享图片库 08-work.jpg" width="96"> | 共享图片库 | shared | 08-work.jpg | 193 KB | `assets/images/illustrations/fun-rankings/08-work.jpg` |
+| <img src="assets/images/illustrations/fun-rankings/09-rehearsals.jpg" alt="共享图片库 09-rehearsals.jpg" width="96"> | 共享图片库 | shared | 09-rehearsals.jpg | 196 KB | `assets/images/illustrations/fun-rankings/09-rehearsals.jpg` |
+| <img src="assets/images/illustrations/fun-rankings/10-ai-anxiety.jpg" alt="共享图片库 10-ai-anxiety.jpg" width="96"> | 共享图片库 | shared | 10-ai-anxiety.jpg | 181 KB | `assets/images/illustrations/fun-rankings/10-ai-anxiety.jpg` |
+| <img src="assets/images/illustrations/fun-rankings/11-exams.jpg" alt="共享图片库 11-exams.jpg" width="96"> | 共享图片库 | shared | 11-exams.jpg | 265 KB | `assets/images/illustrations/fun-rankings/11-exams.jpg` |
+| <img src="assets/images/illustrations/fun-rankings/12-injuries.jpg" alt="共享图片库 12-injuries.jpg" width="96"> | 共享图片库 | shared | 12-injuries.jpg | 291 KB | `assets/images/illustrations/fun-rankings/12-injuries.jpg` |
+| <img src="assets/images/illustrations/fun-rankings/13-quote-density.jpg" alt="共享图片库 13-quote-density.jpg" width="96"> | 共享图片库 | shared | 13-quote-density.jpg | 257 KB | `assets/images/illustrations/fun-rankings/13-quote-density.jpg` |
+| <img src="assets/images/illustrations/fun-rankings/14-music.jpg" alt="共享图片库 14-music.jpg" width="96"> | 共享图片库 | shared | 14-music.jpg | 230 KB | `assets/images/illustrations/fun-rankings/14-music.jpg` |
+| <img src="assets/images/illustrations/fun-rankings/15-heartbeats.jpg" alt="共享图片库 15-heartbeats.jpg" width="96"> | 共享图片库 | shared | 15-heartbeats.jpg | 153 KB | `assets/images/illustrations/fun-rankings/15-heartbeats.jpg` |
+| <img src="assets/images/illustrations/fun-rankings/16-money.jpg" alt="共享图片库 16-money.jpg" width="96"> | 共享图片库 | shared | 16-money.jpg | 191 KB | `assets/images/illustrations/fun-rankings/16-money.jpg` |
+| <img src="assets/images/illustrations/fun-rankings/17-digital-objects.jpg" alt="共享图片库 17-digital-objects.jpg" width="96"> | 共享图片库 | shared | 17-digital-objects.jpg | 253 KB | `assets/images/illustrations/fun-rankings/17-digital-objects.jpg` |
+| <img src="assets/images/illustrations/fun-rankings/18-mentors-leaders.jpg" alt="共享图片库 18-mentors-leaders.jpg" width="96"> | 共享图片库 | shared | 18-mentors-leaders.jpg | 162 KB | `assets/images/illustrations/fun-rankings/18-mentors-leaders.jpg` |
+| <img src="assets/images/illustrations/literary-gems/01-photo-box.jpg" alt="共享图片库 01-photo-box.jpg" width="96"> | 共享图片库 | shared | 01-photo-box.jpg | 211 KB | `assets/images/illustrations/literary-gems/01-photo-box.jpg` |
+| <img src="assets/images/illustrations/literary-gems/02-wind-to-today.jpg" alt="共享图片库 02-wind-to-today.jpg" width="96"> | 共享图片库 | shared | 02-wind-to-today.jpg | 150 KB | `assets/images/illustrations/literary-gems/02-wind-to-today.jpg` |
+| <img src="assets/images/illustrations/literary-gems/03-kept-until-death.jpg" alt="共享图片库 03-kept-until-death.jpg" width="96"> | 共享图片库 | shared | 03-kept-until-death.jpg | 157 KB | `assets/images/illustrations/literary-gems/03-kept-until-death.jpg` |
+| <img src="assets/images/illustrations/literary-gems/04-someone-elses-life.jpg" alt="共享图片库 04-someone-elses-life.jpg" width="96"> | 共享图片库 | shared | 04-someone-elses-life.jpg | 129 KB | `assets/images/illustrations/literary-gems/04-someone-elses-life.jpg` |
+| <img src="assets/images/illustrations/literary-gems/05-mothers-hand.jpg" alt="共享图片库 05-mothers-hand.jpg" width="96"> | 共享图片库 | shared | 05-mothers-hand.jpg | 258 KB | `assets/images/illustrations/literary-gems/05-mothers-hand.jpg` |
+| <img src="assets/images/illustrations/literary-gems/06-sudden-graduation.jpg" alt="共享图片库 06-sudden-graduation.jpg" width="96"> | 共享图片库 | shared | 06-sudden-graduation.jpg | 178 KB | `assets/images/illustrations/literary-gems/06-sudden-graduation.jpg` |
+| <img src="assets/images/illustrations/literary-gems/07-song-without-ending.jpg" alt="共享图片库 07-song-without-ending.jpg" width="96"> | 共享图片库 | shared | 07-song-without-ending.jpg | 192 KB | `assets/images/illustrations/literary-gems/07-song-without-ending.jpg` |
+| <img src="assets/images/illustrations/literary-gems/08-watch-her-until-dawn.jpg" alt="共享图片库 08-watch-her-until-dawn.jpg" width="96"> | 共享图片库 | shared | 08-watch-her-until-dawn.jpg | 113 KB | `assets/images/illustrations/literary-gems/08-watch-her-until-dawn.jpg` |
+| <img src="assets/images/illustrations/literary-gems/09-rain-grew-heavier.jpg" alt="共享图片库 09-rain-grew-heavier.jpg" width="96"> | 共享图片库 | shared | 09-rain-grew-heavier.jpg | 202 KB | `assets/images/illustrations/literary-gems/09-rain-grew-heavier.jpg` |
+| <img src="assets/images/illustrations/literary-gems/10-strength-spent.jpg" alt="共享图片库 10-strength-spent.jpg" width="96"> | 共享图片库 | shared | 10-strength-spent.jpg | 184 KB | `assets/images/illustrations/literary-gems/10-strength-spent.jpg` |
+| <img src="assets/images/illustrations/literary-gems/11-rhythm-of-wind.jpg" alt="共享图片库 11-rhythm-of-wind.jpg" width="96"> | 共享图片库 | shared | 11-rhythm-of-wind.jpg | 253 KB | `assets/images/illustrations/literary-gems/11-rhythm-of-wind.jpg` |
+| <img src="assets/images/illustrations/literary-gems/12-memory-castle.jpg" alt="共享图片库 12-memory-castle.jpg" width="96"> | 共享图片库 | shared | 12-memory-castle.jpg | 180 KB | `assets/images/illustrations/literary-gems/12-memory-castle.jpg` |
+| <img src="assets/images/illustrations/literary-gems/13-four-seasons-in-blood.jpg" alt="共享图片库 13-four-seasons-in-blood.jpg" width="96"> | 共享图片库 | shared | 13-four-seasons-in-blood.jpg | 300 KB | `assets/images/illustrations/literary-gems/13-four-seasons-in-blood.jpg` |
+| <img src="assets/images/illustrations/literary-gems/14-once-twenty-two.jpg" alt="共享图片库 14-once-twenty-two.jpg" width="96"> | 共享图片库 | shared | 14-once-twenty-two.jpg | 143 KB | `assets/images/illustrations/literary-gems/14-once-twenty-two.jpg` |
+| <img src="assets/images/illustrations/literary-gems/15-softened-evening-wind.jpg" alt="共享图片库 15-softened-evening-wind.jpg" width="96"> | 共享图片库 | shared | 15-softened-evening-wind.jpg | 211 KB | `assets/images/illustrations/literary-gems/15-softened-evening-wind.jpg` |
+| <img src="assets/images/illustrations/literary-gems/16-mediterranean-dream.jpg" alt="共享图片库 16-mediterranean-dream.jpg" width="96"> | 共享图片库 | shared | 16-mediterranean-dream.jpg | 297 KB | `assets/images/illustrations/literary-gems/16-mediterranean-dream.jpg` |
+| <img src="assets/images/illustrations/literary-gems/17-sister-who-never-grew.jpg" alt="共享图片库 17-sister-who-never-grew.jpg" width="96"> | 共享图片库 | shared | 17-sister-who-never-grew.jpg | 200 KB | `assets/images/illustrations/literary-gems/17-sister-who-never-grew.jpg` |
+| <img src="assets/images/illustrations/literary-gems/18-child-in-drain.jpg" alt="共享图片库 18-child-in-drain.jpg" width="96"> | 共享图片库 | shared | 18-child-in-drain.jpg | 226 KB | `assets/images/illustrations/literary-gems/18-child-in-drain.jpg` |
+| <img src="assets/images/illustrations/literary-gems/19-messages-after-death.jpg" alt="共享图片库 19-messages-after-death.jpg" width="96"> | 共享图片库 | shared | 19-messages-after-death.jpg | 74 KB | `assets/images/illustrations/literary-gems/19-messages-after-death.jpg` |
+| <img src="assets/images/illustrations/literary-gems/20-only-death-is-young.jpg" alt="共享图片库 20-only-death-is-young.jpg" width="96"> | 共享图片库 | shared | 20-only-death-is-young.jpg | 160 KB | `assets/images/illustrations/literary-gems/20-only-death-is-young.jpg` |
+| <img src="assets/images/illustrations/literary-gems/21-biological-first.jpg" alt="共享图片库 21-biological-first.jpg" width="96"> | 共享图片库 | shared | 21-biological-first.jpg | 153 KB | `assets/images/illustrations/literary-gems/21-biological-first.jpg` |
+| <img src="assets/images/illustrations/literary-gems/22-quiet-crossroad.jpg" alt="共享图片库 22-quiet-crossroad.jpg" width="96"> | 共享图片库 | shared | 22-quiet-crossroad.jpg | 313 KB | `assets/images/illustrations/literary-gems/22-quiet-crossroad.jpg` |
+| <img src="assets/images/illustrations/literary-gems/23-after-decision.jpg" alt="共享图片库 23-after-decision.jpg" width="96"> | 共享图片库 | shared | 23-after-decision.jpg | 195 KB | `assets/images/illustrations/literary-gems/23-after-decision.jpg` |
+| <img src="assets/images/illustrations/literary-gems/24-youth-expiry.jpg" alt="共享图片库 24-youth-expiry.jpg" width="96"> | 共享图片库 | shared | 24-youth-expiry.jpg | 222 KB | `assets/images/illustrations/literary-gems/24-youth-expiry.jpg` |
+| <img src="assets/images/illustrations/literary-gems/25-small-shelter.jpg" alt="共享图片库 25-small-shelter.jpg" width="96"> | 共享图片库 | shared | 25-small-shelter.jpg | 148 KB | `assets/images/illustrations/literary-gems/25-small-shelter.jpg` |
+| <img src="assets/images/illustrations/literary-gems/26-cloud-remains.jpg" alt="共享图片库 26-cloud-remains.jpg" width="96"> | 共享图片库 | shared | 26-cloud-remains.jpg | 134 KB | `assets/images/illustrations/literary-gems/26-cloud-remains.jpg` |
+| <img src="assets/images/illustrations/literary-gems/27-ancient-programming.jpg" alt="共享图片库 27-ancient-programming.jpg" width="96"> | 共享图片库 | shared | 27-ancient-programming.jpg | 240 KB | `assets/images/illustrations/literary-gems/27-ancient-programming.jpg` |
+| <img src="assets/images/illustrations/literary-gems/28-not-empty-handed.jpg" alt="共享图片库 28-not-empty-handed.jpg" width="96"> | 共享图片库 | shared | 28-not-empty-handed.jpg | 153 KB | `assets/images/illustrations/literary-gems/28-not-empty-handed.jpg` |
+| <img src="assets/images/illustrations/literary-gems/29-drink-in-afterlife.jpg" alt="共享图片库 29-drink-in-afterlife.jpg" width="96"> | 共享图片库 | shared | 29-drink-in-afterlife.jpg | 274 KB | `assets/images/illustrations/literary-gems/29-drink-in-afterlife.jpg` |
+| <img src="assets/images/illustrations/literary-gems/30-unverified-disappearance.jpg" alt="共享图片库 30-unverified-disappearance.jpg" width="96"> | 共享图片库 | shared | 30-unverified-disappearance.jpg | 111 KB | `assets/images/illustrations/literary-gems/30-unverified-disappearance.jpg` |
+| <img src="assets/images/illustrations/literary-gems/31-two-lines-of-tears.jpg" alt="共享图片库 31-two-lines-of-tears.jpg" width="96"> | 共享图片库 | shared | 31-two-lines-of-tears.jpg | 120 KB | `assets/images/illustrations/literary-gems/31-two-lines-of-tears.jpg` |
+| <img src="assets/images/illustrations/literary-gems/32-silver-watch.jpg" alt="共享图片库 32-silver-watch.jpg" width="96"> | 共享图片库 | shared | 32-silver-watch.jpg | 175 KB | `assets/images/illustrations/literary-gems/32-silver-watch.jpg` |
 
 ## 文章图片
 

@@ -62,6 +62,7 @@ node scripts/article_covers.mjs --mode markdown
 - `website/ranking.md`：评分排名。
 - `website/literary-gems.md`：佳句榜。
 - `website/fun-rankings.md`：趣味榜单。
+- `website/footprints.md`：中国与世界足迹地图、地点档案。
 - `website/image-index.md`：图片索引，自动生成。
 
 完整 Docsify 站点入口是根目录 `index.html`，用于 GitHub Pages 原地址。网页相关 Markdown 仍统一放在 `website/`。`website/index.html` 只保留为旧 `/website/` 地址的兼容跳回页，并会保留当前 hash 路由。文章正文保留在 `articles/`，文章图片统一放在 `assets/images/articles/`。
@@ -115,6 +116,15 @@ node scripts/generate_image_index.mjs
 ```
 
 生成结果在 `website/image-index.md`。正文使用仓库根路径，例如 `assets/images/articles/合集-05-我在康杰念高中（怀昔）/001.jpg`。
+
+佳句榜和趣味榜插画由 `scripts/illustration_manifest.json` 统一描述。使用已配置的全局 Azure GPT Image skill 生成缺失原图，再生成网页 WebP 并注入对应标题：
+
+```powershell
+./scripts/generate_site_illustrations.ps1 -TimeoutSec 600
+python scripts/prepare_site_illustrations.py
+```
+
+生成脚本默认跳过已有原图；需要重做单张时使用 `-Id <条目ID> -Force`。足迹坐标与来源说明维护在 `website/footprints-data.json`。
 
 ## 成书工作区
 

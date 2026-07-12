@@ -138,7 +138,9 @@ python -m py_compile scripts/save_article.py
 - `scripts/generate_cover_thumbnails.py` 会从文章原始封面生成目录 WebP、首页主视觉和 favicon；依赖 Pillow。
 - `scripts/generate_image_index.mjs` 会扫描 `assets/images/articles/` 和其他 `assets/images/` 子目录，生成 `website/image-index.md`。
 - `scripts/update_ai_edit_notes.mjs` 会根据原文和 AI 改稿生成每篇 `notes.md` 的实际改动清单。
-- 两个脚本都可能改动 `website/catalog.md`，`article_covers.mjs --mode markdown` 还会改动多篇 `articles/*/index.md` 的封面块。
+- `scripts/generate_site_illustrations.ps1` 按 `scripts/illustration_manifest.json` 调用全局 Azure GPT Image skill，生成佳句榜和趣味榜缺失插画；默认跳过已有文件。
+- `scripts/prepare_site_illustrations.py` 将插画原图转为 960×640 WebP，并按清单把图片块注入 `website/literary-gems.md` 和 `website/fun-rankings.md`。
+- `save_article.py` 和 `article_covers.mjs` 都可能改动 `website/catalog.md`，后者在 `--mode markdown` 下还会改动多篇 `articles/*/index.md` 的封面块。
 
 ## 图片索引与复用规则
 

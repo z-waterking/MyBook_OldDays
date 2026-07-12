@@ -6,6 +6,11 @@
 
 ## 🍜 美食榜 · 出镜率最高的食物
 
+<figure class="section-illustration" data-illustration="fun-01-food">
+  <img src="assets/images/_generated/illustrations/fun-rankings/01-food.webp" alt="深夜街边冒热气的拌面奶茶与鸡蛋灌饼" loading="lazy" decoding="async" width="960" height="640">
+</figure>
+
+
 | 排名 | 美食 | 出处 | 点评 |
 |------|------|------|------|
 | 1 | **飘香拌面** | 佛山家教 | 备课到深夜后的灵魂慰藉，和猪手面一起成为里水记忆 |
@@ -22,6 +27,11 @@
 ---
 
 ## 😂 名场面榜 · 最搞笑的十个瞬间
+
+<figure class="section-illustration" data-illustration="fun-02-funny-scenes">
+  <img src="assets/images/_generated/illustrations/fun-rankings/02-funny-scenes.webp" alt="音箱复仇鸡蛋装置和天台蜡烛组成的漫画分镜" loading="lazy" decoding="async" width="960" height="640">
+</figure>
+
 
 | 排名 | 场面 | 出处 |
 |------|------|------|
@@ -40,6 +50,11 @@
 
 ## 😢 催泪榜 · 最让人心酸的瞬间
 
+<figure class="section-illustration" data-illustration="fun-03-tearful">
+  <img src="assets/images/_generated/illustrations/fun-rankings/03-tearful.webp" alt="北京西站人潮中握着退票凭证的孤独背影" loading="lazy" decoding="async" width="960" height="640">
+</figure>
+
+
 | 排名 | 瞬间 | 出处 |
 |------|------|------|
 | 1 | **小猪18岁因肺炎去世**——小学一起玩的伙伴，没能长大 | 河津上小学 |
@@ -56,6 +71,11 @@
 ---
 
 ## 🗺️ 足迹榜 · 作者去过的城市/地点
+
+<figure class="section-illustration" data-illustration="fun-04-footprints">
+  <img src="assets/images/_generated/illustrations/fun-rankings/04-footprints.webp" alt="摊开的旅行手账与跨越中国到西班牙的路线" loading="lazy" decoding="async" width="960" height="640">
+</figure>
+
 
 | 区域 | 地点 | 代表出处 |
 |------|------|----------|
@@ -76,6 +96,11 @@
 
 ## 👥 人物榜 · 贯穿全书的重要角色
 
+<figure class="section-illustration" data-illustration="fun-05-people">
+  <img src="assets/images/_generated/illustrations/fun-rankings/05-people.webp" alt="校园操场与工位之间不同人生阶段的人物剪影" loading="lazy" decoding="async" width="960" height="640">
+</figure>
+
+
 > 按叙事重要程度排列；“出场篇数”按正文明确提及统计，同一人物的不同称谓合并。
 
 | 排名 | 人物 | 身份 | 出场篇数 | 关键词 |
@@ -94,6 +119,11 @@
 ---
 
 ## 📖 文体榜 · 作者尝试过的写作风格
+
+<figure class="section-illustration" data-illustration="fun-06-genres">
+  <img src="assets/images/_generated/illustrations/fun-rankings/06-genres.webp" alt="手稿在回忆录武侠代码与寓言场景间变化" loading="lazy" decoding="async" width="960" height="640">
+</figure>
+
 
 | 文体 | 代表作 | 点评 |
 |------|--------|------|
@@ -115,6 +145,11 @@
 
 ## 🎮 游戏榜 · 文中提到的游戏
 
+<figure class="section-illustration" data-illustration="fun-07-games">
+  <img src="assets/images/_generated/illustrations/fun-rankings/07-games.webp" alt="旧网吧到掌机时代的游戏设备变迁" loading="lazy" decoding="async" width="960" height="640">
+</figure>
+
+
 | 游戏 | 出处 | 故事 |
 |------|------|------|
 | **梦幻西游 / 跑跑卡丁车** | 初中 | 衍生出石头剪刀布版拍手游戏，中学文化符号 |
@@ -131,6 +166,11 @@
 ---
 
 ## 💼 打工榜 · 作者的职业经历
+
+<figure class="section-illustration" data-illustration="fun-08-work">
+  <img src="assets/images/_generated/illustrations/fun-rankings/08-work.webp" alt="从家教书桌到游戏公司和大厂工位的工作变迁" loading="lazy" decoding="async" width="960" height="640">
+</figure>
+
 
 | 排名 | 工作 | 时间 | 月薪 | 快乐指数 |
 |------|------|------|------|----------|
@@ -149,6 +189,11 @@
 
 ## 🧠 预案榜 · 脑内演练最密集的场景
 
+<figure class="section-illustration" data-illustration="fun-09-rehearsals">
+  <img src="assets/images/_generated/illustrations/fun-rankings/09-rehearsals.webp" alt="平静工位背后展开丧尸屋顶武侠与裁员预演" loading="lazy" decoding="async" width="960" height="640">
+</figure>
+
+
 | 排名 | 预案 | 出处 | 荒诞指数 |
 |------|------|------|----------|
 | 1 | 收到裁员消息后往座位上一摊，拍大腿大笑 | 意念“挥刀” | ⭐⭐⭐⭐⭐ |
@@ -161,6 +206,11 @@
 
 ## 🤖 AI 焦虑榜 · 技术时代的新情绪
 
+<figure class="section-illustration" data-illustration="fun-10-ai-anxiety">
+  <img src="assets/images/_generated/illustrations/fun-rankings/10-ai-anxiety.webp" alt="代码云快速生成而程序员逐渐失去掌控感" loading="lazy" decoding="async" width="960" height="640">
+</figure>
+
+
 | 排名 | 情绪 | 出处 | 关键词 |
 |------|------|------|--------|
 | 1 | 写代码从手艺变成自然语言调度 | vibe coding带来的虚无感 | 古法编程、AI 替代 |
@@ -172,6 +222,11 @@
 ---
 
 ## 🏫 考试榜 · 作者经历过的重大考试
+
+<figure class="section-illustration" data-illustration="fun-11-exams">
+  <img src="assets/images/_generated/illustrations/fun-rankings/11-exams.webp" alt="跑道上的体测号码牌与被雨水打湿的答题纸" loading="lazy" decoding="async" width="960" height="640">
+</figure>
+
 
 | 考试 | 结果 | 戏剧性指数 |
 |------|------|------------|
@@ -188,6 +243,11 @@
 
 ## 🌡️ 受伤榜 · 作者经历过的身体伤害
 
+<figure class="section-illustration" data-illustration="fun-12-injuries">
+  <img src="assets/images/_generated/illustrations/fun-rankings/12-injuries.webp" alt="急救箱自行车头盔与烈日下的受伤记忆静物" loading="lazy" decoding="async" width="960" height="640">
+</figure>
+
+
 | 排名 | 伤害 | 出处 | 严重程度 |
 |------|------|------|----------|
 | 1 | 儿时差点在水沟溺水 | 从张雪峰老师的死亡所想到的 | 🔴🔴🔴🔴🔴 |
@@ -200,6 +260,11 @@
 ---
 
 ## 🏆 金句密度榜 · 当前评审精选最密集的文章
+
+<figure class="section-illustration" data-illustration="fun-13-quote-density">
+  <img src="assets/images/_generated/illustrations/fun-rankings/13-quote-density.webp" alt="钢笔墨迹与密集发光句子组成的编辑设计" loading="lazy" decoding="async" width="960" height="640">
+</figure>
+
 
 > 口径：以各篇最新 `review.md` 的“金句摘录”数，除以正文去除 frontmatter、图片标记与空白后的字符数；下表为每千字近似值。短篇天然占优，因此这是“精选句密度”，不是文学质量总排名。
 
@@ -220,6 +285,11 @@
 
 ## 🎵 音乐榜 · 融入灵魂的那些歌
 
+<figure class="section-illustration" data-illustration="fun-14-music">
+  <img src="assets/images/_generated/illustrations/fun-rankings/14-music.webp" alt="旧磁带CD与有线耳机连接不同年代的青春" loading="lazy" decoding="async" width="960" height="640">
+</figure>
+
+
 | 排名 | 歌曲 | 出处 | 点评 |
 |------|------|------|------|
 | 1 | **《奇迹再现》**（迪迦奥特曼主题曲） | 那些生命中最重要的音乐 | 记忆中最早的歌，痴迷到能背下整首 |
@@ -235,6 +305,11 @@
 ---
 
 ## 💕 心动榜 · 那些年怦然心动的瞬间
+
+<figure class="section-illustration" data-illustration="fun-15-heartbeats">
+  <img src="assets/images/_generated/illustrations/fun-rankings/15-heartbeats.webp" alt="深夜快餐店里课本奶茶与相邻的年轻身影" loading="lazy" decoding="async" width="960" height="640">
+</figure>
+
 
 | 排名 | 心动瞬间 | 出处 | 点评 |
 |------|---------|------|------|
@@ -252,6 +327,11 @@
 
 ## 💰 金钱榜 · 书里出现过的那些数字
 
+<figure class="section-illustration" data-illustration="fun-16-money">
+  <img src="assets/images/_generated/illustrations/fun-rankings/16-money.webp" alt="账本硬币相机和车票构成的人生价格静物" loading="lazy" decoding="async" width="960" height="640">
+</figure>
+
+
 | 排名 | 金额 | 出处 | 点评 |
 |------|------|------|------|
 | 1 | **"两千万生意"** | 北京合租屋 | 千万哥称群里说话"影响他两千万生意"，索赔——全书最离谱数字 |
@@ -267,6 +347,11 @@
 
 ## 📱 数码榜 · 被偷、被卖、被珍藏的电子产品
 
+<figure class="section-illustration" data-illustration="fun-17-digital-objects">
+  <img src="assets/images/_generated/illustrations/fun-rankings/17-digital-objects.webp" alt="有划痕的旧手机相机卡带与智能音箱静物" loading="lazy" decoding="async" width="960" height="640">
+</figure>
+
+
 | 排名 | 产品 | 出处 | 点评 |
 |------|------|------|------|
 | 1 | **iPhone 4s（妈妈买的"小板砖"）** | 珠海（新序） | 上铺摔地面多次没坏，"后来在海边被人偷走了。可恶" |
@@ -280,6 +365,11 @@
 ---
 
 ## 👨‍🏫 恩师与领导榜 · 塑造与折磨过他的人
+
+<figure class="section-illustration" data-illustration="fun-18-mentors-leaders">
+  <img src="assets/images/_generated/illustrations/fun-rankings/18-mentors-leaders.webp" alt="粉笔黑板与会议室长桌交叠出的两种权威" loading="lazy" decoding="async" width="960" height="640">
+</figure>
+
 
 | 排名 | 人物 | 出处 | 点评 |
 |------|------|------|------|
@@ -297,4 +387,3 @@
 </p>
 
 <!-- 此页面基于全书内容提取更新 -->
-

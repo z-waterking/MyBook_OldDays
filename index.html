@@ -13,6 +13,7 @@
   <link rel="canonical" href="https://z-waterking.github.io/MyBook_OldDays/">
   <link rel="icon" type="image/png" href="assets/images/_generated/favicon.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
   <style>
     :root {
       --theme-color: #5a4a3a;
@@ -441,7 +442,7 @@
 
     .book-home-explore {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 0;
       margin-bottom: 46px;
       border-top: 1px solid #dcd4c6;
@@ -480,6 +481,247 @@
       overflow-wrap: anywhere;
       font-size: 15px;
       line-height: 1.45;
+    }
+
+    /* 足迹地图 */
+    .footprints-page {
+      margin-top: 24px;
+    }
+
+    .footprints-summary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid #ddd5c8;
+      border-bottom: 1px solid #ddd5c8;
+    }
+
+    .footprints-summary span {
+      padding: 17px 18px;
+      border-right: 1px solid #e8e2d8;
+      color: #756b61;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .footprints-summary span:last-child {
+      border-right: 0;
+    }
+
+    .footprints-summary strong {
+      margin-right: 5px;
+      color: #3a3128;
+      font-size: 21px;
+    }
+
+    .footprints-tabs {
+      display: flex;
+      gap: 8px;
+      margin: 26px 0 12px;
+    }
+
+    .footprints-tabs button {
+      min-height: 36px;
+      padding: 0 14px;
+      border: 1px solid #d8cfbf;
+      border-radius: 4px;
+      background: #fffdf8;
+      color: #615546;
+      cursor: pointer;
+      font: inherit;
+      font-size: 13px;
+    }
+
+    .footprints-tabs button.is-active {
+      border-color: #6d5d49;
+      background: #6d5d49;
+      color: #fff;
+    }
+
+    .footprints-map {
+      width: 100%;
+      height: 540px;
+      overflow: hidden;
+      border: 1px solid #dcd4c6;
+      border-radius: 6px;
+      background: #ece9e2;
+    }
+
+    .footprints-map-note {
+      margin: 8px 0 0 !important;
+      color: #8b8176;
+      font-size: 12px;
+    }
+
+    .footprints-marker {
+      width: 14px;
+      height: 14px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      background: #7d6a51;
+      box-shadow: 0 1px 5px rgba(31, 27, 22, 0.35);
+    }
+
+    .footprints-marker[data-kind="life"] { background: #a64f42; }
+    .footprints-marker[data-kind="study"] { background: #426f8f; }
+    .footprints-marker[data-kind="work"] { background: #7d6430; }
+    .footprints-marker[data-kind="choice"] { background: #745484; }
+    .footprints-marker[data-kind="travel"] { background: #3f7a62; }
+    .footprints-marker[data-kind="transit"] { background: #8b8176; }
+
+    .leaflet-popup-content-wrapper {
+      border-radius: 5px;
+      box-shadow: 0 5px 20px rgba(35, 30, 24, 0.2);
+    }
+
+    .footprints-popup strong,
+    .footprints-popup small,
+    .footprints-popup span,
+    .footprints-popup a {
+      display: block;
+    }
+
+    .footprints-popup strong {
+      color: #302921;
+      font-size: 14px;
+    }
+
+    .footprints-popup small {
+      margin-top: 2px;
+      color: #8a7c6c;
+    }
+
+    .footprints-popup span {
+      margin-top: 6px;
+      color: #5a524a;
+      line-height: 1.55;
+    }
+
+    .footprints-popup a {
+      margin-top: 7px;
+      color: #745b3e !important;
+    }
+
+    .footprints-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 15px;
+      margin-top: 16px;
+      color: #70665d;
+      font-size: 12px;
+    }
+
+    .footprints-legend span::before {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      margin-right: 6px;
+      border-radius: 50%;
+      background: #7d6a51;
+      content: "";
+    }
+
+    .footprints-legend span[data-kind="life"]::before { background: #a64f42; }
+    .footprints-legend span[data-kind="study"]::before { background: #426f8f; }
+    .footprints-legend span[data-kind="work"]::before { background: #7d6430; }
+    .footprints-legend span[data-kind="choice"]::before { background: #745484; }
+    .footprints-legend span[data-kind="travel"]::before { background: #3f7a62; }
+    .footprints-legend span[data-kind="transit"]::before { background: #8b8176; }
+
+    .footprints-list-section {
+      margin-top: 48px;
+    }
+
+    .footprints-list-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #dcd4c6;
+    }
+
+    .footprints-list-head p {
+      margin: 0 !important;
+      color: #3a3128;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .footprints-list-head label {
+      color: #7b7066;
+      font-size: 12px;
+    }
+
+    .footprints-list-head select {
+      min-height: 32px;
+      margin-left: 7px;
+      padding: 0 8px;
+      border: 1px solid #d8cfbf;
+      border-radius: 4px;
+      background: #fffdf8;
+      color: #4d443a;
+    }
+
+    .footprints-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 24px;
+    }
+
+    .footprints-item {
+      display: grid;
+      grid-template-columns: 82px minmax(0, 1fr);
+      gap: 12px;
+      padding: 18px 0;
+      border-bottom: 1px solid #ebe6dd;
+    }
+
+    .footprints-item-meta small,
+    .footprints-item-meta strong {
+      display: block;
+    }
+
+    .footprints-item-meta small {
+      color: #9a8260;
+      font-size: 11px;
+    }
+
+    .footprints-item-meta strong {
+      margin-top: 3px;
+      color: #3c342c;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .footprints-item p {
+      margin: 0 !important;
+      color: #6c645c;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .footprints-item a {
+      display: inline-block;
+      margin-top: 5px;
+      color: #775f42 !important;
+      font-size: 12px;
+      text-decoration: none !important;
+    }
+
+    /* 榜单插画 */
+    .section-illustration {
+      margin: 16px 0 22px;
+    }
+
+    .section-illustration img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 2;
+      margin: 0 !important;
+      object-fit: cover;
+      border-radius: 6px !important;
+      background: #eeeae2;
     }
 
     .article-cover-list {
@@ -891,6 +1133,12 @@
     }
 
     /* 手机端字号不缩 */
+    @media (min-width: 769px) and (max-width: 1100px) {
+      .book-home-explore {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 768px) {
       .markdown-section {
         font-size: 17px !important;
@@ -1096,6 +1344,40 @@
       .book-home-explore a:last-child {
         border-bottom: 0;
       }
+
+      .footprints-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .footprints-summary span {
+        padding: 11px 8px;
+        border-right: 0;
+        border-bottom: 1px solid #e8e2d8;
+      }
+
+      .footprints-summary span:last-child {
+        border-bottom: 0;
+      }
+
+      .footprints-map {
+        height: 430px;
+      }
+
+      .footprints-list {
+        grid-template-columns: 1fr;
+      }
+
+      .footprints-list-head {
+        align-items: flex-start;
+      }
+
+      .footprints-item {
+        grid-template-columns: 74px minmax(0, 1fr);
+      }
+
+      .section-illustration {
+        margin: 12px 0 18px;
+      }
     }
   </style>
 </head>
@@ -1129,6 +1411,127 @@
             if (!window.location.hash || window.location.hash === '#/') {
               document.title = '旧日之书';
             }
+          });
+        },
+        function renderFootprints(hook) {
+          var footprintMap;
+
+          function escapeHtml(value) {
+            return String(value || '')
+              .replace(/&/g, '&amp;')
+              .replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;')
+              .replace(/"/g, '&quot;');
+          }
+
+          function markerIcon(kind) {
+            return L.divIcon({
+              className: '',
+              html: '<div class="footprints-marker" data-kind="' + escapeHtml(kind) + '"></div>',
+              iconSize: [18, 18],
+              iconAnchor: [9, 9],
+              popupAnchor: [0, -10]
+            });
+          }
+
+          function articleHref(path) {
+            if (!path || path === 'website/footprints.md') return '#/';
+            return '#/' + encodeURI(path).replace(/#/g, '%23');
+          }
+
+          function popupHtml(item) {
+            return '<div class="footprints-popup">' +
+              '<strong>' + escapeHtml(item.name) + '</strong>' +
+              '<small>' + escapeHtml(item.status) + ' · ' + escapeHtml(item.period) + '</small>' +
+              '<span>' + escapeHtml(item.story) + '</span>' +
+              '<a href="' + articleHref(item.article) + '">阅读来源</a>' +
+              '</div>';
+          }
+
+          function renderList(container, items, filter) {
+            var visible = filter === 'all' ? items : items.filter(function (item) { return item.kind === filter; });
+            container.innerHTML = visible.map(function (item) {
+              return '<article class="footprints-item">' +
+                '<div class="footprints-item-meta"><small>' + escapeHtml(item.status) + '</small><strong>' + escapeHtml(item.name) + '</strong></div>' +
+                '<div><p>' + escapeHtml(item.story) + '</p><a href="' + articleHref(item.article) + '">来源文章</a></div>' +
+                '</article>';
+            }).join('');
+          }
+
+          hook.doneEach(function () {
+            var page = document.querySelector('.footprints-page');
+            if (!page) return;
+            var mapElement = document.getElementById('footprints-map');
+            var listElement = document.getElementById('footprints-list');
+            var filterElement = document.getElementById('footprints-filter');
+            fetch(page.dataset.source)
+              .then(function (response) {
+                if (!response.ok) throw new Error('Footprint data HTTP ' + response.status);
+                return response.json();
+              })
+              .then(function (data) {
+                if (typeof L === 'undefined') {
+                  mapElement.innerHTML = '<p style="padding:24px;color:#746b62">地图暂时无法加载，请使用下方地点列表。</p>';
+                  renderList(listElement, data.china, 'all');
+                  filterElement.onchange = function () {
+                    renderList(listElement, data.china, filterElement.value);
+                  };
+                  return;
+                }
+                if (footprintMap) footprintMap.remove();
+                footprintMap = L.map(mapElement, { scrollWheelZoom: false, zoomControl: true });
+                L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+                  maxZoom: 18,
+                  attribution: 'Tiles &copy; Esri'
+                }).addTo(footprintMap);
+                var currentScope = 'china';
+                var layers = [];
+
+                function showScope(scope) {
+                  currentScope = scope;
+                  layers.forEach(function (layer) { footprintMap.removeLayer(layer); });
+                  layers = [];
+                  var items = data[scope];
+                  items.forEach(function (item) {
+                    var marker = L.marker([item.lat, item.lng], { icon: markerIcon(item.kind) })
+                      .bindPopup(popupHtml(item))
+                      .addTo(footprintMap);
+                    layers.push(marker);
+                  });
+                  var route = scope === 'china' ? data.routes.china : data.routes.spain;
+                  if (route && route.length) {
+                    var line = L.polyline(route, {
+                      color: scope === 'china' ? '#8a6b45' : '#3f6f8e',
+                      weight: 2,
+                      opacity: 0.55,
+                      dashArray: '6 7'
+                    }).addTo(footprintMap);
+                    layers.push(line);
+                  }
+                  var bounds = L.latLngBounds(items.map(function (item) { return [item.lat, item.lng]; }));
+                  footprintMap.fitBounds(bounds, { padding: [28, 28], maxZoom: scope === 'china' ? 5 : 4 });
+                  filterElement.value = 'all';
+                  renderList(listElement, items, 'all');
+                  document.querySelectorAll('[data-map-tab]').forEach(function (button) {
+                    var active = button.dataset.mapTab === scope;
+                    button.classList.toggle('is-active', active);
+                    button.setAttribute('aria-selected', String(active));
+                  });
+                  setTimeout(function () { footprintMap.invalidateSize(); }, 0);
+                }
+
+                document.querySelectorAll('[data-map-tab]').forEach(function (button) {
+                  button.onclick = function () { showScope(button.dataset.mapTab); };
+                });
+                filterElement.onchange = function () {
+                  renderList(listElement, data[currentScope], filterElement.value);
+                };
+                showScope('china');
+              })
+              .catch(function (error) {
+                mapElement.innerHTML = '<p style="padding:24px;color:#746b62">地图暂时无法加载，请使用下方地点列表。</p>';
+                console.error(error);
+              });
           });
         },
         function enhanceSidebar(hook) {
@@ -1282,6 +1685,7 @@
       ],
     }
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
 </body>

@@ -1,0 +1,45 @@
+{
+  "china": [
+    {"name":"河津","province":"山西","lat":35.596,"lng":110.712,"kind":"life","status":"长期生活","period":"童年","article":"articles/合集-01-我在河津上幼儿园/index.md","story":"从博物馆后的幼儿园到一小、四小，这里保存了最早的生活底色。"},
+    {"name":"运城","province":"山西","lat":35.026,"lng":111.007,"kind":"study","status":"求学","period":"初中","article":"articles/合集-03-我在运中念初中/index.md","story":"第一次长期离家，在寄宿生活、教师群像和同学之间学习长大。"},
+    {"name":"康杰中学","province":"山西","lat":35.057,"lng":111.021,"kind":"study","status":"求学","period":"高中","article":"articles/合集-05-我在康杰念高中（怀昔）/index.md","story":"573 班、柴老师、暗恋、游戏和离别，构成全书最深的一组校园记忆。"},
+    {"name":"平遥古城","province":"山西","lat":37.204,"lng":112.174,"kind":"travel","status":"旅行","period":"大学","article":"articles/合集-08-我在珠海上大学（风途）/index.md","story":"带恋人回到山西旅行，让故乡与大学生活第一次重叠。"},
+    {"name":"皇城相府","province":"山西","lat":35.516,"lng":112.583,"kind":"travel","status":"旅行","period":"大学","article":"articles/合集-08-我在珠海上大学（风途）/index.md","story":"与家人同行的一站，属于大学时代密集远行的一部分。"},
+    {"name":"华山","province":"陕西","lat":34.483,"lng":110.084,"kind":"travel","status":"多次旅行","period":"高考后 / 大学毕业","article":"articles/合集-06-我在珠海上大学（新序）/index.md","story":"高考出分前和大学毕业后两次夜爬，成为人生阶段转换的同一机位。"},
+    {"name":"西安","province":"陕西","lat":34.259,"lng":108.947,"kind":"choice","status":"考试与选择","period":"成年","article":"articles/合集-18-我的第二次考公经历/index.md","story":"两次考公与一张最终退掉的车票，让这座城市成为未走之路的象征。"},
+    {"name":"珠海","province":"广东","lat":22.271,"lng":113.577,"kind":"life","status":"长期生活","period":"大学四年","article":"articles/合集-06-我在珠海上大学（新序）/index.md","story":"大学、恋爱、海风、宿舍与毕业，人生第一次真正离开小城。"},
+    {"name":"东澳岛","province":"广东","lat":22.018,"lng":113.709,"kind":"travel","status":"旅行","period":"大学","article":"articles/合集-06-我在珠海上大学（新序）/index.md","story":"刚入学时的海岛出行，南方世界以潮湿和海风展开。"},
+    {"name":"斗门","province":"广东","lat":22.209,"lng":113.297,"kind":"travel","status":"短途旅行","period":"大学","article":"articles/合集-08-我在珠海上大学（风途）/index.md","story":"美食节和农科体验，是大学周边漫游的一站。"},
+    {"name":"中山","province":"广东","lat":22.517,"lng":113.392,"kind":"travel","status":"旅行","period":"大学","article":"articles/合集-08-我在珠海上大学（风途）/index.md","story":"恋爱周年旅行与一顿烤乳鸽，构成青春路线中的近途远方。"},
+    {"name":"佛山里水","province":"广东","lat":23.184,"lng":113.161,"kind":"work","status":"工作","period":"本科毕业后","article":"articles/合集-11-我在佛山做家教/index.md","story":"第一次真正教学生，也记住了岭南夏夜、备课压力和深夜面食。"},
+    {"name":"广州","province":"广东","lat":23.129,"lng":113.264,"kind":"work","status":"学习与工作","period":"大学 / 初入行","article":"articles/合集-13-我在广州做游戏/index.md","story":"从校区中转到游戏公司，二十二岁的职业世界在城中村和工位之间展开。"},
+    {"name":"深圳","province":"广东","lat":22.543,"lng":114.058,"kind":"travel","status":"旅行","period":"大学","article":"articles/合集-08-我在珠海上大学（风途）/index.md","story":"与父亲看航母，也作为香港路线的起点。"},
+    {"name":"香港","province":"香港","lat":22.319,"lng":114.169,"kind":"travel","status":"旅行","period":"大学","article":"articles/合集-08-我在珠海上大学（风途）/index.md","story":"港中文、海洋公园和海路往返，构成大学旅行中最鲜明的跨境体验。"},
+    {"name":"澳门","province":"澳门","lat":22.199,"lng":113.543,"kind":"travel","status":"旅行","period":"大学","article":"articles/合集-08-我在珠海上大学（风途）/index.md","story":"二十岁时看大三巴和威尼斯人，却还进不了赌场。"},
+    {"name":"凤凰古城","province":"湖南","lat":27.949,"lng":109.599,"kind":"travel","status":"旅行","period":"大学","article":"articles/合集-08-我在珠海上大学（风途）/index.md","story":"沱江夜色、竹屋客栈与长途火车，是大学远行的开端之一。"},
+    {"name":"武汉","province":"湖北","lat":30.593,"lng":114.305,"kind":"travel","status":"旅行","period":"大学","article":"articles/合集-08-我在珠海上大学（风途）/index.md","story":"毕业前去武大看樱花，也看见同行关系悄然变化。"},
+    {"name":"成都","province":"四川","lat":30.572,"lng":104.066,"kind":"travel","status":"旅行","period":"大学","article":"articles/合集-08-我在珠海上大学（风途）/index.md","story":"二十小时绿皮车、熊猫和干锅兔头，旅行体力在这里被充分使用。"},
+    {"name":"青城山","province":"四川","lat":30.903,"lng":103.573,"kind":"travel","status":"旅行","period":"大学","article":"articles/合集-08-我在珠海上大学（风途）/index.md","story":"在山水和长途交通之间体验“青城幽”。"},
+    {"name":"峨眉山","province":"四川","lat":29.526,"lng":103.333,"kind":"travel","status":"旅行","period":"大学","article":"articles/合集-08-我在珠海上大学（风途）/index.md","story":"毕业旅行中的峨眉秀和山间猴群。"},
+    {"name":"厦门","province":"福建","lat":24.479,"lng":118.089,"kind":"travel","status":"旅行","period":"大学","article":"articles/合集-08-我在珠海上大学（风途）/index.md","story":"曾厝垵、海边住宿与远眺鼓浪屿。"},
+    {"name":"阳朔","province":"广西","lat":24.778,"lng":110.496,"kind":"travel","status":"旅行","period":"大学","article":"articles/合集-08-我在珠海上大学（风途）/index.md","story":"漂流、双人自行车和十里画廊，把旅行写成身体行动。"},
+    {"name":"济南","province":"山东","lat":36.651,"lng":117.120,"kind":"travel","status":"旅行","period":"大学","article":"articles/合集-09-我在珠海上大学（忽然之间）/index.md","story":"在冷战之后去接女友，关系与城市旅途彼此缠绕。"},
+    {"name":"上海","province":"上海","lat":31.230,"lng":121.474,"kind":"travel","status":"旅行","period":"大学","article":"articles/合集-08-我在珠海上大学（风途）/index.md","story":"与同学会合、寻找灌汤包，属于苏沪旅行线。"},
+    {"name":"苏州","province":"江苏","lat":31.299,"lng":120.585,"kind":"travel","status":"旅行","period":"大学","article":"articles/合集-08-我在珠海上大学（风途）/index.md","story":"园林、观前街和春日汇合；住宿则落在昆山。"},
+    {"name":"杭州","province":"浙江","lat":30.274,"lng":120.155,"kind":"work","status":"工作","period":"实习 / 正式工作","article":"articles/合集-14-我在阿里做实习（推荐算法版）/index.md","story":"阿里园区、西湖与西溪，既是职业光环，也是后来散场的共同体。"},
+    {"name":"北京","province":"北京","lat":39.904,"lng":116.407,"kind":"life","status":"长期生活","period":"研究生后 / 工作","article":"articles/合集-16-我在北京住合租屋/index.md","story":"海淀、丰台、西二旗、798 与北京西站共同构成年生活的硬质地。"},
+    {"name":"北京 798","province":"北京","lat":39.984,"lng":116.496,"kind":"work","status":"工作","period":"实习","article":"articles/合集-19-我在北京大厂实习/index.md","story":"AWS 实习、共享工位和波士顿龙虾，是一段轻松的职业插曲。"},
+    {"name":"重庆","province":"重庆","lat":29.563,"lng":106.551,"kind":"transit","status":"中转","period":"大学旅行","article":"articles/合集-08-我在珠海上大学（风途）/index.md","story":"前往成都时短暂停留的交通节点。"},
+    {"name":"昆山","province":"江苏","lat":31.385,"lng":120.981,"kind":"transit","status":"住宿中转","period":"大学旅行","article":"articles/合集-08-我在珠海上大学（风途）/index.md","story":"因苏州住宿昂贵而选择的高铁通勤落脚点。"}
+  ],
+  "world": [
+    {"name":"中国","country":"中国","lat":35.861,"lng":104.195,"kind":"life","status":"主要生活范围","period":"童年至今","article":"website/footprints.md","story":"绝大多数成长、求学、工作与旅行足迹分布在中国。"},
+    {"name":"马拉加","country":"西班牙","lat":36.721,"lng":-4.421,"kind":"travel","status":"旅行","period":"2025","article":"articles/合集-20-我在西班牙骑自行车/index.md","story":"租下山地车，从地中海城市开始一次高温骑行。"},
+    {"name":"希布拉法罗城堡","country":"西班牙","lat":36.723,"lng":-4.410,"kind":"travel","status":"旅行","period":"2025","article":"articles/合集-20-我在西班牙骑自行车/index.md","story":"原想骑车攻顶，最终在陡坡和阶梯前折返。"},
+    {"name":"内尔哈方向","country":"西班牙","lat":36.746,"lng":-3.879,"kind":"travel","status":"骑行目的地","period":"2025","article":"articles/合集-20-我在西班牙骑自行车/index.md","story":"沿海公路朝欧洲阳台方向前进，往返一百多公里。"}
+  ],
+  "routes": {
+    "china": [[35.596,110.712],[35.026,111.007],[35.057,111.021],[22.271,113.577],[23.184,113.161],[23.129,113.264],[30.274,120.155],[39.904,116.407],[34.259,108.947]],
+    "spain": [[36.721,-4.421],[36.723,-4.410],[36.746,-3.879]]
+  }
+}
