@@ -135,7 +135,7 @@ async function main() {
   const lines = [
     '# 图片索引',
     '',
-    `> 共 ${articleRows.length + sharedRows.length} 张图片，更新于 ${new Date().toISOString().slice(0, 10)}。`,
+    `> 共 ${articleRows.length + sharedRows.length} 张图片。`,
     '',
     '## 引用规则',
     '',

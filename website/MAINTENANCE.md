@@ -28,6 +28,9 @@
 
 ## 二、命令速查
 
+工具链基线为 Python 3.12+ 与 Node.js 20 LTS，分别记录在 `.python-version` 和 `.nvmrc`；文本编码与换行规则见 `.editorconfig`。
+Python 依赖在 `requirements.txt` 中限定兼容主版本：日常安装获取兼容范围内的新修复，跨主版本升级必须单独验证后调整上限。
+
 安装依赖：
 
 ```bash
@@ -50,13 +53,15 @@ python scripts/check_site.py
 
 该命令检查：
 
-- 每篇文章都有 `index.md` 和唯一的 `review.md`。
-- `website/catalog.md` 条目数与文章数一致。
+- 每篇文章都有唯一的 `review.md`、六个规定章节和一个有效综合评分。
+- 评分榜顺序、分类、分布和汇总统计与全部 `review.md` 一致。
+- `website/catalog.md` 条目集合与文章集合一致，并带有规范生成声明。
+- AI 改稿、`source_article`、`notes.md` 和 `mapping.md` 与原文一一对应。
 - `website/*.md` 中的本地页面、图片和 Docsify 路由目标存在。
 - 足迹 JSON 结构、坐标范围、来源链接和路线有效。
 - 插画清单、页面插画块、JPEG 原图和 WebP 派生图一一对应，并通过尺寸与像素差异检查确认派生图已同步。
 
-同一检查由 `.github/workflows/site-check.yml` 在推送到 `main` 和 Pull Request 时自动执行。新增约束时应优先扩展 `scripts/check_site.py`，让本地与 CI 使用同一套规则。
+同一检查由 `.github/workflows/site-check.yml` 在推送到 `main` 和 Pull Request 时自动执行。CI 还会检查全部 Python/Node.js 脚本语法，重建目录与图片索引，并要求生成结果无差异。新增约束时应优先扩展 `scripts/check_site.py`，让本地与 CI 使用同一套规则。
 
 ## 三、按改动类型维护
 
@@ -78,7 +83,7 @@ python scripts/check_site.py
 node scripts/article_covers.mjs --mode markdown
 ```
 
-它会刷新目录缩略图、首页派生图片、文章封面块和 `website/catalog.md`。只有在明确不需要刷新图片和文章封面块时，才使用快速目录重建：
+它会刷新目录缩略图、首页派生图片和文章封面块，再调用 Python 的唯一目录渲染器更新 `website/catalog.md`。只有在明确不需要刷新图片和文章封面块时，才使用快速目录重建：
 
 ```bash
 python scripts/save_article.py --catalog-only
@@ -119,7 +124,14 @@ python scripts/prepare_site_illustrations.py
 ### 自动检查
 
 ```bash
-python -m py_compile scripts/save_article.py scripts/check_site.py
+python -m py_compile scripts/save_article.py scripts/check_site.py scripts/generate_cover_thumbnails.py scripts/prepare_site_illustrations.py
+node --check scripts/article_covers.mjs
+node --check scripts/generate_ai_edit_drafts.mjs
+node --check scripts/generate_image_index.mjs
+node --check scripts/update_ai_edit_notes.mjs
+python scripts/save_article.py --catalog-only
+node scripts/generate_image_index.mjs
+git diff --exit-code -- website/catalog.md website/image-index.md
 python scripts/check_site.py
 git diff --check
 ```
@@ -129,9 +141,9 @@ git diff --check
 桌面和约 390px 移动宽度各检查一次：
 
 1. 首页：主视觉、三个主操作、地图专题和四篇入口。
-2. 全部文章：38 篇目录、封面、评价与 AI 改稿入口。
+2. 全部文章：目录、封面、评价与 AI 改稿入口。
 3. 佳句选读：章节导航、插画和来源链接。
-4. 趣味索引：18 个榜单、章节导航和表格移动端宽度。
+4. 趣味索引：全部榜单、章节导航和表格移动端宽度。
 5. 足迹地图：中国/世界切换、筛选、标记弹窗、来源文章和静态索引。
 
 同时用键盘 Tab 检查“跳到正文”、侧栏、表单控件与回到顶部的焦点是否可见，页面不应出现横向滚动。

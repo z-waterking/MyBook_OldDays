@@ -1,6 +1,6 @@
 # 文章目录
 
-> 共 38 篇文章，更新于 2026-07-12
+> 共 38 篇文章
 
 <div class="article-cover-group">
 <h2>合集 · 少年时代 <small>5 篇</small></h2>
@@ -520,4 +520,4 @@
 </div>
 </div>
 
-<!-- 此文件由 scripts/article_covers.mjs 自动更新，也可手动编辑 -->
+<!-- 此文件由 scripts/save_article.py 自动生成，请勿手工编辑。 -->

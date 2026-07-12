@@ -16,6 +16,8 @@ website/                  Docsify 网站入口、侧边栏、榜单和目录
 scripts/                  抓取、目录生成、封面处理等脚本
 index.html                GitHub Pages / Docsify 正式入口
 requirements.txt          Python 依赖
+.python-version           Python 版本基线（3.12）
+.nvmrc                    Node.js 版本基线（20）
 ```
 
 ## 文章归档
@@ -133,18 +135,27 @@ python scripts/prepare_site_illustrations.py
 
 ## 本地环境
 
+工具链要求：
+
+- Python 3.12 或更高版本；项目基线见 `.python-version`。
+- Node.js 20 LTS 或兼容版本；项目基线见 `.nvmrc`。
+
 安装 Python 依赖：
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-Windows 如果没有 `python`，先安装 Python 3.12+，并在安装器里勾选 `Add python.exe to PATH`。
+Windows 如果没有 `python` 或 `node`，安装后重新打开终端并确认两个命令都在 `PATH` 中。
 
-检查 Python 脚本语法：
+检查全部维护脚本语法：
 
 ```bash
-python -m py_compile scripts/save_article.py
+python -m py_compile scripts/save_article.py scripts/check_site.py scripts/generate_cover_thumbnails.py scripts/prepare_site_illustrations.py
+node --check scripts/article_covers.mjs
+node --check scripts/generate_ai_edit_drafts.mjs
+node --check scripts/generate_image_index.mjs
+node --check scripts/update_ai_edit_notes.mjs
 ```
 
 检查网站文章、目录、链接、足迹和插画完整性：
@@ -162,3 +173,5 @@ python scripts/check_site.py
 3. `ai-edited-articles/` 是 AI 改稿区，保持与原文一一对应。
 4. `book/` 是成书工作区，用于最终选稿、编排和补写。
 5. `assets/images/articles/` 是文章图片的唯一存储区，原文和 AI 改稿共享引用。
+6. 自动生成的目录、图片索引和 `_generated/` 派生图不直接手改，应修改源文件后重新运行生成脚本。
+7. 本地密钥只通过环境变量或安全交互输入，不提交 `.env`；文本格式遵循 `.editorconfig`。

@@ -22,7 +22,7 @@
 - 网站页面统一放在 `website/`，不要再把 `catalog.md`、`ranking.md`、`literary-gems.md`、`fun-rankings.md` 散放到根目录。
 - `website/index.html` 只是旧 `/website/` 地址的兼容跳回页，正式入口不要放到 `website/` 下。
 - 网站页里的文章链接按仓库根路径写，例如 `articles/合集-01-我在河津上幼儿园/index.md`。
-- `website/catalog.md` 是自动生成目录。完整发布以 `article_covers.mjs --mode markdown` 为准；`save_article.py --catalog-only` 只用于不刷新图片的快速重建。
+- `website/catalog.md` 是自动生成目录，唯一渲染实现位于 `save_article.py`。完整发布以 `article_covers.mjs --mode markdown` 为准，该命令刷新图片后委托 Python 重建目录；`save_article.py --catalog-only` 只用于不刷新图片的快速重建。
 - `website/ranking.md`、`website/literary-gems.md`、`website/fun-rankings.md` 是人工整理榜单，新增文章后必须手动复评并同步。
 - `website/image-index.md` 是图片索引，由 `scripts/generate_image_index.mjs` 生成，记录文章图片和其他共享图片的引用路径。
 - `website/maintenance-log.md` 是网站维护日志。凡影响网站结构、导航入口、目录生成、榜单统计、文章归档流程、AI 改稿入口或部署入口的大改动，都要追加一条 Log。
@@ -30,6 +30,8 @@
 - 文章目录命名遵循 `合集-01-标题` 或 `散篇-01-标题`。新增文章不要随意改变已有编号体系。
 
 ## 常用命令
+
+工具链基线：Python 3.12+、Node.js 20 LTS；文本统一使用 UTF-8 与 LF，具体见 `.python-version`、`.nvmrc` 和 `.editorconfig`。
 
 安装依赖：
 
@@ -78,7 +80,16 @@ node scripts/generate_image_index.mjs
 检查 Python 脚本语法：
 
 ```bash
-python -m py_compile scripts/save_article.py
+python -m py_compile scripts/save_article.py scripts/check_site.py scripts/generate_cover_thumbnails.py scripts/prepare_site_illustrations.py
+```
+
+检查 Node.js 脚本语法：
+
+```bash
+node --check scripts/article_covers.mjs
+node --check scripts/generate_ai_edit_drafts.mjs
+node --check scripts/generate_image_index.mjs
+node --check scripts/update_ai_edit_notes.mjs
 ```
 
 检查网站完整性：
@@ -101,7 +112,7 @@ python scripts/check_site.py
 8. 更新 `website/literary-gems.md`：判断新金句是否进入佳句榜；若进入，补条目、点评、来源链接和底部总数。
 9. 更新 `website/fun-rankings.md`：检查新文章是否影响美食榜、名场面榜、催泪榜、足迹榜、人物榜、文体榜、游戏榜、职业经历、预案榜、AI 焦虑榜、受伤榜、金句密度榜等。
 10. 运行 `node scripts/article_covers.mjs --mode markdown`，让目录页和封面块保持最新。
-11. 运行 `python -m py_compile scripts/save_article.py`，并检查相关链接、条目数和页面统计是否一致。
+11. 运行 `python scripts/check_site.py`，并检查相关链接、条目数和页面统计是否一致。
 12. 最后询问用户是否需要 git commit；不要主动提交，除非用户明确要求。
 
 ## 文章评价规则
@@ -129,6 +140,7 @@ python scripts/check_site.py
 - 每篇改稿至少包含 `index.md` 和 `notes.md`。
 - 目录名必须与 `articles/` 中对应文章一致，并在 `ai-edited-articles/mapping.md` 中保持可追踪。
 - `index.md` 放完整可读正文，不要只放建议。
+- `index.md` 永远是唯一当前版本；历史版本使用 Git 保存，不创建 `index_v*.md` 平行入口。
 - `notes.md` 记录改稿目标、主要改动、保留意见和下一轮建议，并必须包含 `## 本版实际改动`，写清本版到底改了哪些地方。
 - 改稿目标是向 `10/10` 靠近，但要保留作者原有语气：具体、嘴贫、自嘲、偶尔突然伤感，不要改成标准作文腔。
 - 新增或补齐改稿后运行 `node scripts/article_covers.mjs --mode markdown`，让 `website/catalog.md` 自动出现 `AI改稿` 入口。
@@ -139,16 +151,16 @@ python scripts/check_site.py
 
 ## 脚本说明
 
-- `scripts/save_article.py` 负责抓取微信公众号文章、下载图片、转换 Markdown、生成 `website/catalog.md`。
-- `scripts/article_covers.mjs --mode markdown` 会刷新轻量封面缩略图、给每篇文章插入或刷新封面 `<img class="article-cover">` 块，并重建 `website/catalog.md`。
+- `scripts/save_article.py` 负责抓取微信公众号文章、下载图片、转换 Markdown，并作为 `website/catalog.md` 的唯一渲染器。
+- `scripts/article_covers.mjs --mode markdown` 会刷新轻量封面缩略图、给每篇文章插入或刷新封面 `<img class="article-cover">` 块，再调用 `save_article.py --catalog-only` 重建目录。
 - `scripts/article_covers.mjs --mode generate` 会调用 Azure OpenAI 图片接口生成封面，需要 `AZURE_OPENAI_API_KEY` 或交互输入 API key；不要在日志或回复中暴露密钥。
 - `scripts/generate_cover_thumbnails.py` 会从文章原始封面生成目录 WebP、首页主视觉和 favicon；依赖 Pillow。
 - `scripts/generate_image_index.mjs` 会扫描 `assets/images/articles/` 和其他 `assets/images/` 子目录，生成 `website/image-index.md`。
 - `scripts/update_ai_edit_notes.mjs` 会根据原文和 AI 改稿生成每篇 `notes.md` 的实际改动清单。
 - `scripts/generate_site_illustrations.ps1` 按 `scripts/illustration_manifest.json` 调用全局 Azure GPT Image skill，生成佳句榜和趣味榜缺失插画；默认跳过已有文件。
 - `scripts/prepare_site_illustrations.py` 将插画原图转为 960×640 WebP，并按清单把图片块注入 `website/literary-gems.md` 和 `website/fun-rankings.md`。
-- `scripts/check_site.py` 检查文章与评价、目录条目、本地链接、足迹数据和插画资产之间的一致性。
-- `save_article.py` 和 `article_covers.mjs` 都可能改动 `website/catalog.md`，后者在 `--mode markdown` 下还会改动多篇 `articles/*/index.md` 的封面块。
+- `scripts/check_site.py` 检查唯一评价与六节结构、评分榜统计、文章/目录/AI 改稿映射、本地链接、足迹数据和插画资产之间的一致性。
+- `save_article.py` 和 `article_covers.mjs` 都可能触发 `website/catalog.md` 更新，但目录 HTML 只由前者渲染；后者在 `--mode markdown` 下还会改动多篇 `articles/*/index.md` 的封面块。
 
 ## 图片索引与复用规则
 
@@ -171,7 +183,8 @@ python scripts/check_site.py
 ## 验证清单
 
 - 网站或内容改动后运行 `python scripts/check_site.py`。
-- Python 逻辑改动后运行 `python -m py_compile scripts/save_article.py`，并执行对应命令做行为验证。
+- Python 逻辑改动后检查全部 `scripts/*.py` 语法，并执行对应命令做行为验证。
+- Node.js 逻辑改动后对全部 `scripts/*.mjs` 运行 `node --check`，并执行对应命令做行为验证。
 - 目录、封面、AI 改稿入口变化后运行 `node scripts/article_covers.mjs --mode markdown`。
 - 图片新增、复制或路径规则变化后运行 `node scripts/generate_image_index.mjs`。
 - 榜单改动后检查编号、排名、统计数字和链接目标。
@@ -180,6 +193,8 @@ python scripts/check_site.py
 
 ## Git 与交付
 
+- 不提交 API key、token、`.env` 或其他本地凭据；示例配置只能使用 `.env.example` 且不得包含真实值。
+- 生成文件必须由权威脚本重建，不在生成结果里做无法复现的长期手工修改。
 - 不主动 `git commit`，除非用户明确要求。
 - 不使用 `git reset --hard`、`git checkout --` 等破坏性命令。
 - 保存文章或更新榜单后，最终回复应说明新增/修改了哪些文件、跑了哪些验证、是否有需要用户确认的遗留事项。

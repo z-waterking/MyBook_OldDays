@@ -704,7 +704,7 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
     lines = [
         "# 文章目录",
         "",
-        f"> 共 {len(entries)} 篇文章，更新于 {datetime.now().strftime('%Y-%m-%d')}",
+        f"> 共 {len(entries)} 篇文章",
         "",
     ]
 
@@ -756,7 +756,7 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
         lines.append('</div>')
         lines.append("")
 
-    lines.append("<!-- 此文件由 save_article.py 自动更新，也可手动编辑 -->")
+    lines.append("<!-- 此文件由 scripts/save_article.py 自动生成，请勿手工编辑。 -->")
     lines.append("")
 
     catalog_path = repo_root / CATALOG_FILE.relative_to(REPO_ROOT)

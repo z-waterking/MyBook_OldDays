@@ -10,6 +10,38 @@
 
 ---
 
+## 2026-07-12 · 工程原则收敛与全库自动校验
+
+- **类型：** 仓库规范 / 生成流程 / 持续集成 / 数据一致性
+- **状态：** 已完成
+- **关联提交：** 本条所在提交 · `chore: consolidate repository engineering rules`
+
+### 涉及范围
+
+- `scripts/save_article.py` / `scripts/article_covers.mjs`：目录 HTML 收敛为唯一 Python 实现，Node 封面流程改为委托调用。
+- `scripts/check_site.py`：新增评价结构与唯一性、评分榜顺序和统计、AI 改稿与映射、页面固定统计等校验。
+- `.github/workflows/site-check.yml`：覆盖全部 Python 与 Node.js 脚本，并验证目录和图片索引可重复生成。
+- `.python-version` / `.nvmrc` / `.editorconfig` / `.gitattributes` / `.gitignore`：明确工具链、编码换行、缩进和本地密钥规则。
+- `AGENTS.md` / `README.md` / `website/MAINTENANCE.md` / 各子目录 README：统一生成物、AI 当前版本和验证约定。
+
+### 改动摘要
+
+- `website/catalog.md` 只由 `save_article.py` 渲染；完整封面命令保留原用法，但不再维护第二套目录模板。
+- 生成目录和图片索引不再写入运行日期，相同源文件始终产生相同结果；生成文件明确禁止长期手工编辑。
+- AI 改稿统一以 `index.md` 作为唯一当前版本，历史由 Git 保存，不再允许 `index_v*.md` 平行入口。
+- CI 使用 Python 3.12 和 Node.js 20，安装完整 Python 依赖、检查全部 8 个脚本并重建索引。
+- Python 依赖限定兼容主版本，允许安全更新但不静默跨越破坏性大版本。
+- 巡检把 38 篇规范评价、排名/分布/均值、38 个 AI 改稿及 mapping、地点和榜单统计纳入机器约束。
+- 首页和常青维护文档移除容易过期的文章/榜单固定总数；成书规模保留为带日期快照。
+
+### 验证
+
+- 完整运行 `article_covers.mjs --mode markdown`，文章正文无变化，目录由唯一 Python 渲染器重建。
+- 两次重建 `website/catalog.md` 与 `website/image-index.md`，文件哈希保持一致。
+- 全部 4 个 Python 和 4 个 Node.js 脚本语法检查。
+- `python scripts/check_site.py`：文章、目录、排名、AI 改稿均为 38，567 个本地目标、31+4 个足迹记录和 50 张插画全部通过。
+- `git diff --check` 与首页桌面/移动端冒烟检查。
+
 ## 2026-07-12 · 全站审阅、故障降级与维护体系
 
 - **类型：** 全站审阅 / 可访问性 / 性能与韧性 / 维护自动化

@@ -3,16 +3,12 @@
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
-import { basename, dirname, join, relative } from 'node:path';
+import { dirname, join, relative } from 'node:path';
 import { stdin, stdout } from 'node:process';
 
 const ROOT = process.cwd();
 const ARTICLES_DIR = join(ROOT, 'articles');
 const ARTICLE_IMAGES_DIR = join(ROOT, 'assets', 'images', 'articles');
-const CATALOG_COVERS_DIR = join(ROOT, 'assets', 'images', '_generated', 'catalog-covers');
-const AI_EDITED_DIR = join(ROOT, 'ai-edited-articles');
-const WEBSITE_DIR = join(ROOT, 'website');
-const CATALOG = join(WEBSITE_DIR, 'catalog.md');
 const DEFAULT_REST_ENDPOINT = 'https://41626-me2j04fd-eastus2.cognitiveservices.azure.com/openai/deployments/gpt-image-2/images/generations';
 const DEFAULT_API_VERSION = '2024-02-01';
 
@@ -83,8 +79,6 @@ function parseArticle(content, dirName) {
   }
   const h1 = content.match(/^#\s+(.+)$/m)?.[1]?.trim();
   const title = meta.title || h1 || dirName.replace(/^(合集|散篇)-\d{2}-/, '');
-  const author = meta.author || '凡复思忖';
-  const date = meta.date || '';
   const body = content
     .replace(/^---\r?\n[\s\S]*?\r?\n---/, '')
     .replace(/\*原文链接:[\s\S]*$/m, '')
@@ -97,36 +91,29 @@ function parseArticle(content, dirName) {
     .replace(/[*_`~]/g, '')
     .replace(/\s+/g, ' ')
     .trim();
-  return { title, author, date, excerpt: body.slice(0, 650) };
+  return { title, excerpt: body.slice(0, 650) };
 }
 
-function catalogExcerpt(value) {
-  const text = String(value || '').replace(/\s+/g, ' ').trim();
-  if (text.length <= 150) return text;
-  return `${text.slice(0, 150)}...`;
-}
-
-function localDate() {
-  const date = new Date();
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-  return `${year}-${month}-${day}`;
-}
-
-function refreshCoverThumbnails() {
-  const script = join(ROOT, 'scripts', 'generate_cover_thumbnails.py');
+function runPythonScript(script, args, label) {
   const candidates = [process.env.PYTHON, 'python', 'python3'].filter(Boolean);
   for (const executable of candidates) {
-    const result = spawnSync(executable, [script], { cwd: ROOT, encoding: 'utf8' });
+    const result = spawnSync(executable, [script, ...args], { cwd: ROOT, encoding: 'utf8' });
     if (result.error?.code === 'ENOENT') continue;
     if (result.status !== 0) {
-      throw new Error(result.stderr?.trim() || `Thumbnail generator exited with ${result.status}.`);
+      throw new Error(result.stderr?.trim() || `${label} exited with ${result.status}.`);
     }
     if (result.stdout?.trim()) console.log(result.stdout.trim());
     return;
   }
   throw new Error('Python was not found. Install Python and dependencies from requirements.txt.');
+}
+
+function refreshCoverThumbnails() {
+  runPythonScript(join(ROOT, 'scripts', 'generate_cover_thumbnails.py'), [], 'Thumbnail generator');
+}
+
+function rebuildCatalog() {
+  runPythonScript(join(ROOT, 'scripts', 'save_article.py'), ['--catalog-only'], 'Catalog generator');
 }
 
 function coverPrompt(article, dirName) {
@@ -166,11 +153,7 @@ async function listArticles() {
     if (!existsSync(mdPath)) continue;
     const content = await readFile(mdPath, 'utf8');
     const parsed = parseArticle(content, dir.name);
-    const files = await readdir(join(ARTICLES_DIR, dir.name), { withFileTypes: true });
-    const reviews = files
-      .filter((file) => file.isFile() && file.name === 'review.md')
-      .map((file) => file.name);
-    articles.push({ dir: dir.name, mdPath, content, reviews, ...parsed });
+    articles.push({ dir: dir.name, mdPath, content, ...parsed });
   }
   articles.sort(articleNavSort);
   return articles;
@@ -197,34 +180,6 @@ function groupOrder(group) {
 function dirOrder(dirName) {
   const match = dirName.match(/^(?:合集|散篇)-(\d{2})-/);
   return match ? Number(match[1]) : 999;
-}
-
-function websiteArticleHref(article) {
-  return relative(ROOT, article.mdPath).replace(/\\/g, '/');
-}
-
-function websiteImageHref(article) {
-  const thumbnail = join(CATALOG_COVERS_DIR, `${article.dir}.webp`);
-  const imagePath = existsSync(thumbnail) ? thumbnail : join(ARTICLE_IMAGES_DIR, article.dir, 'cover.png');
-  return relative(ROOT, imagePath).replace(/\\/g, '/');
-}
-
-function websiteReviewHref(article, filename) {
-  return relative(ROOT, join(ARTICLES_DIR, article.dir, filename)).replace(/\\/g, '/');
-}
-
-function aiEditedGroup(dirName) {
-  if (dirName.startsWith('散篇-')) return '散篇';
-  if (dirName.startsWith('合集-')) return '合集';
-  return '其他';
-}
-
-function aiEditedPath(article) {
-  return join(AI_EDITED_DIR, aiEditedGroup(article.dir), article.dir, 'index.md');
-}
-
-function websiteAiEditedHref(article) {
-  return relative(ROOT, aiEditedPath(article)).replace(/\\/g, '/');
 }
 
 function articleLocalCover(article) {
@@ -257,10 +212,6 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;');
 }
 
-function encodePath(path) {
-  return encodeURI(path).replace(/#/g, '%23');
-}
-
 function catalogGroup(article) {
   if (article.dir.startsWith('散篇-')) return '散篇';
   const match = article.dir.match(/^合集-(\d{2})-/);
@@ -269,57 +220,6 @@ function catalogGroup(article) {
   if (order <= 5) return '合集 · 少年时代';
   if (order <= 10) return '合集 · 大学四年';
   return '合集 · 工作与考试';
-}
-
-async function updateCatalog(articles) {
-  const lines = [
-    '# 文章目录',
-    '',
-    `> 共 ${articles.length} 篇文章，更新于 ${localDate()}`,
-    '',
-  ];
-  const groups = ['合集 · 少年时代', '合集 · 大学四年', '合集 · 工作与考试', '散篇', '其他'];
-  const byGroup = new Map(groups.map((group) => [group, []]));
-  for (const article of articles) {
-    const group = catalogGroup(article);
-    if (!byGroup.has(group)) byGroup.set(group, []);
-    byGroup.get(group).push(article);
-  }
-  for (const group of groups) {
-    const groupedArticles = byGroup.get(group) || [];
-    if (!groupedArticles.length) continue;
-    lines.push(`<div class="article-cover-group">`);
-    lines.push(`<h2>${escapeHtml(group)} <small>${groupedArticles.length} 篇</small></h2>`);
-    lines.push('<div class="article-cover-list">');
-    for (const article of groupedArticles) {
-      lines.push('<div class="article-cover-row">');
-      lines.push(`<a class="article-cover-thumb" href="#/${encodePath(websiteArticleHref(article))}"><img src="${encodePath(websiteImageHref(article))}" alt="${escapeHtml(article.title)} 封面" loading="lazy" decoding="async" width="480" height="320"></a>`);
-      lines.push('<span class="article-cover-info">');
-      const actionLinks = [
-        ...article.reviews.map((filename) => `<a href="#/${encodePath(websiteReviewHref(article, filename))}">评价</a>`),
-      ];
-      if (existsSync(aiEditedPath(article))) {
-        actionLinks.push(`<a href="#/${encodePath(websiteAiEditedHref(article))}">AI改稿</a>`);
-      }
-      lines.push('<span class="article-cover-head">');
-      lines.push('<span class="article-cover-main">');
-      lines.push(`<a class="article-cover-title" href="#/${encodePath(websiteArticleHref(article))}"><strong>${escapeHtml(article.title)}</strong></a>`);
-      lines.push(`<em>${escapeHtml(article.date || '')}</em>`);
-      lines.push('</span>');
-      if (actionLinks.length > 0) lines.push(`<span class="article-cover-actions">${actionLinks.join('')}</span>`);
-      lines.push('</span>');
-      lines.push(`<span class="article-cover-excerpt">${escapeHtml(catalogExcerpt(article.excerpt))}</span>`);
-      lines.push('</span>');
-      lines.push('</div>');
-    }
-    lines.push('</div>');
-    lines.push('</div>');
-    lines.push('');
-  }
-  lines.push('<!-- 此文件由 scripts/article_covers.mjs 自动更新，也可手动编辑 -->');
-  lines.push('');
-  await mkdir(WEBSITE_DIR, { recursive: true });
-  await writeFile(CATALOG, lines.join('\n'), 'utf8');
 }
 
 async function main() {
@@ -356,7 +256,7 @@ async function main() {
       const fresh = await readFile(article.mdPath, 'utf8');
       await writeFile(article.mdPath, ensureArticleCover(fresh, article), 'utf8');
     }
-    await updateCatalog(articles);
+    rebuildCatalog();
   }
 }
 

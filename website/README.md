@@ -35,13 +35,13 @@ python scripts/check_site.py
 node scripts/article_covers.mjs --mode markdown
 ```
 
-这是完整发布命令，会刷新目录缩略图、首页派生图片、文章封面块和网站目录。仅需快速重建目录且明确不刷新图片时，可运行：
+这是完整发布命令，会刷新目录缩略图、首页派生图片和文章封面块，再调用 Python 的唯一目录渲染器更新网站目录。仅需快速重建目录且明确不刷新图片时，可运行：
 
 ```bash
 python scripts/save_article.py --catalog-only
 ```
 
-两个命令都会生成 `website/catalog.md`，但完整发布以 Node 命令为准。
+两个命令都会触发 `website/catalog.md` 更新，但目录 HTML 只由 `save_article.py` 渲染；完整发布以 Node 命令为准。
 
 ## 图片索引
 

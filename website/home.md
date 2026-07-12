@@ -15,7 +15,7 @@
 
   <section class="book-home-intro">
     <p>这本文集想写的，不是一个人如何成功，也不是一个人如何失败。它记录一个普通人如何被地方、学校、工作、关系和选择，慢慢塑造成现在的样子。</p>
-    <p>从河津、运城到珠海、广州、北京，再到地中海边；从小城少年到互联网打工人，三十八篇文章沿着一条并不笔直的人生线展开。</p>
+    <p>从河津、运城到珠海、广州、北京，再到地中海边；从小城少年到互联网打工人，这些文章沿着一条并不笔直的人生线展开。</p>
   </section>
 
   <section class="book-home-path">
@@ -34,7 +34,7 @@
     <div>
       <p class="book-home-section-label">把文章放回地图</p>
       <h2>从河津到地中海</h2>
-      <p>三十一处中国足迹、三处西班牙坐标。每一个标记，都能打开一段求学、工作、远行或人生选择。</p>
+      <p>遍布中国的足迹、地中海沿岸的坐标。每一个标记，都能打开一段求学、工作、远行或人生选择。</p>
       <p class="book-home-map-stats"><span><strong>31</strong> 中国地点</span><span><strong>3</strong> 西班牙地点</span></p>
       <a href="#/website/footprints.md">打开足迹地图</a>
     </div>
@@ -46,7 +46,7 @@
         <p class="book-home-section-label">第一次来，建议从这里读</p>
         <h2>四篇入口</h2>
       </div>
-      <a href="#/website/catalog.md">查看全部 38 篇</a>
+      <a href="#/website/catalog.md">查看全部文章</a>
     </div>
     <div class="book-home-featured-grid">
       <a class="book-home-feature book-home-feature-wide" href="#/articles/合集-05-我在康杰念高中（怀昔）/index.md">
@@ -75,7 +75,7 @@
 
   <section class="book-home-explore">
     <a href="#/book/01-成书目录.md"><small>按卷阅读</small><strong>看见七卷人生结构</strong></a>
-    <a href="#/website/literary-gems.md"><small>佳句选读</small><strong>从三十二句话进入旧日</strong></a>
+    <a href="#/website/literary-gems.md"><small>佳句选读</small><strong>从一句话进入旧日</strong></a>
     <a href="#/website/fun-rankings.md"><small>趣味索引</small><strong>食物、人物、足迹与名场面</strong></a>
   </section>
 </div>
