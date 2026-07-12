@@ -63,9 +63,4 @@
   - [18 丧尸躲避指南](articles/散篇-18-丧尸躲避指南/index.md)
 
 - **维护**
-  - [网站维护手册](website/MAINTENANCE.md)
-  - [成书工作区](book/README.md)
-  - [成书时间线](book/02-时间线.md)
-  - [成书执行规划](book/03-写作规划.md)
-  - [候选题目库](book/04-候选题目库.md)
   - [网站维护日志](website/maintenance-log.md)
