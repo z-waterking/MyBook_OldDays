@@ -1297,23 +1297,10 @@
     }
 
     .sidebar-nav > ul > li > p > a:hover,
+    .sidebar-nav > ul > li > p.active > a,
     .sidebar-nav > ul > li.active > p > a {
       background: #e9e1d2 !important;
       color: #241d16 !important;
-    }
-
-    .sidebar-nav a.sidebar-feature-link {
-      border-left: 3px solid #a56a43 !important;
-      background: #eee3d0 !important;
-      color: #3c2f22 !important;
-    }
-
-    .sidebar-nav a.sidebar-feature-link::after {
-      margin-left: auto;
-      color: #9a603d;
-      content: "NEW";
-      font-size: 9px;
-      font-weight: 800;
     }
 
     .back-to-top {
@@ -2424,6 +2411,7 @@
           }
 
           function setupPageBranches() {
+            var currentHash = normalizeHash(window.location.hash || '#/');
             document.querySelectorAll('.sidebar-nav li').forEach(function (item) {
               var generatedPanel = item.querySelector(':scope > ul.app-sub-sidebar, :scope > p > ul.app-sub-sidebar');
               var staticPanel = item.querySelector(':scope > ul:not(.app-sub-sidebar)');
@@ -2435,10 +2423,18 @@
               var knownPageBranch = isKnownPageBranch(link);
               if (!panel && !knownPageBranch) return;
 
+              var targetHash = normalizeHash(link.getAttribute('href'));
+              var staticChildIsActive = Boolean(staticPanel && Array.from(staticPanel.querySelectorAll('a[href]')).some(function (childLink) {
+                return normalizeHash(childLink.getAttribute('href')) === currentHash;
+              }));
+              var expanded = staticPanel
+                ? targetHash === currentHash || staticChildIsActive
+                : Boolean(generatedPanel);
+
               item.classList.add('sidebar-page-branch');
-              item.classList.toggle('is-expanded', Boolean(panel));
-              item.classList.toggle('is-collapsed', !panel);
-              updateToggleMark(link, !panel, 'sidebar-page-branch-mark');
+              item.classList.toggle('is-expanded', expanded);
+              item.classList.toggle('is-collapsed', !expanded);
+              updateToggleMark(link, !expanded, 'sidebar-page-branch-mark');
               if (panel) {
                 panel.querySelectorAll('li').forEach(function (listItem) {
                   Array.from(listItem.childNodes).forEach(function (node) {
@@ -2450,8 +2446,8 @@
               }
               link.onclick = function (event) {
                 var targetHash = normalizeHash(link.getAttribute('href'));
-                var currentHash = normalizeHash(window.location.hash || '#/');
-                if (panel && targetHash && targetHash === currentHash) {
+                var clickedFromHash = normalizeHash(window.location.hash || '#/');
+                if (panel && targetHash && targetHash === clickedFromHash) {
                   event.preventDefault();
                   event.stopPropagation();
                   item.classList.toggle('is-collapsed');
@@ -2465,9 +2461,6 @@
           function setupSidebar() {
             setupStaticBranches();
             setupPageBranches();
-            document.querySelectorAll('.sidebar-nav a[href*="website/footprints"]').forEach(function (link) {
-              link.classList.add('sidebar-feature-link');
-            });
           }
 
           hook.doneEach(setupSidebar);
