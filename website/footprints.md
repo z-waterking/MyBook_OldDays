@@ -14,7 +14,10 @@
     <button type="button" data-map-tab="world" role="tab" aria-selected="false">世界足迹</button>
   </div>
 
-  <div id="footprints-map" class="footprints-map" role="region" aria-label="作者足迹交互地图"></div>
+  <div class="footprints-map-shell">
+    <div id="footprints-map" class="footprints-map" role="region" aria-label="作者足迹交互地图"></div>
+    <p class="footprints-map-hint">点击标记，打开背后的文章</p>
+  </div>
   <p class="footprints-map-note">点击标记查看地点、时期和来源文章。地图需要联网加载底图；下方列表始终可读。</p>
 
   <div class="footprints-legend" aria-label="足迹类型">

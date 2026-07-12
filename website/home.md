@@ -7,7 +7,7 @@
       <p class="book-home-lead">那些旧日确实发生过，而现在的我，也确实是从那里走来的。</p>
       <div class="book-home-actions">
         <a class="book-home-primary" href="#/articles/合集-01-我在河津上幼儿园/index.md">从头开始</a>
-        <a href="#/website/ranking.md">编辑精选</a>
+        <a href="#/website/footprints.md">足迹地图</a>
         <a href="#/website/catalog.md">全部文章</a>
       </div>
     </div>
@@ -29,6 +29,17 @@
     </div>
   </section>
 
+  <section class="book-home-map-feature">
+    <img src="assets/images/_generated/illustrations/fun-rankings/04-footprints.webp" alt="旅行手账与从中国延伸到西班牙的足迹路线" loading="lazy" decoding="async" width="960" height="640">
+    <div>
+      <p class="book-home-section-label">把文章放回地图</p>
+      <h2>从河津到地中海</h2>
+      <p>三十一处中国足迹、三处西班牙坐标。每一个标记，都能打开一段求学、工作、远行或人生选择。</p>
+      <p class="book-home-map-stats"><span><strong>31</strong> 中国地点</span><span><strong>3</strong> 西班牙地点</span></p>
+      <a href="#/website/footprints.md">打开足迹地图</a>
+    </div>
+  </section>
+
   <section class="book-home-featured">
     <div class="book-home-section-head">
       <div>
@@ -39,7 +50,7 @@
     </div>
     <div class="book-home-featured-grid">
       <a class="book-home-feature book-home-feature-wide" href="#/articles/合集-05-我在康杰念高中（怀昔）/index.md">
-        <img src="assets/images/_generated/catalog-covers/合集-05-我在康杰念高中（怀昔）.webp" alt="我在康杰念高中（怀昔）封面" loading="lazy" width="480" height="320">
+        <img src="assets/images/_generated/catalog-covers/合集-05-我在康杰念高中（怀昔）.webp" alt="我在康杰念高中（怀昔）封面" loading="eager" decoding="async" width="480" height="320">
         <span><small>校园回忆 · 全库最高分</small><strong>我在康杰念高中（怀昔）</strong><em>人物、青春与生死回响，构成全书最完整的一次回望。</em></span>
       </a>
       <a class="book-home-feature" href="#/articles/合集-09-我在珠海上大学（忽然之间）/index.md">
@@ -66,6 +77,5 @@
     <a href="#/book/01-成书目录.md"><small>按卷阅读</small><strong>看见七卷人生结构</strong></a>
     <a href="#/website/literary-gems.md"><small>佳句选读</small><strong>从三十二句话进入旧日</strong></a>
     <a href="#/website/fun-rankings.md"><small>趣味索引</small><strong>食物、人物、足迹与名场面</strong></a>
-    <a href="#/website/footprints.md"><small>足迹地图</small><strong>从河津到地中海</strong></a>
   </section>
 </div>
