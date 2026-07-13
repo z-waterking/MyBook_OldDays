@@ -12,9 +12,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2019-08-14
 
-<p><img class="article-cover" src="assets/images/articles/散篇-09-作为一个在阿里实习的萌新，是一种怎样的体验？/cover.png" alt="作为一个在阿里实习的萌新，是一种怎样的体验？ 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/散篇-09-作为一个在阿里实习的萌新，是一种怎样的体验？.webp" alt="作为一个在阿里实习的萌新，是一种怎样的体验？ 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 **当我们在谈实习，我们在谈些什么**

@@ -11,9 +11,7 @@ archived: "2026-06-03 15:11"
 
 > 作者: 凡复思忖 | 日期: 2026-05-29
 
-<p><img class="article-cover" src="assets/images/articles/散篇-14-vibe coding带来的虚无感/cover.png" alt="vibe coding带来的虚无感 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/散篇-14-vibe coding带来的虚无感.webp" alt="vibe coding带来的虚无感 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 最近vibe coding火热，各行各业的人都参与了进来，三天做个APP等等言论甚嚣尘上，我作为AI工具的骨灰级使用者，脑海里总是浮现出“加入光荣的进化吧”这句台词，同时也有着深深的虚无感。

@@ -34,6 +34,9 @@ jobs:
       - name: Check Node.js syntax
         run: for file in scripts/*.mjs; do node --check "$file"; done
 
+      - name: Check index.html inline scripts
+        run: node scripts/check_inline_scripts.mjs
+
       - name: Check generated indexes
         run: |
           python scripts/save_article.py --catalog-only

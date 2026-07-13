@@ -13,9 +13,7 @@ archived: "2026-03-25 23:17"
 
 > 作者: 凡复思忖 | 日期: 2026-03-14
 
-<p><img class="article-cover" src="assets/images/articles/合集-09-我在珠海上大学（忽然之间）/cover.png" alt="我在珠海上大学（忽然之间） 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/合集-09-我在珠海上大学（忽然之间）.webp" alt="我在珠海上大学（忽然之间） 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 小时候看过全套的《小故事里的大智慧》，主标题之外，它还有个副标题，我记得的有《他山之石》，最喜欢的是《忽然之间》。

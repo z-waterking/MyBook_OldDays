@@ -167,9 +167,11 @@ Windows 如果没有 `python` 或 `node`，安装后重新打开终端并确认�
 ```bash
 python -m py_compile scripts/save_article.py scripts/check_site.py scripts/build_book_manuscript.py scripts/generate_cover_thumbnails.py scripts/prepare_site_illustrations.py
 node --check scripts/article_covers.mjs
+node --check scripts/check_inline_scripts.mjs
 node --check scripts/generate_ai_edit_drafts.mjs
 node --check scripts/generate_image_index.mjs
 node --check scripts/update_ai_edit_notes.mjs
+node scripts/check_inline_scripts.mjs
 ```
 
 检查网站文章、成书阅读顺序、目录、链接、足迹和插画完整性：

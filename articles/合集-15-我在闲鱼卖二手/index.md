@@ -13,9 +13,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2026-03-11
 
-<p><img class="article-cover" src="assets/images/articles/合集-15-我在闲鱼卖二手/cover.png" alt="我在闲鱼卖二手 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/合集-15-我在闲鱼卖二手.webp" alt="我在闲鱼卖二手 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 硕士之前，我几乎没有用过闲鱼。只知道它是一个买卖二手物品的APP。疫情期间，听说switch的健身环大冒险在闲鱼上可以翻倍卖，那时候才开始注意到这个APP。直到我自己的switch卡带《异度神剑》玩腻后，想出掉游戏卡换其他的游戏，才第一次使用它。

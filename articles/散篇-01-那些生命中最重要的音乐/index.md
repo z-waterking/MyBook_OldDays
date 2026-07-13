@@ -12,9 +12,7 @@ archived: "2026-03-25 23:20"
 
 > 作者: 凡复思忖 | 日期: 2025-04-27
 
-<p><img class="article-cover" src="assets/images/articles/散篇-01-那些生命中最重要的音乐/cover.png" alt="那些生命中最重要的音乐 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/散篇-01-那些生命中最重要的音乐.webp" alt="那些生命中最重要的音乐 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 最近我听歌时，更加倾向于欣赏一些“经典老歌”，像是《相约98》、《千千阙歌》、《偏爱》、《出山》等。

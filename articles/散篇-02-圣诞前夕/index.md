@@ -12,9 +12,7 @@ archived: "2026-03-25 23:17"
 
 > 作者: 凡复思忖 | 日期: 2023-12-23
 
-<p><img class="article-cover" src="assets/images/articles/散篇-02-圣诞前夕/cover.png" alt="圣诞前夕 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/散篇-02-圣诞前夕.webp" alt="圣诞前夕 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 终于买了心心念念的人体工学椅，感谢公司元旦福利，不然还不知道要拖到什么时候。之前的椅子我也很喜欢，因为可以盘腿，不用怕摔倒。人体工学椅（智商税）可以提供腰靠和枕头，也算是各有千秋吧。

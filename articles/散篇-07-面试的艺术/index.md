@@ -12,9 +12,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2019-09-25
 
-<p><img class="article-cover" src="assets/images/articles/散篇-07-面试的艺术/cover.png" alt="面试的艺术 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/散篇-07-面试的艺术.webp" alt="面试的艺术 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 请欣赏

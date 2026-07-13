@@ -11,12 +11,7 @@ archived: "2026-07-09 11:52"
 
 > 作者: 凡复思忖 | 日期: 2026-07-09
 
-<p><img class="article-cover" src="assets/images/articles/散篇-18-丧尸躲避指南/cover.png" alt="丧尸暴发后，普通人该如何躲避 封面"></p>
-
-
-
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/散篇-18-丧尸躲避指南.webp" alt="丧尸暴发后，普通人该如何躲避 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 （作者没疯，正经文章）

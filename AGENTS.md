@@ -96,9 +96,11 @@ python -m py_compile scripts/save_article.py scripts/check_site.py scripts/build
 
 ```bash
 node --check scripts/article_covers.mjs
+node --check scripts/check_inline_scripts.mjs
 node --check scripts/generate_ai_edit_drafts.mjs
 node --check scripts/generate_image_index.mjs
 node --check scripts/update_ai_edit_notes.mjs
+node scripts/check_inline_scripts.mjs
 ```
 
 检查网站完整性：
@@ -163,7 +165,8 @@ python scripts/check_site.py
 - `scripts/save_article.py` 负责抓取微信公众号文章、下载图片、转换 Markdown，并作为 `website/catalog.md` 的唯一渲染器。
 - `scripts/article_covers.mjs --mode markdown` 会刷新轻量封面缩略图、给每篇文章插入或刷新封面 `<img class="article-cover">` 块，再调用 `save_article.py --catalog-only` 重建目录。
 - `scripts/article_covers.mjs --mode generate` 会调用 Azure OpenAI 图片接口生成封面，需要 `AZURE_OPENAI_API_KEY` 或交互输入 API key；不要在日志或回复中暴露密钥。
-- `scripts/generate_cover_thumbnails.py` 会从文章原始封面生成目录 WebP、首页主视觉和 favicon；依赖 Pillow。
+- `scripts/generate_cover_thumbnails.py` 会从文章原始封面生成目录与正文 WebP、首页主视觉和 favicon；依赖 Pillow。
+- `scripts/check_inline_scripts.mjs` 会解析根目录 `index.html` 中无 `src` 的脚本块，防止首页交互代码出现未被 CI 捕获的语法错误。
 - `scripts/generate_image_index.mjs` 会扫描 `assets/images/articles/` 和其他 `assets/images/` 子目录，生成 `website/image-index.md`。
 - `scripts/build_book_manuscript.py` 按 `book/reading-order.json` 从当前 AI 修改稿或原始档案稿生成连续书稿；默认输出为 `book/manuscript.md`。
 - `scripts/update_ai_edit_notes.mjs` 会根据原文和 AI 改稿生成每篇 `notes.md` 的实际改动清单。

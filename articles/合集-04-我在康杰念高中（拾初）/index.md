@@ -13,9 +13,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2026-03-04
 
-<p><img class="article-cover" src="assets/images/articles/合集-04-我在康杰念高中（拾初）/cover.png" alt="我在康杰念高中（拾初） 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/合集-04-我在康杰念高中（拾初）.webp" alt="我在康杰念高中（拾初） 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 俺念高中已经是17年前的事情了。这17年来，如果有人问我，最快乐的地方是在哪里？我会毫不犹豫地回答， 在康杰读高中的日子。更多的是高二高三的日子。如果我能活到AI大发展的日子，我一定要把这些场景重现，然后珍藏，到时候陪伴我死去。

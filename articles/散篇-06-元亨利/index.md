@@ -12,9 +12,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2021-04-30
 
-<p><img class="article-cover" src="assets/images/articles/散篇-06-元亨利/cover.png" alt="元亨利 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/散篇-06-元亨利.webp" alt="元亨利 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 京城中关村金拱门的格局，是和别处不同的：别处都是宽堂大厅，而这里却是当街曲尺形的一个大柜台，柜里面预备着冰块，可以随时端出冰镇饮料。上班的人，中午傍晚下了班，每每花五块大洋，买一个两块的香辣鸡腿堡，端一杯外面卖一个大洋的可乐——这是三年前的事，现在每份要涨到十块大洋，——靠柜台外站着，冰冰地喝了休息。

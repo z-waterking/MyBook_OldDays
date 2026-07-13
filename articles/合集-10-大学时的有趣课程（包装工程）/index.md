@@ -13,9 +13,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2026-03-12
 
-<p><img class="article-cover" src="assets/images/articles/合集-10-大学时的有趣课程（包装工程）/cover.png" alt="大学时的有趣课程（包装工程） 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/合集-10-大学时的有趣课程（包装工程）.webp" alt="大学时的有趣课程（包装工程） 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 我的大学专业是包装工程。跟大多数人一样，我初次听到这个专业名时也是一脸懵。许多吃货都会问我这是包装月饼的吗？我统一回答，是的。这个专业比较强的学校有清华大学，江南大学，暨南大学。江南大学也还罢了，我实在不知道我们专业何德何能可以去碰瓷清华，可事实就是如此。

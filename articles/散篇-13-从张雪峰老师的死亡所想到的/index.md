@@ -11,9 +11,7 @@ archived: "2026-04-08 17:52"
 
 > 作者: 凡复思忖 | 日期: 2026-03-29
 
-<p><img class="article-cover" src="assets/images/articles/散篇-13-从张雪峰老师的死亡所想到的/cover.png" alt="从张雪峰老师的死亡所想到的 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/散篇-13-从张雪峰老师的死亡所想到的.webp" alt="从张雪峰老师的死亡所想到的 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 2026年03月24日下午，微信群里陆续有消息传来，说张雪峰老师的网络账号头像灰了，怕是有什么不测，并且信誓旦旦地发了截图。我一看，果然是灰的，原本以为是谁随手把图片P成了灰度，想造谣一波。没想到愈传愈烈，直至峰学蔚来发布公告，我才得知，原来张雪峰老师真的猝死了。猝死在健身房中。

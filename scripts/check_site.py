@@ -18,7 +18,17 @@ ROOT = Path(__file__).resolve().parents[1]
 WEBSITE = ROOT / "website"
 BOOK = ROOT / "book"
 AI_EDITED = ROOT / "ai-edited-articles"
+ARTICLE_IMAGES = ROOT / "assets" / "images" / "articles"
+GENERATED_IMAGES = ROOT / "assets" / "images" / "_generated"
 FOOTPRINT_KINDS = {"life", "study", "work", "choice", "travel", "transit"}
+ARTICLE_COVER_SIZE = (1536, 1024)
+CATALOG_COVER_SIZE = (480, 320)
+ARTICLE_WEB_COVER_SIZE = (1200, 800)
+HOME_HERO_SIZE = (1200, 800)
+FAVICON_SIZE = (64, 64)
+CATALOG_COVER_RMS_LIMIT = 9.0
+ARTICLE_WEB_COVER_RMS_LIMIT = 8.0
+HOME_HERO_SOURCE = "合集-05-我在康杰念高中（怀昔）"
 ILLUSTRATION_SIZE = (1536, 1024)
 ILLUSTRATION_WEB_SIZE = (960, 640)
 ILLUSTRATION_RMS_LIMIT = 8.0
@@ -54,6 +64,11 @@ def report_error(message: str) -> None:
 def require(condition: bool, message: str) -> None:
     if not condition:
         report_error(message)
+
+
+def image_rms(expected: Image.Image, actual: Image.Image) -> float:
+    channel_rms = ImageStat.Stat(ImageChops.difference(expected, actual)).rms
+    return sum(channel_rms) / len(channel_rms)
 
 
 def parse_front_matter(content: str) -> dict[str, str]:
@@ -457,6 +472,107 @@ def check_footprints() -> tuple[int, int, int]:
     return len(data["china"]), len(data["world"]), spanish_count
 
 
+def check_cover_derivatives(articles: list[Path]) -> int:
+    catalog_dir = GENERATED_IMAGES / "catalog-covers"
+    article_web_dir = GENERATED_IMAGES / "article-covers"
+    expected_names = {article.name for article in articles}
+    derivative_sets = (
+        ("目录封面", catalog_dir),
+        ("正文封面", article_web_dir),
+    )
+    for label, directory in derivative_sets:
+        actual_names = {path.stem for path in directory.glob("*.webp")} if directory.is_dir() else set()
+        missing = sorted(expected_names - actual_names)
+        extra = sorted(actual_names - expected_names)
+        require(not missing, f"{label}派生图缺失: {', '.join(missing)}")
+        require(not extra, f"{label}派生图没有对应文章: {', '.join(extra)}")
+
+    hero_original: Image.Image | None = None
+    for article in articles:
+        source = ARTICLE_IMAGES / article.name / "cover.png"
+        catalog_derivative = catalog_dir / f"{article.name}.webp"
+        article_derivative = article_web_dir / f"{article.name}.webp"
+        article_content = (article / "index.md").read_text(encoding="utf-8")
+        cover_tag_match = re.search(r'<img class="article-cover"(?:\s|>)[^>]*>', article_content)
+        require(cover_tag_match is not None, f"文章缺少正文封面块: {article.name}")
+        if cover_tag_match is not None:
+            cover_tag = cover_tag_match.group(0)
+            expected_src = f'assets/images/_generated/article-covers/{article.name}.webp'
+            require(f'src="{expected_src}"' in cover_tag, f"文章未引用轻量正文封面: {article.name}")
+            require('width="1200"' in cover_tag and 'height="800"' in cover_tag, f"文章正文封面缺少尺寸声明: {article.name}")
+        require(source.is_file(), f"文章封面原图不存在: {source.relative_to(ROOT).as_posix()}")
+        if not source.is_file():
+            continue
+        try:
+            with Image.open(source) as source_image:
+                require(source_image.format == "PNG", f"文章封面原图不是 PNG: {source.relative_to(ROOT).as_posix()}")
+                require(source_image.size == ARTICLE_COVER_SIZE, f"文章封面原图尺寸不是 1536x1024: {source.relative_to(ROOT).as_posix()}")
+                original = ImageOps.exif_transpose(source_image).convert("RGB")
+                if article.name == HOME_HERO_SOURCE:
+                    hero_original = original.copy()
+            derivative_specs = (
+                ("目录封面", catalog_derivative, CATALOG_COVER_SIZE, CATALOG_COVER_RMS_LIMIT),
+                ("正文封面", article_derivative, ARTICLE_WEB_COVER_SIZE, ARTICLE_WEB_COVER_RMS_LIMIT),
+            )
+            for label, derivative, expected_size, rms_limit in derivative_specs:
+                if not derivative.is_file():
+                    continue
+                expected = ImageOps.fit(original, expected_size, method=Image.Resampling.LANCZOS)
+                with Image.open(derivative) as derivative_image:
+                    require(derivative_image.format == "WEBP", f"{label}派生图不是 WebP: {derivative.relative_to(ROOT).as_posix()}")
+                    require(derivative_image.size == expected_size, f"{label}派生图尺寸不是 {expected_size[0]}x{expected_size[1]}: {derivative.relative_to(ROOT).as_posix()}")
+                    actual = derivative_image.convert("RGB")
+                if actual.size == expected.size:
+                    difference = image_rms(expected, actual)
+                    require(
+                        difference <= rms_limit,
+                        f"{label}派生图可能未同步（RMS {difference:.2f}）: {derivative.relative_to(ROOT).as_posix()}",
+                    )
+        except (OSError, UnidentifiedImageError) as error:
+            report_error(f"无法读取文章封面 {article.name}: {error}")
+
+    hero_path = GENERATED_IMAGES / "home-hero.webp"
+    favicon_path = GENERATED_IMAGES / "favicon.png"
+    require(hero_original is not None, f"首页主视觉来源文章不存在: {HOME_HERO_SOURCE}")
+    require(hero_path.is_file(), f"首页主视觉派生图不存在: {hero_path.relative_to(ROOT).as_posix()}")
+    require(favicon_path.is_file(), f"站点图标不存在: {favicon_path.relative_to(ROOT).as_posix()}")
+    if hero_original is not None and hero_path.is_file():
+        try:
+            expected = ImageOps.fit(hero_original, HOME_HERO_SIZE, method=Image.Resampling.LANCZOS)
+            with Image.open(hero_path) as hero_image:
+                require(hero_image.format == "WEBP", "首页主视觉派生图不是 WebP")
+                require(hero_image.size == HOME_HERO_SIZE, "首页主视觉派生图尺寸不是 1200x800")
+                actual = hero_image.convert("RGB")
+            if actual.size == expected.size:
+                difference = image_rms(expected, actual)
+                require(difference <= ARTICLE_WEB_COVER_RMS_LIMIT, f"首页主视觉派生图可能未同步（RMS {difference:.2f}）")
+        except (OSError, UnidentifiedImageError) as error:
+            report_error(f"无法读取首页主视觉派生图: {error}")
+    if hero_original is not None and favicon_path.is_file():
+        try:
+            expected = ImageOps.fit(hero_original, FAVICON_SIZE, method=Image.Resampling.LANCZOS)
+            with Image.open(favicon_path) as favicon_image:
+                require(favicon_image.format == "PNG", "站点图标不是 PNG")
+                require(favicon_image.size == FAVICON_SIZE, "站点图标尺寸不是 64x64")
+                actual = favicon_image.convert("RGB")
+            if actual.size == expected.size:
+                require(image_rms(expected, actual) == 0, "站点图标与首页主视觉来源未同步")
+        except (OSError, UnidentifiedImageError) as error:
+            report_error(f"无法读取站点图标: {error}")
+
+    return len(expected_names)
+
+
+def check_docsify_asset_resolver() -> None:
+    index_html = (ROOT / "index.html").read_text(encoding="utf-8")
+    require(
+        'function resolveRootAssetPaths(hook)' in index_html
+        and 'hook.afterEach(function (html)' in index_html
+        and '/src=\"[^\"]*?assets\\/images\\//g' in index_html,
+        "Docsify 缺少仓库根图片路径修正，深层文章路由会导致正文图片 404",
+    )
+
+
 def check_illustrations() -> tuple[int, Counter[str]]:
     manifest_path = ROOT / "scripts" / "illustration_manifest.json"
     try:
@@ -507,8 +623,7 @@ def check_illustrations() -> tuple[int, Counter[str]]:
                     require(derivative_image.size == ILLUSTRATION_WEB_SIZE, f"插画派生图尺寸不是 960x640: {derivative.relative_to(ROOT).as_posix()}")
                     actual = derivative_image.convert("RGB")
                 if actual.size == expected.size:
-                    channel_rms = ImageStat.Stat(ImageChops.difference(expected, actual)).rms
-                    average_rms = sum(channel_rms) / len(channel_rms)
+                    average_rms = image_rms(expected, actual)
                     require(
                         average_rms <= ILLUSTRATION_RMS_LIMIT,
                         f"插画派生图可能未同步（RMS {average_rms:.2f}）: {derivative.relative_to(ROOT).as_posix()}",
@@ -594,6 +709,8 @@ def main() -> int:
     ai_edit_count = check_ai_edits(articles)
     link_count = check_site_links()
     china_count, world_count, spanish_count = check_footprints()
+    check_docsify_asset_resolver()
+    cover_count = check_cover_derivatives(articles)
     illustration_count, illustration_counts = check_illustrations()
     check_documented_counts(len(articles), ai_edit_count, china_count, spanish_count, illustration_counts)
 
@@ -608,6 +725,7 @@ def main() -> int:
     print(f"- 已检查本地链接与图片：{link_count}")
     print(f"- 成书阅读：{book_part_count} 个部分，{book_chapter_count} 篇入选文章")
     print(f"- 足迹：中国 {china_count}，世界视图 {world_count}")
+    print(f"- 文章封面派生图：{cover_count} × 2，站点资产：2")
     print(f"- 插画原图与派生图：{illustration_count}")
     return 0
 

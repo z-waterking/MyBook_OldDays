@@ -13,9 +13,7 @@ archived: "2026-03-25 23:17"
 
 > 作者: 凡复思忖 | 日期: 2026-03-02
 
-<p><img class="article-cover" src="assets/images/articles/合集-12-我在河津考研究生/cover.png" alt="我在河津考研究生 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/合集-12-我在河津考研究生.webp" alt="我在河津考研究生 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 每当我坐在软子的大办公室里跟AI斗智斗勇的时候，我准会想起，十年前我在河津的家里备考研究生的那段时光。

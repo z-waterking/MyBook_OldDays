@@ -13,9 +13,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2026-03-03
 
-<p><img class="article-cover" src="assets/images/articles/合集-16-我在北京住合租屋/cover.png" alt="我在北京住合租屋 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/合集-16-我在北京住合租屋.webp" alt="我在北京住合租屋 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 写这篇文，是希望回顾下在北京租房住的时候发生的有趣故事。后半段是一次非常难忘的经历，我一个人与其他三户最多共8位住客爆发了极其激烈的冲突，最终无奈搬走，也反映了几分北漂的无奈吧。

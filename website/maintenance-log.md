@@ -10,6 +10,41 @@
 
 ---
 
+## 2026-07-13 · 全站审计与构建、加载体验加固
+
+- **类型：** 全站审计 / 生成流程 / 可访问性 / 加载韧性 / 持续集成
+- **状态：** 已完成
+- **关联提交：** 待提交
+
+### 涉及范围
+
+- `scripts/save_article.py`：文章正文与网站目录统一以 LF 写入；纯本地目录重建不再强制加载抓取依赖。
+- `scripts/generate_cover_thumbnails.py` / `scripts/article_covers.mjs`：生成并引用轻量正文封面。
+- `scripts/check_site.py`：校验文章封面、目录/正文 WebP、首页主视觉和 favicon 的格式、尺寸及同步状态。
+- `index.html`：改善粗指针设备触控区域，补充常青元信息、CDN 预连接、无脚本说明和 Docsify 加载失败提示。
+- `scripts/check_inline_scripts.mjs` / `.github/workflows/site-check.yml`：将首页内联脚本语法纳入本地和 CI 检查。
+
+### 改动摘要
+
+- 修复 Windows 上运行 `--catalog-only` 时，内容没有变化但 `website/catalog.md` 因 CRLF 换行而显示为已修改的问题。
+- `--catalog-only` 只使用标准库即可运行；缺少抓取依赖时，真正归档远程文章仍会给出明确安装提示。
+- 新归档文章也显式遵循仓库 `.editorconfig` 与 `.gitattributes` 的 LF 约定，避免平台相关差异进入后续构建。
+- 文章页改用 1200×800 WebP 封面并声明尺寸，降低原始 PNG 传输量和布局偏移；巡检会捕获缺失、多余或过期的封面派生图。
+- 移动端触控目标按输入设备能力增大，桌面端继续保持紧凑布局。Docsify 或 JavaScript 不可用时，读者会看到明确说明和 GitHub 内容入口。
+- Docsify 渲染前会把仓库根图片路径补成站点根路径，修复深层文章路由下正文图片被错误拼接为 `articles/.../assets/...` 的问题。
+- CI 现在会实际编译检查 `index.html` 的内联脚本，覆盖此前只检查 `scripts/*.mjs` 的盲区。
+
+### 验证
+
+- Windows 上连续运行两次 `python scripts/save_article.py --catalog-only`，`website/catalog.md` 保持无差异。
+- `node scripts/article_covers.mjs --mode markdown`。
+- `node scripts/check_inline_scripts.mjs`。
+- `python -m py_compile scripts/save_article.py`。
+- `python scripts/check_site.py`。
+- 桌面与 390px 移动宽度浏览器冒烟检查。
+
+---
+
 ## 2026-07-12 · 七部成书结构与连续阅读
 
 - **类型：** 成书编排 / 读者导航 / 生成流程 / 持续集成

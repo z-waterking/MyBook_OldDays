@@ -12,9 +12,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2023-12-16
 
-<p><img class="article-cover" src="assets/images/articles/散篇-03-小记二十有九/cover.png" alt="小记二十有九 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/散篇-03-小记二十有九.webp" alt="小记二十有九 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 这周迎来了自己29岁的生日。生日当天出去骑了街头自行车，冷风呼啸，可以清晰感受到汗水不断地带走体力。速度也比往常慢了许多。去拜访了荣姐，参观了她的大house，吃到了有生以来最豪华的长寿面。

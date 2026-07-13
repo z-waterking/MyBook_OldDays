@@ -13,9 +13,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2026-03-10
 
-<p><img class="article-cover" src="assets/images/articles/合集-08-我在珠海上大学（风途）/cover.png" alt="我在珠海上大学（风途） 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/合集-08-我在珠海上大学（风途）.webp" alt="我在珠海上大学（风途） 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 如果问我，大学期间最深的记忆是什么，我的回答应该是，佳人相伴，走遍天涯。我们去了凤凰古城，成都，香港，澳门，厦门，桂林，上海，苏州，杭州，武汉等地方，几乎把南方的省份给转遍了。

@@ -13,9 +13,7 @@ archived: "2026-03-25 23:17"
 
 > 作者: 凡复思忖 | 日期: 2025-06-04
 
-<p><img class="article-cover" src="assets/images/articles/合集-17-我的初次考公经历/cover.png" alt="我的初次考公经历 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/合集-17-我的初次考公经历.webp" alt="我的初次考公经历 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 2022年7月，我那时还在杭州阿里打黑工。

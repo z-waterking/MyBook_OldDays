@@ -11,9 +11,7 @@ archived: "2026-07-07 20:00"
 
 > 作者: 凡复思忖 | 日期: 2026-07-07
 
-<p><img class="article-cover" src="assets/images/articles/散篇-16-我舍不得的不是公司，是我的工位/cover.png" alt="我舍不得的不是公司，是我的工位 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/散篇-16-我舍不得的不是公司，是我的工位.webp" alt="我舍不得的不是公司，是我的工位 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 最近脑海中总是浮现两手托腮仰头看天的画面。很小的时候，喜欢火影中的鹿丸，他最喜欢蹲在树荫底下，幻想自己变成一朵云。**可最后，最渴望闲散的人，反而成了最忙碌的人。**

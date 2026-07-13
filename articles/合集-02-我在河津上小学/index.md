@@ -13,9 +13,7 @@ archived: "2026-03-25 23:17"
 
 > 作者: 凡复思忖 | 日期: 2026-03-19
 
-<p><img class="article-cover" src="assets/images/articles/合集-02-我在河津上小学/cover.png" alt="我在河津上小学 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/合集-02-我在河津上小学.webp" alt="我在河津上小学 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 **我小学时由于搬家，共上过两个学校。那时候还只需要上五年，从2001年到2006年，分别上的是一小的1(2)班，2(6)班，3(2)班，搬家之后，是四小的4(3)班，5(3)班。**

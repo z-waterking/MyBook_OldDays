@@ -13,9 +13,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2026-03-07
 
-<p><img class="article-cover" src="assets/images/articles/合集-06-我在珠海上大学（新序）/cover.png" alt="我在珠海上大学（新序） 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/合集-06-我在珠海上大学（新序）.webp" alt="我在珠海上大学（新序） 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 高考失利后，我并没有什么痛苦的感觉，更多的是麻木。我邀请大家一起去华山游玩，有十几个人响应。我们半夜出发，日出时到了山顶，大家都累得气喘吁吁，靠在山壁上休息。山风吹拂，人生的享受不过如此。

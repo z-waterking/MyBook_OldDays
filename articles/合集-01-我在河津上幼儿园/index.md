@@ -13,9 +13,7 @@ archived: "2026-03-25 23:17"
 
 > 作者: 凡复思忖 | 日期: 2026-03-20
 
-<p><img class="article-cover" src="assets/images/articles/合集-01-我在河津上幼儿园/cover.png" alt="我在河津上幼儿园 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/合集-01-我在河津上幼儿园.webp" alt="我在河津上幼儿园 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 我到底是从哪个年纪加入**蓓蕾幼儿园**的？小班，中班，记不清了。那就算作中班吧。上小学前，在这儿经历了中班，大班，学前班。

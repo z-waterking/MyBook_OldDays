@@ -13,9 +13,7 @@ archived: "2026-03-25 23:17"
 
 > 作者: 凡复思忖 | 日期: 2026-03-16
 
-<p><img class="article-cover" src="assets/images/articles/合集-03-我在运中念初中/cover.png" alt="我在运中念初中 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/合集-03-我在运中念初中.webp" alt="我在运中念初中 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 我是在运中的初中上的学。小学毕业后，运中招生办来河津招生，在汾滨街的一家宾馆房间，考了我们这些小学生一道题。题目内容是，今天是星期一，3000天后是星期几。**我觉得这道题不伦不类，不知道哪个大聪明出的，你要考试就好好考，要看过往的考试成绩就看。拿一个脑筋急转弯来筛选人？**

@@ -12,9 +12,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2019-04-05
 
-<p><img class="article-cover" src="assets/images/articles/散篇-11-男朋友不回消息怎么办/cover.png" alt="男朋友不回消息怎么办 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/散篇-11-男朋友不回消息怎么办.webp" alt="男朋友不回消息怎么办 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 可能是消息队列发生了堵塞，建议及时request一下他身边的老板、哥们、红颜知己谁在那里一天到晚老发消息把队列堵上的。

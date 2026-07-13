@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parent.parent
 ARTICLE_IMAGES_DIR = ROOT / "assets" / "images" / "articles"
 OUTPUT_DIR = ROOT / "assets" / "images" / "_generated"
 CATALOG_DIR = OUTPUT_DIR / "catalog-covers"
+ARTICLE_COVERS_DIR = OUTPUT_DIR / "article-covers"
 HERO_SOURCE = ARTICLE_IMAGES_DIR / "合集-05-我在康杰念高中（怀昔）" / "cover.png"
 
 
@@ -47,8 +48,10 @@ def main() -> None:
 
     changed = 0
     for cover in covers:
-        target = CATALOG_DIR / f"{cover.parent.name}.webp"
-        changed += write_if_changed(target, render_webp(cover, (480, 320), 74))
+        catalog_target = CATALOG_DIR / f"{cover.parent.name}.webp"
+        article_target = ARTICLE_COVERS_DIR / f"{cover.parent.name}.webp"
+        changed += write_if_changed(catalog_target, render_webp(cover, (480, 320), 74))
+        changed += write_if_changed(article_target, render_webp(cover, (1200, 800), 80))
 
     changed += write_if_changed(
         OUTPUT_DIR / "home-hero.webp",
@@ -59,7 +62,7 @@ def main() -> None:
     generated = list(OUTPUT_DIR.rglob("*.webp")) + list(OUTPUT_DIR.rglob("*.png"))
     total_bytes = sum(path.stat().st_size for path in generated)
     print(
-        f"generated {len(covers)} catalog covers and 2 site assets; "
+        f"generated {len(covers)} catalog covers, {len(covers)} article covers, and 2 site assets; "
         f"updated {changed}; total {total_bytes / 1024 / 1024:.2f} MB"
     )
 

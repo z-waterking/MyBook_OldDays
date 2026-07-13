@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <title>旧日之书</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="从小城少年到互联网打工人，三十八篇文章记录地方、学校、工作、关系与选择如何塑造一个普通人。">
+  <meta name="description" content="从小城少年到互联网打工人，一组个人文章记录地方、学校、工作、关系与选择如何塑造一个普通人。">
+  <meta name="theme-color" content="#5a4a3a">
+  <meta name="color-scheme" content="light">
   <meta property="og:type" content="website">
   <meta property="og:title" content="旧日之书">
   <meta property="og:description" content="那些旧日确实发生过，而现在的我，也确实是从那里走来的。">
@@ -12,6 +14,7 @@
   <meta property="og:url" content="https://z-waterking.github.io/MyBook_OldDays/">
   <link rel="canonical" href="https://z-waterking.github.io/MyBook_OldDays/">
   <link rel="icon" type="image/png" href="assets/images/_generated/favicon.png">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
     :root {
@@ -21,6 +24,36 @@
     body {
       background: #fafaf8;
       color: #2d2d2d;
+    }
+
+    #app.site-load-error,
+    .site-load-error {
+      display: block;
+      max-width: 680px;
+      box-sizing: border-box;
+      margin: 12vh auto 0;
+      padding: 30px 32px;
+      border: 1px solid #ded7ca;
+      border-radius: 8px;
+      background: #fffdf8;
+      box-shadow: 0 8px 28px rgba(45, 37, 28, 0.08);
+      color: #3e3328;
+      line-height: 1.75;
+    }
+
+    .site-load-error h1 {
+      margin: 0 0 10px;
+      font-size: 24px;
+    }
+
+    .site-load-error p {
+      margin: 0 0 16px;
+    }
+
+    .site-load-error a {
+      color: #5a4a3a;
+      font-weight: 700;
+      text-underline-offset: 3px;
     }
 
     .skip-link {
@@ -1848,11 +1881,84 @@
         bottom: 14px;
       }
     }
+
+    @media (max-width: 768px), (pointer: coarse), (any-pointer: coarse) {
+      .skip-link,
+      .book-home-actions a,
+      .book-home-map-feature > div > a,
+      .footprints-tabs button {
+        min-height: 44px !important;
+      }
+
+      .book-home-section-head > a,
+      .book-home-quote a,
+      .footprints-item a {
+        display: inline-flex;
+        min-height: 40px;
+        align-items: center;
+      }
+
+      .article-cover-actions {
+        gap: 8px;
+      }
+
+      .article-cover-actions a {
+        min-height: 36px;
+        padding: 3px 10px;
+        font-size: 12px;
+      }
+
+      .sidebar .search input {
+        height: 44px !important;
+        font-size: 16px !important;
+      }
+
+      .sidebar-nav > ul > li > p > a,
+      .sidebar-nav > ul > li.sidebar-branch > p.sidebar-branch-toggle,
+      .sidebar-nav > ul > li > ul > li > a,
+      .sidebar-nav .app-sub-sidebar li a {
+        display: flex !important;
+        min-height: 40px !important;
+        align-items: center !important;
+      }
+
+      .footprints-list-head select {
+        min-height: 44px;
+      }
+
+      .curated-section-nav select {
+        height: 44px;
+      }
+
+      .footprints-map .leaflet-control-zoom a {
+        width: 44px !important;
+        height: 44px !important;
+        line-height: 44px !important;
+      }
+
+      .footprints-map .leaflet-control-layers-toggle {
+        width: 44px !important;
+        height: 44px !important;
+      }
+
+      .back-to-top {
+        width: 48px;
+        height: 48px;
+      }
+    }
   </style>
 </head>
 <body>
   <button class="skip-link" type="button">跳到正文</button>
   <div id="app">加载中...</div>
+  <noscript>
+    <style>.skip-link, #app, .back-to-top { display: none !important; }</style>
+    <main class="site-load-error">
+      <h1>需要启用 JavaScript</h1>
+      <p>此站点使用 JavaScript 加载文章与导航。请启用后刷新页面，或前往 GitHub 阅读仓库内容。</p>
+      <a href="https://github.com/z-waterking/MyBook_OldDays">前往 GitHub 仓库</a>
+    </main>
+  </noscript>
   <script>
     window.$docsify = {
       name: '旧日之书',
@@ -1885,6 +1991,16 @@
         function hideFrontMatter(hook) {
           hook.beforeEach(function (content) {
             return content.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n+/, '');
+          });
+        },
+        function resolveRootAssetPaths(hook) {
+          hook.afterEach(function (html) {
+            var siteRoot = window.location.pathname.replace(/[^/]*$/, '');
+            if (!siteRoot.endsWith('/')) siteRoot += '/';
+            return html.replace(
+              /src="[^"]*?assets\/images\//g,
+              'src="' + siteRoot + 'assets/images/'
+            );
           });
         },
         function keepHomepageTitle(hook) {
@@ -2468,7 +2584,7 @@
       ],
     }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js" onerror="this.onerror=null;document.getElementById('app').outerHTML='&lt;main id=&quot;app&quot; class=&quot;site-load-error&quot; role=&quot;alert&quot;&gt;&lt;h1&gt;页面暂时无法加载&lt;/h1&gt;&lt;p&gt;站点组件没有成功加载。请检查网络后刷新页面，或前往 GitHub 阅读仓库内容。&lt;/p&gt;&lt;a href=&quot;https://github.com/z-waterking/MyBook_OldDays&quot;&gt;前往 GitHub 仓库&lt;/a&gt;&lt;/main&gt;'"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
   <button class="back-to-top" type="button" aria-label="回到顶部" title="回到顶部">↑</button>
   <script>

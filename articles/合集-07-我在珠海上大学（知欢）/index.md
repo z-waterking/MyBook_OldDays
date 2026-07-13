@@ -13,9 +13,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2026-03-08
 
-<p><img class="article-cover" src="assets/images/articles/合集-07-我在珠海上大学（知欢）/cover.png" alt="我在珠海上大学（知欢） 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/合集-07-我在珠海上大学（知欢）.webp" alt="我在珠海上大学（知欢） 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 第一个寒假我还是很期待返回学校的。广东那边美食多，但不油腻，而且量少，我在学校吃了一个学期瘦了5斤。在家过个年就胖回去了。

@@ -7,6 +7,8 @@
     python save_article.py --catalog-only
 """
 
+from __future__ import annotations
+
 import argparse
 import ast
 import hashlib
@@ -26,11 +28,21 @@ from datetime import datetime
 from pathlib import Path
 from urllib.parse import quote, urlparse, parse_qs
 
-import requests
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
-from bs4 import BeautifulSoup, Tag
-import markdownify
+try:
+    import markdownify
+    import requests
+    from bs4 import BeautifulSoup, Tag
+    from requests.adapters import HTTPAdapter
+    from urllib3.util.retry import Retry
+except ImportError as error:
+    markdownify = None
+    requests = None
+    BeautifulSoup = Tag = HTTPAdapter = Retry = None
+    ARCHIVE_DEPENDENCY_ERROR = error
+else:
+    ARCHIVE_DEPENDENCY_ERROR = None
+
+MarkdownConverterBase = markdownify.MarkdownConverter if markdownify is not None else object
 
 
 # ─── 配置 ────────────────────────────────────────────────────────────────────
@@ -496,7 +508,7 @@ def clean_content_html(elem: Tag):
 
 # ─── Markdown 转换 ────────────────────────────────────────────────────────────
 
-class WeChatMarkdownConverter(markdownify.MarkdownConverter):
+class WeChatMarkdownConverter(MarkdownConverterBase):
     """针对微信公众号文章的自定义 Markdown 转换器"""
 
     def __init__(self, image_map=None, **kwargs):
@@ -655,7 +667,7 @@ def save_article_to_disk(
 
     # 写入文件
     md_path = article_dir / "index.md"
-    md_path.write_text(markdown, encoding="utf-8")
+    md_path.write_text(markdown, encoding="utf-8", newline="\n")
 
     return str(article_dir)
 
@@ -761,7 +773,7 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
 
     catalog_path = repo_root / CATALOG_FILE.relative_to(REPO_ROOT)
     catalog_path.parent.mkdir(parents=True, exist_ok=True)
-    catalog_path.write_text("\n".join(lines), encoding="utf-8")
+    catalog_path.write_text("\n".join(lines), encoding="utf-8", newline="\n")
     return len(entries)
 
 
@@ -879,6 +891,14 @@ def main():
 
     if not urls:
         parser.print_help()
+        sys.exit(1)
+
+    if ARCHIVE_DEPENDENCY_ERROR is not None:
+        print(
+            "❌ 抓取文章所需依赖尚未安装。请运行: "
+            "python -m pip install -r requirements.txt",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
     # 去重

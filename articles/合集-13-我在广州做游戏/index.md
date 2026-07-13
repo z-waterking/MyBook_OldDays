@@ -13,9 +13,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2026-03-09
 
-<p><img class="article-cover" src="assets/images/articles/合集-13-我在广州做游戏/cover.png" alt="我在广州做游戏 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/合集-13-我在广州做游戏.webp" alt="我在广州做游戏 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 现在我经常会以“年纪大了”为开头，例如睡不着觉的时候会说：年纪大的人觉就是少了。可是我也曾经22岁过。

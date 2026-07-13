@@ -11,9 +11,7 @@ archived: "2026-04-08 17:52"
 
 > 作者: 凡复思忖 | 日期: 2026-04-07
 
-<p><img class="article-cover" src="assets/images/articles/合集-20-我在西班牙骑自行车/cover.png" alt="我在西班牙骑自行车 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/合集-20-我在西班牙骑自行车.webp" alt="我在西班牙骑自行车 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 早上起来时，阳光透过窗帘洒在我脸上，我睁开眼，眼前朦胧一片，恍惚间，仿佛又回到了地中海边的那个早上。

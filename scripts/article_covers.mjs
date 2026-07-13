@@ -3,7 +3,7 @@
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
-import { dirname, join, relative } from 'node:path';
+import { dirname, join } from 'node:path';
 import { stdin, stdout } from 'node:process';
 
 const ROOT = process.cwd();
@@ -182,12 +182,12 @@ function dirOrder(dirName) {
   return match ? Number(match[1]) : 999;
 }
 
-function articleLocalCover(article) {
-  return relative(ROOT, join(ARTICLE_IMAGES_DIR, article.dir, 'cover.png')).replace(/\\/g, '/');
+function articleWebCover(article) {
+  return `assets/images/_generated/article-covers/${article.dir}.webp`;
 }
 
 function ensureArticleCover(content, article) {
-  const coverBlock = `<p><img class="article-cover" src="${articleLocalCover(article)}" alt="${escapeHtml(article.title)} 封面"></p>`;
+  const coverBlock = `<p><img class="article-cover" src="${articleWebCover(article)}" alt="${escapeHtml(article.title)} 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>`;
   if (content.includes(coverBlock)) return content;
   let next = content.replace(/\n?<p><img class="article-cover"[\s\S]*?<\/p>\n?/m, '\n');
   const metaLine = next.match(/^> .*$/m);

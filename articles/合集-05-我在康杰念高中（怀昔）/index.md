@@ -13,9 +13,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2026-03-05
 
-<p><img class="article-cover" src="assets/images/articles/合集-05-我在康杰念高中（怀昔）/cover.png" alt="我在康杰念高中（怀昔） 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/合集-05-我在康杰念高中（怀昔）.webp" alt="我在康杰念高中（怀昔） 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 触碰到了最底层的记忆。像是老旧的相片匣被打开，积压的照片一瞬间找到了释放的方向，猛地向上弹出，如雪花般四散在空中。

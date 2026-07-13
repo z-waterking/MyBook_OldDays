@@ -12,9 +12,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2019-05-10
 
-<p><img class="article-cover" src="assets/images/articles/散篇-10-读研读废了是什么体验/cover.png" alt="读研读废了是什么体验 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/散篇-10-读研读废了是什么体验.webp" alt="读研读废了是什么体验 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 深刻理解博硕士的毕业要求与毕业难度。

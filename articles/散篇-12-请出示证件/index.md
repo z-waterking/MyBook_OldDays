@@ -12,9 +12,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2019-02-25
 
-<p><img class="article-cover" src="assets/images/articles/散篇-12-请出示证件/cover.png" alt="请出示证件 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/散篇-12-请出示证件.webp" alt="请出示证件 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 第01天

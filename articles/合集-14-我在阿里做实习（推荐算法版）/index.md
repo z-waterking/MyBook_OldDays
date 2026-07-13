@@ -13,9 +13,7 @@ archived: "2026-03-25 23:18"
 
 > 作者: 凡复思忖 | 日期: 2026-03-06
 
-<p><img class="article-cover" src="assets/images/articles/合集-14-我在阿里做实习（推荐算法版）/cover.png" alt="我在阿里做实习（推荐算法版） 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/合集-14-我在阿里做实习（推荐算法版）.webp" alt="我在阿里做实习（推荐算法版） 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 我的第一份正式的实习，是19年去了杭州阿里总部，推荐算法岗位。

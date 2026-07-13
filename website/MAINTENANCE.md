@@ -24,6 +24,7 @@
 - `website/image-index.md`：图片索引。
 - `book/manuscript.md`：按阅读清单与当前 AI 修改稿拼合的连续工作书稿。
 - `assets/images/_generated/catalog-covers/`：目录封面 WebP。
+- `assets/images/_generated/article-covers/`：文章正文使用的轻量封面 WebP。
 - `assets/images/_generated/illustrations/`：榜单插画 WebP。
 - `assets/images/_generated/home-hero.webp` 和 `favicon.png`：首页主视觉与站点图标。
 
@@ -65,7 +66,7 @@ python scripts/check_site.py
 - 足迹 JSON 结构、坐标范围、来源链接和路线有效。
 - 插画清单、页面插画块、JPEG 原图和 WebP 派生图一一对应，并通过尺寸与像素差异检查确认派生图已同步。
 
-同一检查由 `.github/workflows/site-check.yml` 在推送到 `main` 和 Pull Request 时自动执行。CI 还会检查全部 Python/Node.js 脚本语法，重建目录、图片索引和连续书稿，并要求生成结果无差异。新增约束时应优先扩展 `scripts/check_site.py`，让本地与 CI 使用同一套规则。
+同一检查由 `.github/workflows/site-check.yml` 在推送到 `main` 和 Pull Request 时自动执行。CI 还会检查全部 Python/Node.js 脚本及 `index.html` 内联脚本的语法，重建目录、图片索引和连续书稿，并要求生成结果无差异。新增约束时应优先扩展 `scripts/check_site.py`，让本地与 CI 使用同一套规则。
 
 ## 三、按改动类型维护
 
@@ -144,9 +145,11 @@ python scripts/prepare_site_illustrations.py
 ```bash
 python -m py_compile scripts/save_article.py scripts/check_site.py scripts/build_book_manuscript.py scripts/generate_cover_thumbnails.py scripts/prepare_site_illustrations.py
 node --check scripts/article_covers.mjs
+node --check scripts/check_inline_scripts.mjs
 node --check scripts/generate_ai_edit_drafts.mjs
 node --check scripts/generate_image_index.mjs
 node --check scripts/update_ai_edit_notes.mjs
+node scripts/check_inline_scripts.mjs
 python scripts/save_article.py --catalog-only
 node scripts/generate_image_index.mjs
 git diff --exit-code -- website/catalog.md website/image-index.md

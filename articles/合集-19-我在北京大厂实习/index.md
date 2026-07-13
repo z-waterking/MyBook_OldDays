@@ -11,9 +11,7 @@ archived: "2026-04-08 17:52"
 
 > 作者: 凡复思忖 | 日期: 2026-04-05
 
-<p><img class="article-cover" src="assets/images/articles/合集-19-我在北京大厂实习/cover.png" alt="我在北京大厂实习 封面"></p>
-
-
+<p><img class="article-cover" src="assets/images/_generated/article-covers/合集-19-我在北京大厂实习.webp" alt="我在北京大厂实习 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 硕士期间，我有几次实习经历。实习的旅程很长，有的是自己面试得来的，有的是通过做项目得来的。经历过**亚马逊AWS，百度，字节，以及阿里。**其中阿里的经历写在[我在阿里做实习（推荐算法版）](https://mp.weixin.qq.com/s?__biz=MzI4NTkwMzY1MA==&mid=2247483850&idx=1&sn=c7acbab1ecff81e54ddefab390794d45&scene=21#wechat_redirect)。

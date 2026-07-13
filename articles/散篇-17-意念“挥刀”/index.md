@@ -8,7 +8,7 @@ archived: "2026-07-08 03:21"
 # 意念“挥刀”
 > 作者: 凡复思忖 | 日期: 2026-07-08
 
-<p><img class="article-cover" src="assets/images/articles/散篇-17-意念“挥刀”/cover.png" alt="意念“挥刀” 封面"></p>
+<p><img class="article-cover" src="assets/images/_generated/article-covers/散篇-17-意念“挥刀”.webp" alt="意念“挥刀” 封面" width="1200" height="800" decoding="async" fetchpriority="high"></p>
 
 
 我的脑海中住着一只兽人加鲁鲁，每天使出无数次凯撒锐爪和弦月弯道；我的脑海中住着一个郭靖，每天挥出无数记亢龙有悔和飞龙在天；我的脑海中住着一个叶凡，每天都要独断万古；我的脑海中住着一个宁缺，每天要斩观主无数次；我的脑海中住着一个保安柯察金，每天要跟冬妮娅分别无数次；我的脑海中住着一个孙少平，每天要跟田晓霞经历无数次生离死别；我的脑海中住着一只基拉祈，她可以实现无数的愿望；我的脑海中住着一个崔护，每天都要“桃花依旧笑春风”......
