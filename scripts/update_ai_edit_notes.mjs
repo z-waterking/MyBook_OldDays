@@ -99,6 +99,23 @@ function classifyChanges({ dirName, sourceBody, draftBody, sourceImages, draftIm
     changes.push('手工强化青春回忆主线，增加开头与结尾呼应，并压缩部分同学信息罗列。');
   }
 
+  const headings = [...draftBody.matchAll(/^##\s+(.+)$/gm)].map((match) => match[1]);
+  if (headings.length) {
+    changes.push('按评价建议重建正文层次，新增分节：' + headings.slice(0, 8).join('、') + '。');
+  }
+  if (/^edit_round:\s*"v2"\s*$/m.test(draftBody)) {
+    changes.push('直接覆盖唯一当前稿为 v2；不保留平行版本，原始档案保持不变。');
+  }
+  if (dirName === '散篇-12-请出示证件') {
+    changes.push('补写第五、六天，交代父亲逃亡原因、义眼用途、小闪动机和小牛最终选择，完成小说闭环。');
+  }
+  if (dirName === '散篇-13-从张雪峰老师的死亡所想到的') {
+    changes.push('删除无法由本地档案核实的死因、饮食与直播传言，避免替逝者确认单一因果。');
+  }
+  if (dirName === '散篇-18-丧尸躲避指南') {
+    changes.push('补充虚构设定声明、点位淘汰标准和现实安全警示，明确危险攀爬不可模仿。');
+  }
+
   return [...new Set(changes)];
 }
 
@@ -157,9 +174,22 @@ async function main() {
     const sourceRel = relative(ROOT, sourcePath).replace(/\\/g, '/');
     const draftRel = relative(ROOT, draftPath).replace(/\\/g, '/');
     const block = actualChangesBlock(changes, sourceRel, draftRel);
-    const next = `${upsertSection(notesBody, '本版实际改动', block).replace(/^# 修改说明：.*$/m, `# 修改说明：${title}`).trimEnd()}\n`;
-    if (next !== notesBody) {
-      await writeFile(notesPath, next, 'utf8');
+    const strategy = [
+      '## 本轮改稿策略',
+      '',
+      '这是第二轮定向精修。长篇按规范评价重建主轴、分节、取舍与结尾；短篇和低分文章采用场景化重写，使其成为可独立阅读的完整作品。全程保留作者原声，不改动原始档案。',
+      '',
+    ].join('\n');
+    const normalizedNotes = notesBody
+      .replace('- 当前评分：', '- 原文评分：')
+      .replace(/(?:- 当前轮次：v2\r?\n)+/g, '')
+      .replace(/- 目标评分：10\/10\r?\n/, '- 目标评分：10/10\n- 当前轮次：v2\n')
+      .replace(/## 本轮改稿策略\n[\s\S]*?(?=## 本版实际改动)/, strategy)
+      .replace('## 下一轮建议', '## 作者确认事项');
+    const finalBody = upsertSection(normalizedNotes, '本版实际改动', block);
+    const finalNotes = finalBody.replace(/^# 修改说明：.*$/m, '# 修改说明：' + title).trimEnd() + '\n';
+    if (finalNotes !== notesBody) {
+      await writeFile(notesPath, finalNotes, 'utf8');
       updated += 1;
     } else {
       skipped += 1;

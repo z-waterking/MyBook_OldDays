@@ -110,7 +110,17 @@ def build_manuscript(source: str) -> str:
     expected_chapters = sum(
         len(part.get("chapters", [])) for part in parts if isinstance(part, dict)
     )
-    actual_chapters = len(re.findall(r"(?m)^## ", manuscript)) - 1
+    expected_titles = [
+        str(chapter["title"])
+        for part in parts
+        if isinstance(part, dict)
+        for chapter in part.get("chapters", [])
+        if isinstance(chapter, dict)
+    ]
+    actual_chapters = sum(
+        len(re.findall(rf"(?m)^## {re.escape(title)}$", manuscript))
+        for title in expected_titles
+    )
     if actual_chapters != expected_chapters:
         raise ValueError(f"书稿章节数量错误: 预期 {expected_chapters}，实际 {actual_chapters}")
     archive_metadata = re.search(
