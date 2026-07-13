@@ -49,16 +49,17 @@
 
 ## 评分分布
 
-| 评分区间 | 篇数 |
-| ---------- | ------ |
-| 9.0 - 10.0 | 1 |
-| 8.5 - 8.9 | 8 |
-| 8.0 - 8.4 | 10 |
-| 7.5 - 7.9 | 10 |
-| 7.0 - 7.4 | 5 |
-| 6.0 - 6.9 | 3 |
-| 低于 6.0 | 1 |
-| **合计** | **38** |
+<div class="score-distribution-chart" role="img" aria-label="38 篇文章评分分布：9.0 到 10.0 分 1 篇，8.5 到 8.9 分 8 篇，8.0 到 8.4 分 10 篇，7.5 到 7.9 分 10 篇，7.0 到 7.4 分 5 篇，6.0 到 6.9 分 3 篇，低于 6.0 分 1 篇。">
+  <div class="score-distribution-row" data-score-range="9.0 - 10.0" data-score-count="1"><span class="score-distribution-label">9.0–10.0</span><span class="score-distribution-track"><span class="score-distribution-bar" style="width: 10%"></span></span><strong class="score-distribution-value">1 篇 <small>2.6%</small></strong></div>
+  <div class="score-distribution-row" data-score-range="8.5 - 8.9" data-score-count="8"><span class="score-distribution-label">8.5–8.9</span><span class="score-distribution-track"><span class="score-distribution-bar" style="width: 80%"></span></span><strong class="score-distribution-value">8 篇 <small>21.1%</small></strong></div>
+  <div class="score-distribution-row" data-score-range="8.0 - 8.4" data-score-count="10"><span class="score-distribution-label">8.0–8.4</span><span class="score-distribution-track"><span class="score-distribution-bar" style="width: 100%"></span></span><strong class="score-distribution-value">10 篇 <small>26.3%</small></strong></div>
+  <div class="score-distribution-row" data-score-range="7.5 - 7.9" data-score-count="10"><span class="score-distribution-label">7.5–7.9</span><span class="score-distribution-track"><span class="score-distribution-bar" style="width: 100%"></span></span><strong class="score-distribution-value">10 篇 <small>26.3%</small></strong></div>
+  <div class="score-distribution-row" data-score-range="7.0 - 7.4" data-score-count="5"><span class="score-distribution-label">7.0–7.4</span><span class="score-distribution-track"><span class="score-distribution-bar" style="width: 50%"></span></span><strong class="score-distribution-value">5 篇 <small>13.2%</small></strong></div>
+  <div class="score-distribution-row" data-score-range="6.0 - 6.9" data-score-count="3"><span class="score-distribution-label">6.0–6.9</span><span class="score-distribution-track"><span class="score-distribution-bar" style="width: 30%"></span></span><strong class="score-distribution-value">3 篇 <small>7.9%</small></strong></div>
+  <div class="score-distribution-row" data-score-range="低于 6.0" data-score-count="1"><span class="score-distribution-label">低于 6.0</span><span class="score-distribution-track"><span class="score-distribution-bar" style="width: 10%"></span></span><strong class="score-distribution-value">1 篇 <small>2.6%</small></strong></div>
+</div>
+
+<p class="score-distribution-caption">横轴为篇数，满格代表当前最高区间的 10 篇；合计 38 篇。</p>
 
 ## 统计
 

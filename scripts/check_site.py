@@ -342,11 +342,16 @@ def check_ranking(review_scores: dict[str, float]) -> int:
         "6.0 - 6.9": sum(6.0 <= score < 7.0 for score in review_scores.values()),
         "低于 6.0": sum(score < 6.0 for score in review_scores.values()),
     }
-    for label, expected_count in expected_distribution.items():
-        match = re.search(rf"^\|\s*{re.escape(label)}\s*\|\s*(?P<count>\d+)\s*\|$", content, re.MULTILINE)
-        require(match is not None, f"评分榜缺少分布区间: {label}")
-        if match:
-            require(int(match.group("count")) == expected_count, f"评分榜分布数量错误: {label}")
+    chart_rows = {
+        match.group("label"): int(match.group("count"))
+        for match in re.finditer(
+            r'<div class="score-distribution-row" data-score-range="(?P<label>[^"]+)" data-score-count="(?P<count>\d+)">',
+            content,
+        )
+    }
+    require(len(chart_rows) == len(expected_distribution), "评分分布图的区间数量错误")
+    require(chart_rows == expected_distribution, "评分分布图与规范评价分数不一致")
+    require("score-distribution-chart" in content and "score-distribution-caption" in content, "评分榜缺少可视化分布图")
 
     if rows:
         for label, row in (("最高分", rows[0]), ("最低分", rows[-1])):
@@ -582,6 +587,12 @@ def check_docsify_asset_resolver() -> None:
         and 'hook.afterEach(function (html)' in index_html
         and '/src=\"[^\"]*?assets\\/images\\//g' in index_html,
         "Docsify 缺少仓库根图片路径修正，深层文章路由会导致正文图片 404",
+    )
+    require(
+        "function addArticleAiEditEntry(hook)" in index_html
+        and "article-ai-edit-entry" in index_html
+        and "#/ai-edited-articles/" in index_html,
+        "原文详情页缺少 AI 改稿入口",
     )
 
 

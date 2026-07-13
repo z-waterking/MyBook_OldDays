@@ -104,6 +104,43 @@
       border-bottom: 2px solid #e0ddd8 !important;
     }
 
+    .markdown-section h1.article-detail-heading {
+      display: flex !important;
+      align-items: center !important;
+      gap: 16px !important;
+    }
+
+    .markdown-section h1.article-detail-heading > a:first-child {
+      min-width: 0 !important;
+    }
+
+    .markdown-section h1.article-detail-heading > a.article-ai-edit-entry {
+      display: inline-flex !important;
+      min-height: 36px !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-sizing: border-box !important;
+      margin: 0 0 0 auto !important;
+      padding: 0 13px !important;
+      border: 1px solid #5a4a3a !important;
+      border-radius: 5px !important;
+      background: #5a4a3a !important;
+      color: #fff !important;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      line-height: 1 !important;
+      text-decoration: none !important;
+      white-space: nowrap !important;
+      flex: 0 0 auto !important;
+    }
+
+    .markdown-section h1.article-detail-heading > a.article-ai-edit-entry:hover {
+      border-color: #8b6914 !important;
+      background: #8b6914 !important;
+      color: #fff !important;
+    }
+
     .markdown-section h2 {
       font-size: 1.5em !important;
       font-weight: 600 !important;
@@ -169,6 +206,63 @@
 
     .markdown-section table tbody tr:hover {
       background: #f7f6f3 !important;
+    }
+
+    .score-distribution-chart {
+      display: grid;
+      gap: 10px;
+      margin: 1.2em 0 0.75em;
+    }
+
+    .score-distribution-row {
+      display: grid;
+      grid-template-columns: 104px minmax(160px, 1fr) 108px;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .score-distribution-label {
+      color: #51483e;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.35;
+      text-align: right;
+    }
+
+    .score-distribution-track {
+      display: block;
+      height: 20px;
+      overflow: hidden;
+      border-radius: 4px;
+      background: #ece7dd;
+    }
+
+    .score-distribution-bar {
+      display: block;
+      height: 100%;
+      border-radius: 4px;
+      background: linear-gradient(90deg, #8b6914, #b18a30);
+    }
+
+    .score-distribution-value {
+      color: #302a24;
+      font-size: 14px;
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+
+    .score-distribution-value small {
+      margin-left: 4px;
+      color: #81766a;
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    .score-distribution-caption {
+      margin: 0 0 2em !important;
+      color: #81766a;
+      font-size: 13px;
+      text-align: center;
     }
 
     /* 图片 */
@@ -1595,6 +1689,33 @@
         font-size: 17px !important;
       }
 
+      .markdown-section h1.article-detail-heading {
+        align-items: flex-start !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+      }
+
+      .markdown-section h1.article-detail-heading > a.article-ai-edit-entry {
+        min-height: 38px !important;
+        margin-left: 0 !important;
+      }
+
+      .score-distribution-row {
+        grid-template-columns: 78px minmax(0, 1fr) 82px;
+        gap: 8px;
+      }
+
+      .score-distribution-label,
+      .score-distribution-value {
+        font-size: 12px;
+      }
+
+      .score-distribution-value small {
+        display: block;
+        margin-left: 0;
+        font-size: 11px;
+      }
+
       .article-cover-list {
         gap: 0;
       }
@@ -2007,6 +2128,30 @@
         function hideFrontMatter(hook) {
           hook.beforeEach(function (content) {
             return content.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n+/, '');
+          });
+        },
+        function addArticleAiEditEntry(hook) {
+          hook.doneEach(function () {
+            var route = String(window.location.hash || '').replace(/\?id=.*$/, '');
+            var match = route.match(/^#\/articles\/([^/]+)\/index(?:\.md)?$/);
+            if (!match) return;
+
+            var articleName = match[1];
+            try {
+              articleName = decodeURI(articleName);
+            } catch (error) {
+            }
+            var category = articleName.indexOf('合集-') === 0 ? '合集' : '散篇';
+            var heading = document.querySelector('.markdown-section > h1');
+            if (!heading || heading.querySelector('.article-ai-edit-entry')) return;
+
+            heading.classList.add('article-detail-heading');
+            var entry = document.createElement('a');
+            entry.className = 'article-ai-edit-entry';
+            entry.href = '#/ai-edited-articles/' + encodeURI(category) + '/' + encodeURI(articleName) + '/index.md';
+            entry.textContent = '阅读 AI 改稿';
+            entry.setAttribute('aria-label', '阅读《' + heading.textContent.trim() + '》的 AI 改稿');
+            heading.appendChild(entry);
           });
         },
         function resolveRootAssetPaths(hook) {
@@ -2486,6 +2631,13 @@
           }
 
           function alignAiEditedSidebar() {
+            document.querySelectorAll('.sidebar-ai-badge').forEach(function (badge) {
+              badge.remove();
+            });
+            document.querySelectorAll('.sidebar-ai-context').forEach(function (item) {
+              item.classList.remove('sidebar-ai-context');
+            });
+
             var currentHash = normalizeHash(window.location.hash || '#/');
             var route = currentHash.match(/^#\/ai-edited-articles\/(?:合集|散篇)\/([^/]+)\/(index|notes)$/);
             if (!route) return;
