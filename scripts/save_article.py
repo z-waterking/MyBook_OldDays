@@ -707,10 +707,16 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
         excerpt = markdown_excerpt(content)
         group = catalog_group(article_dir.name)
         reviews = ["review.md"] if (article_dir / "review.md").is_file() else []
+        review_score = ""
+        if reviews:
+            review_content = (article_dir / "review.md").read_text(encoding="utf-8")
+            score_match = re.search(r"\*\*(\d+(?:\.\d+)?)\s*/\s*10\*\*", review_content)
+            if score_match:
+                review_score = score_match.group(1)
 
-        entries.append((date, title, author, rel_path, cover_rel_path, excerpt, group, reviews, article_dir))
+        entries.append((date, title, author, rel_path, cover_rel_path, excerpt, group, reviews, review_score, article_dir))
 
-    entries.sort(key=lambda x: (group_order(x[6]), dir_order(x[8].name), x[8].name))
+    entries.sort(key=lambda x: (group_order(x[6]), dir_order(x[9].name), x[9].name))
 
     # 生成网站目录页
     lines = [
@@ -728,13 +734,20 @@ def generate_catalog(repo_root: Path, articles_dir: Path):
         lines.append(f'<div class="article-cover-group">')
         lines.append(f'<h2>{html.escape(group)} <small>{len(grouped_entries)} 篇</small></h2>')
         lines.append('<div class="article-cover-list">')
-        for date, title, author, rel_path, cover_rel_path, excerpt, _, reviews, article_dir in grouped_entries:
+        for date, title, author, rel_path, cover_rel_path, excerpt, item_group, reviews, review_score, article_dir in grouped_entries:
             safe_rel_path = markdown_link_target(rel_path)
             safe_cover_path = markdown_link_target(cover_rel_path)
             safe_title = html.escape(title)
             safe_date = html.escape(date)
             safe_excerpt = html.escape(excerpt)
-            lines.append('<div class="article-cover-row">')
+            group_key = {
+                "合集 · 少年时代": "youth",
+                "合集 · 大学四年": "college",
+                "合集 · 工作与考试": "work",
+                "散篇": "essay",
+            }.get(item_group, "other")
+            score_key = review_score.replace(".", "-") or "unknown"
+            lines.append(f'<div class="article-cover-row catalog-group-{group_key} catalog-score-{score_key}">')
             lines.append(f'<a class="article-cover-thumb" href="#/{safe_rel_path}"><img src="{safe_cover_path}" alt="{safe_title} 封面" loading="lazy" decoding="async" width="480" height="320"></a>')
             lines.append('<span class="article-cover-info">')
             review_links = []

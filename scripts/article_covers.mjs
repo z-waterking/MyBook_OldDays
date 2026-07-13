@@ -95,10 +95,13 @@ function parseArticle(content, dirName) {
 }
 
 function runPythonScript(script, args, label) {
-  const candidates = [process.env.PYTHON, 'python', 'python3'].filter(Boolean);
+  const bundledPython = process.env.USERPROFILE
+    ? join(process.env.USERPROFILE, '.cache', 'codex-runtimes', 'codex-primary-runtime', 'dependencies', 'python', 'python.exe')
+    : '';
+  const candidates = [process.env.PYTHON, bundledPython, 'py', 'python', 'python3'].filter(Boolean);
   for (const executable of candidates) {
     const result = spawnSync(executable, [script, ...args], { cwd: ROOT, encoding: 'utf8' });
-    if (result.error?.code === 'ENOENT') continue;
+    if (result.error?.code === 'ENOENT' || (result.status === null && !result.stderr?.trim())) continue;
     if (result.status !== 0) {
       throw new Error(result.stderr?.trim() || `${label} exited with ${result.status}.`);
     }
@@ -257,6 +260,7 @@ async function main() {
       await writeFile(article.mdPath, ensureArticleCover(fresh, article), 'utf8');
     }
     rebuildCatalog();
+    runPythonScript(join(ROOT, 'scripts', 'generate_search_index.py'), [], 'Search index generator');
   }
 }
 

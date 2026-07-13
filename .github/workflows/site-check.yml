@@ -32,7 +32,10 @@ jobs:
         run: python -m py_compile scripts/*.py
 
       - name: Check Node.js syntax
-        run: for file in scripts/*.mjs; do node --check "$file"; done
+        run: |
+          for file in scripts/*.mjs; do node --check "$file"; done
+          node --check scripts/site_runtime_helpers.js
+          node scripts/check_runtime_routes.mjs
 
       - name: Check index.html inline scripts
         run: node scripts/check_inline_scripts.mjs
@@ -41,13 +44,15 @@ jobs:
         run: |
           python scripts/save_article.py --catalog-only
           node scripts/generate_image_index.mjs
-          git diff --exit-code -- website/catalog.md website/image-index.md
+          python scripts/generate_search_index.py
+          python scripts/sync_book_reading_links.py
+          git diff --exit-code -- website/catalog.md website/image-index.md website/search-index.json book/01-成书目录.md book/部*.md book/附录-*.md
 
       - name: Check generated book manuscript
         run: |
           python scripts/build_book_manuscript.py
           python scripts/build_book_manuscript.py --check
-          git diff --exit-code -- book/manuscript.md
+          git diff --exit-code -- book/manuscript.md book/README.md
 
       - name: Check site integrity
         run: python scripts/check_site.py

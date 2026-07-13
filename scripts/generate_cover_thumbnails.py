@@ -12,7 +12,10 @@ ARTICLE_IMAGES_DIR = ROOT / "assets" / "images" / "articles"
 OUTPUT_DIR = ROOT / "assets" / "images" / "_generated"
 CATALOG_DIR = OUTPUT_DIR / "catalog-covers"
 ARTICLE_COVERS_DIR = OUTPUT_DIR / "article-covers"
+ARTICLE_INLINE_DIR = OUTPUT_DIR / "article-inline"
 HERO_SOURCE = ARTICLE_IMAGES_DIR / "合集-05-我在康杰念高中（怀昔）" / "cover.png"
+INLINE_EXTENSIONS = {".jpg", ".jpeg", ".png"}
+INLINE_MAX_SIZE = (1600, 1600)
 
 
 def write_if_changed(path: Path, content: bytes) -> bool:
@@ -29,6 +32,15 @@ def render_webp(source: Path, size: tuple[int, int], quality: int) -> bytes:
         image = ImageOps.fit(image, size, method=Image.Resampling.LANCZOS)
         output = io.BytesIO()
         image.save(output, format="WEBP", quality=quality, method=6)
+        return output.getvalue()
+
+
+def render_inline_webp(source: Path) -> bytes:
+    with Image.open(source) as image:
+        image = ImageOps.exif_transpose(image).convert("RGB")
+        image.thumbnail(INLINE_MAX_SIZE, Image.Resampling.LANCZOS)
+        output = io.BytesIO()
+        image.save(output, format="WEBP", quality=76, method=6)
         return output.getvalue()
 
 
@@ -53,6 +65,27 @@ def main() -> None:
         changed += write_if_changed(catalog_target, render_webp(cover, (480, 320), 74))
         changed += write_if_changed(article_target, render_webp(cover, (1200, 800), 80))
 
+    inline_sources = sorted(
+        (
+            path
+            for path in ARTICLE_IMAGES_DIR.glob("*/*")
+            if path.is_file()
+            and path.name.lower() != "cover.png"
+            and path.suffix.lower() in INLINE_EXTENSIONS
+        ),
+        key=lambda path: path.as_posix(),
+    )
+    expected_inline_targets: set[Path] = set()
+    for source in inline_sources:
+        target = ARTICLE_INLINE_DIR / source.parent.name / f"{source.stem}.webp"
+        expected_inline_targets.add(target)
+        changed += write_if_changed(target, render_inline_webp(source))
+    if ARTICLE_INLINE_DIR.is_dir():
+        for stale in ARTICLE_INLINE_DIR.glob("*/*.webp"):
+            if stale not in expected_inline_targets:
+                stale.unlink()
+                changed += 1
+
     changed += write_if_changed(
         OUTPUT_DIR / "home-hero.webp",
         render_webp(HERO_SOURCE, (1200, 800), 80),
@@ -62,7 +95,8 @@ def main() -> None:
     generated = list(OUTPUT_DIR.rglob("*.webp")) + list(OUTPUT_DIR.rglob("*.png"))
     total_bytes = sum(path.stat().st_size for path in generated)
     print(
-        f"generated {len(covers)} catalog covers, {len(covers)} article covers, and 2 site assets; "
+        f"generated {len(covers)} catalog covers, {len(covers)} article covers, "
+        f"{len(inline_sources)} inline derivatives, and 2 site assets; "
         f"updated {changed}; total {total_bytes / 1024 / 1024:.2f} MB"
     )
 

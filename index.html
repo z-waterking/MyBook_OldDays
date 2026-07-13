@@ -104,41 +104,52 @@
       border-bottom: 2px solid #e0ddd8 !important;
     }
 
-    .markdown-section h1.article-detail-heading {
-      display: flex !important;
-      align-items: center !important;
-      gap: 16px !important;
+    .article-detail-header {
+      margin: 1em 0 1.25em;
+      border-bottom: 2px solid #e0ddd8;
     }
 
-    .markdown-section h1.article-detail-heading > a:first-child {
-      min-width: 0 !important;
+    .markdown-section .article-detail-header h1 {
+      margin: 0 !important;
+      padding-bottom: 10px !important;
+      border-bottom: 0 !important;
     }
 
-    .markdown-section h1.article-detail-heading > a.article-ai-edit-entry {
-      display: inline-flex !important;
-      min-height: 36px !important;
-      align-items: center !important;
-      justify-content: center !important;
-      box-sizing: border-box !important;
-      margin: 0 0 0 auto !important;
-      padding: 0 13px !important;
-      border: 1px solid #5a4a3a !important;
-      border-radius: 5px !important;
-      background: #5a4a3a !important;
-      color: #fff !important;
-      font-family: system-ui, -apple-system, "Segoe UI", sans-serif !important;
-      font-size: 13px !important;
-      font-weight: 700 !important;
-      line-height: 1 !important;
+    .article-context-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      padding: 0 0 14px;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    .markdown-section .article-context-nav a,
+    .article-context-nav span {
+      display: inline-flex;
+      min-height: 32px;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 0 10px;
+      border: 1px solid #b9ad9c;
+      border-radius: 4px;
+      background: #fffdf8;
+      color: #5a4a3a !important;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1;
       text-decoration: none !important;
-      white-space: nowrap !important;
-      flex: 0 0 auto !important;
+      white-space: nowrap;
     }
 
-    .markdown-section h1.article-detail-heading > a.article-ai-edit-entry:hover {
-      border-color: #8b6914 !important;
-      background: #8b6914 !important;
+    .article-context-nav span[aria-current="page"] {
+      border-color: #5a4a3a;
+      background: #5a4a3a;
       color: #fff !important;
+    }
+
+    .markdown-section .article-context-nav a:hover {
+      border-color: #8b6914;
+      background: #f6efe2;
     }
 
     .markdown-section h2 {
@@ -263,6 +274,79 @@
       color: #81766a;
       font-size: 13px;
       text-align: center;
+    }
+
+    .ranking-table .ranking-card-toggle {
+      display: none;
+    }
+
+    .catalog-filters {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      gap: 10px;
+      margin: 1.1em 0 1.4em;
+      padding: 14px;
+      border: 1px solid #ded7ca;
+      border-radius: 6px;
+      background: #fffdf8;
+    }
+
+    .catalog-filters label {
+      display: grid;
+      gap: 4px;
+      color: #5d5145;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .catalog-filters select {
+      min-height: 38px;
+      padding: 0 32px 0 10px;
+      border: 1px solid #b9ad9c;
+      border-radius: 4px;
+      background: #fff;
+      color: #302a24;
+      font: inherit;
+      font-size: 14px;
+    }
+
+    .catalog-filter-count {
+      margin-left: auto;
+      color: #756a5e;
+      font-size: 13px;
+    }
+
+    .full-search-results mark {
+      padding: 0 1px;
+      background: #f5df9c;
+      color: inherit;
+    }
+
+    .full-search-results .matching-post {
+      display: block;
+      margin: 0;
+      padding: 10px 2px;
+      border-bottom: 1px solid #e8e2d8;
+      text-decoration: none;
+    }
+
+    .full-search-results .matching-post strong,
+    .full-search-results .matching-post small,
+    .full-search-results .matching-post span {
+      display: block;
+    }
+
+    .full-search-results .matching-post small {
+      color: #8a7b6a;
+      font-size: 10px;
+    }
+
+    .full-search-results .matching-post span {
+      margin-top: 3px;
+      color: #665c52;
+      font-size: 11px;
+      line-height: 1.45;
     }
 
     /* 图片 */
@@ -1689,15 +1773,15 @@
         font-size: 17px !important;
       }
 
-      .markdown-section h1.article-detail-heading {
-        align-items: flex-start !important;
-        flex-wrap: wrap !important;
-        gap: 10px !important;
+      .article-context-nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .markdown-section h1.article-detail-heading > a.article-ai-edit-entry {
-        min-height: 38px !important;
-        margin-left: 0 !important;
+      .markdown-section .article-context-nav a,
+      .article-context-nav span {
+        min-height: 40px;
+        justify-content: center;
       }
 
       .score-distribution-row {
@@ -1714,6 +1798,101 @@
         display: block;
         margin-left: 0;
         font-size: 11px;
+      }
+
+      .ranking-table,
+      .ranking-table tbody,
+      .ranking-table tr,
+      .ranking-table td {
+        display: block !important;
+        width: auto !important;
+      }
+
+      .ranking-table thead {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        overflow: hidden !important;
+        clip: rect(0 0 0 0) !important;
+        white-space: nowrap !important;
+      }
+
+      .markdown-section .ranking-table tr {
+        display: grid !important;
+        grid-template-columns: 52px 68px minmax(0, 1fr);
+        gap: 7px 8px;
+        box-sizing: border-box;
+        margin: 0 0 10px;
+        padding: 12px;
+        border: 1px solid #ded7ca !important;
+        border-radius: 6px;
+        background: #fffdf8;
+      }
+
+      .markdown-section .ranking-table td {
+        box-sizing: border-box;
+        padding: 0 !important;
+        border: 0 !important;
+        line-height: 1.5;
+      }
+
+      .ranking-table td:nth-child(1),
+      .ranking-table td:nth-child(2),
+      .ranking-table td:nth-child(3) {
+        color: #756a5e;
+        font-size: 13px;
+        white-space: nowrap;
+      }
+
+      .ranking-table td:nth-child(1)::before { content: "第 "; }
+      .ranking-table td:nth-child(1)::after { content: " 名"; }
+      .ranking-table td:nth-child(2)::after { content: " 分"; }
+
+      .ranking-table td:nth-child(4) {
+        grid-column: 1 / -1;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .ranking-table td:nth-child(5) {
+        display: none !important;
+        grid-column: 1 / -1;
+        padding-top: 8px !important;
+        border-top: 1px solid #e8e2d8 !important;
+        color: #5f554b;
+        font-size: 14px;
+      }
+
+      .ranking-table tr.is-expanded td:nth-child(5) {
+        display: block !important;
+      }
+
+      .ranking-table .ranking-card-toggle {
+        display: inline-flex;
+        min-height: 36px;
+        align-items: center;
+        margin-top: 8px;
+        padding: 0 10px;
+        border: 1px solid #b9ad9c;
+        border-radius: 4px;
+        background: #fff;
+        color: #5a4a3a;
+        font: inherit;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .catalog-filters {
+        align-items: stretch;
+      }
+
+      .catalog-filters label {
+        flex: 1 1 135px;
+      }
+
+      .catalog-filter-count {
+        flex-basis: 100%;
+        margin-left: 0;
       }
 
       .article-cover-list {
@@ -2096,6 +2275,7 @@
       <a href="https://github.com/z-waterking/MyBook_OldDays">前往 GitHub 仓库</a>
     </main>
   </noscript>
+  <script src="scripts/site_runtime_helpers.js"></script>
   <script>
     window.$docsify = {
       name: '旧日之书',
@@ -2127,48 +2307,251 @@
         },
         function hideFrontMatter(hook) {
           hook.beforeEach(function (content) {
-            return content.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n+/, '');
+            var clean = content.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n+/, '');
+            var route = String(window.location.hash || '').replace(/\?id=.*$/, '');
+            var review = route.match(/^#\/articles\/([^/]+)\/review(?:\.md)?$/);
+            if (review && !/^#\s+/m.test(clean)) {
+              var articleName = review[1];
+              try { articleName = decodeURI(articleName); } catch (error) {}
+              var title = articleName.replace(/^(?:合集|散篇)-\d{2}-/, '');
+              clean = '# 文章评价：' + title + '\n\n' + clean;
+            }
+            return clean;
           });
         },
-        function addArticleAiEditEntry(hook) {
+        function enhanceArticleContext(hook) {
+          function parseRoute() {
+            return window.siteRuntimeHelpers.articleContextFromHash(window.location.hash);
+          }
+
+          function routeHref(path) {
+            return '#/' + encodeURI(path).replace(/#/g, '%23');
+          }
+
+          function setPageMetadata(title, context) {
+            var label = { original: '原文档案', review: '文章评价', edited: 'AI 改稿', notes: '改稿说明' }[context.page];
+            var cleanTitle = title
+              .replace(/^文章评价[：:]\s*/, '')
+              .replace(/^修改说明[：:]\s*/, '');
+            document.title = cleanTitle + ' · ' + label + ' · 旧日之书';
+            var titleMeta = document.querySelector('meta[property="og:title"]');
+            var urlMeta = document.querySelector('meta[property="og:url"]');
+            var canonical = document.querySelector('link[rel="canonical"]');
+            if (titleMeta) titleMeta.content = document.title;
+            if (urlMeta) urlMeta.content = window.location.href;
+            if (canonical) canonical.href = window.location.href;
+          }
+
           hook.doneEach(function () {
-            var route = String(window.location.hash || '').replace(/\?id=.*$/, '');
-            var match = route.match(/^#\/articles\/([^/]+)\/index(?:\.md)?$/);
-            if (!match) return;
+            var context = parseRoute();
+            if (!context) return;
+            var content = document.querySelector('.markdown-section');
+            var heading = content && content.querySelector(':scope > h1');
+            if (!heading) return;
+            var title = heading.textContent.replace(/\s+/g, ' ').trim();
+            var header = document.createElement('header');
+            header.className = 'article-detail-header';
+            heading.before(header);
+            header.appendChild(heading);
 
-            var articleName = match[1];
-            try {
-              articleName = decodeURI(articleName);
-            } catch (error) {
-            }
-            var category = articleName.indexOf('合集-') === 0 ? '合集' : '散篇';
-            var heading = document.querySelector('.markdown-section > h1');
-            if (!heading || heading.querySelector('.article-ai-edit-entry')) return;
-
-            heading.classList.add('article-detail-heading');
-            var entry = document.createElement('a');
-            entry.className = 'article-ai-edit-entry';
-            entry.href = '#/ai-edited-articles/' + encodeURI(category) + '/' + encodeURI(articleName) + '/index.md';
-            entry.textContent = '阅读 AI 改稿';
-            entry.setAttribute('aria-label', '阅读《' + heading.textContent.trim() + '》的 AI 改稿');
-            heading.appendChild(entry);
+            var pages = [
+              { key: 'original', label: '原文档案', path: 'articles/' + context.articleName + '/index.md' },
+              { key: 'review', label: '文章评价', path: 'articles/' + context.articleName + '/review.md' },
+              { key: 'edited', label: 'AI 改稿', path: 'ai-edited-articles/' + context.category + '/' + context.articleName + '/index.md' },
+              { key: 'notes', label: '改稿说明', path: 'ai-edited-articles/' + context.category + '/' + context.articleName + '/notes.md' }
+            ];
+            var nav = document.createElement('nav');
+            nav.className = 'article-context-nav';
+            nav.setAttribute('aria-label', '文章版本与编辑信息');
+            pages.forEach(function (item) {
+              var element = document.createElement(item.key === context.page ? 'span' : 'a');
+              element.textContent = item.label;
+              if (item.key === context.page) element.setAttribute('aria-current', 'page');
+              else element.href = routeHref(item.path);
+              nav.appendChild(element);
+            });
+            header.appendChild(nav);
+            setPageMetadata(title, context);
           });
         },
         function resolveRootAssetPaths(hook) {
           hook.afterEach(function (html) {
             var siteRoot = window.location.pathname.replace(/[^/]*$/, '');
             if (!siteRoot.endsWith('/')) siteRoot += '/';
+            html = html.replace(
+              /src="[^"]*?assets\/images\/articles\/([^/"]+)\/([^/"]+)\.(?:jpe?g|png)"/gi,
+              'src="' + siteRoot + 'assets/images/_generated/article-inline/$1/$2.webp"'
+            );
             return html.replace(
               /src="[^"]*?assets\/images\//g,
               'src="' + siteRoot + 'assets/images/'
             );
           });
         },
+        function optimizeContentImages(hook) {
+          hook.doneEach(function () {
+            var images = Array.from(document.querySelectorAll('.markdown-section img'));
+            var articleTitle = document.querySelector('.markdown-section h1')?.textContent.trim() || '文章';
+            var inlineIndex = 0;
+            images.forEach(function (image) {
+              if (!image.classList.contains('article-cover') && !image.hasAttribute('loading')) {
+                image.loading = 'lazy';
+              }
+              if (!image.hasAttribute('decoding')) image.decoding = 'async';
+              if (!image.hasAttribute('alt') || !image.alt.trim()) {
+                inlineIndex += 1;
+                image.alt = articleTitle + '配图 ' + inlineIndex;
+              }
+            });
+          });
+        },
         function keepHomepageTitle(hook) {
           hook.doneEach(function () {
             if (!window.location.hash || window.location.hash === '#/') {
               document.title = '旧日之书';
+              var titleMeta = document.querySelector('meta[property="og:title"]');
+              var urlMeta = document.querySelector('meta[property="og:url"]');
+              if (titleMeta) titleMeta.content = '旧日之书';
+              if (urlMeta) urlMeta.content = window.location.href.split('#')[0];
+              var canonical = document.querySelector('link[rel="canonical"]');
+              if (canonical) canonical.href = window.location.href.split('#')[0];
             }
+          });
+        },
+        function enableFullSiteSearch(hook) {
+          var entriesPromise;
+
+          function escapeHtml(value) {
+            return String(value || '')
+              .replace(/&/g, '&amp;')
+              .replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;')
+              .replace(/"/g, '&quot;');
+          }
+
+          function loadEntries() {
+            if (!entriesPromise) {
+              entriesPromise = fetch('website/search-index.json')
+                .then(function (response) {
+                  if (!response.ok) throw new Error('搜索索引 HTTP ' + response.status);
+                  return response.json();
+                });
+            }
+            return entriesPromise;
+          }
+
+          function excerpt(text, query) {
+            var lower = text.toLocaleLowerCase();
+            var index = lower.indexOf(query.toLocaleLowerCase());
+            var start = Math.max(0, index - 42);
+            var end = Math.min(text.length, Math.max(index + query.length + 74, start + 116));
+            var value = (start ? '…' : '') + text.slice(start, end) + (end < text.length ? '…' : '');
+            var escaped = escapeHtml(value);
+            var pattern = new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'ig');
+            return escaped.replace(pattern, function (match) { return '<mark>' + match + '</mark>'; });
+          }
+
+          hook.doneEach(function () {
+            var input = document.querySelector('.search input');
+            var panel = document.querySelector('.search .results-panel');
+            if (!input || !panel || input.dataset.fullSiteSearch === 'true') return;
+            input.dataset.fullSiteSearch = 'true';
+            panel.classList.add('full-search-results');
+            input.addEventListener('input', function (event) {
+              event.stopImmediatePropagation();
+              var query = input.value.trim();
+              if (!query) {
+                panel.innerHTML = '';
+                panel.classList.remove('show');
+                return;
+              }
+              loadEntries().then(function (entries) {
+                if (input.value.trim() !== query) return;
+                var needle = query.toLocaleLowerCase();
+                var results = entries.filter(function (entry) {
+                  return (entry.title + ' ' + entry.text).toLocaleLowerCase().includes(needle);
+                }).slice(0, 30);
+                panel.innerHTML = results.length
+                  ? results.map(function (entry) {
+                    return '<a class="matching-post" href="#/' + encodeURI(entry.path).replace(/#/g, '%23') + '">' +
+                      '<small>' + escapeHtml(entry.type) + '</small>' +
+                      '<strong>' + escapeHtml(entry.title) + '</strong>' +
+                      '<span>' + excerpt(entry.text, query) + '</span></a>';
+                  }).join('')
+                  : '<p class="empty">没有找到结果</p>';
+                panel.classList.add('show');
+              }).catch(function (error) {
+                panel.innerHTML = '<p class="empty">搜索索引暂时不可用</p>';
+                panel.classList.add('show');
+                console.warn('完整搜索索引未加载', error);
+              });
+            }, true);
+          });
+        },
+        function enhanceRankingAndCatalog(hook) {
+          hook.doneEach(function () {
+            var route = String(window.location.hash || '').replace(/\?id=.*$/, '');
+            if (/^#\/website\/ranking(?:\.md)?$/.test(route)) {
+              var table = document.querySelector('.markdown-section table');
+              if (table) {
+                table.classList.add('ranking-table');
+                table.querySelectorAll('tbody tr').forEach(function (row, index) {
+                  var cells = row.querySelectorAll('td');
+                  if (cells.length < 5 || cells[3].querySelector('.ranking-card-toggle')) return;
+                  var button = document.createElement('button');
+                  button.type = 'button';
+                  button.className = 'ranking-card-toggle';
+                  button.textContent = '展开核心评价';
+                  button.setAttribute('aria-expanded', 'false');
+                  button.setAttribute('aria-controls', 'ranking-comment-' + (index + 1));
+                  cells[4].id = 'ranking-comment-' + (index + 1);
+                  button.onclick = function () {
+                    var expanded = row.classList.toggle('is-expanded');
+                    button.textContent = expanded ? '收起核心评价' : '展开核心评价';
+                    button.setAttribute('aria-expanded', String(expanded));
+                  };
+                  cells[3].appendChild(button);
+                });
+              }
+            }
+
+            if (!/^#\/website\/catalog(?:\.md)?$/.test(route)) return;
+            var content = document.querySelector('.markdown-section');
+            var rows = Array.from(document.querySelectorAll('.article-cover-row'));
+            var firstGroup = content && content.querySelector('.article-cover-group');
+            if (!content || !rows.length || !firstGroup) return;
+            var filters = document.createElement('div');
+            filters.className = 'catalog-filters';
+            filters.setAttribute('role', 'search');
+            filters.innerHTML =
+              '<label>文章分类<select data-catalog-filter="group"><option value="">全部分类</option>' +
+              '<option value="youth">合集 · 少年时代</option><option value="college">合集 · 大学四年</option><option value="work">合集 · 工作与考试</option><option value="essay">散篇</option></select></label>' +
+              '<label>原文评分<select data-catalog-filter="score"><option value="">全部评分</option>' +
+              '<option value="8.5">8.5 分及以上</option><option value="8">8.0 分及以上</option><option value="7">7.0 分及以上</option></select></label>' +
+              '<span class="catalog-filter-count" aria-live="polite"></span>';
+            firstGroup.before(filters);
+            var groupSelect = filters.querySelector('[data-catalog-filter="group"]');
+            var scoreSelect = filters.querySelector('[data-catalog-filter="score"]');
+            var count = filters.querySelector('.catalog-filter-count');
+            function applyFilters() {
+              var visible = 0;
+              rows.forEach(function (row) {
+                var scoreClass = Array.from(row.classList).find(function (name) { return name.indexOf('catalog-score-') === 0; }) || '';
+                var score = Number(scoreClass.replace('catalog-score-', '').replace('-', '.')) || 0;
+                var matchesGroup = !groupSelect.value || row.classList.contains('catalog-group-' + groupSelect.value);
+                var matchesScore = !scoreSelect.value || score >= Number(scoreSelect.value);
+                var show = matchesGroup && matchesScore;
+                row.hidden = !show;
+                if (show) visible += 1;
+              });
+              content.querySelectorAll('.article-cover-group').forEach(function (group) {
+                group.hidden = !Array.from(group.querySelectorAll('.article-cover-row')).some(function (row) { return !row.hidden; });
+              });
+              count.textContent = '显示 ' + visible + ' / ' + rows.length + ' 篇';
+            }
+            groupSelect.onchange = applyFilters;
+            scoreSelect.onchange = applyFilters;
+            applyFilters();
           });
         },
         function addCuratedSectionNav(hook) {
@@ -2476,7 +2859,7 @@
             var label = document.createElement('small');
             var title = document.createElement('strong');
             if (entry) {
-              link.href = routeHref(entry.path);
+              link.href = routeHref(entry.readingPath || entry.path);
               label.textContent = direction === 'previous' ? '上一篇' : '下一篇';
               title.textContent = entry.title;
             } else {
@@ -2526,7 +2909,7 @@
                 (part.chapters || []).forEach(function (chapter) {
                   chapters.push({
                     title: chapter.title,
-                    path: chapter.path,
+                    path: chapter.readingPath || chapter.path,
                     part: part
                   });
                 });
@@ -2592,16 +2975,7 @@
           }
 
           function normalizeHash(value) {
-            var normalized = String(value || '');
-            try {
-              normalized = decodeURI(normalized);
-            } catch (error) {
-            }
-            return normalized
-              .replace(/^#/, '#')
-              .replace(/\?id=.*$/, '')
-              .replace(/\.md$/, '')
-              .replace(/\/$/, '');
+            return window.siteRuntimeHelpers.normalizeSiteHash(value);
           }
 
           function ensureToggleMark(container, className) {
@@ -2630,7 +3004,7 @@
             return branchTargets.indexOf(normalizeHash(link.getAttribute('href'))) !== -1;
           }
 
-          function alignAiEditedSidebar() {
+          function alignArticleContextSidebar() {
             document.querySelectorAll('.sidebar-ai-badge').forEach(function (badge) {
               badge.remove();
             });
@@ -2639,7 +3013,7 @@
             });
 
             var currentHash = normalizeHash(window.location.hash || '#/');
-            var route = currentHash.match(/^#\/ai-edited-articles\/(?:合集|散篇)\/([^/]+)\/(index|notes)$/);
+            var route = currentHash.match(/^#\/(?:ai-edited-articles\/(?:合集|散篇)|articles)\/([^/]+)\/(index|notes|review)$/);
             if (!route) return;
 
             var articleName = route[1];
@@ -2665,7 +3039,7 @@
 
             var badge = document.createElement('span');
             badge.className = 'sidebar-ai-badge';
-            badge.textContent = route[2] === 'notes' ? '改稿说明' : 'AI改稿';
+            badge.textContent = route[2] === 'notes' ? '改稿说明' : route[2] === 'review' ? '文章评价' : currentHash.indexOf('/ai-edited-articles/') !== -1 ? 'AI改稿' : '原文';
             originalLink.appendChild(badge);
           }
 
@@ -2777,7 +3151,7 @@
           }
 
           function setupSidebar() {
-            alignAiEditedSidebar();
+            alignArticleContextSidebar();
             setupStaticBranches();
             setupPageBranches();
           }

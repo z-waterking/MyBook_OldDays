@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from datetime import date
 import json
 import re
 import sys
@@ -15,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BOOK = ROOT / "book"
 MANIFEST = BOOK / "reading-order.json"
 DEFAULT_OUTPUT = BOOK / "manuscript.md"
+BOOK_README = BOOK / "README.md"
 
 FRONT_MATTER_RE = re.compile(r"^---\r?\n[\s\S]*?\r?\n---\r?\n+", re.MULTILINE)
 FIRST_HEADING_RE = re.compile(r"^#\s+[^\r\n]+\r?\n+", re.MULTILINE)
@@ -42,6 +44,15 @@ def article_source_path(article_path: str, source: str) -> Path:
     return ROOT / "ai-edited-articles" / category / article_name / "index.md"
 
 
+def chapter_source_path(chapter: dict[str, object], source: str) -> Path:
+    """Resolve a chapter without conflating its archive and public reading paths."""
+    archive_path = str(chapter.get("archivePath") or chapter.get("path") or "")
+    reading_path = str(chapter.get("readingPath") or "")
+    if source == "edited" and reading_path:
+        return ROOT / unquote(reading_path)
+    return article_source_path(archive_path, source)
+
+
 def clean_article(content: str) -> str:
     content = content.lstrip("\ufeff")
     content = FRONT_MATTER_RE.sub("", content, count=1)
@@ -50,6 +61,15 @@ def clean_article(content: str) -> str:
     content = ARTICLE_COVER_RE.sub("", content, count=1)
     content = SOURCE_FOOTER_RE.sub("", content, count=1)
     return content.strip()
+
+
+def demote_article_headings(content: str) -> str:
+    """Keep chapter H2 headings distinct from headings inside an article."""
+    return re.sub(
+        r"(?m)^(#{2,6})(?=\s)",
+        lambda match: "#" * min(len(match.group(1)) + 1, 6),
+        content,
+    )
 
 
 def part_heading_and_intro(page: Path) -> tuple[str, str]:
@@ -100,10 +120,10 @@ def build_manuscript(source: str) -> str:
             if not isinstance(chapter, dict):
                 raise ValueError("reading-order.json 包含非对象章节")
             title = str(chapter["title"])
-            source_path = article_source_path(str(chapter["path"]), source)
+            source_path = chapter_source_path(chapter, source)
             if not source_path.is_file():
                 raise FileNotFoundError(f"章节源文件不存在: {source_path}")
-            body = clean_article(source_path.read_text(encoding="utf-8"))
+            body = demote_article_headings(clean_article(source_path.read_text(encoding="utf-8")))
             output.extend([f"## {title}", "", body, ""])
 
     manuscript = "\n".join(output).strip() + "\n"
@@ -140,6 +160,32 @@ def write_text_lf(path: Path, content: str) -> None:
         handle.write(content)
 
 
+def manuscript_stats_line(manuscript: str) -> str:
+    character_count = len(manuscript)
+    return f"- 当前连续书稿：{character_count:,} 字符（约 {character_count / 10000:.1f} 万）"
+
+
+def sync_readme_stats(manuscript: str, *, check: bool) -> bool:
+    content = BOOK_README.read_text(encoding="utf-8")
+    expected_line = manuscript_stats_line(manuscript)
+    current_match = re.search(r"(?m)^- 当前连续书稿：.*$", content)
+    if current_match and current_match.group(0) == expected_line:
+        return True
+    if check:
+        return False
+    if not current_match:
+        raise ValueError("book/README.md 缺少当前连续书稿统计行")
+    updated = content[: current_match.start()] + expected_line + content[current_match.end() :]
+    updated = re.sub(
+        r"(?m)^> 规模快照更新于 \d{4}-\d{2}-\d{2}",
+        f"> 规模快照更新于 {date.today().isoformat()}",
+        updated,
+        count=1,
+    )
+    write_text_lf(BOOK_README, updated)
+    return True
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -170,10 +216,14 @@ def main() -> int:
         if not output.is_file() or output.read_text(encoding="utf-8") != manuscript:
             print(f"成书稿需要重建: {output.relative_to(ROOT)}", file=sys.stderr)
             return 1
+        if not sync_readme_stats(manuscript, check=True):
+            print("book/README.md 的连续书稿统计需要重建", file=sys.stderr)
+            return 1
         print(f"成书稿可重复生成: {output.relative_to(ROOT)}")
         return 0
 
     write_text_lf(output, manuscript)
+    sync_readme_stats(manuscript, check=False)
     print(f"已生成成书稿: {output.relative_to(ROOT)}")
     print(f"- 来源: {'AI 修改稿' if args.source == 'edited' else '原始归档稿'}")
     print(f"- 字符数: {len(manuscript)}")

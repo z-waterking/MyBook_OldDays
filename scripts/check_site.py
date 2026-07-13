@@ -20,6 +20,7 @@ BOOK = ROOT / "book"
 AI_EDITED = ROOT / "ai-edited-articles"
 ARTICLE_IMAGES = ROOT / "assets" / "images" / "articles"
 GENERATED_IMAGES = ROOT / "assets" / "images" / "_generated"
+INLINE_IMAGES = GENERATED_IMAGES / "article-inline"
 FOOTPRINT_KINDS = {"life", "study", "work", "choice", "travel", "transit"}
 ARTICLE_COVER_SIZE = (1536, 1024)
 CATALOG_COVER_SIZE = (480, 320)
@@ -40,7 +41,7 @@ MARKDOWN_LINK_RE = re.compile(
 )
 HTML_LINK_RE = re.compile(r"(?:href|src)\s*=\s*['\"](?P<target>[^'\"]+)['\"]", re.IGNORECASE)
 ILLUSTRATION_ID_RE = re.compile(r'data-illustration=["\']([^"\']+)["\']')
-CATALOG_ARTICLE_RE = re.compile(r'class="article-cover-title"\s+href="#/(?P<target>[^"]+)"')
+CATALOG_ARTICLE_RE = re.compile(r'<a\s+class="article-cover-title"\s+href="#/(?P<target>[^"]+)"')
 REVIEW_SCORE_RE = re.compile(r"\*\*(?P<score>\d+(?:\.\d+)?)\s*/\s*10\*\*")
 RANKING_ROW_RE = re.compile(
     r"^\|\s*(?P<rank>\d+)\s*\|\s*\*\*(?P<score>\d+(?:\.\d+)?)\*\*\s*\|\s*"
@@ -153,6 +154,16 @@ def markdown_article_targets(path: Path) -> list[str]:
     ]
 
 
+def markdown_reading_targets(path: Path) -> list[str]:
+    content = path.read_text(encoding="utf-8")
+    return [
+        unquote(html.unescape(match.group("target").strip().strip("<>")))
+        for match in MARKDOWN_LINK_RE.finditer(content)
+        if match.group("target").strip().strip("<>").startswith("ai-edited-articles/")
+        and match.group("target").strip().strip("<>").endswith("/index.md")
+    ]
+
+
 def check_book_reading_order(article_count: int) -> tuple[int, int]:
     manifest_path = BOOK / "reading-order.json"
     try:
@@ -169,7 +180,8 @@ def check_book_reading_order(article_count: int) -> tuple[int, int]:
     require(len(parts) == 8, f"成书阅读顺序应为七部加附录，当前为 {len(parts)} 个部分")
     part_ids: list[str] = []
     part_pages: list[str] = []
-    selected_targets: list[str] = []
+    selected_archive_targets: list[str] = []
+    selected_reading_targets: list[str] = []
     for part in parts:
         if not isinstance(part, dict):
             report_error("成书阅读顺序包含非对象部分")
@@ -188,36 +200,43 @@ def check_book_reading_order(article_count: int) -> tuple[int, int]:
         if not isinstance(chapters, list):
             continue
 
-        part_targets: list[str] = []
+        part_archive_targets: list[str] = []
+        part_reading_targets: list[str] = []
         for chapter in chapters:
             if not isinstance(chapter, dict):
                 report_error(f"成书阅读部分包含非对象章节: {part_id}")
                 continue
-            target = unquote(str(chapter.get("path", "")))
-            require(bool(chapter.get("title")), f"成书阅读章节缺少标题: {target or part_id}")
-            require(target.startswith("articles/") and target.endswith("/index.md"), f"成书阅读章节路径格式错误: {target}")
-            require((ROOT / target).is_file(), f"成书阅读章节不存在: {target}")
-            part_targets.append(target)
-            selected_targets.append(target)
+            archive_target = unquote(str(chapter.get("archivePath", "")))
+            reading_target = unquote(str(chapter.get("readingPath", "")))
+            require(bool(chapter.get("title")), f"成书阅读章节缺少标题: {archive_target or part_id}")
+            require(archive_target.startswith("articles/") and archive_target.endswith("/index.md"), f"成书档案路径格式错误: {archive_target}")
+            require(reading_target.startswith("ai-edited-articles/") and reading_target.endswith("/index.md"), f"成书阅读路径格式错误: {reading_target}")
+            require((ROOT / archive_target).is_file(), f"成书档案章节不存在: {archive_target}")
+            require((ROOT / reading_target).is_file(), f"成书阅读章节不存在: {reading_target}")
+            part_archive_targets.append(archive_target)
+            part_reading_targets.append(reading_target)
+            selected_archive_targets.append(archive_target)
+            selected_reading_targets.append(reading_target)
 
         if page_path.is_file():
             require(
-                markdown_article_targets(page_path) == part_targets,
+                markdown_reading_targets(page_path) == part_reading_targets,
                 f"成书分部页面与阅读顺序不一致: {page}",
             )
 
     require(len(part_ids) == len(set(part_ids)), "成书阅读部分 id 重复")
     require(len(part_pages) == len(set(part_pages)), "成书阅读部分页面重复")
     require(part_ids == [f"part-{number}" for number in range(1, 8)] + ["appendix"], "成书阅读部分顺序错误")
-    require(len(selected_targets) == 33, f"成书阅读版应选 33 篇，当前为 {len(selected_targets)} 篇")
-    require(len(selected_targets) == len(set(selected_targets)), "成书阅读版存在重复文章")
-    require(len(selected_targets) <= article_count, "成书阅读版篇数超过文章档案总数")
+    require(len(selected_archive_targets) == 33, f"成书阅读版应选 33 篇，当前为 {len(selected_archive_targets)} 篇")
+    require(len(selected_archive_targets) == len(set(selected_archive_targets)), "成书阅读版存在重复档案文章")
+    require(len(selected_reading_targets) == len(set(selected_reading_targets)), "成书阅读版存在重复阅读文章")
+    require(len(selected_archive_targets) <= article_count, "成书阅读版篇数超过文章档案总数")
 
     contents_path = BOOK / "01-成书目录.md"
     require(contents_path.is_file(), "缺少公开成书阅读目录")
     if contents_path.is_file():
         require(
-            markdown_article_targets(contents_path) == selected_targets,
+            markdown_reading_targets(contents_path) == selected_reading_targets,
             "公开成书目录与 reading-order.json 顺序不一致",
         )
 
@@ -229,7 +248,7 @@ def check_book_reading_order(article_count: int) -> tuple[int, int]:
         if "../articles/" in path.read_text(encoding="utf-8")
     ]
     require(not legacy_links, f"成书区仍使用旧相对文章链接: {', '.join(legacy_links)}")
-    return len(parts), len(selected_targets)
+    return len(parts), len(selected_archive_targets)
 
 
 def check_articles_and_catalog() -> tuple[list[Path], int, dict[str, float]]:
@@ -246,6 +265,7 @@ def check_articles_and_catalog() -> tuple[list[Path], int, dict[str, float]]:
         if not review_path.is_file():
             continue
         content = review_path.read_text(encoding="utf-8")
+        require(bool(re.search(r"(?m)^#\s+", content)), f"{article.name}/review.md 缺少一级标题")
         missing_sections = [section for section in REVIEW_SECTIONS if f"## {section}" not in content]
         require(not missing_sections, f"{article.name}/review.md 缺少章节: {', '.join(missing_sections)}")
         score_matches = REVIEW_SCORE_RE.findall(content)
@@ -256,7 +276,7 @@ def check_articles_and_catalog() -> tuple[list[Path], int, dict[str, float]]:
             review_scores[f"articles/{article.name}/review.md"] = score
 
     catalog = (WEBSITE / "catalog.md").read_text(encoding="utf-8")
-    catalog_rows = catalog.count('class="article-cover-row"')
+    catalog_rows = len(re.findall(r'class="article-cover-row(?:\s|")', catalog))
     require(catalog_rows == len(articles), f"目录条目为 {catalog_rows}，文章实际为 {len(articles)}")
 
     expected_targets = {f"articles/{article.name}/index.md" for article in articles}
@@ -275,6 +295,8 @@ def check_articles_and_catalog() -> tuple[list[Path], int, dict[str, float]]:
     if catalog_total:
         require(int(catalog_total.group(1)) == len(articles), "website/catalog.md 标注的文章总数不正确")
     require(CATALOG_FOOTER in catalog, "website/catalog.md 缺少规范的自动生成声明")
+    require(catalog.count('catalog-group-') == len(articles), "目录条目缺少分类筛选数据")
+    require(catalog.count('catalog-score-') == len(articles), "目录条目缺少评分筛选数据")
 
     return articles, catalog_rows, review_scores
 
@@ -365,6 +387,13 @@ def check_ranking(review_scores: dict[str, float]) -> int:
                 require(abs(float(match.group("score")) - row["score"]) < 1e-9, f"评分榜{label}摘要分数错误")
                 require(match.group("title") == row["title"], f"评分榜{label}摘要标题错误")
 
+        home = (WEBSITE / "home.md").read_text(encoding="utf-8")
+        top_article_path = rows[0]["target"].replace("/review.md", "/index.md")
+        require(
+            f'href="#/{top_article_path}"' in unquote(home),
+            "首页“全库最高分”入口没有指向评分榜第一名",
+        )
+
     return len(rows)
 
 
@@ -409,6 +438,8 @@ def check_ai_edits(articles: list[Path]) -> int:
         if notes_path.is_file():
             notes = notes_path.read_text(encoding="utf-8")
             require("## 本版实际改动" in notes, f"AI 改稿说明缺少“本版实际改动”: {name}")
+            if name == "散篇-12-请出示证件":
+                require("戛然而止" not in notes and "首要任务是补完" not in notes, "《请出示证件》改稿说明仍引用未完成旧稿结论")
 
     mapping_content = (AI_EDITED / "mapping.md").read_text(encoding="utf-8")
     mapping_rows = list(MAPPING_ROW_RE.finditer(mapping_content))
@@ -588,12 +619,58 @@ def check_docsify_asset_resolver() -> None:
         and '/src=\"[^\"]*?assets\\/images\\//g' in index_html,
         "Docsify 缺少仓库根图片路径修正，深层文章路由会导致正文图片 404",
     )
-    require(
-        "function addArticleAiEditEntry(hook)" in index_html
-        and "article-ai-edit-entry" in index_html
-        and "#/ai-edited-articles/" in index_html,
-        "原文详情页缺少 AI 改稿入口",
+    for marker in (
+        "enhanceArticleContext",
+        "enableFullSiteSearch",
+        "enhanceRankingAndCatalog",
+        "optimizeContentImages",
+        "article-detail-header",
+        "ranking-table",
+    ):
+        require(marker in index_html, f"index.html 缺少页面增强实现: {marker}")
+
+
+def check_inline_derivatives(articles: list[Path]) -> int:
+    sources = sorted(
+        path
+        for article in articles
+        for path in (ARTICLE_IMAGES / article.name).glob("*")
+        if path.is_file() and path.name.lower() != "cover.png" and path.suffix.lower() in {".jpg", ".jpeg", ".png"}
     )
+    expected = {INLINE_IMAGES / source.parent.name / f"{source.stem}.webp" for source in sources}
+    actual = set(INLINE_IMAGES.glob("*/*.webp")) if INLINE_IMAGES.is_dir() else set()
+    missing = sorted(path.relative_to(ROOT).as_posix() for path in expected - actual)
+    extra = sorted(path.relative_to(ROOT).as_posix() for path in actual - expected)
+    require(not missing, f"正文图片缺少 WebP 派生图: {', '.join(missing)}")
+    require(not extra, f"存在无来源的正文图片派生图: {', '.join(extra)}")
+    for target in expected & actual:
+        try:
+            with Image.open(target) as image:
+                require(image.format == "WEBP", f"正文图片派生图不是 WebP: {target.relative_to(ROOT).as_posix()}")
+                require(max(image.size) <= 1600, f"正文图片派生图尺寸超过 1600px: {target.relative_to(ROOT).as_posix()}")
+        except (OSError, UnidentifiedImageError) as error:
+            report_error(f"无法读取正文图片派生图 {target.relative_to(ROOT).as_posix()}: {error}")
+    return len(expected)
+
+
+def check_search_index() -> int:
+    path = WEBSITE / "search-index.json"
+    require(path.is_file(), "缺少完整站内搜索索引")
+    if not path.is_file():
+        return 0
+    try:
+        entries = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as error:
+        report_error(f"站内搜索索引 JSON 无效: {error}")
+        return 0
+    indexed_paths = {entry.get("path") for entry in entries if isinstance(entry, dict)}
+    expected = {
+        source.relative_to(ROOT).as_posix()
+        for pattern in ("articles/*/index.md", "articles/*/review.md", "ai-edited-articles/*/*/index.md", "ai-edited-articles/*/*/notes.md")
+        for source in ROOT.glob(pattern)
+    }
+    require(expected <= indexed_paths, "站内搜索索引没有覆盖全部原文、评价、改稿和说明")
+    return len(entries)
 
 
 def check_illustrations() -> tuple[int, Counter[str]]:
@@ -700,6 +777,8 @@ def check_documented_counts(
 def check_required_files() -> None:
     required = [
         "index.html",
+        "scripts/site_runtime_helpers.js",
+        "scripts/check_runtime_routes.mjs",
         "website/home.md",
         "website/_sidebar.md",
         "website/catalog.md",
@@ -708,6 +787,7 @@ def check_required_files() -> None:
         "website/fun-rankings.md",
         "website/footprints.md",
         "website/footprints-data.json",
+        "website/search-index.json",
         "website/MAINTENANCE.md",
         "book/README.md",
         "book/01-成书目录.md",
@@ -734,6 +814,8 @@ def main() -> int:
     china_count, world_count, spanish_count = check_footprints()
     check_docsify_asset_resolver()
     cover_count = check_cover_derivatives(articles)
+    inline_count = check_inline_derivatives(articles)
+    search_count = check_search_index()
     illustration_count, illustration_counts = check_illustrations()
     check_documented_counts(len(articles), ai_edit_count, china_count, spanish_count, illustration_counts)
 
@@ -749,6 +831,7 @@ def main() -> int:
     print(f"- 成书阅读：{book_part_count} 个部分，{book_chapter_count} 篇入选文章")
     print(f"- 足迹：中国 {china_count}，世界视图 {world_count}")
     print(f"- 文章封面派生图：{cover_count} × 2，站点资产：2")
+    print(f"- 正文图片 WebP 派生图：{inline_count}，搜索页面：{search_count}")
     print(f"- 插画原图与派生图：{illustration_count}")
     return 0
 

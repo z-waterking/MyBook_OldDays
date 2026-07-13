@@ -22,9 +22,11 @@
 
 - `website/catalog.md`：文章目录。
 - `website/image-index.md`：图片索引。
+- `website/search-index.json`：覆盖原文、评价、AI 改稿、说明和成书页的全文搜索索引。
 - `book/manuscript.md`：按阅读清单与当前 AI 修改稿拼合的连续工作书稿。
 - `assets/images/_generated/catalog-covers/`：目录封面 WebP。
 - `assets/images/_generated/article-covers/`：文章正文使用的轻量封面 WebP。
+- `assets/images/_generated/article-inline/`：正文静态图片使用的轻量 WebP；原图继续保留在档案区。
 - `assets/images/_generated/illustrations/`：榜单插画 WebP。
 - `assets/images/_generated/home-hero.webp` 和 `favicon.png`：首页主视觉与站点图标。
 
@@ -63,6 +65,7 @@ python scripts/check_site.py
 - AI 改稿、`source_article`、`notes.md` 和 `mapping.md` 与原文一一对应。
 - `website/*.md` 中的本地页面、图片和 Docsify 路由目标存在。
 - `book/*.md` 本地链接有效，成书目录、八个分部页面与 `reading-order.json` 的章节集合和顺序一致。
+- 完整搜索索引覆盖原文、评价、AI 改稿和改稿说明；正文图片 WebP 派生图与原图一一对应。
 - 足迹 JSON 结构、坐标范围、来源链接和路线有效。
 - 插画清单、页面插画块、JPEG 原图和 WebP 派生图一一对应，并通过尺寸与像素差异检查确认派生图已同步。
 
@@ -78,6 +81,7 @@ python scripts/check_site.py
 | 新增 AI 改稿 | 更新映射与说明，刷新目录中的 AI 改稿入口 | `article_covers.mjs` + `check_site.py` |
 | 修改成书选篇、分部或顺序 | 同步阅读清单、公开目录和分部页，重建书稿 | `build_book_manuscript.py` + `check_site.py` |
 | 修改首页、侧栏或 Docsify | 更新维护日志 | 六类页面浏览器冒烟检查 |
+| 修改搜索、评价或改稿正文 | 重建完整搜索索引 | `generate_search_index.py` + 搜索冒烟检查 |
 | 修改足迹 | 同步 JSON 与静态地点索引 | `check_site.py` + 地图双视图检查 |
 | 修改佳句/趣味插画 | 更新 manifest，生成原图并准备 WebP | `prepare_site_illustrations.py` + `check_site.py` |
 
@@ -102,10 +106,19 @@ node scripts/generate_image_index.mjs
 ```
 
 文章图片只存放在 `assets/images/articles/<文章目录>/`；AI 改稿直接引用同一份图片，不复制副本。
+正文静态 JPG/PNG 的 WebP 由 `generate_cover_thumbnails.py` 一并生成；GIF 保留动画原文件。
+
+### 完整站内搜索
+
+```bash
+python scripts/generate_search_index.py
+```
+
+该索引覆盖原文档案、文章评价、AI 改稿、改稿说明、成书页和网站栏目。修改上述正文后应重建并提交 `website/search-index.json`。
 
 ### 成书阅读与连续书稿
 
-`book/reading-order.json` 控制七部、附录及全部入选章节的顺序。调整它时，必须同步检查 `book/01-成书目录.md`、对应分部页和网站侧栏；`scripts/check_site.py` 会核对这些入口是否一致。
+`book/reading-order.json` 控制七部、附录及全部入选章节的顺序。每章使用 `archivePath` 保存原文档案路径，使用 `readingPath` 保存面向读者的当前 AI 稿路径。调整它时，先运行 `python scripts/sync_book_reading_links.py` 同步公开目录与分部页，再重建连续书稿；`scripts/check_site.py` 会核对这些入口是否一致。
 
 从当前 AI 修改稿重建连续书稿并检查生成结果：
 
@@ -149,13 +162,17 @@ node --check scripts/check_inline_scripts.mjs
 node --check scripts/generate_ai_edit_drafts.mjs
 node --check scripts/generate_image_index.mjs
 node --check scripts/update_ai_edit_notes.mjs
+node --check scripts/site_runtime_helpers.js
+node scripts/check_runtime_routes.mjs
 node scripts/check_inline_scripts.mjs
 python scripts/save_article.py --catalog-only
 node scripts/generate_image_index.mjs
-git diff --exit-code -- website/catalog.md website/image-index.md
+python scripts/generate_search_index.py
+python scripts/sync_book_reading_links.py
+git diff --exit-code -- website/catalog.md website/image-index.md website/search-index.json book/01-成书目录.md book/部*.md book/附录-*.md
 python scripts/build_book_manuscript.py
 python scripts/build_book_manuscript.py --check
-git diff --exit-code -- book/manuscript.md
+git diff --exit-code -- book/manuscript.md book/README.md
 python scripts/check_site.py
 git diff --check
 ```
@@ -165,11 +182,12 @@ git diff --check
 桌面和约 390px 移动宽度各检查一次：
 
 1. 首页：主视觉、三个主操作、七部人生路径、地图专题和四篇入口。
-2. 全部文章：目录、封面、评价与 AI 改稿入口。
-3. 成书阅读：目录、七部与附录入口、章节进度、上一篇与下一篇跨部衔接。
+2. 全部文章：目录、分类/评分筛选、封面、评价与 AI 改稿入口。
+3. 成书阅读：目录、七部与附录入口、AI 当前稿正文、章节进度、上一篇与下一篇跨部衔接。
 4. 佳句选读：章节导航、插画和来源链接。
 5. 趣味索引：全部榜单、章节导航和表格移动端宽度。
 6. 足迹地图：中国/世界切换、筛选、标记弹窗、来源文章和静态索引。
+7. 版本与搜索：原文/评价/AI 改稿/说明互链，评价页侧栏归属，全文搜索能命中评价和 AI 新增句。
 
 同时用键盘 Tab 检查“跳到正文”、侧栏、表单控件与回到顶部的焦点是否可见，页面不应出现横向滚动。
 
