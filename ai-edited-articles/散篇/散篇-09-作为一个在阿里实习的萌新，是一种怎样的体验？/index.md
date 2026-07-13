@@ -62,4 +62,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [作为一个在阿里实习的萌新，是一种怎样的体验？](#/articles/%E6%95%A3%E7%AF%87-09-%E4%BD%9C%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%9C%A8%E9%98%BF%E9%87%8C%E5%AE%9E%E4%B9%A0%E7%9A%84%E8%90%8C%E6%96%B0%EF%BC%8C%E6%98%AF%E4%B8%80%E7%A7%8D%E6%80%8E%E6%A0%B7%E7%9A%84%E4%BD%93%E9%AA%8C%EF%BC%9F/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E6%95%A3%E7%AF%87-09-%E4%BD%9C%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%9C%A8%E9%98%BF%E9%87%8C%E5%AE%9E%E4%B9%A0%E7%9A%84%E8%90%8C%E6%96%B0%EF%BC%8C%E6%98%AF%E4%B8%80%E7%A7%8D%E6%80%8E%E6%A0%B7%E7%9A%84%E4%BD%93%E9%AA%8C%EF%BC%9F/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E6%95%A3%E7%AF%87/%E6%95%A3%E7%AF%87-09-%E4%BD%9C%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%9C%A8%E9%98%BF%E9%87%8C%E5%AE%9E%E4%B9%A0%E7%9A%84%E8%90%8C%E6%96%B0%EF%BC%8C%E6%98%AF%E4%B8%80%E7%A7%8D%E6%80%8E%E6%A0%B7%E7%9A%84%E4%BD%93%E9%AA%8C%EF%BC%9F/notes.md">查看改稿说明</a>
+</nav>

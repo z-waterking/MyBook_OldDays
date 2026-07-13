@@ -114,4 +114,7 @@ C原本决定去读博，所以这个offer有没有对他不太重要。H非常�
 
 ---
 
-*原文: [我在阿里做实习（推荐算法版）](#/articles/%E5%90%88%E9%9B%86-14-%E6%88%91%E5%9C%A8%E9%98%BF%E9%87%8C%E5%81%9A%E5%AE%9E%E4%B9%A0%EF%BC%88%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E7%89%88%EF%BC%89/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E5%90%88%E9%9B%86-14-%E6%88%91%E5%9C%A8%E9%98%BF%E9%87%8C%E5%81%9A%E5%AE%9E%E4%B9%A0%EF%BC%88%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E7%89%88%EF%BC%89/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E5%90%88%E9%9B%86/%E5%90%88%E9%9B%86-14-%E6%88%91%E5%9C%A8%E9%98%BF%E9%87%8C%E5%81%9A%E5%AE%9E%E4%B9%A0%EF%BC%88%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E7%89%88%EF%BC%89/notes.md">查看改稿说明</a>
+</nav>

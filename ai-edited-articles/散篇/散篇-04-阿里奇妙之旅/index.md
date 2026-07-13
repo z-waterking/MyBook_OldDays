@@ -66,4 +66,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [阿里奇妙之旅](#/articles/%E6%95%A3%E7%AF%87-04-%E9%98%BF%E9%87%8C%E5%A5%87%E5%A6%99%E4%B9%8B%E6%97%85/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E6%95%A3%E7%AF%87-04-%E9%98%BF%E9%87%8C%E5%A5%87%E5%A6%99%E4%B9%8B%E6%97%85/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E6%95%A3%E7%AF%87/%E6%95%A3%E7%AF%87-04-%E9%98%BF%E9%87%8C%E5%A5%87%E5%A6%99%E4%B9%8B%E6%97%85/notes.md">查看改稿说明</a>
+</nav>

@@ -78,4 +78,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [我在闲鱼卖二手](#/articles/%E5%90%88%E9%9B%86-15-%E6%88%91%E5%9C%A8%E9%97%B2%E9%B1%BC%E5%8D%96%E4%BA%8C%E6%89%8B/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E5%90%88%E9%9B%86-15-%E6%88%91%E5%9C%A8%E9%97%B2%E9%B1%BC%E5%8D%96%E4%BA%8C%E6%89%8B/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E5%90%88%E9%9B%86/%E5%90%88%E9%9B%86-15-%E6%88%91%E5%9C%A8%E9%97%B2%E9%B1%BC%E5%8D%96%E4%BA%8C%E6%89%8B/notes.md">查看改稿说明</a>
+</nav>

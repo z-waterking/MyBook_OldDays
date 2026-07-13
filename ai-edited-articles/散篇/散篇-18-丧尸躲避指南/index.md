@@ -100,4 +100,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [丧尸暴发后，普通人该如何躲避](#/articles/%E6%95%A3%E7%AF%87-18-%E4%B8%A7%E5%B0%B8%E8%BA%B2%E9%81%BF%E6%8C%87%E5%8D%97/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E6%95%A3%E7%AF%87-18-%E4%B8%A7%E5%B0%B8%E8%BA%B2%E9%81%BF%E6%8C%87%E5%8D%97/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E6%95%A3%E7%AF%87/%E6%95%A3%E7%AF%87-18-%E4%B8%A7%E5%B0%B8%E8%BA%B2%E9%81%BF%E6%8C%87%E5%8D%97/notes.md">查看改稿说明</a>
+</nav>

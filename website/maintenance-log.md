@@ -10,6 +10,36 @@
 
 ---
 
+## 2026-07-13 · 修复 AI 改稿侧栏归属与返回路由
+
+- **类型：** AI 改稿入口 / Docsify 路由 / 侧栏导航 / 巡检规则
+- **状态：** 已完成
+- **关联提交：** 本条所在提交
+
+### 涉及范围
+
+- `index.html`：AI 改稿及说明页的自动目录归入对应原文侧栏条目，并自动展开所属合集或散篇分组。
+- `ai-edited-articles/**/index.md`：38 篇改稿统一增加可靠的“返回原文”和“查看改稿说明”导航。
+- `scripts/generate_ai_edit_drafts.mjs`：新增 `--refresh-navigation`，可重复刷新现有改稿的导航块。
+- `scripts/check_site.py` / `scripts/build_book_manuscript.py`：巡检 AI 页面路由，并让连续书稿继续清理站点专用导航。
+
+### 改动摘要
+
+- 修复 AI 改稿的二级标题被 Docsify 错挂到“首页”下的问题；当前文章目录现在显示在对应原文条目下，并标记为 `AI改稿`。
+- 修复 Markdown `](#/articles/...)` 被 Docsify 解析成当前页面标题锚点的问题，改用明确的 HTML hash 路由。
+- 进入 AI 改稿或改稿说明时，无论读者此前如何折叠侧栏，当前文章所属分组都会自动展开。
+- 巡检范围纳入 AI 改稿和说明页，禁止错误 hash 写法再次进入仓库。
+
+### 验证
+
+- `node scripts/generate_ai_edit_drafts.mjs --refresh-navigation` 连续运行保持幂等。
+- `node scripts/check_inline_scripts.mjs` 与 Python / Node.js 语法检查通过。
+- `python scripts/check_site.py`：38 / 38 / 38 / 38，955 个本地链接与图片通过。
+- `python scripts/build_book_manuscript.py --check` 通过。
+- 本地 Docsify 浏览器复测：AI 目录归属正确，“首页”无误展开，返回原文实际跳转成功。
+
+---
+
 ## 2026-07-13 · 全库 38 篇 AI 改稿升级为 v2
 
 - **类型：** AI 改稿 / 成书生成 / 内容安全与可信度

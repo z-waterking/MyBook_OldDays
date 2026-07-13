@@ -46,4 +46,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [意念“挥刀”](#/articles/%E6%95%A3%E7%AF%87-17-%E6%84%8F%E5%BF%B5%E2%80%9C%E6%8C%A5%E5%88%80%E2%80%9D/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E6%95%A3%E7%AF%87-17-%E6%84%8F%E5%BF%B5%E2%80%9C%E6%8C%A5%E5%88%80%E2%80%9D/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E6%95%A3%E7%AF%87/%E6%95%A3%E7%AF%87-17-%E6%84%8F%E5%BF%B5%E2%80%9C%E6%8C%A5%E5%88%80%E2%80%9D/notes.md">查看改稿说明</a>
+</nav>

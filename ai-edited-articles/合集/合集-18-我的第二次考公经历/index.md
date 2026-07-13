@@ -88,4 +88,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [我的第二次考公经历](#/articles/%E5%90%88%E9%9B%86-18-%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%80%83%E5%85%AC%E7%BB%8F%E5%8E%86/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E5%90%88%E9%9B%86-18-%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%80%83%E5%85%AC%E7%BB%8F%E5%8E%86/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E5%90%88%E9%9B%86/%E5%90%88%E9%9B%86-18-%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%80%83%E5%85%AC%E7%BB%8F%E5%8E%86/notes.md">查看改稿说明</a>
+</nav>

@@ -115,7 +115,12 @@ def repository_target(raw_target: str, source: Path) -> Path | None:
 def check_site_links() -> int:
     checked: set[tuple[Path, str]] = set()
     link_count = 0
-    sources = sorted([*WEBSITE.glob("*.md"), *BOOK.glob("*.md")])
+    ai_pages = [
+        path
+        for category in ("合集", "散篇")
+        for path in (AI_EDITED / category).glob("*/*.md")
+    ]
+    sources = sorted([*WEBSITE.glob("*.md"), *BOOK.glob("*.md"), *ai_pages])
     for source in sources:
         content = source.read_text(encoding="utf-8")
         for pattern in (MARKDOWN_LINK_RE, HTML_LINK_RE):
@@ -382,13 +387,20 @@ def check_ai_edits(articles: list[Path]) -> int:
         require(not version_files, f"AI 改稿不得使用平行版本文件 {name}: {', '.join(version_files)}")
 
         if index_path.is_file():
-            metadata = parse_front_matter(index_path.read_text(encoding="utf-8"))
+            index_content = index_path.read_text(encoding="utf-8")
+            metadata = parse_front_matter(index_content)
             source_value = metadata.get("source_article")
             require(bool(source_value), f"AI 改稿缺少 source_article: {name}")
             if source_value:
                 source_path = (index_path.parent / source_value).resolve()
                 require(source_path == (ROOT / "articles" / name / "index.md").resolve(), f"AI 改稿 source_article 错误: {name}")
             require(metadata.get("status") == "AI 修改稿", f"AI 改稿 status 错误: {name}")
+            decoded_content = unquote(index_content)
+            source_route = f'href="#/articles/{name}/index.md"'
+            notes_route = f'href="#/ai-edited-articles/{category}/{name}/notes.md"'
+            require("](#/" not in index_content, f"AI 改稿包含会被 Docsify 误解析的 Markdown hash 路由: {name}")
+            require(source_route in decoded_content, f"AI 改稿缺少正确的返回原文路由: {name}")
+            require(notes_route in decoded_content, f"AI 改稿缺少正确的改稿说明路由: {name}")
         if notes_path.is_file():
             notes = notes_path.read_text(encoding="utf-8")
             require("## 本版实际改动" in notes, f"AI 改稿说明缺少“本版实际改动”: {name}")

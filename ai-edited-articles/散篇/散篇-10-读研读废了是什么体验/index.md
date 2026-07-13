@@ -46,4 +46,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [读研读废了是什么体验](#/articles/%E6%95%A3%E7%AF%87-10-%E8%AF%BB%E7%A0%94%E8%AF%BB%E5%BA%9F%E4%BA%86%E6%98%AF%E4%BB%80%E4%B9%88%E4%BD%93%E9%AA%8C/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E6%95%A3%E7%AF%87-10-%E8%AF%BB%E7%A0%94%E8%AF%BB%E5%BA%9F%E4%BA%86%E6%98%AF%E4%BB%80%E4%B9%88%E4%BD%93%E9%AA%8C/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E6%95%A3%E7%AF%87/%E6%95%A3%E7%AF%87-10-%E8%AF%BB%E7%A0%94%E8%AF%BB%E5%BA%9F%E4%BA%86%E6%98%AF%E4%BB%80%E4%B9%88%E4%BD%93%E9%AA%8C/notes.md">查看改稿说明</a>
+</nav>

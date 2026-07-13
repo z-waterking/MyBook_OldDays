@@ -58,4 +58,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [412之趣言趣闻](#/articles/%E6%95%A3%E7%AF%87-08-412%E4%B9%8B%E8%B6%A3%E8%A8%80%E8%B6%A3%E9%97%BB/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E6%95%A3%E7%AF%87-08-412%E4%B9%8B%E8%B6%A3%E8%A8%80%E8%B6%A3%E9%97%BB/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E6%95%A3%E7%AF%87/%E6%95%A3%E7%AF%87-08-412%E4%B9%8B%E8%B6%A3%E8%A8%80%E8%B6%A3%E9%97%BB/notes.md">查看改稿说明</a>
+</nav>

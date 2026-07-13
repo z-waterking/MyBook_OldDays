@@ -66,4 +66,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [我舍不得的不是公司，是我的工位](#/articles/%E6%95%A3%E7%AF%87-16-%E6%88%91%E8%88%8D%E4%B8%8D%E5%BE%97%E7%9A%84%E4%B8%8D%E6%98%AF%E5%85%AC%E5%8F%B8%EF%BC%8C%E6%98%AF%E6%88%91%E7%9A%84%E5%B7%A5%E4%BD%8D/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E6%95%A3%E7%AF%87-16-%E6%88%91%E8%88%8D%E4%B8%8D%E5%BE%97%E7%9A%84%E4%B8%8D%E6%98%AF%E5%85%AC%E5%8F%B8%EF%BC%8C%E6%98%AF%E6%88%91%E7%9A%84%E5%B7%A5%E4%BD%8D/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E6%95%A3%E7%AF%87/%E6%95%A3%E7%AF%87-16-%E6%88%91%E8%88%8D%E4%B8%8D%E5%BE%97%E7%9A%84%E4%B8%8D%E6%98%AF%E5%85%AC%E5%8F%B8%EF%BC%8C%E6%98%AF%E6%88%91%E7%9A%84%E5%B7%A5%E4%BD%8D/notes.md">查看改稿说明</a>
+</nav>

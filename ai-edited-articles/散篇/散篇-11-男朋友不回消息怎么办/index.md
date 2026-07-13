@@ -32,4 +32,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [男朋友不回消息怎么办](#/articles/%E6%95%A3%E7%AF%87-11-%E7%94%B7%E6%9C%8B%E5%8F%8B%E4%B8%8D%E5%9B%9E%E6%B6%88%E6%81%AF%E6%80%8E%E4%B9%88%E5%8A%9E/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E6%95%A3%E7%AF%87-11-%E7%94%B7%E6%9C%8B%E5%8F%8B%E4%B8%8D%E5%9B%9E%E6%B6%88%E6%81%AF%E6%80%8E%E4%B9%88%E5%8A%9E/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E6%95%A3%E7%AF%87/%E6%95%A3%E7%AF%87-11-%E7%94%B7%E6%9C%8B%E5%8F%8B%E4%B8%8D%E5%9B%9E%E6%B6%88%E6%81%AF%E6%80%8E%E4%B9%88%E5%8A%9E/notes.md">查看改稿说明</a>
+</nav>

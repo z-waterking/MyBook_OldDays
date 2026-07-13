@@ -48,4 +48,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [小记二十有九](#/articles/%E6%95%A3%E7%AF%87-03-%E5%B0%8F%E8%AE%B0%E4%BA%8C%E5%8D%81%E6%9C%89%E4%B9%9D/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E6%95%A3%E7%AF%87-03-%E5%B0%8F%E8%AE%B0%E4%BA%8C%E5%8D%81%E6%9C%89%E4%B9%9D/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E6%95%A3%E7%AF%87/%E6%95%A3%E7%AF%87-03-%E5%B0%8F%E8%AE%B0%E4%BA%8C%E5%8D%81%E6%9C%89%E4%B9%9D/notes.md">查看改稿说明</a>
+</nav>

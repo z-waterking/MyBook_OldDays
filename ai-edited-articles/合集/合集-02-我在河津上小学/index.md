@@ -122,4 +122,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [我在河津上小学](#/articles/%E5%90%88%E9%9B%86-02-%E6%88%91%E5%9C%A8%E6%B2%B3%E6%B4%A5%E4%B8%8A%E5%B0%8F%E5%AD%A6/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E5%90%88%E9%9B%86-02-%E6%88%91%E5%9C%A8%E6%B2%B3%E6%B4%A5%E4%B8%8A%E5%B0%8F%E5%AD%A6/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E5%90%88%E9%9B%86/%E5%90%88%E9%9B%86-02-%E6%88%91%E5%9C%A8%E6%B2%B3%E6%B4%A5%E4%B8%8A%E5%B0%8F%E5%AD%A6/notes.md">查看改稿说明</a>
+</nav>

@@ -50,4 +50,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [我在佛山做家教](#/articles/%E5%90%88%E9%9B%86-11-%E6%88%91%E5%9C%A8%E4%BD%9B%E5%B1%B1%E5%81%9A%E5%AE%B6%E6%95%99/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E5%90%88%E9%9B%86-11-%E6%88%91%E5%9C%A8%E4%BD%9B%E5%B1%B1%E5%81%9A%E5%AE%B6%E6%95%99/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E5%90%88%E9%9B%86/%E5%90%88%E9%9B%86-11-%E6%88%91%E5%9C%A8%E4%BD%9B%E5%B1%B1%E5%81%9A%E5%AE%B6%E6%95%99/notes.md">查看改稿说明</a>
+</nav>

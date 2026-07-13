@@ -90,4 +90,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [我在运中念初中](#/articles/%E5%90%88%E9%9B%86-03-%E6%88%91%E5%9C%A8%E8%BF%90%E4%B8%AD%E5%BF%B5%E5%88%9D%E4%B8%AD/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E5%90%88%E9%9B%86-03-%E6%88%91%E5%9C%A8%E8%BF%90%E4%B8%AD%E5%BF%B5%E5%88%9D%E4%B8%AD/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E5%90%88%E9%9B%86/%E5%90%88%E9%9B%86-03-%E6%88%91%E5%9C%A8%E8%BF%90%E4%B8%AD%E5%BF%B5%E5%88%9D%E4%B8%AD/notes.md">查看改稿说明</a>
+</nav>

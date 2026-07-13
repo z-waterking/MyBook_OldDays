@@ -186,4 +186,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [剿贼（一）](#/articles/%E6%95%A3%E7%AF%87-05-%E5%89%BF%E8%B4%BC%EF%BC%88%E4%B8%80%EF%BC%89/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E6%95%A3%E7%AF%87-05-%E5%89%BF%E8%B4%BC%EF%BC%88%E4%B8%80%EF%BC%89/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E6%95%A3%E7%AF%87/%E6%95%A3%E7%AF%87-05-%E5%89%BF%E8%B4%BC%EF%BC%88%E4%B8%80%EF%BC%89/notes.md">查看改稿说明</a>
+</nav>

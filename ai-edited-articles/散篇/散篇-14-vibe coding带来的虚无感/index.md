@@ -64,4 +64,7 @@ AI当然也会失手。有一次它把看似无害的修改扩散到不该动的
 
 ---
 
-*原文: [vibe coding带来的虚无感](#/articles/%E6%95%A3%E7%AF%87-14-vibe%20coding%E5%B8%A6%E6%9D%A5%E7%9A%84%E8%99%9A%E6%97%A0%E6%84%9F/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E6%95%A3%E7%AF%87-14-vibe%20coding%E5%B8%A6%E6%9D%A5%E7%9A%84%E8%99%9A%E6%97%A0%E6%84%9F/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E6%95%A3%E7%AF%87/%E6%95%A3%E7%AF%87-14-vibe%20coding%E5%B8%A6%E6%9D%A5%E7%9A%84%E8%99%9A%E6%97%A0%E6%84%9F/notes.md">查看改稿说明</a>
+</nav>

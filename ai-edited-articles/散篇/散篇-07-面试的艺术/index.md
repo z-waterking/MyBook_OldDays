@@ -42,4 +42,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [面试的艺术](#/articles/%E6%95%A3%E7%AF%87-07-%E9%9D%A2%E8%AF%95%E7%9A%84%E8%89%BA%E6%9C%AF/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E6%95%A3%E7%AF%87-07-%E9%9D%A2%E8%AF%95%E7%9A%84%E8%89%BA%E6%9C%AF/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E6%95%A3%E7%AF%87/%E6%95%A3%E7%AF%87-07-%E9%9D%A2%E8%AF%95%E7%9A%84%E8%89%BA%E6%9C%AF/notes.md">查看改稿说明</a>
+</nav>

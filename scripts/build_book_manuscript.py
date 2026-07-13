@@ -24,7 +24,7 @@ ARTICLE_COVER_RE = re.compile(
     re.IGNORECASE,
 )
 SOURCE_FOOTER_RE = re.compile(
-    r"\r?\n---\r?\n+\*原文(?:链接)?:[\s\S]*?\*\s*$",
+    r"\r?\n---\r?\n+(?:\*原文(?:链接)?:[\s\S]*?\*|<nav class=[\"']ai-edit-links[\"'][\s\S]*?</nav>)\s*$",
     re.MULTILINE,
 )
 

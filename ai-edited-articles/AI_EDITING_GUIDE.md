@@ -82,6 +82,12 @@ node scripts/article_covers.mjs --mode markdown
 
 目录页会自动检测 `ai-edited-articles/<分类>/<文章目录>/index.md`，并在文章卡片右侧加 `AI改稿` 入口。
 
+每篇改稿底部保留 `ai-edit-links` 导航块，提供“返回原文”和“查看改稿说明”。Docsify 的站内 hash 路由必须写成 HTML `href="#/..."`，不要写成 Markdown 的 `](#/...)`；后者会被解析为当前页面的标题锚点。批量修复已有导航可运行：
+
+```bash
+node scripts/generate_ai_edit_drafts.mjs --refresh-navigation
+```
+
 ## 批量生成初稿
 
 如果需要给缺失文章补第一版改稿，可运行：

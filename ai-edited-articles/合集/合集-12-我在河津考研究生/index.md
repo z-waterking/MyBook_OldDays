@@ -72,4 +72,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [我在河津考研究生](#/articles/%E5%90%88%E9%9B%86-12-%E6%88%91%E5%9C%A8%E6%B2%B3%E6%B4%A5%E8%80%83%E7%A0%94%E7%A9%B6%E7%94%9F/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E5%90%88%E9%9B%86-12-%E6%88%91%E5%9C%A8%E6%B2%B3%E6%B4%A5%E8%80%83%E7%A0%94%E7%A9%B6%E7%94%9F/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E5%90%88%E9%9B%86/%E5%90%88%E9%9B%86-12-%E6%88%91%E5%9C%A8%E6%B2%B3%E6%B4%A5%E8%80%83%E7%A0%94%E7%A9%B6%E7%94%9F/notes.md">查看改稿说明</a>
+</nav>

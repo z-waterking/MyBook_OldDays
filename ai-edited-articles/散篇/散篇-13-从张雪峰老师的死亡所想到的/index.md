@@ -60,4 +60,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [从张雪峰老师的死亡所想到的](#/articles/%E6%95%A3%E7%AF%87-13-%E4%BB%8E%E5%BC%A0%E9%9B%AA%E5%B3%B0%E8%80%81%E5%B8%88%E7%9A%84%E6%AD%BB%E4%BA%A1%E6%89%80%E6%83%B3%E5%88%B0%E7%9A%84/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E6%95%A3%E7%AF%87-13-%E4%BB%8E%E5%BC%A0%E9%9B%AA%E5%B3%B0%E8%80%81%E5%B8%88%E7%9A%84%E6%AD%BB%E4%BA%A1%E6%89%80%E6%83%B3%E5%88%B0%E7%9A%84/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E6%95%A3%E7%AF%87/%E6%95%A3%E7%AF%87-13-%E4%BB%8E%E5%BC%A0%E9%9B%AA%E5%B3%B0%E8%80%81%E5%B8%88%E7%9A%84%E6%AD%BB%E4%BA%A1%E6%89%80%E6%83%B3%E5%88%B0%E7%9A%84/notes.md">查看改稿说明</a>
+</nav>

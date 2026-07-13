@@ -1550,6 +1550,22 @@
       transform: none !important;
     }
 
+    .sidebar-ai-badge {
+      display: inline-flex !important;
+      align-items: center !important;
+      min-height: 17px !important;
+      margin-left: 6px !important;
+      padding: 0 5px !important;
+      border: 1px solid #c9b58f !important;
+      border-radius: 999px !important;
+      background: #fff8e8 !important;
+      color: #7a5a22 !important;
+      font-size: 10px !important;
+      font-weight: 700 !important;
+      line-height: 1.4 !important;
+      vertical-align: 1px !important;
+    }
+
     .sidebar::-webkit-scrollbar {
       width: 8px;
     }
@@ -2469,6 +2485,38 @@
             return branchTargets.indexOf(normalizeHash(link.getAttribute('href'))) !== -1;
           }
 
+          function alignAiEditedSidebar() {
+            var currentHash = normalizeHash(window.location.hash || '#/');
+            var route = currentHash.match(/^#\/ai-edited-articles\/(?:合集|散篇)\/([^/]+)\/(index|notes)$/);
+            if (!route) return;
+
+            var articleName = route[1];
+            var originalTarget = '#/articles/' + articleName + '/index';
+            var originalLink = Array.from(document.querySelectorAll('.sidebar-nav a[href]')).find(function (link) {
+              return !link.closest('.app-sub-sidebar')
+                && normalizeHash(link.getAttribute('href')) === originalTarget;
+            });
+            if (!originalLink) return;
+
+            var articleItem = originalLink.closest('li');
+            if (!articleItem) return;
+            var generatedPanel = document.querySelector('.sidebar-nav ul.app-sub-sidebar');
+            if (generatedPanel && generatedPanel.parentElement !== articleItem) {
+              articleItem.appendChild(generatedPanel);
+            }
+
+            document.querySelectorAll('.sidebar-nav li.active, .sidebar-nav a.active').forEach(function (element) {
+              if (!element.closest('.app-sub-sidebar')) element.classList.remove('active');
+            });
+            articleItem.classList.add('active', 'sidebar-ai-context');
+            originalLink.classList.add('active');
+
+            var badge = document.createElement('span');
+            badge.className = 'sidebar-ai-badge';
+            badge.textContent = route[2] === 'notes' ? '改稿说明' : 'AI改稿';
+            originalLink.appendChild(badge);
+          }
+
           function setCollapsed(item, collapsed) {
             item.classList.toggle('is-collapsed', collapsed);
             item.classList.toggle('is-expanded', !collapsed);
@@ -2490,7 +2538,9 @@
               var toggle = label.parentElement;
               var key = label.textContent.trim() || 'branch-' + index;
               var hasActiveChild = Boolean(panel.querySelector('li.active, a.active'));
-              var collapsed = Object.prototype.hasOwnProperty.call(state, key) ? state[key] : !hasActiveChild;
+              var collapsed = hasActiveChild
+                ? false
+                : (Object.prototype.hasOwnProperty.call(state, key) ? state[key] : true);
 
               item.classList.add('sidebar-branch');
               if (key === '维护') item.classList.add('sidebar-maintenance');
@@ -2575,6 +2625,7 @@
           }
 
           function setupSidebar() {
+            alignAiEditedSidebar();
             setupStaticBranches();
             setupPageBranches();
           }

@@ -70,4 +70,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [我在康杰念高中（拾初）](#/articles/%E5%90%88%E9%9B%86-04-%E6%88%91%E5%9C%A8%E5%BA%B7%E6%9D%B0%E5%BF%B5%E9%AB%98%E4%B8%AD%EF%BC%88%E6%8B%BE%E5%88%9D%EF%BC%89/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E5%90%88%E9%9B%86-04-%E6%88%91%E5%9C%A8%E5%BA%B7%E6%9D%B0%E5%BF%B5%E9%AB%98%E4%B8%AD%EF%BC%88%E6%8B%BE%E5%88%9D%EF%BC%89/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E5%90%88%E9%9B%86/%E5%90%88%E9%9B%86-04-%E6%88%91%E5%9C%A8%E5%BA%B7%E6%9D%B0%E5%BF%B5%E9%AB%98%E4%B8%AD%EF%BC%88%E6%8B%BE%E5%88%9D%EF%BC%89/notes.md">查看改稿说明</a>
+</nav>

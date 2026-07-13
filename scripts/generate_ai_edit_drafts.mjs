@@ -13,6 +13,7 @@ const TODAY = new Date().toISOString().slice(0, 10);
 const args = new Set(process.argv.slice(2));
 const FORCE = args.has('--force');
 const REFRESH_GENERATED = args.has('--refresh-generated');
+const REFRESH_NAVIGATION = args.has('--refresh-navigation');
 
 function parseFrontmatter(content) {
   const meta = {};
@@ -32,6 +33,25 @@ function parseFrontmatter(content) {
 
 function yamlQuote(value) {
   return `"${String(value || '').replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\r/g, '\\r').replace(/\n/g, '\\n')}"`;
+}
+
+function navigationFooter(dirName) {
+  const encodedName = encodeURI(dirName);
+  const encodedGroup = encodeURI(groupOf(dirName));
+  return [
+    '<nav class="ai-edit-links" aria-label="AI 改稿相关页面">',
+    `  <a href="#/articles/${encodedName}/index.md">← 返回原文</a>`,
+    `  <a href="#/ai-edited-articles/${encodedGroup}/${encodedName}/notes.md">查看改稿说明</a>`,
+    '</nav>',
+  ].join('\n');
+}
+
+function refreshNavigationFooter(content, dirName) {
+  const body = content
+    .replace(/\r\n/g, '\n')
+    .replace(/\n---\n+(?:\*原文(?:链接)?:[\s\S]*?\*|<nav class="ai-edit-links"[\s\S]*?<\/nav>)\s*$/m, '')
+    .trimEnd();
+  return `${body}\n\n---\n\n${navigationFooter(dirName)}\n`;
 }
 
 function stripBoilerplate(content) {
@@ -438,6 +458,21 @@ async function main() {
     const outIndex = join(outDir, 'index.md');
     const outNotes = join(outDir, 'notes.md');
     const existed = existsSync(outIndex);
+    if (REFRESH_NAVIGATION) {
+      if (!existed) {
+        skipped += 1;
+        continue;
+      }
+      const existing = await readFile(outIndex, 'utf8');
+      const updated = refreshNavigationFooter(existing, dirName);
+      if (updated === existing) {
+        skipped += 1;
+      } else {
+        await writeFile(outIndex, updated, 'utf8');
+        refreshed += 1;
+      }
+      continue;
+    }
     if (!FORCE && existsSync(outIndex)) {
       const existing = await readFile(outIndex, 'utf8');
       if (!REFRESH_GENERATED || !isGeneratedDraft(existing)) {
@@ -473,7 +508,7 @@ async function main() {
       '',
       '---',
       '',
-      `*原文: [${title}](#/articles/${encodeURI(dirName)}/index.md)*`,
+      navigationFooter(dirName),
       '',
     ].join('\n');
 

@@ -142,4 +142,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [我在北京住合租屋](#/articles/%E5%90%88%E9%9B%86-16-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E4%BD%8F%E5%90%88%E7%A7%9F%E5%B1%8B/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E5%90%88%E9%9B%86-16-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E4%BD%8F%E5%90%88%E7%A7%9F%E5%B1%8B/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E5%90%88%E9%9B%86/%E5%90%88%E9%9B%86-16-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E4%BD%8F%E5%90%88%E7%A7%9F%E5%B1%8B/notes.md">查看改稿说明</a>
+</nav>

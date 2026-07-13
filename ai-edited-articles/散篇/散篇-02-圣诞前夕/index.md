@@ -62,4 +62,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [圣诞前夕](#/articles/%E6%95%A3%E7%AF%87-02-%E5%9C%A3%E8%AF%9E%E5%89%8D%E5%A4%95/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E6%95%A3%E7%AF%87-02-%E5%9C%A3%E8%AF%9E%E5%89%8D%E5%A4%95/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E6%95%A3%E7%AF%87/%E6%95%A3%E7%AF%87-02-%E5%9C%A3%E8%AF%9E%E5%89%8D%E5%A4%95/notes.md">查看改稿说明</a>
+</nav>

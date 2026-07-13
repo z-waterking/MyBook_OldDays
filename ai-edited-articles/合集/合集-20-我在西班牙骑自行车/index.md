@@ -90,4 +90,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [我在西班牙骑自行车](#/articles/%E5%90%88%E9%9B%86-20-%E6%88%91%E5%9C%A8%E8%A5%BF%E7%8F%AD%E7%89%99%E9%AA%91%E8%87%AA%E8%A1%8C%E8%BD%A6/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E5%90%88%E9%9B%86-20-%E6%88%91%E5%9C%A8%E8%A5%BF%E7%8F%AD%E7%89%99%E9%AA%91%E8%87%AA%E8%A1%8C%E8%BD%A6/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E5%90%88%E9%9B%86/%E5%90%88%E9%9B%86-20-%E6%88%91%E5%9C%A8%E8%A5%BF%E7%8F%AD%E7%89%99%E9%AA%91%E8%87%AA%E8%A1%8C%E8%BD%A6/notes.md">查看改稿说明</a>
+</nav>

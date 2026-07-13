@@ -88,4 +88,7 @@ SYM，LQJ他们去复读了。直到今天我都觉得这是我的一个遗憾�
 
 ---
 
-*原文: [我在珠海上大学（新序）](#/articles/%E5%90%88%E9%9B%86-06-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E6%96%B0%E5%BA%8F%EF%BC%89/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E5%90%88%E9%9B%86-06-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E6%96%B0%E5%BA%8F%EF%BC%89/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E5%90%88%E9%9B%86/%E5%90%88%E9%9B%86-06-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E6%96%B0%E5%BA%8F%EF%BC%89/notes.md">查看改稿说明</a>
+</nav>

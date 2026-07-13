@@ -76,4 +76,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [我在阿里的最后一个leader](#/articles/%E6%95%A3%E7%AF%87-15-%E6%88%91%E5%9C%A8%E9%98%BF%E9%87%8C%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AAleader/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E6%95%A3%E7%AF%87-15-%E6%88%91%E5%9C%A8%E9%98%BF%E9%87%8C%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AAleader/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E6%95%A3%E7%AF%87/%E6%95%A3%E7%AF%87-15-%E6%88%91%E5%9C%A8%E9%98%BF%E9%87%8C%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AAleader/notes.md">查看改稿说明</a>
+</nav>

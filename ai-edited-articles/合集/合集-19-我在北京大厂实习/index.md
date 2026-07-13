@@ -80,4 +80,7 @@ ZRZ通过了微软和苹果的面试。在这几家外企中她犯了难。我�
 
 ---
 
-*原文: [我在北京大厂实习](#/articles/%E5%90%88%E9%9B%86-19-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%8E%82%E5%AE%9E%E4%B9%A0/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E5%90%88%E9%9B%86-19-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%8E%82%E5%AE%9E%E4%B9%A0/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E5%90%88%E9%9B%86/%E5%90%88%E9%9B%86-19-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%8E%82%E5%AE%9E%E4%B9%A0/notes.md">查看改稿说明</a>
+</nav>

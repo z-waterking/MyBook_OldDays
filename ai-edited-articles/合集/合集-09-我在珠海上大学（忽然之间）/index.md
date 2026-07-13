@@ -92,4 +92,7 @@ HSZ有一次在学生活动中心拿macbook做作业时，出门上了个厕所�
 
 ---
 
-*原文: [我在珠海上大学（忽然之间）](#/articles/%E5%90%88%E9%9B%86-09-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B4%EF%BC%89/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E5%90%88%E9%9B%86-09-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B4%EF%BC%89/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E5%90%88%E9%9B%86/%E5%90%88%E9%9B%86-09-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B4%EF%BC%89/notes.md">查看改稿说明</a>
+</nav>

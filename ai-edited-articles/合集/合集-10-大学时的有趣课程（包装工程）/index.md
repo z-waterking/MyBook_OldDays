@@ -80,4 +80,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [大学时的有趣课程（包装工程）](#/articles/%E5%90%88%E9%9B%86-10-%E5%A4%A7%E5%AD%A6%E6%97%B6%E7%9A%84%E6%9C%89%E8%B6%A3%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8C%85%E8%A3%85%E5%B7%A5%E7%A8%8B%EF%BC%89/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E5%90%88%E9%9B%86-10-%E5%A4%A7%E5%AD%A6%E6%97%B6%E7%9A%84%E6%9C%89%E8%B6%A3%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8C%85%E8%A3%85%E5%B7%A5%E7%A8%8B%EF%BC%89/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E5%90%88%E9%9B%86/%E5%90%88%E9%9B%86-10-%E5%A4%A7%E5%AD%A6%E6%97%B6%E7%9A%84%E6%9C%89%E8%B6%A3%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8C%85%E8%A3%85%E5%B7%A5%E7%A8%8B%EF%BC%89/notes.md">查看改稿说明</a>
+</nav>

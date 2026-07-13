@@ -142,4 +142,7 @@ edited: "2026-07-13"
 
 ---
 
-*原文: [那些生命中最重要的音乐](#/articles/%E6%95%A3%E7%AF%87-01-%E9%82%A3%E4%BA%9B%E7%94%9F%E5%91%BD%E4%B8%AD%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E9%9F%B3%E4%B9%90/index.md)*
+<nav class="ai-edit-links" aria-label="AI 改稿相关页面">
+  <a href="#/articles/%E6%95%A3%E7%AF%87-01-%E9%82%A3%E4%BA%9B%E7%94%9F%E5%91%BD%E4%B8%AD%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E9%9F%B3%E4%B9%90/index.md">← 返回原文</a>
+  <a href="#/ai-edited-articles/%E6%95%A3%E7%AF%87/%E6%95%A3%E7%AF%87-01-%E9%82%A3%E4%BA%9B%E7%94%9F%E5%91%BD%E4%B8%AD%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E9%9F%B3%E4%B9%90/notes.md">查看改稿说明</a>
+</nav>
