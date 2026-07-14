@@ -3013,25 +3013,23 @@
             });
 
             var currentHash = normalizeHash(window.location.hash || '#/');
-            var route = currentHash.match(/^#\/(?:ai-edited-articles\/(?:合集|散篇)|articles)\/([^/]+)\/(index|notes|review)$/);
-            if (!route) return;
+            var context = window.siteRuntimeHelpers.sidebarArticleContextFromHash(currentHash);
+            if (!context) return null;
 
-            var articleName = route[1];
-            var originalTarget = '#/articles/' + articleName + '/index';
             var originalLink = Array.from(document.querySelectorAll('.sidebar-nav a[href]')).find(function (link) {
               return !link.closest('.app-sub-sidebar')
-                && normalizeHash(link.getAttribute('href')) === originalTarget;
+                && normalizeHash(link.getAttribute('href')) === context.targetHash;
             });
-            if (!originalLink) return;
+            if (!originalLink) return null;
 
             var articleItem = originalLink.closest('li');
-            if (!articleItem) return;
+            if (!articleItem) return null;
             var generatedPanel = document.querySelector('.sidebar-nav ul.app-sub-sidebar');
             if (generatedPanel && generatedPanel.parentElement !== articleItem) {
               articleItem.appendChild(generatedPanel);
             }
 
-            document.querySelectorAll('.sidebar-nav li.active, .sidebar-nav a.active').forEach(function (element) {
+            document.querySelectorAll('.sidebar-nav li.active, .sidebar-nav p.active, .sidebar-nav a.active').forEach(function (element) {
               if (!element.closest('.app-sub-sidebar')) element.classList.remove('active');
             });
             articleItem.classList.add('active', 'sidebar-ai-context');
@@ -3039,8 +3037,26 @@
 
             var badge = document.createElement('span');
             badge.className = 'sidebar-ai-badge';
-            badge.textContent = route[2] === 'notes' ? '改稿说明' : route[2] === 'review' ? '文章评价' : currentHash.indexOf('/ai-edited-articles/') !== -1 ? 'AI改稿' : '原文';
+            badge.textContent = context.label;
             originalLink.appendChild(badge);
+            return articleItem;
+          }
+
+          function keepArticleItemVisible(articleItem, routeAtRender) {
+            if (!articleItem) return;
+            requestAnimationFrame(function () {
+              if (!articleItem.isConnected || normalizeHash(window.location.hash || '#/') !== routeAtRender) return;
+              var sidebar = articleItem.closest('.sidebar');
+              if (!sidebar) return;
+              var itemRect = articleItem.getBoundingClientRect();
+              var sidebarRect = sidebar.getBoundingClientRect();
+              var margin = 16;
+              if (itemRect.top < sidebarRect.top + margin) {
+                sidebar.scrollTop -= sidebarRect.top + margin - itemRect.top;
+              } else if (itemRect.bottom > sidebarRect.bottom - margin) {
+                sidebar.scrollTop += itemRect.bottom - sidebarRect.bottom + margin;
+              }
+            });
           }
 
           function setCollapsed(item, collapsed) {
@@ -3151,9 +3167,11 @@
           }
 
           function setupSidebar() {
-            alignArticleContextSidebar();
+            var routeAtRender = normalizeHash(window.location.hash || '#/');
+            var articleItem = alignArticleContextSidebar();
             setupStaticBranches();
             setupPageBranches();
+            keepArticleItemVisible(articleItem, routeAtRender);
           }
 
           hook.doneEach(setupSidebar);

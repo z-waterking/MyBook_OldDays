@@ -28,6 +28,9 @@ for (const articleName of articleNames) {
     assert.equal(context?.articleName, articleName, `article route mismatch: ${route}`);
     assert.equal(context?.category, category, `article category mismatch: ${route}`);
     assert.equal(context?.page, expectedPage, `article page mismatch: ${route}`);
+    const sidebarContext = helpers.sidebarArticleContextFromHash(route);
+    assert.equal(sidebarContext?.articleName, articleName, `sidebar article mismatch: ${route}`);
+    assert.equal(sidebarContext?.targetHash, `#/articles/${articleName}/index`, `sidebar target mismatch: ${route}`);
   }
 }
 
@@ -39,5 +42,6 @@ for (const chapter of chapters) {
 }
 
 assert.equal(helpers.articleContextFromHash('#/website/ranking.md'), null);
+assert.equal(helpers.sidebarArticleContextFromHash('#/website/ranking.md'), null);
 assert.equal(helpers.normalizeSiteHash('#/articles/a/index.md?id=section'), '#/articles/a/index');
 console.log(`运行时路由契约通过（${articleNames.length} 篇 × 4 类页面，${chapters.length} 篇成书路径）`);

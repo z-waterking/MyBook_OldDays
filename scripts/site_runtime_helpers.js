@@ -32,8 +32,25 @@
     };
   }
 
+  function sidebarArticleContextFromHash(value) {
+    var context = articleContextFromHash(value);
+    if (!context) return null;
+    var labels = {
+      original: '原文',
+      review: '文章评价',
+      edited: 'AI改稿',
+      notes: '改稿说明'
+    };
+    return {
+      articleName: context.articleName,
+      targetHash: '#/articles/' + context.articleName + '/index',
+      label: labels[context.page]
+    };
+  }
+
   global.siteRuntimeHelpers = {
     normalizeSiteHash: normalizeSiteHash,
-    articleContextFromHash: articleContextFromHash
+    articleContextFromHash: articleContextFromHash,
+    sidebarArticleContextFromHash: sidebarArticleContextFromHash
   };
 }(typeof window === 'undefined' ? globalThis : window));
