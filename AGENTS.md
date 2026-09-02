@@ -12,6 +12,7 @@
 - `assets/images/articles/`：文章图片统一存储区，按文章目录分组；原文和 AI 改稿引用同一份文件。
 - `assets/images/`：除文章图片外的跨文章、成书区共用图片库。
 - `ai-edited-articles/`：AI 修改稿工作区。改稿不能覆盖 `articles/` 原文，目录关系记录在 `ai-edited-articles/mapping.md`。
+- `fan-submissions/`：粉丝投稿公开归档。每篇包含公众号正式稿 `index.md`、专栏评价 `review.md` 和编辑说明 `notes.md`；不混入作者个人文章、榜单或成书时间线。
 - `book/`：成书工作区。维护七部时间主线、附录、补写计划、题目库和生成书稿，但不替代原文归档。
 - `website/`：Docsify 展示层内容目录。目录页、评分榜、佳句榜、趣味榜单等网页 Markdown 都放这里。
 - `scripts/`：文章抓取、封面、图片索引、插画和网站巡检脚本。
@@ -20,6 +21,7 @@
 ## 关键路径约定
 
 - 网站页面统一放在 `website/`，不要再把 `catalog.md`、`ranking.md`、`literary-gems.md`、`fun-rankings.md` 散放到根目录。
+- `website/submissions.md` 是粉丝投稿专栏页，按连续编号手工维护；投稿正文与图片分别链接到 `fan-submissions/` 和 `assets/images/fan-submissions/`。
 - `website/index.html` 只是旧 `/website/` 地址的兼容跳回页，正式入口不要放到 `website/` 下。
 - 网站页里的文章链接按仓库根路径写，例如 `articles/合集-01-我在河津上幼儿园/index.md`。
 - `website/catalog.md` 是自动生成目录，唯一渲染实现位于 `save_article.py`。完整发布以 `article_covers.mjs --mode markdown` 为准，该命令刷新图片后委托 Python 重建目录；`save_article.py --catalog-only` 只用于不刷新图片的快速重建。

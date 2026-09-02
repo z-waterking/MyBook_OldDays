@@ -9,6 +9,7 @@
         <a class="book-home-primary" href="#/book/部一-小城与少年.md">从头开始</a>
         <a href="#/website/footprints.md">足迹地图</a>
         <a href="#/website/catalog.md">全部文章</a>
+        <a href="#/website/submissions.md">粉丝投稿</a>
       </div>
     </div>
   </section>
@@ -77,6 +78,7 @@
 
   <section class="book-home-explore">
     <a href="#/book/01-成书目录.md"><small>成书阅读</small><strong>沿七部人生结构连续阅读</strong></a>
+    <a href="#/website/submissions.md"><small>粉丝投稿</small><strong>把别人的人生，也认真写下来</strong></a>
     <a href="#/website/literary-gems.md"><small>佳句选读</small><strong>从一句话进入旧日</strong></a>
     <a href="#/website/fun-rankings.md"><small>趣味索引</small><strong>食物、人物、足迹与名场面</strong></a>
   </section>

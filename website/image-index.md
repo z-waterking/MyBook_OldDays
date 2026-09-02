@@ -1,10 +1,11 @@
 # 图片索引
 
-> 共 184 张图片。
+> 共 187 张图片。
 
 ## 引用规则
 
 - 所有文章图片统一存放在 `assets/images/articles/<文章目录>/`，原文和 AI 改稿引用同一份文件。
+- 粉丝投稿图片存放在 `assets/images/fan-submissions/<投稿目录>/`。
 - 其他跨文章、成书区共用图片放入 `assets/images/<主题>/`。
 - Markdown 使用仓库根路径，例如 `![](assets/images/articles/合集-05-我在康杰念高中（怀昔）/001.jpg)`。
 
@@ -62,6 +63,14 @@
 | <img src="assets/images/illustrations/literary-gems/30-unverified-disappearance.jpg" alt="共享图片库 30-unverified-disappearance.jpg" width="96"> | 共享图片库 | shared | 30-unverified-disappearance.jpg | 111 KB | `assets/images/illustrations/literary-gems/30-unverified-disappearance.jpg` |
 | <img src="assets/images/illustrations/literary-gems/31-two-lines-of-tears.jpg" alt="共享图片库 31-two-lines-of-tears.jpg" width="96"> | 共享图片库 | shared | 31-two-lines-of-tears.jpg | 120 KB | `assets/images/illustrations/literary-gems/31-two-lines-of-tears.jpg` |
 | <img src="assets/images/illustrations/literary-gems/32-silver-watch.jpg" alt="共享图片库 32-silver-watch.jpg" width="96"> | 共享图片库 | shared | 32-silver-watch.jpg | 175 KB | `assets/images/illustrations/literary-gems/32-silver-watch.jpg` |
+
+## 粉丝投稿图片
+
+| 预览 | 来源 | 类型 | 文件 | 大小 | 引用路径 |
+|------|------|------|------|------|----------|
+| <img src="assets/images/fan-submissions/%E7%B2%89%E4%B8%9D%E6%8A%95%E7%A8%BF-01-%E4%BA%8C%E5%8D%81%E4%B8%89%E5%B2%81%E6%88%91%E5%8F%88%E5%8E%BB%E9%97%AE%E4%BA%86%E4%B8%80%E6%AC%A1%E5%91%BD/001.png" alt="二十三岁，我又去问了一次命 001.png" width="96"> | [二十三岁，我又去问了一次命](#/fan-submissions/%E7%B2%89%E4%B8%9D%E6%8A%95%E7%A8%BF-01-%E4%BA%8C%E5%8D%81%E4%B8%89%E5%B2%81%E6%88%91%E5%8F%88%E5%8E%BB%E9%97%AE%E4%BA%86%E4%B8%80%E6%AC%A1%E5%91%BD/index.md) | cover | 001.png | 2.4 MB | `assets/images/fan-submissions/粉丝投稿-01-二十三岁我又去问了一次命/001.png` |
+| <img src="assets/images/fan-submissions/%E7%B2%89%E4%B8%9D%E6%8A%95%E7%A8%BF-01-%E4%BA%8C%E5%8D%81%E4%B8%89%E5%B2%81%E6%88%91%E5%8F%88%E5%8E%BB%E9%97%AE%E4%BA%86%E4%B8%80%E6%AC%A1%E5%91%BD/002.png" alt="二十三岁，我又去问了一次命 002.png" width="96"> | [二十三岁，我又去问了一次命](#/fan-submissions/%E7%B2%89%E4%B8%9D%E6%8A%95%E7%A8%BF-01-%E4%BA%8C%E5%8D%81%E4%B8%89%E5%B2%81%E6%88%91%E5%8F%88%E5%8E%BB%E9%97%AE%E4%BA%86%E4%B8%80%E6%AC%A1%E5%91%BD/index.md) | inline | 002.png | 2.1 MB | `assets/images/fan-submissions/粉丝投稿-01-二十三岁我又去问了一次命/002.png` |
+| <img src="assets/images/fan-submissions/%E7%B2%89%E4%B8%9D%E6%8A%95%E7%A8%BF-01-%E4%BA%8C%E5%8D%81%E4%B8%89%E5%B2%81%E6%88%91%E5%8F%88%E5%8E%BB%E9%97%AE%E4%BA%86%E4%B8%80%E6%AC%A1%E5%91%BD/003.png" alt="二十三岁，我又去问了一次命 003.png" width="96"> | [二十三岁，我又去问了一次命](#/fan-submissions/%E7%B2%89%E4%B8%9D%E6%8A%95%E7%A8%BF-01-%E4%BA%8C%E5%8D%81%E4%B8%89%E5%B2%81%E6%88%91%E5%8F%88%E5%8E%BB%E9%97%AE%E4%BA%86%E4%B8%80%E6%AC%A1%E5%91%BD/index.md) | inline | 003.png | 916 KB | `assets/images/fan-submissions/粉丝投稿-01-二十三岁我又去问了一次命/003.png` |
 
 ## 文章图片
 

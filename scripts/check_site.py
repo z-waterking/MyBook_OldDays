@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 WEBSITE = ROOT / "website"
 BOOK = ROOT / "book"
 AI_EDITED = ROOT / "ai-edited-articles"
+FAN_SUBMISSIONS = ROOT / "fan-submissions"
 ARTICLE_IMAGES = ROOT / "assets" / "images" / "articles"
 GENERATED_IMAGES = ROOT / "assets" / "images" / "_generated"
 INLINE_IMAGES = GENERATED_IMAGES / "article-inline"
@@ -121,7 +122,8 @@ def check_site_links() -> int:
         for category in ("合集", "散篇")
         for path in (AI_EDITED / category).glob("*/*.md")
     ]
-    sources = sorted([*WEBSITE.glob("*.md"), *BOOK.glob("*.md"), *ai_pages])
+    fan_pages = list(FAN_SUBMISSIONS.glob("*/*.md"))
+    sources = sorted([*WEBSITE.glob("*.md"), *BOOK.glob("*.md"), *ai_pages, *fan_pages])
     for source in sources:
         content = source.read_text(encoding="utf-8")
         for pattern in (MARKDOWN_LINK_RE, HTML_LINK_RE):
@@ -143,6 +145,35 @@ def check_site_links() -> int:
                         display_target = str(target)
                     report_error(f"{source.relative_to(ROOT).as_posix()}:{line} 目标不存在: {display_target}")
     return link_count
+
+
+def check_fan_submissions() -> int:
+    submissions_page = WEBSITE / "submissions.md"
+    require(submissions_page.is_file(), "缺少粉丝投稿专栏页")
+    if not submissions_page.is_file():
+        return 0
+
+    workspaces = sorted(path for path in FAN_SUBMISSIONS.glob("粉丝投稿-*") if path.is_dir())
+    for workspace in workspaces:
+        require((workspace / "index.md").is_file(), f"粉丝投稿缺少 index.md: {workspace.name}")
+        require((workspace / "review.md").is_file(), f"粉丝投稿缺少 review.md: {workspace.name}")
+        require((workspace / "notes.md").is_file(), f"粉丝投稿缺少 notes.md: {workspace.name}")
+        image_dir = ROOT / "assets" / "images" / "fan-submissions" / workspace.name
+        require(image_dir.is_dir(), f"粉丝投稿缺少图片目录: {workspace.name}")
+
+    content = submissions_page.read_text(encoding="utf-8")
+    numbers = [int(value) for value in re.findall(r"(?m)^## (\d{2}) · ", content)]
+    require(numbers == list(range(1, len(numbers) + 1)), "粉丝投稿专栏编号必须从 01 连续递增")
+    require(len(numbers) == len(workspaces), "粉丝投稿专栏条目数与投稿目录数不一致")
+    declared = re.search(r"当前共 (\d+) 篇", content)
+    require(declared is not None, "粉丝投稿专栏缺少总数声明")
+    if declared:
+        require(int(declared.group(1)) == len(workspaces), "粉丝投稿专栏总数声明不正确")
+    for workspace in workspaces:
+        relative = workspace.relative_to(ROOT).as_posix()
+        for filename in ("index.md", "review.md", "notes.md"):
+            require(f"{relative}/{filename}" in content, f"粉丝投稿专栏缺少入口: {workspace.name}/{filename}")
+    return len(numbers)
 
 
 def markdown_article_targets(path: Path) -> list[str]:
@@ -669,6 +700,11 @@ def check_search_index() -> int:
         for pattern in ("articles/*/index.md", "articles/*/review.md", "ai-edited-articles/*/*/index.md", "ai-edited-articles/*/*/notes.md")
         for source in ROOT.glob(pattern)
     }
+    expected.update(
+        source.relative_to(ROOT).as_posix()
+        for pattern in ("fan-submissions/*/index.md", "fan-submissions/*/review.md", "fan-submissions/*/notes.md")
+        for source in ROOT.glob(pattern)
+    )
     require(expected <= indexed_paths, "站内搜索索引没有覆盖全部原文、评价、改稿和说明")
     return len(entries)
 
@@ -782,6 +818,7 @@ def check_required_files() -> None:
         "website/home.md",
         "website/_sidebar.md",
         "website/catalog.md",
+        "website/submissions.md",
         "website/ranking.md",
         "website/literary-gems.md",
         "website/fun-rankings.md",
@@ -789,6 +826,7 @@ def check_required_files() -> None:
         "website/footprints-data.json",
         "website/search-index.json",
         "website/MAINTENANCE.md",
+        "fan-submissions/README.md",
         "book/README.md",
         "book/01-成书目录.md",
         "book/02-时间线.md",
@@ -811,6 +849,7 @@ def main() -> int:
     ranking_count = check_ranking(review_scores)
     ai_edit_count = check_ai_edits(articles)
     link_count = check_site_links()
+    submission_count = check_fan_submissions()
     china_count, world_count, spanish_count = check_footprints()
     check_docsify_asset_resolver()
     cover_count = check_cover_derivatives(articles)
@@ -827,6 +866,7 @@ def main() -> int:
 
     print("网站巡检通过")
     print(f"- 文章 / 目录 / 排名 / AI 改稿：{len(articles)} / {catalog_count} / {ranking_count} / {ai_edit_count}")
+    print(f"- 粉丝投稿专栏：{submission_count}")
     print(f"- 已检查本地链接与图片：{link_count}")
     print(f"- 成书阅读：{book_part_count} 个部分，{book_chapter_count} 篇入选文章")
     print(f"- 足迹：中国 {china_count}，世界视图 {world_count}")
