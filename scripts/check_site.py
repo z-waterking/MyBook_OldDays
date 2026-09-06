@@ -764,14 +764,79 @@ def check_documented_counts(
     require(f"<strong>{china_count}</strong> 个中国地点" in footprints, "足迹页中国地点统计已过期")
     require(f"<strong>{spanish_count}</strong> 个西班牙地点" in footprints, "足迹页西班牙地点统计已过期")
 
-    literary_count = illustration_counts.get("literary-gems", 0)
     literary = (WEBSITE / "literary-gems.md").read_text(encoding="utf-8")
-    require(f"共 {literary_count} 句" in literary, "佳句榜底部总数与插画清单不一致")
+    literary_entries = list(re.finditer(r"^### (?P<number>\d+)\. [^\n]+\n(?P<body>[\s\S]*?)(?=^### |^## |^---|\Z)", literary, re.MULTILINE))
+    literary_count = len(literary_entries)
+    require(literary_count > 0, "佳句榜没有选句条目")
+    require([int(entry.group("number")) for entry in literary_entries] == list(range(1, literary_count + 1)), "佳句榜编号必须从 1 连续递增")
+    require(f"共 {literary_count} 句" in literary, "佳句榜底部总数与实际选句条目不一致")
+    for entry in literary_entries:
+        body = entry.group("body")
+        quotes = re.findall(r"^> \*\*(.+?)\*\*\s*$", body, re.MULTILINE)
+        sources = [match.group("target").strip("<>") for match in MARKDOWN_LINK_RE.finditer(body) if match.group("target").strip("<>").startswith("articles/")]
+        label = f"佳句榜第 {entry.group('number')} 条"
+        require(bool(quotes), f"{label} 缺少引用正文")
+        require(len(sources) == 1, f"{label} 必须恰有一个原文来源")
+        if len(sources) == 1:
+            source = repository_target(sources[0], WEBSITE / "literary-gems.md")
+            require(source is not None and source.name == "index.md", f"{label} 应链接到归档原文")
+            if source is not None and source.is_file():
+                original = re.sub(r"\s+", "", html.unescape(source.read_text(encoding="utf-8")).replace("**", ""))
+                for quote in quotes:
+                    require(re.sub(r"\s+", "", html.unescape(quote)) in original, f"{label} 引句与原文不一致")
 
     fun_count = illustration_counts.get("fun-rankings", 0)
     fun_rankings = (WEBSITE / "fun-rankings.md").read_text(encoding="utf-8")
     fun_sections = len(re.findall(r"^## ", fun_rankings, re.MULTILINE))
     require(fun_sections == fun_count, f"趣味榜有 {fun_sections} 个章节，插画清单有 {fun_count} 项")
+
+
+def check_excerpt_density(articles: list[Path]) -> None:
+    """Recompute the manual excerpt-frequency table from archive text and reviews."""
+    page = WEBSITE / "fun-rankings.md"
+    content = page.read_text(encoding="utf-8")
+    sections = [section for section in re.split(r"(?=^## )", content, flags=re.MULTILINE) if section.startswith("## 🏆 金句密度榜")]
+    require(len(sections) == 1, "趣味榜必须恰有一个金句密度章节")
+    if len(sections) != 1:
+        return
+    section = sections[0]
+    expected: list[tuple[Path, int, int]] = []
+    image_only: list[str] = []
+    for article in articles:
+        original = (article / "index.md").read_text(encoding="utf-8")
+        review = (article / "review.md").read_text(encoding="utf-8")
+        body = re.sub(r"^---\r?\n[\s\S]*?\r?\n---", "", original.lstrip("\ufeff"), count=1)
+        body = body.split("*原文链接:", 1)[0]
+        body = "\n".join(line for line in body.splitlines() if not line.startswith(("# ", "> 作者:")))
+        body = re.sub(r"<[^>]*>", "", body)
+        body = re.sub(r"!\[[^]]*\]\([^)]*\)", "", body)
+        body = re.sub(r"\[([^]]+)\]\([^)]*\)", lambda match: match[1], body)
+        han_count = len(re.findall(r"[一-鿿]", html.unescape(body)))
+        # The comic archive contains only an image and the invitation 请欣赏.
+        invitation_only = re.sub(r"[\s-]+", "", body) == "请欣赏" and "![](" in original
+        if han_count == 0 or invitation_only:
+            image_only.append(article.name)
+            continue
+        excerpts = re.search(r"^## 金句摘录\s*$([\s\S]*?)(?=^## |\Z)", review, re.MULTILINE)
+        excerpt_count = len(re.findall(r"^\d+\. ", excerpts[1], re.MULTILINE)) if excerpts else 0
+        require(excerpt_count > 0, f"摘录密度无法取得评价条目: {article.name}")
+        expected.append((article, han_count, excerpt_count))
+    expected.sort(key=lambda row: (-row[2] * 1000 / row[1], article_sort_key(row[0].name)))
+    table_lines = [line for line in section.splitlines() if line.startswith("|")]
+    rows = table_lines[2:]
+    require(len(rows) == len(expected), f"摘录密度应有 {len(expected)} 篇，表格有 {len(rows)} 行")
+    for rank, (line, (article, han_count, excerpt_count)) in enumerate(zip(rows, expected), start=1):
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        label = f"摘录密度第 {rank} 行"
+        require(len(cells) == 5, f"{label} 列数错误")
+        if len(cells) != 5:
+            continue
+        link = MARKDOWN_LINK_RE.fullmatch(cells[1])
+        target = repository_target(link.group("target"), page) if link else None
+        require(cells[0] == str(rank), f"{label} 排名不连续")
+        require(target == article / "index.md", f"{label} 文章或排序错误")
+        require(cells[2:] == [str(han_count), str(excerpt_count), f"{excerpt_count * 1000 / han_count:.2f}"], f"{label} 字数、摘录数或频率未同步")
+    require(f"共 {len(expected)} 篇可计量文本；{len(image_only)} 篇图片正文不纳入。" in section, "摘录密度底部篇数未同步")
 
 
 def check_required_files() -> None:
@@ -818,6 +883,7 @@ def main() -> int:
     search_count = check_search_index()
     illustration_count, illustration_counts = check_illustrations()
     check_documented_counts(len(articles), ai_edit_count, china_count, spanish_count, illustration_counts)
+    check_excerpt_density(articles)
 
     if errors:
         print(f"网站巡检失败，共 {len(errors)} 个问题：")

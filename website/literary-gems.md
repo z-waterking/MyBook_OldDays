@@ -1,8 +1,8 @@
-﻿# ✨ 文学性佳句榜
+# ✨ 文学性佳句榜
 
-> 2026-07-11 重新通读 38 篇文章的 canonical `review.md` 后，从“金句摘录”中复选，并逐句回查原文。
+> 2026-09-06 全库原文复评后重新选句、核对出处。按主题编排，序号用于阅读，不表示句子之间的绝对高下。
 >
-> 只收录在意象、情感、节奏、思想或叙事功能上真正成立的句子；普通总结、脱离上下文便失效的包袱，以及引用他作的文字不列入。
+> 兼顾语言的新鲜感与上下文中的叙事作用；保留必要上下句，不将仿写经典的句式列作作者独立的语言发现。本文点评针对文字，不代替对文中公共事件的事实核实。
 
 ---
 
@@ -19,7 +19,7 @@
 >
 > —— [我在康杰念高中（怀昔）](articles/合集-05-我在康杰念高中（怀昔）/index.md)
 
-**点评：** 记忆被写成有弹性、有重量的旧照片；“猛地”与“雪花般”让回忆同时具有爆发力和飘零感。
+**点评：** “积压”“弹出”让记忆有了重量和力量，再以四散的照片写出无法逐张抓住的往昔。比单说回忆涌现更具体，也契合篇中人物接连被唤起的结构。
 
 ### 2. 吹到今天的风
 
@@ -32,7 +32,7 @@
 >
 > —— [我在康杰念高中（怀昔）](articles/合集-05-我在康杰念高中（怀昔）/index.md)
 
-**点评：** 一阵晚风跨过多年，把当时未说尽的情绪持续送到写作此刻；时间因此有了触觉。
+**点评：** 风原本属于一个夜晚，却被“到今天”延长到写作此刻。短句的分量来自前面的同伴和校园现场，抽出后仍保留触觉，适合作为整本文集的记忆线索。
 
 ### 3. 陪伴我死去
 
@@ -45,7 +45,7 @@
 >
 > —— [我在康杰念高中（拾初）](articles/合集-04-我在康杰念高中（拾初）/index.md)
 
-**点评：** 技术幻想没有指向未来，反而被用来打捞过去；“重现”与“死去”相接，显出怀旧最深处的孤独。
+**点评：** 未来技术被用来保存旧日场景，愿望的尽头却是生命的终点。两种时间方向相遇，使怀旧不只是想回到过去，也成为如何带着过去走完一生的问题。
 
 ### 4. 另一个人的生活
 
@@ -58,7 +58,7 @@
 >
 > —— [我在运中念初中](articles/合集-03-我在运中念初中/index.md)
 
-**点评：** 它写的不是遗忘，而是仍能看见往事却认不出当年的自己；平静口吻使这种疏离更深。
+**点评：** 记得清楚与感到亲近并不总是一回事。“另外一个人”承认叙述者与少年自己的距离，为校园回忆保留了一种诚实的陌生感。
 
 ### 5. 眉头一动
 
@@ -71,22 +71,9 @@
 >
 > —— [我在河津上小学](articles/合集-02-我在河津上小学/index.md)
 
-**点评：** “眉头一动”把回忆的启动落在一个细微身体反应上，漫长岁月由此骤然折回一个早晨。
+**点评：** 二十五年突然折回母亲送学的一个早晨。“眉头一动”未必是精致修辞，却把记忆落在微小身体反应上，个人声口鲜明。
 
-### 6. 忽然毕业
-
-<figure class="section-illustration" data-illustration="gem-06-sudden-graduation">
-  <img src="assets/images/_generated/illustrations/literary-gems/06-sudden-graduation.webp" alt="毕业后人去楼空的大学宿舍" loading="lazy" decoding="async" width="960" height="640">
-</figure>
-
-
-> **忽然之间，就毕业了。**
->
-> —— [我在珠海上大学（忽然之间）](articles/合集-09-我在珠海上大学（忽然之间）/index.md)
-
-**点评：** 极短独句切断此前纷杂的校园生活；越不铺陈，越接近青春结束时猝不及防的真实感。
-
-### 7. 没有终结的歌声
+### 6. 没有终结的歌声
 
 <figure class="section-illustration" data-illustration="gem-07-song-without-ending">
   <img src="assets/images/_generated/illustrations/literary-gems/07-song-without-ending.webp" alt="有线耳机唤醒旧日操场与青春记忆" loading="lazy" decoding="async" width="960" height="640">
@@ -97,16 +84,16 @@
 >
 > —— [那些生命中最重要的音乐](articles/散篇-01-那些生命中最重要的音乐/index.md)
 
-**点评：** 歌声不是背景，而是抵抗衰老与离散的通道；“身体中沉睡的记忆”准确写出音乐唤醒往昔的生理力量。
+**点评：** 歌曲将身体、人物与往事一起唤醒，长句不断向过去展开。末尾“一如当时”收住铺陈，回应全文用歌名串联生命阶段的写法。
 
 ---
 
 ## 🌿 青春、亲密与远行
 
-### 8. 看她到天亮
+### 7. 看她到天亮
 
 <figure class="section-illustration" data-illustration="gem-08-watch-her-until-dawn">
-  <img src="assets/images/_generated/illustrations/literary-gems/08-watch-her-until-dawn.webp" alt="凌晨自习室里女孩写线性代数男孩趴桌凝望" loading="lazy" decoding="async" width="960" height="640">
+  <img src="assets/images/_generated/illustrations/literary-gems/08-watch-her-until-dawn.webp" alt="以凌晨学习场景表现肯德基相伴到天亮的记忆，意象插画" loading="lazy" decoding="async" width="960" height="640">
 </figure>
 
 
@@ -114,12 +101,12 @@
 >
 > —— [我在珠海上大学（新序）](articles/合集-06-我在珠海上大学（新序）/index.md)
 
-**点评：** 线性代数的冷静与彻夜凝望的热烈并置；没有表白，一个“趴”字和漫长时间已经把心意写满。
+**点评：** 看不懂作业，却看人看到天亮，学习任务与私人心意错开了。动作笨拙、时间漫长，感情由这一小段生活自然显出。
 
-### 9. 雨更大了
+### 8. 雨更大了
 
 <figure class="section-illustration" data-illustration="gem-09-rain-grew-heavier">
-  <img src="assets/images/_generated/illustrations/literary-gems/09-rain-grew-heavier.webp" alt="校园暴雨中独自撑伞的男孩与奶茶" loading="lazy" decoding="async" width="960" height="640">
+  <img src="assets/images/_generated/illustrations/literary-gems/09-rain-grew-heavier.webp" alt="借暴雨、伞与奶茶表现失落的意象插画" loading="lazy" decoding="async" width="960" height="640">
 </figure>
 
 
@@ -127,9 +114,9 @@
 >
 > —— [我在珠海上大学（知欢）](articles/合集-07-我在珠海上大学（知欢）/index.md)
 
-**点评：** 前句只陈述事实，后句只写天气，失落却在两者之间自然生成；克制比直说伤心更有余味。
+**点评：** 对方只说奶茶的去向，叙述者随后只写雨势，没有替读者解释失落。天气接过情绪，前后两句因留白而发生联系。
 
-### 10. 用完的力气
+### 9. 用完的力气
 
 <figure class="section-illustration" data-illustration="gem-10-strength-spent">
   <img src="assets/images/_generated/illustrations/literary-gems/10-strength-spent.webp" alt="绿皮火车上耗尽力气后熟睡的年轻人" loading="lazy" decoding="async" width="960" height="640">
@@ -140,22 +127,9 @@
 >
 > —— [我在珠海上大学（风途）](articles/合集-08-我在珠海上大学（风途）/index.md)
 
-**点评：** 它把密集旅行和青春挥霍收束为身体记忆；“用完”既是疲惫，也是对旺盛生命力的一次回望。
+**点评：** 此前密集的旅行在这里变成一笔身体的支出。“那两年”有具体经历支撑，使疲惫同时带着对行动力的怀念。
 
-### 11. 风的律动
-
-<figure class="section-illustration" data-illustration="gem-11-rhythm-of-wind">
-  <img src="assets/images/_generated/illustrations/literary-gems/11-rhythm-of-wind.webp" alt="佛山夏夜街头两个年轻人迎风聊天" loading="lazy" decoding="async" width="960" height="640">
-</figure>
-
-
-> **在夏夜的街头，两个大学生感受着风的律动，思绪飞上星空，无话不谈，充分地释放着备课带来的压力。**
->
-> —— [我在佛山做家教](articles/合集-11-我在佛山做家教/index.md)
-
-**点评：** 备课的现实压力与飞上星空的思绪形成张力，夜风让两个疲惫年轻人的短暂自由有了节奏。
-
-### 12. 青春小城堡
+### 10. 青春小城堡
 
 <figure class="section-illustration" data-illustration="gem-12-memory-castle">
   <img src="assets/images/_generated/illustrations/literary-gems/12-memory-castle.webp" alt="办公桌上由快乐记忆筑成的微光城堡" loading="lazy" decoding="async" width="960" height="640">
@@ -166,9 +140,9 @@
 >
 > —— [我在阿里做实习（推荐算法版）](articles/合集-14-我在阿里做实习（推荐算法版）/index.md)
 
-**点评：** 快乐不是覆盖悲伤，而是重新“填入”；城堡意象让一段实习成为可以进入、也可以守护的记忆空间。
+**点评：** “重新填入”没有假装旧伤已经消失，而是让新记忆与悲伤共存。城堡比喻稍满，但在整段实习的陪伴与玩乐之后，仍完成了有效收束。
 
-### 13. 融入血液的四季
+### 11. 融入血液的四季
 
 <figure class="section-illustration" data-illustration="gem-13-four-seasons-in-blood">
   <img src="assets/images/_generated/illustrations/literary-gems/13-four-seasons-in-blood.webp" alt="火烧云蝉鸣初雪暴雨交织成生命四季" loading="lazy" decoding="async" width="960" height="640">
@@ -179,9 +153,9 @@
 >
 > —— [阿里奇妙之旅](articles/散篇-04-阿里奇妙之旅/index.md)
 
-**点评：** 火烧云、蝉鸣、初雪和暴雨组成四季蒙太奇，把职场年份从履历重新还原成身体经历。
+**点评：** 四季没有按年月报到，而以光、声音和天气留在身体里。由外部风景落到“血液”，把离职回顾从履历变回真正生活过的时间。
 
-### 14. 我也曾经22岁
+### 12. 我也曾经22岁
 
 <figure class="section-illustration" data-illustration="gem-14-once-twenty-two">
   <img src="assets/images/_generated/illustrations/literary-gems/14-once-twenty-two.webp" alt="疲惫成年人影子里奔跑着二十二岁的自己" loading="lazy" decoding="async" width="960" height="640">
@@ -192,9 +166,9 @@
 >
 > —— [我在广州做游戏](articles/合集-13-我在广州做游戏/index.md)
 
-**点评：** 自嘲在末句突然下沉。“也曾经”把并不遥远的二十二岁写成失去的年代，轻微而准确地刺中成年感。
+**点评：** 前面的“年纪大了”原本是日常玩笑，末句忽然认真。“也曾经”把二十二岁写成需要提醒别人的旧身份，语气轻，失落却清楚。
 
-### 15. 燥热晚风
+### 13. 燥热晚风
 
 <figure class="section-illustration" data-illustration="gem-15-softened-evening-wind">
   <img src="assets/images/_generated/illustrations/literary-gems/15-softened-evening-wind.webp" alt="北京燥热街道上变得轻柔的晚风" loading="lazy" decoding="async" width="960" height="640">
@@ -205,7 +179,23 @@
 >
 > —— [我在北京大厂实习](articles/合集-19-我在北京大厂实习/index.md)
 
-**点评：** 同一阵风因人的处境改变质地，以触觉写出一份工作如何短暂地改变生活感受。
+**点评：** 工作处境改变了同一阵晚风的感受。只用“燥热／轻柔”的触觉差别，就说明生活质量如何进入身体，无须另外赞美一家公司。
+
+### 14. 控制风的大小
+
+> **骑车出门跟步行最大的不同就是，骑车可以控制风的大小。**
+>
+> —— [我在西班牙骑自行车](articles/合集-20-我在西班牙骑自行车/index.md)
+
+**点评：** 速度使风成为身体能主动调节的感受。这句从骑行动作中生长出的发现，比对远方的笼统赞美更鲜明，也保留了作者的新奇。
+
+### 15. 不带背景的骑行
+
+> **回去的路成了不带背景的单纯骑行。**
+>
+> —— [我在西班牙骑自行车](articles/合集-20-我在西班牙骑自行车/index.md)
+
+**点评：** 回程体力下降，换到道路另一侧又难再看见来时风景，骑行逐渐只剩下动作本身。“不带背景”把去程的新鲜与返程的单调压进一句话，疲惫因而具有画面。
 
 ### 16. 地中海边的梦
 
@@ -218,16 +208,16 @@
 >
 > —— [我在西班牙骑自行车](articles/合集-20-我在西班牙骑自行车/index.md)
 
-**点评：** 理智拒绝重来，身体却继续怀念；代价与迷恋同时存在，使旅行没有被美化成单薄的远方。
+**点评：** 不想重来与仍然怀念同时成立。去返程和身体代价为这种矛盾提供了依据，结尾因此没有把旅行简化为值得或不值得。
 
 ---
 
-## 🔥 生存、失去与命运岔路
+## 🌱 生命与人生选择
 
-### 17. 没有长大的妹妹
+### 17. 未曾谋面的女孩
 
 <figure class="section-illustration" data-illustration="gem-17-sister-who-never-grew">
-  <img src="assets/images/_generated/illustrations/literary-gems/17-sister-who-never-grew.webp" alt="广东早茶桌上为未长大女孩留下的空位" loading="lazy" decoding="async" width="960" height="640">
+  <img src="assets/images/_generated/illustrations/literary-gems/17-sister-who-never-grew.webp" alt="广东早茶桌上为逝去女孩设想的普通生活留下空位" loading="lazy" decoding="async" width="960" height="640">
 </figure>
 
 
@@ -235,7 +225,7 @@
 >
 > —— [我在珠海上大学（忽然之间）](articles/合集-09-我在珠海上大学（忽然之间）/index.md)
 
-**点评：** 不写死亡本身，只替逝者设想喝早茶的普通人生；越寻常的愿景，越显出未能长大的残酷。
+**点评：** 这里的“她”是校园悲剧中作者未曾谋面的女孩，并非妹妹。工作与早茶越寻常，未能发生的人生越令人遗憾；点评只谈这一设想的叙事作用，不确认文中转述的事件原因。
 
 ### 18. 水沟里的孩子
 
@@ -248,22 +238,9 @@
 >
 > —— [从张雪峰老师的死亡所想到的](articles/散篇-13-从张雪峰老师的死亡所想到的/index.md)
 
-**点评：** 视角从挣扎的孩子突然拉远，“没有人知道”让一次险情显出生命无人见证时的脆弱与孤独。
+**点评：** 视角从孩子的当时处境退到无人注意的角落。句子真正写出的是一次重要经历对外界几乎不可见的尺度差。
 
-### 19. 死后的工作消息
-
-<figure class="section-illustration" data-illustration="gem-19-messages-after-death">
-  <img src="assets/images/_generated/illustrations/literary-gems/19-messages-after-death.webp" alt="深夜空工位上不断亮起工作提醒的手机" loading="lazy" decoding="async" width="960" height="640">
-</figure>
-
-
-> **小伙子好不容易来到了一线城市，获得了一份足以养家糊口的工作，却由于过度劳累，猝死在了岗位上，死后还有工作消息不断传到他手机上。**
->
-> —— [从张雪峰老师的死亡所想到的](articles/散篇-13-从张雪峰老师的死亡所想到的/index.md)
-
-**点评：** 手机仍在接收消息，人却已经不在；一个冷静的日常细节，使劳动系统的惯性显得格外冷酷。
-
-### 20. 年纪轻轻
+### 19. 年纪轻轻
 
 <figure class="section-illustration" data-illustration="gem-20-only-death-is-young">
   <img src="assets/images/_generated/illustrations/literary-gems/20-only-death-is-young.webp" alt="人生刻度在中途骤然中断的概念画面" loading="lazy" decoding="async" width="960" height="640">
@@ -274,9 +251,9 @@
 >
 > —— [从张雪峰老师的死亡所想到的](articles/散篇-13-从张雪峰老师的死亡所想到的/index.md)
 
-**点评：** 两套年龄标准在死亡处相撞，反讽短促而锋利，揭开社会对人的使用期限与对生命的迟来惋惜。
+**点评：** 同一个年龄在两种语境里得到相反判词，反讽因此成立。“不论做什么”是情绪性的概括，文学点评肯定其句式张力，不把它当作统计结论。
 
-### 21. 生物之先
+### 20. 生物之先
 
 <figure class="section-illustration" data-illustration="gem-21-biological-first">
   <img src="assets/images/_generated/illustrations/literary-gems/21-biological-first.webp" alt="灰色工位中仍有温暖生命脉搏的人" loading="lazy" decoding="async" width="960" height="640">
@@ -287,22 +264,9 @@
 >
 > —— [从张雪峰老师的死亡所想到的](articles/散篇-13-从张雪峰老师的死亡所想到的/index.md)
 
-**点评：** 它将常被绩效和身份颠倒的价值次序重新扶正，朴素句式因此具有明确的思想力度。
+**点评：** 先后顺序就是价值判断。前文关于身体与工作关系的追问给了它具体对象，让简短主张具备叙事支撑。
 
-### 22. 平静午后的岔路
-
-<figure class="section-illustration" data-illustration="gem-22-quiet-crossroad">
-  <img src="assets/images/_generated/illustrations/literary-gems/22-quiet-crossroad.webp" alt="平静午后里通向不同人生的十字路口" loading="lazy" decoding="async" width="960" height="640">
-</figure>
-
-
-> **很多年以后，当我们回看过往，经常会后知后觉，原来那个平静的午后发生的事情，居然对自己生命轨迹的影响如此之大。**
->
-> —— [我的第二次考公经历](articles/合集-18-我的第二次考公经历/index.md)
-
-**点评：** “平静”与“如此之大”构成命运的反差：真正改变人生的时刻，发生时往往没有戏剧性的声响。
-
-### 23. 决定之后
+### 21. 决定之后
 
 <figure class="section-illustration" data-illustration="gem-23-after-decision">
   <img src="assets/images/_generated/illustrations/literary-gems/23-after-decision.webp" alt="做出重大决定后在床上沉沉睡去的人" loading="lazy" decoding="async" width="960" height="640">
@@ -313,9 +277,9 @@
 >
 > —— [我的第二次考公经历](articles/合集-18-我的第二次考公经历/index.md)
 
-**点评：** 重大抉择后不是宣言，而是立即睡去；身体替人物说出了长久拉扯终于结束时的耗尽。
+**点评：** 选择之后没有胜利宣言，紧接的是耗尽后睡去。必须连同退票场景阅读，才能看见一句平静告知背后已经消耗了多少力气；也不能由此推断参加面试就必然录用。
 
-### 24. 有时效性的青春
+### 22. 有时效性的青春
 
 <figure class="section-illustration" data-illustration="gem-24-youth-expiry">
   <img src="assets/images/_generated/illustrations/literary-gems/24-youth-expiry.webp" alt="北京出租屋里被时间标记的青春静物" loading="lazy" decoding="async" width="960" height="640">
@@ -326,13 +290,21 @@
 >
 > —— [我在北京住合租屋](articles/合集-16-我在北京住合租屋/index.md)
 
-**点评：** “时效性”这个冷静词落在青春上，写出有些生活并非以后补偿即可，选择因此具有不可逆的重量。
+**点评：** “时效性”原是冷静的功能词，放在青春感受上却产生痛感。它解释了作者为何不愿无限推迟更好的居住与生活，也使合租争执有了时间维度。
 
 ---
 
 ## 🏙️ 成年生活与精神空间
 
-### 25. 小型避难所
+### 23. 知道自己会离开的看客
+
+> **而我就像一个看客，虽然身在局中，但我知道自己两个月后就要离开这里。**
+>
+> —— [我在广州做游戏](articles/合集-13-我在广州做游戏/index.md)
+
+**点评：** 作者承认自己与眼前长期通勤的打工人处境不同：他知道两个月后就会离开。短暂体验者的退路被点明，使这一段不只是共同受累的故事，也显出观察者的有限立场。
+
+### 24. 小型避难所
 
 <figure class="section-illustration" data-illustration="gem-25-small-shelter">
   <img src="assets/images/_generated/illustrations/literary-gems/25-small-shelter.webp" alt="冷色办公室中被杯子和私人物件筑起的温暖工位" loading="lazy" decoding="async" width="960" height="640">
@@ -343,9 +315,9 @@
 >
 > —— [我舍不得的不是公司，是我的工位](articles/散篇-16-我舍不得的不是公司，是我的工位/index.md)
 
-**点评：** “筑起来”让普通工位积累了时间和私人劳动；公司可以离开，亲手安放生活痕迹的空间却难以割舍。
+**点评：** “一点点筑起来”强调亲手安放的过程。前面具体列出的杯子、书包与衣服支撑了比喻，使避难所不只是给工位换个好听名字。
 
-### 26. 云还是在那里
+### 25. 云还是在那里
 
 <figure class="section-illustration" data-illustration="gem-26-cloud-remains">
   <img src="assets/images/_generated/illustrations/literary-gems/26-cloud-remains.webp" alt="办公室玻璃外依旧宏大的云" loading="lazy" decoding="async" width="960" height="640">
@@ -354,11 +326,13 @@
 
 > **云还是在那里。**
 >
+> **只是我已经很久没有相信，自己真的能变成它了。**
+>
 > —— [我舍不得的不是公司，是我的工位](articles/散篇-16-我舍不得的不是公司，是我的工位/index.md)
 
-**点评：** 天空未变，观看它的人却已失去从容与想象；短句以近乎空白的方式承接了整篇的告别。
+**点评：** 单独一句“云还是在那里”太容易空泛；与下一句连读，不变的天空和改变的自我才构成完整落差，也回应开头想变成云的愿望。
 
-### 27. 古法编程
+### 26. 古法编程
 
 <figure class="section-illustration" data-illustration="gem-27-ancient-programming">
   <img src="assets/images/_generated/illustrations/literary-gems/27-ancient-programming.webp" alt="蒙尘旧显示器里的手写代码正在消散" loading="lazy" decoding="async" width="960" height="640">
@@ -369,9 +343,9 @@
 >
 > —— [vibe coding带来的虚无感](articles/散篇-14-vibe%20coding带来的虚无感/index.md)
 
-**点评：** “古法”尚有手艺的尊严，“垃圾堆”却骤然将它贬为废物；落差写出了技术代际替换的刺痛。
+**点评：** “古法”让多年练成的技能骤然显老，后半句又将这点怀旧意味打断。语言夸张，但准确保存了作者对能力贬值的即时感受。
 
-### 28. 赤手空拳
+### 27. 赤手空拳
 
 <figure class="section-illustration" data-illustration="gem-28-not-empty-handed">
   <img src="assets/images/_generated/illustrations/literary-gems/28-not-empty-handed.webp" alt="会议室里被透明预案护甲包围的人" loading="lazy" decoding="async" width="960" height="640">
@@ -382,52 +356,13 @@
 >
 > —— [意念“挥刀”](articles/散篇-17-意念“挥刀”/index.md)
 
-**点评：** 心理预演被写成身体防具，既解释了不断推演的实用愿望，也泄露了对失控的深层不安。
+**点评：** “未必”承认现实的不确定，“总觉得”暴露心理上的需要。它为全文热闹的预演提供解释，同时留下作者是否真的能控制局面的疑问。
 
 ---
 
-## 🗡️ 虚构中的人、制度与江湖
+## 📖 虚构中的物件与关系
 
-### 29. 九泉把酒
-
-<figure class="section-illustration" data-illustration="gem-29-drink-in-afterlife">
-  <img src="assets/images/_generated/illustrations/literary-gems/29-drink-in-afterlife.webp" alt="雪地孤坟旁两位江湖人把酒诀别" loading="lazy" decoding="async" width="960" height="640">
-</figure>
-
-
-> **今日一别，他日九泉之下，再当寻兄把酒言欢。**
->
-> —— [剿贼（一）](articles/散篇-05-剿贼（一）/index.md)
-
-**点评：** 它把死亡改写为下一次相聚，既有诀别的沉重，也有江湖人物面对必死之局的从容。
-
-### 30. 无处核实的消失
-
-<figure class="section-illustration" data-illustration="gem-30-unverified-disappearance">
-  <img src="assets/images/_generated/illustrations/literary-gems/30-unverified-disappearance.webp" alt="黄昏雪地里逐渐被风抹平的脚印" loading="lazy" decoding="async" width="960" height="640">
-</figure>
-
-
-> **我到现在终于没有看见——大约元亨利的确死了。**
->
-> —— [元亨利](articles/散篇-06-元亨利/index.md)
-
-**点评：** “大约”与“的确”彼此抵牾，写出叙述者迟钝的猜测，也写出一个边缘人的消失轻得无人核实。
-
-### 31. 泪水两行
-
-<figure class="section-illustration" data-illustration="gem-31-two-lines-of-tears">
-  <img src="assets/images/_generated/illustrations/literary-gems/31-two-lines-of-tears.webp" alt="边境哨卡前无声回头落泪的男人" loading="lazy" decoding="async" width="960" height="640">
-</figure>
-
-
-> **那个男人突然站住了，回过头来已是泪水两行。**
->
-> —— [请出示证件](articles/散篇-12-请出示证件/index.md)
-
-**点评：** 动作在雷区中骤停，回头的瞬间成为悲剧定格；爆炸尚未发生，人物的诀别已经完成。
-
-### 32. 银色怀表
+### 28. 银色怀表
 
 <figure class="section-illustration" data-illustration="gem-32-silver-watch">
   <img src="assets/images/_generated/illustrations/literary-gems/32-silver-watch.webp" alt="粗糙手掌中嵌着家庭照片的磨损银怀表" loading="lazy" decoding="async" width="960" height="640">
@@ -438,12 +373,12 @@
 >
 > —— [请出示证件](articles/散篇-12-请出示证件/index.md)
 
-**点评：** 制度眼中的申请人被一件遗物还原成丈夫和父亲；冷硬金属包住家庭照片，物件本身便形成冲突。
+**点评：** 抽象身份被缩成一张具体家庭照片，怀表因此承担识别关系的叙事作用。句子本身朴素，入选理由在物件怎样改变读者对人物的理解。
 
 ---
 
 <p style="text-align: center; color: #999; margin-top: 60px; font-size: 14px;">
-— 甄选自《旧日之书》38 篇文章 · 共 32 句 —
+— 甄选自《旧日之书》38 篇文章 · 共 28 句 —
 </p>
 
-<!-- 此页面基于 38 篇原文及 canonical review.md 全量复评更新于 2026-07-11 -->
+<!-- 依据归档原文与本轮 review.md 复核；2026-09-06。 -->

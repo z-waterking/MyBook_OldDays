@@ -5,7 +5,7 @@
 <div class="article-cover-group">
 <h2>合集 · 少年时代 <small>5 篇</small></h2>
 <div class="article-cover-list">
-<div class="article-cover-row catalog-group-youth catalog-score-7-2">
+<div class="article-cover-row catalog-group-youth catalog-score-7-7">
 <a class="article-cover-thumb" href="#/articles/%E5%90%88%E9%9B%86-01-%E6%88%91%E5%9C%A8%E6%B2%B3%E6%B4%A5%E4%B8%8A%E5%B9%BC%E5%84%BF%E5%9B%AD/index.md"><img src="assets/images/_generated/catalog-covers/%E5%90%88%E9%9B%86-01-%E6%88%91%E5%9C%A8%E6%B2%B3%E6%B4%A5%E4%B8%8A%E5%B9%BC%E5%84%BF%E5%9B%AD.webp" alt="我在河津上幼儿园 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -115,7 +115,7 @@
 <span class="article-cover-excerpt">如果问我，大学期间最深的记忆是什么，我的回答应该是，佳人相伴，走遍天涯。我们去了凤凰古城，成都，香港，澳门，厦门，桂林，上海，苏州，杭州，武汉等地方，几乎把南方的省份给转遍了。 有了女友之后，我干涸许久的心田第一次得到了雨露的滋润。开学时我偷偷买了一套爱心蜡烛，可以摆出一箭穿心的造型。快递发到学校，...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-college catalog-score-8-7">
+<div class="article-cover-row catalog-group-college catalog-score-8-2">
 <a class="article-cover-thumb" href="#/articles/%E5%90%88%E9%9B%86-09-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B4%EF%BC%89/index.md"><img src="assets/images/_generated/catalog-covers/%E5%90%88%E9%9B%86-09-%E6%88%91%E5%9C%A8%E7%8F%A0%E6%B5%B7%E4%B8%8A%E5%A4%A7%E5%AD%A6%EF%BC%88%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B4%EF%BC%89.webp" alt="我在珠海上大学（忽然之间） 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -147,7 +147,7 @@
 <div class="article-cover-group">
 <h2>合集 · 工作与考试 <small>10 篇</small></h2>
 <div class="article-cover-list">
-<div class="article-cover-row catalog-group-work catalog-score-8-5">
+<div class="article-cover-row catalog-group-work catalog-score-8-4">
 <a class="article-cover-thumb" href="#/articles/%E5%90%88%E9%9B%86-11-%E6%88%91%E5%9C%A8%E4%BD%9B%E5%B1%B1%E5%81%9A%E5%AE%B6%E6%95%99/index.md"><img src="assets/images/_generated/catalog-covers/%E5%90%88%E9%9B%86-11-%E6%88%91%E5%9C%A8%E4%BD%9B%E5%B1%B1%E5%81%9A%E5%AE%B6%E6%95%99.webp" alt="我在佛山做家教 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -160,7 +160,7 @@
 <span class="article-cover-excerpt">事情还要从我本科毕业时候说起。那是2016年的夏天，刚参加完毕业典礼的我，还没有准备好成为一名合格的社会人。当时也决定了继续攻读研究生，因此收拾完宿舍后，提着袋子就直接回山西老家了。为了庆祝我顺利毕业，我爸妈提议带家里的几个孩子去一趟华山，像我小学毕业时那样。在那个夏夜，我们六个人开着车，赶在半夜1...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-work catalog-score-8-2">
+<div class="article-cover-row catalog-group-work catalog-score-8-1">
 <a class="article-cover-thumb" href="#/articles/%E5%90%88%E9%9B%86-12-%E6%88%91%E5%9C%A8%E6%B2%B3%E6%B4%A5%E8%80%83%E7%A0%94%E7%A9%B6%E7%94%9F/index.md"><img src="assets/images/_generated/catalog-covers/%E5%90%88%E9%9B%86-12-%E6%88%91%E5%9C%A8%E6%B2%B3%E6%B4%A5%E8%80%83%E7%A0%94%E7%A9%B6%E7%94%9F.webp" alt="我在河津考研究生 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -173,7 +173,7 @@
 <span class="article-cover-excerpt">每当我坐在软子的大办公室里跟AI斗智斗勇的时候，我准会想起，十年前我在河津的家里备考研究生的那段时光。 那是在佛山做家教和去广州做游戏之前的一段时间，我在家里备考北理工的计算机硕士。最后结果挺好，勉强上岸，又为学生生涯续了三年费。一般情况下，毕业后考研究生的人有两种选择，一种是租住在学校附近，住本科...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-work catalog-score-8-7">
+<div class="article-cover-row catalog-group-work catalog-score-8-5">
 <a class="article-cover-thumb" href="#/articles/%E5%90%88%E9%9B%86-13-%E6%88%91%E5%9C%A8%E5%B9%BF%E5%B7%9E%E5%81%9A%E6%B8%B8%E6%88%8F/index.md"><img src="assets/images/_generated/catalog-covers/%E5%90%88%E9%9B%86-13-%E6%88%91%E5%9C%A8%E5%B9%BF%E5%B7%9E%E5%81%9A%E6%B8%B8%E6%88%8F.webp" alt="我在广州做游戏 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -186,7 +186,7 @@
 <span class="article-cover-excerpt">现在我经常会以“年纪大了”为开头，例如睡不着觉的时候会说：年纪大的人觉就是少了。可是我也曾经22岁过。 那是17年的3月，我在北京参加了研究生的复试，并且知道了成绩以及拟录取这一结果，心理上的负担顿时就消散了。我是一个闲不住的人，既然9月份之后的事情确定了，那么3月到9月的这一段空白，总需要一些事情...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-work catalog-score-7-8">
+<div class="article-cover-row catalog-group-work catalog-score-8-0">
 <a class="article-cover-thumb" href="#/articles/%E5%90%88%E9%9B%86-14-%E6%88%91%E5%9C%A8%E9%98%BF%E9%87%8C%E5%81%9A%E5%AE%9E%E4%B9%A0%EF%BC%88%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E7%89%88%EF%BC%89/index.md"><img src="assets/images/_generated/catalog-covers/%E5%90%88%E9%9B%86-14-%E6%88%91%E5%9C%A8%E9%98%BF%E9%87%8C%E5%81%9A%E5%AE%9E%E4%B9%A0%EF%BC%88%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E7%89%88%EF%BC%89.webp" alt="我在阿里做实习（推荐算法版） 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -199,7 +199,7 @@
 <span class="article-cover-excerpt">我的第一份正式的实习，是19年去了杭州阿里总部，推荐算法岗位。 那时我只有25岁，虽然在硕士期间被学术论文摧残，但总的来说还处于意气风发的年纪。脸庞的轮廓还不像现在这样圆润，当时侧脸线条像是刀刻出来的，给人一种英气勃发的感觉。 杭州自古以来便是繁华之地，富饶之乡。南宋时更是有柳永的《望海潮》词为证：...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-work catalog-score-7-7">
+<div class="article-cover-row catalog-group-work catalog-score-7-5">
 <a class="article-cover-thumb" href="#/articles/%E5%90%88%E9%9B%86-15-%E6%88%91%E5%9C%A8%E9%97%B2%E9%B1%BC%E5%8D%96%E4%BA%8C%E6%89%8B/index.md"><img src="assets/images/_generated/catalog-covers/%E5%90%88%E9%9B%86-15-%E6%88%91%E5%9C%A8%E9%97%B2%E9%B1%BC%E5%8D%96%E4%BA%8C%E6%89%8B.webp" alt="我在闲鱼卖二手 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -212,7 +212,7 @@
 <span class="article-cover-excerpt">硕士之前，我几乎没有用过闲鱼。只知道它是一个买卖二手物品的APP。疫情期间，听说switch的健身环大冒险在闲鱼上可以翻倍卖，那时候才开始注意到这个APP。直到我自己的switch卡带《异度神剑》玩腻后，想出掉游戏卡换其他的游戏，才第一次使用它。 这么些年来，我在闲鱼上已经买卖出了将近3万的二手物品...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-work catalog-score-7-9">
+<div class="article-cover-row catalog-group-work catalog-score-7-8">
 <a class="article-cover-thumb" href="#/articles/%E5%90%88%E9%9B%86-16-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E4%BD%8F%E5%90%88%E7%A7%9F%E5%B1%8B/index.md"><img src="assets/images/_generated/catalog-covers/%E5%90%88%E9%9B%86-16-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E4%BD%8F%E5%90%88%E7%A7%9F%E5%B1%8B.webp" alt="我在北京住合租屋 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -225,7 +225,7 @@
 <span class="article-cover-excerpt">写这篇文，是希望回顾下在北京租房住的时候发生的有趣故事。后半段是一次非常难忘的经历，我一个人与其他三户最多共8位住客爆发了极其激烈的冲突，最终无奈搬走，也反映了几分北漂的无奈吧。 又到一年春天了。冬日里的萧条，已经被吐绿的新芽所取代。那些暗淡无光的岁月，已经成了生命中的养分。我相信，所有的黑暗终将过...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-work catalog-score-8-6">
+<div class="article-cover-row catalog-group-work catalog-score-8-7">
 <a class="article-cover-thumb" href="#/articles/%E5%90%88%E9%9B%86-17-%E6%88%91%E7%9A%84%E5%88%9D%E6%AC%A1%E8%80%83%E5%85%AC%E7%BB%8F%E5%8E%86/index.md"><img src="assets/images/_generated/catalog-covers/%E5%90%88%E9%9B%86-17-%E6%88%91%E7%9A%84%E5%88%9D%E6%AC%A1%E8%80%83%E5%85%AC%E7%BB%8F%E5%8E%86.webp" alt="我的初次考公经历 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -238,7 +238,7 @@
 <span class="article-cover-excerpt">2022年7月，我那时还在杭州阿里打黑工。 之所以萌生考公的念头，是源自于那段时间国内互联网发起的无差别裁员，我们底层打工人像是陷入了黑色恐怖，也许第二天早上刚起床就被告知“门禁权限收回，N+1补偿，你可以走了。记得把电脑还回去”。 新员工群里每天都有人统计人数变化，大多数时候人数都是下降的。意味着...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-work catalog-score-8-5">
+<div class="article-cover-row catalog-group-work catalog-score-8-4">
 <a class="article-cover-thumb" href="#/articles/%E5%90%88%E9%9B%86-18-%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%80%83%E5%85%AC%E7%BB%8F%E5%8E%86/index.md"><img src="assets/images/_generated/catalog-covers/%E5%90%88%E9%9B%86-18-%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%80%83%E5%85%AC%E7%BB%8F%E5%8E%86.webp" alt="我的第二次考公经历 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -251,7 +251,7 @@
 <span class="article-cover-excerpt">我考公一共考了四次。两次国考，两次省考。其中有一次行测未能及格，剩下三次都考了第一或者第二。成绩斐然。 第一次考公的经历写在这里。我的初次考公经历 时隔一年后，我进行了第二次的考公。虽然第一次已经证明了俺具备不错的行测和申论能力，但是考公毕竟是个马虎不得的事情。 第二次我决定裸考，从而进一步证明我是...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-work catalog-score-8-1">
+<div class="article-cover-row catalog-group-work catalog-score-8-0">
 <a class="article-cover-thumb" href="#/articles/%E5%90%88%E9%9B%86-19-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%8E%82%E5%AE%9E%E4%B9%A0/index.md"><img src="assets/images/_generated/catalog-covers/%E5%90%88%E9%9B%86-19-%E6%88%91%E5%9C%A8%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%8E%82%E5%AE%9E%E4%B9%A0.webp" alt="我在北京大厂实习 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -264,7 +264,7 @@
 <span class="article-cover-excerpt">硕士期间，我有几次实习经历。实习的旅程很长，有的是自己面试得来的，有的是通过做项目得来的。经历过亚马逊AWS，百度，字节，以及阿里。其中阿里的经历写在我在阿里做实习（推荐算法版）。 最初是从这里开始。19年跟爸妈姐姐一起去哈尔滨，报了个旅行团去雪乡，期间经过一片雪地摩托营地，团里有人说自己年纪大了，...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-work catalog-score-8-4">
+<div class="article-cover-row catalog-group-work catalog-score-8-5">
 <a class="article-cover-thumb" href="#/articles/%E5%90%88%E9%9B%86-20-%E6%88%91%E5%9C%A8%E8%A5%BF%E7%8F%AD%E7%89%99%E9%AA%91%E8%87%AA%E8%A1%8C%E8%BD%A6/index.md"><img src="assets/images/_generated/catalog-covers/%E5%90%88%E9%9B%86-20-%E6%88%91%E5%9C%A8%E8%A5%BF%E7%8F%AD%E7%89%99%E9%AA%91%E8%87%AA%E8%A1%8C%E8%BD%A6.webp" alt="我在西班牙骑自行车 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -296,7 +296,7 @@
 <span class="article-cover-excerpt">最近我听歌时，更加倾向于欣赏一些“经典老歌”，像是《相约98》、《千千阙歌》、《偏爱》、《出山》等。 我感到自己灵魂经过这十多年的熏陶，早已习惯了老歌的旋律。 面对新歌，显得无所适从，仿佛听新歌便是离开了自己的舒适区，于是每当随机到未曾听过的歌曲，我便急不可耐地切换到下一首。 我曾一度怀疑，这是我从...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-essay catalog-score-7-3">
+<div class="article-cover-row catalog-group-essay catalog-score-7-4">
 <a class="article-cover-thumb" href="#/articles/%E6%95%A3%E7%AF%87-02-%E5%9C%A3%E8%AF%9E%E5%89%8D%E5%A4%95/index.md"><img src="assets/images/_generated/catalog-covers/%E6%95%A3%E7%AF%87-02-%E5%9C%A3%E8%AF%9E%E5%89%8D%E5%A4%95.webp" alt="圣诞前夕 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -348,7 +348,7 @@
 <span class="article-cover-excerpt">前言 不如意事常八九，可与语人无二三。2022年开年便想将这两年的感悟以小说的形式记下。 遭逢变故，搁置了一段时间。重启后便希望一鼓作气做完。 世人皆知，一将功成万骨枯。自古以来，能走到大众眼前的，背后不知遭了多少罪，受了多少苦。 即便如此，受苦遭罪也实在不足以将人送入史册。更多的是略一遭逢变故，就...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-essay catalog-score-7-1">
+<div class="article-cover-row catalog-group-essay catalog-score-7-2">
 <a class="article-cover-thumb" href="#/articles/%E6%95%A3%E7%AF%87-06-%E5%85%83%E4%BA%A8%E5%88%A9/index.md"><img src="assets/images/_generated/catalog-covers/%E6%95%A3%E7%AF%87-06-%E5%85%83%E4%BA%A8%E5%88%A9.webp" alt="元亨利 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -361,7 +361,7 @@
 <span class="article-cover-excerpt">京城中关村金拱门的格局，是和别处不同的：别处都是宽堂大厅，而这里却是当街曲尺形的一个大柜台，柜里面预备着冰块，可以随时端出冰镇饮料。上班的人，中午傍晚下了班，每每花五块大洋，买一个两块的香辣鸡腿堡，端一杯外面卖一个大洋的可乐——这是三年前的事，现在每份要涨到十块大洋，——靠柜台外站着，冰冰地喝了休息...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-essay catalog-score-5-9">
+<div class="article-cover-row catalog-group-essay catalog-score-7-1">
 <a class="article-cover-thumb" href="#/articles/%E6%95%A3%E7%AF%87-07-%E9%9D%A2%E8%AF%95%E7%9A%84%E8%89%BA%E6%9C%AF/index.md"><img src="assets/images/_generated/catalog-covers/%E6%95%A3%E7%AF%87-07-%E9%9D%A2%E8%AF%95%E7%9A%84%E8%89%BA%E6%9C%AF.webp" alt="面试的艺术 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -374,7 +374,7 @@
 <span class="article-cover-excerpt">请欣赏</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-essay catalog-score-6-2">
+<div class="article-cover-row catalog-group-essay catalog-score-6-6">
 <a class="article-cover-thumb" href="#/articles/%E6%95%A3%E7%AF%87-08-412%E4%B9%8B%E8%B6%A3%E8%A8%80%E8%B6%A3%E9%97%BB/index.md"><img src="assets/images/_generated/catalog-covers/%E6%95%A3%E7%AF%87-08-412%E4%B9%8B%E8%B6%A3%E8%A8%80%E8%B6%A3%E9%97%BB.webp" alt="412之趣言趣闻 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -387,7 +387,7 @@
 <span class="article-cover-excerpt">0 1 一凡：站的高尿的远 孩儿们,吃橘子 吃火锅就吃火锅,可不许掀桌子 去摸摸唱 0 2 大飞哥：洗车店说小飞哥吐过的地方有打蜡效果 0 3 思凡 :好纠结，不想去阿里，怕他坑我 我可以周一二去亚马逊,周三去百度,其他时间去头条 国家安全中心可难进了，博士到那都是插U盘的 0 4 荣荣：卡卡师兄，...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-essay catalog-score-7-1">
+<div class="article-cover-row catalog-group-essay catalog-score-7-3">
 <a class="article-cover-thumb" href="#/articles/%E6%95%A3%E7%AF%87-09-%E4%BD%9C%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%9C%A8%E9%98%BF%E9%87%8C%E5%AE%9E%E4%B9%A0%E7%9A%84%E8%90%8C%E6%96%B0%EF%BC%8C%E6%98%AF%E4%B8%80%E7%A7%8D%E6%80%8E%E6%A0%B7%E7%9A%84%E4%BD%93%E9%AA%8C%EF%BC%9F/index.md"><img src="assets/images/_generated/catalog-covers/%E6%95%A3%E7%AF%87-09-%E4%BD%9C%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%9C%A8%E9%98%BF%E9%87%8C%E5%AE%9E%E4%B9%A0%E7%9A%84%E8%90%8C%E6%96%B0%EF%BC%8C%E6%98%AF%E4%B8%80%E7%A7%8D%E6%80%8E%E6%A0%B7%E7%9A%84%E4%BD%93%E9%AA%8C%EF%BC%9F.webp" alt="作为一个在阿里实习的萌新，是一种怎样的体验？ 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -400,7 +400,7 @@
 <span class="article-cover-excerpt">当我们在谈实习，我们在谈些什么 大家好，我是一只实习萌新，在阿里巴巴的AE技术部算法团队“摸爬滚打”了两个多月，回想这两个月的生活，真的是慌张有之，从容有之，偶尔大彻大悟之…… 第一天入职，懵懵懂懂的我就赶上组内的晨会，师兄们在介绍自己手头工作的时候，各种英文单词往外冒，PV, UV, CPM, R...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-essay catalog-score-6-8">
+<div class="article-cover-row catalog-group-essay catalog-score-7-8">
 <a class="article-cover-thumb" href="#/articles/%E6%95%A3%E7%AF%87-10-%E8%AF%BB%E7%A0%94%E8%AF%BB%E5%BA%9F%E4%BA%86%E6%98%AF%E4%BB%80%E4%B9%88%E4%BD%93%E9%AA%8C/index.md"><img src="assets/images/_generated/catalog-covers/%E6%95%A3%E7%AF%87-10-%E8%AF%BB%E7%A0%94%E8%AF%BB%E5%BA%9F%E4%BA%86%E6%98%AF%E4%BB%80%E4%B9%88%E4%BD%93%E9%AA%8C.webp" alt="读研读废了是什么体验 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -413,7 +413,7 @@
 <span class="article-cover-excerpt">深刻理解博硕士的毕业要求与毕业难度。 熟练使用微信、微博、QQ、支付宝、淘宝、京东、高德地图等各大APP。 熟练购物、退换货、抢优惠券等流程。 熟练论文查找、编纂、相关软件使用等。 在刺激战场、王者荣耀等竞技类活动中取得不错的名次。 打字与思维切换速度飞快，能同时以不同的身份在微博、微信、豆瓣等社交...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-essay catalog-score-6-4">
+<div class="article-cover-row catalog-group-essay catalog-score-7-4">
 <a class="article-cover-thumb" href="#/articles/%E6%95%A3%E7%AF%87-11-%E7%94%B7%E6%9C%8B%E5%8F%8B%E4%B8%8D%E5%9B%9E%E6%B6%88%E6%81%AF%E6%80%8E%E4%B9%88%E5%8A%9E/index.md"><img src="assets/images/_generated/catalog-covers/%E6%95%A3%E7%AF%87-11-%E7%94%B7%E6%9C%8B%E5%8F%8B%E4%B8%8D%E5%9B%9E%E6%B6%88%E6%81%AF%E6%80%8E%E4%B9%88%E5%8A%9E.webp" alt="男朋友不回消息怎么办 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -439,7 +439,7 @@
 <span class="article-cover-excerpt">第01天 “请出示证件。” 时间可真是飞快啊，思绪还停留在上个月的毕业典礼上，校长在毕业典礼上念到我的名字的时候我还在和那些狐朋狗友在操场上偷偷品尝着从医务室偷来的酒精兑水。 要不是小闪这个青梅竹马的邻家姑娘说我生病了替我拿了毕业证，天知道校长大人会不会在台上气的跺脚。 愣过神儿回来，看着面前的护照...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-essay catalog-score-7-8">
+<div class="article-cover-row catalog-group-essay catalog-score-7-5">
 <a class="article-cover-thumb" href="#/articles/%E6%95%A3%E7%AF%87-13-%E4%BB%8E%E5%BC%A0%E9%9B%AA%E5%B3%B0%E8%80%81%E5%B8%88%E7%9A%84%E6%AD%BB%E4%BA%A1%E6%89%80%E6%83%B3%E5%88%B0%E7%9A%84/index.md"><img src="assets/images/_generated/catalog-covers/%E6%95%A3%E7%AF%87-13-%E4%BB%8E%E5%BC%A0%E9%9B%AA%E5%B3%B0%E8%80%81%E5%B8%88%E7%9A%84%E6%AD%BB%E4%BA%A1%E6%89%80%E6%83%B3%E5%88%B0%E7%9A%84.webp" alt="从张雪峰老师的死亡所想到的 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -452,7 +452,7 @@
 <span class="article-cover-excerpt">2026年03月24日下午，微信群里陆续有消息传来，说张雪峰老师的网络账号头像灰了，怕是有什么不测，并且信誓旦旦地发了截图。我一看，果然是灰的，原本以为是谁随手把图片P成了灰度，想造谣一波。没想到愈传愈烈，直至峰学蔚来发布公告，我才得知，原来张雪峰老师真的猝死了。猝死在健身房中。 得知这个消息的第一...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-essay catalog-score-8-0">
+<div class="article-cover-row catalog-group-essay catalog-score-7-8">
 <a class="article-cover-thumb" href="#/articles/%E6%95%A3%E7%AF%87-14-vibe%20coding%E5%B8%A6%E6%9D%A5%E7%9A%84%E8%99%9A%E6%97%A0%E6%84%9F/index.md"><img src="assets/images/_generated/catalog-covers/%E6%95%A3%E7%AF%87-14-vibe%20coding%E5%B8%A6%E6%9D%A5%E7%9A%84%E8%99%9A%E6%97%A0%E6%84%9F.webp" alt="vibe coding带来的虚无感 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -465,7 +465,7 @@
 <span class="article-cover-excerpt">最近vibe coding火热，各行各业的人都参与了进来，三天做个APP等等言论甚嚣尘上，我作为AI工具的骨灰级使用者，脑海里总是浮现出“加入光荣的进化吧”这句台词，同时也有着深深的虚无感。 以前编程还算是一门手艺，我们仿佛是工业革命时期流水线上的工人，现在像是手工纺织被织布机代替一样，我时常感觉到...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-essay catalog-score-7-7">
+<div class="article-cover-row catalog-group-essay catalog-score-7-4">
 <a class="article-cover-thumb" href="#/articles/%E6%95%A3%E7%AF%87-15-%E6%88%91%E5%9C%A8%E9%98%BF%E9%87%8C%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AAleader/index.md"><img src="assets/images/_generated/catalog-covers/%E6%95%A3%E7%AF%87-15-%E6%88%91%E5%9C%A8%E9%98%BF%E9%87%8C%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AAleader.webp" alt="我在阿里的最后一个leader 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -491,7 +491,7 @@
 <span class="article-cover-excerpt">最近脑海中总是浮现两手托腮仰头看天的画面。很小的时候，喜欢火影中的鹿丸，他最喜欢蹲在树荫底下，幻想自己变成一朵云。可最后，最渴望闲散的人，反而成了最忙碌的人。 经常会想起吴谢宇。先不说他的行径有多恶劣，单看他背着案底，购买多张身份证，从福州流窜到河南，辗转上海、深圳，最后在重庆又做培训老师，又做男模...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-essay catalog-score-8-1">
+<div class="article-cover-row catalog-group-essay catalog-score-8-0">
 <a class="article-cover-thumb" href="#/articles/%E6%95%A3%E7%AF%87-17-%E6%84%8F%E5%BF%B5%E2%80%9C%E6%8C%A5%E5%88%80%E2%80%9D/index.md"><img src="assets/images/_generated/catalog-covers/%E6%95%A3%E7%AF%87-17-%E6%84%8F%E5%BF%B5%E2%80%9C%E6%8C%A5%E5%88%80%E2%80%9D.webp" alt="意念“挥刀” 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">
@@ -504,7 +504,7 @@
 <span class="article-cover-excerpt">我的脑海中住着一只兽人加鲁鲁，每天使出无数次凯撒锐爪和弦月弯道；我的脑海中住着一个郭靖，每天挥出无数记亢龙有悔和飞龙在天；我的脑海中住着一个叶凡，每天都要独断万古；我的脑海中住着一个宁缺，每天要斩观主无数次；我的脑海中住着一个保安柯察金，每天要跟冬妮娅分别无数次；我的脑海中住着一个孙少平，每天要跟田...</span>
 </span>
 </div>
-<div class="article-cover-row catalog-group-essay catalog-score-7-9">
+<div class="article-cover-row catalog-group-essay catalog-score-7-7">
 <a class="article-cover-thumb" href="#/articles/%E6%95%A3%E7%AF%87-18-%E4%B8%A7%E5%B0%B8%E8%BA%B2%E9%81%BF%E6%8C%87%E5%8D%97/index.md"><img src="assets/images/_generated/catalog-covers/%E6%95%A3%E7%AF%87-18-%E4%B8%A7%E5%B0%B8%E8%BA%B2%E9%81%BF%E6%8C%87%E5%8D%97.webp" alt="丧尸暴发后，普通人该如何躲避 封面" loading="lazy" decoding="async" width="480" height="320"></a>
 <span class="article-cover-info">
 <span class="article-cover-head">

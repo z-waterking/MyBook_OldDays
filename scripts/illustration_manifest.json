@@ -49,19 +49,10 @@
       "scene": "Low child-height view of a mother holding a small boy's hand as they approach a weathered Chinese primary-school gate on a cool early-2000s morning. Focus on the joined hands, cloth backpack, long morning shadows and pale sunlight; faces are not shown."
     },
     {
-      "id": "gem-06-sudden-graduation",
-      "group": "literary-gems",
-      "page": "website/literary-gems.md",
-      "heading": "### 6. 忽然毕业",
-      "filename": "06-sudden-graduation.jpg",
-      "alt": "毕业后人去楼空的大学宿舍",
-      "scene": "An empty four-person Chinese university dormitory immediately after graduation. Bare bunk beds, rolled bamboo mats, dust rectangles where belongings stood, one taped cardboard box, and hard coastal afternoon light. No people. Wide quiet composition emphasizing abrupt absence."
-    },
-    {
       "id": "gem-07-song-without-ending",
       "group": "literary-gems",
       "page": "website/literary-gems.md",
-      "heading": "### 7. 没有终结的歌声",
+      "heading": "### 6. 没有终结的歌声",
       "filename": "07-song-without-ending.jpg",
       "alt": "有线耳机唤醒旧日操场与青春记忆",
       "scene": "Close-up of a worn portable CD player and wired earphones on a bus seat at night. The headphone cable flows into translucent memories of a school football field, a dorm window and summer streetlights, as if music physically pulls the past into the present. No musical notes or text."
@@ -70,43 +61,34 @@
       "id": "gem-08-watch-her-until-dawn",
       "group": "literary-gems",
       "page": "website/literary-gems.md",
-      "heading": "### 8. 看她到天亮",
+      "heading": "### 7. 看她到天亮",
       "filename": "08-watch-her-until-dawn.jpg",
-      "alt": "凌晨自习室里女孩写线性代数男孩趴桌凝望",
+      "alt": "以凌晨学习场景表现肯德基相伴到天亮的记忆，意象插画",
       "scene": "A nearly empty university study room at 4 a.m. Blue dawn enters through tall windows. A young woman concentrates on a linear-algebra notebook while a tired young man rests his head on the adjacent desk, quietly looking toward her. Side-rear view, fluorescent fatigue rather than romantic glamour; equations are abstract and unreadable."
     },
     {
       "id": "gem-09-rain-grew-heavier",
       "group": "literary-gems",
       "page": "website/literary-gems.md",
-      "heading": "### 9. 雨更大了",
+      "heading": "### 8. 雨更大了",
       "filename": "09-rain-grew-heavier.jpg",
-      "alt": "校园暴雨中独自撑伞的男孩与奶茶",
+      "alt": "借暴雨、伞与奶茶表现失落的意象插画",
       "scene": "A lone young Chinese man under an umbrella on a university road during heavy tropical rain. A sealed cup of red-bean milk tea hangs unused from his hand; streetlamp reflections stretch across flooded pavement. Dense rain erases the campus background. Only one person, restrained heartbreak."
     },
     {
       "id": "gem-10-strength-spent",
       "group": "literary-gems",
       "page": "website/literary-gems.md",
-      "heading": "### 10. 用完的力气",
+      "heading": "### 9. 用完的力气",
       "filename": "10-strength-spent.jpg",
       "alt": "绿皮火车上耗尽力气后熟睡的年轻人",
       "scene": "Inside an old Chinese green train at sunset, a dusty young traveler sleeps against the window after years of restless journeys. A canvas backpack, paper tickets and a thermos sit nearby. Warm fading light, rough upholstery, complete exhaustion mixed with contentment."
     },
     {
-      "id": "gem-11-rhythm-of-wind",
-      "group": "literary-gems",
-      "page": "website/literary-gems.md",
-      "heading": "### 11. 风的律动",
-      "filename": "11-rhythm-of-wind.jpg",
-      "alt": "佛山夏夜街头两个年轻人迎风聊天",
-      "scene": "Two young Chinese tutors walk down a quiet Foshan street after midnight, talking freely beneath banyan trees and old shop awnings. Humid pavement reflects sparse lamps; warm wind lifts loose shirts while the dark sky feels unusually open. Wide low-angle composition, modest neighborhood not commercial glamour."
-    },
-    {
       "id": "gem-12-memory-castle",
       "group": "literary-gems",
       "page": "website/literary-gems.md",
-      "heading": "### 12. 青春小城堡",
+      "heading": "### 10. 青春小城堡",
       "filename": "12-memory-castle.jpg",
       "alt": "办公桌上由快乐记忆筑成的微光城堡",
       "scene": "On a cluttered internship desk between a laptop, fruit container and visitor badge, a small translucent castle made of warm light rises from snapshots of friends, food and summer streets. The surrounding office stays realistic and slightly lonely. Magical realism, not a toy castle."
@@ -115,7 +97,7 @@
       "id": "gem-13-four-seasons-in-blood",
       "group": "literary-gems",
       "page": "website/literary-gems.md",
-      "heading": "### 13. 融入血液的四季",
+      "heading": "### 11. 融入血液的四季",
       "filename": "13-four-seasons-in-blood.jpg",
       "alt": "火烧云蝉鸣初雪暴雨交织成生命四季",
       "scene": "Poetic four-season editorial collage: fire-colored clouds, a cicada shell in summer leaves, first snow on an office path, and sudden rain over a campus. Thin warm red streams connect the four scenes like memory circulating through a life, symbolic rather than anatomical."
@@ -124,7 +106,7 @@
       "id": "gem-14-once-twenty-two",
       "group": "literary-gems",
       "page": "website/literary-gems.md",
-      "heading": "### 14. 我也曾经22岁",
+      "heading": "### 12. 我也曾经22岁",
       "filename": "14-once-twenty-two.jpg",
       "alt": "疲惫成年人影子里奔跑着二十二岁的自己",
       "scene": "A late-twenties Chinese programmer sits at a modest desk after dark, tired but not defeated. His long shadow on the wall becomes the lively silhouette of his twenty-two-year-old self running through a Guangzhou alley. Double exposure, gentle self-mockery rather than despair."
@@ -133,7 +115,7 @@
       "id": "gem-15-softened-evening-wind",
       "group": "literary-gems",
       "page": "website/literary-gems.md",
-      "heading": "### 15. 燥热晚风",
+      "heading": "### 13. 燥热晚风",
       "filename": "15-softened-evening-wind.jpg",
       "alt": "北京燥热街道上变得轻柔的晚风",
       "scene": "A tree-lined Beijing avenue after work in a hot orange evening. A young intern walks lightly through the crowd while a visible ribbon of cool blue air bends leaves and shirt fabric around him. Natural city realism with one subtle poetic wind motif."
@@ -151,9 +133,9 @@
       "id": "gem-17-sister-who-never-grew",
       "group": "literary-gems",
       "page": "website/literary-gems.md",
-      "heading": "### 17. 没有长大的妹妹",
+      "heading": "### 17. 未曾谋面的女孩",
       "filename": "17-sister-who-never-grew.jpg",
-      "alt": "广东早茶桌上为未长大女孩留下的空位",
+      "alt": "广东早茶桌上为逝去女孩设想的普通生活留下空位",
       "scene": "A sunlit Guangdong morning-tea table with bamboo steamers and tea. One chair remains empty; rising steam briefly suggests the soft outline of a young adult woman who might have lived this ordinary life. Bright, warm and unreachable, never ghostly or frightening."
     },
     {
@@ -166,19 +148,10 @@
       "scene": "High vertical view into a narrow mossy concrete drainage channel in a small Chinese town. Dark water and hard geometric walls surround one small child's hand reaching toward daylight; no face, no injury, no graphic distress. The ordinary street above continues unaware."
     },
     {
-      "id": "gem-19-messages-after-death",
-      "group": "literary-gems",
-      "page": "website/literary-gems.md",
-      "heading": "### 19. 死后的工作消息",
-      "filename": "19-messages-after-death.jpg",
-      "alt": "深夜空工位上不断亮起工作提醒的手机",
-      "scene": "A silent dark office cubicle at 2 a.m. An unattended phone on the desk repeatedly glows with stacked work-notification shapes, the only light in the frame. Empty chair, cold monitor and untouched mug; no body, no readable app names or text."
-    },
-    {
       "id": "gem-20-only-death-is-young",
       "group": "literary-gems",
       "page": "website/literary-gems.md",
-      "heading": "### 20. 年纪轻轻",
+      "heading": "### 19. 年纪轻轻",
       "filename": "20-only-death-is-young.jpg",
       "alt": "人生刻度在中途骤然中断的概念画面",
       "scene": "Minimal conceptual editorial image: a long human-life timeline made from worn paper and soft daylight abruptly tears near its middle, while two contradictory shadows label youth and age only through visual scale, with no readable numbers or words. Quiet black, gray and warm ivory palette."
@@ -187,25 +160,16 @@
       "id": "gem-21-biological-first",
       "group": "literary-gems",
       "page": "website/literary-gems.md",
-      "heading": "### 21. 生物之先",
+      "heading": "### 20. 生物之先",
       "filename": "21-biological-first.jpg",
       "alt": "灰色工位中仍有温暖生命脉搏的人",
       "scene": "Rows of gray office cubicles reduce workers to small system-like shapes. One ordinary person stands in warm natural light with a subtle pulse of red-gold life visible through the chest as light, not anatomy. Emphasize breathing, warmth and biological dignity; non-graphic."
     },
     {
-      "id": "gem-22-quiet-crossroad",
-      "group": "literary-gems",
-      "page": "website/literary-gems.md",
-      "heading": "### 22. 平静午后的岔路",
-      "filename": "22-quiet-crossroad.jpg",
-      "alt": "平静午后里通向不同人生的十字路口",
-      "scene": "An utterly ordinary Chinese city crossroads on a calm sunny afternoon. One person pauses almost imperceptibly while two roads continue into different future atmospheres. A single leaf drifts through still air. No storm or drama; the significance is invisible in the moment."
-    },
-    {
       "id": "gem-23-after-decision",
       "group": "literary-gems",
       "page": "website/literary-gems.md",
-      "heading": "### 23. 决定之后",
+      "heading": "### 21. 决定之后",
       "filename": "23-after-decision.jpg",
       "alt": "做出重大决定后在床上沉沉睡去的人",
       "scene": "Top-down view of an exhausted young Chinese man in loosened travel clothes falling fully asleep across a plain white hotel bed after making a life-changing decision. A train ticket lies folded on the bedside table; late-afternoon light cuts across the room. Peace after depletion, no anguish."
@@ -214,7 +178,7 @@
       "id": "gem-24-youth-expiry",
       "group": "literary-gems",
       "page": "website/literary-gems.md",
-      "heading": "### 24. 有时效性的青春",
+      "heading": "### 22. 有时效性的青春",
       "filename": "24-youth-expiry.jpg",
       "alt": "北京出租屋里被时间标记的青春静物",
       "scene": "Still life by the window of a narrow but ordinary Beijing rental: an open travel notebook, an aging transit card, a half-finished drink and a calendar losing pages in moving air. High-rises outside. The objects suggest that receptiveness to beauty has a limited season, without readable dates."
@@ -223,7 +187,7 @@
       "id": "gem-25-small-shelter",
       "group": "literary-gems",
       "page": "website/literary-gems.md",
-      "heading": "### 25. 小型避难所",
+      "heading": "### 24. 小型避难所",
       "filename": "25-small-shelter.jpg",
       "alt": "冷色办公室中被杯子和私人物件筑起的温暖工位",
       "scene": "In a large cool-toned open office, one modest cubicle forms a warm island: seven mismatched cups, tissues, tea, a small plant, personal notes without readable writing, and a soft desk lamp. The seat is empty but deeply lived-in. Intimate realism, not an executive office."
@@ -232,7 +196,7 @@
       "id": "gem-26-cloud-remains",
       "group": "literary-gems",
       "page": "website/literary-gems.md",
-      "heading": "### 26. 云还是在那里",
+      "heading": "### 25. 云还是在那里",
       "filename": "26-cloud-remains.jpg",
       "alt": "办公室玻璃外依旧宏大的云",
       "scene": "Office cubicle tops occupy only the lower quarter of the frame. Beyond a large window, monumental white summer clouds remain luminous and unchanged. A faint reflection of a quiet observer appears in the glass, almost disappearing. Spacious, contemplative composition."
@@ -241,7 +205,7 @@
       "id": "gem-27-ancient-programming",
       "group": "literary-gems",
       "page": "website/literary-gems.md",
-      "heading": "### 27. 古法编程",
+      "heading": "### 26. 古法编程",
       "filename": "27-ancient-programming.jpg",
       "alt": "蒙尘旧显示器里的手写代码正在消散",
       "scene": "A dusty old monitor and mechanical keyboard sit abandoned at the edge of a modern office. Faint green code-like lines on the screen dissolve into dust and dry vines, symbolizing a once-proud craft being discarded. No readable code, no neon cyberpunk."
@@ -250,43 +214,16 @@
       "id": "gem-28-not-empty-handed",
       "group": "literary-gems",
       "page": "website/literary-gems.md",
-      "heading": "### 28. 赤手空拳",
+      "heading": "### 27. 赤手空拳",
       "filename": "28-not-empty-handed.jpg",
       "alt": "会议室里被透明预案护甲包围的人",
       "scene": "An ordinary office worker sits alert in a tense meeting room. Around his empty hands and shoulders, translucent layers of rehearsed possibilities form a subtle protective shell of light. The armor is clearly mental and abstract, with no physical weapons or violence."
     },
     {
-      "id": "gem-29-drink-in-afterlife",
-      "group": "literary-gems",
-      "page": "website/literary-gems.md",
-      "heading": "### 29. 九泉把酒",
-      "filename": "29-drink-in-afterlife.jpg",
-      "alt": "雪地孤坟旁两位江湖人把酒诀别",
-      "scene": "Fictional Chinese wuxia landscape in restrained ink-and-cinema realism: two weathered swordsmen sit beside a lonely grave under a bare tree and share small cups in falling snow before a final separation. Wide 3:2 composition, simple period clothing, solemn friendship, no combat."
-    },
-    {
-      "id": "gem-30-unverified-disappearance",
-      "group": "literary-gems",
-      "page": "website/literary-gems.md",
-      "heading": "### 30. 无处核实的消失",
-      "filename": "30-unverified-disappearance.jpg",
-      "alt": "黄昏雪地里逐渐被风抹平的脚印",
-      "scene": "At northern dusk, a trail of footprints across a bleak snowfield gradually disappears under windblown powder. A barely visible human shape is already merging with the horizon. Extremely simple perspective, muted gray-blue and brown, no identifiable face."
-    },
-    {
-      "id": "gem-31-two-lines-of-tears",
-      "group": "literary-gems",
-      "page": "website/literary-gems.md",
-      "heading": "### 31. 泪水两行",
-      "filename": "31-two-lines-of-tears.jpg",
-      "alt": "边境哨卡前无声回头落泪的男人",
-      "scene": "Fictional dystopian checkpoint at twilight. A man has stopped and turned his head back; two quiet tear tracks catch alternating cold and warm security lights. Fences and document fragments blur behind him. Close portrait without resemblance to any real person, silent farewell, no violence."
-    },
-    {
       "id": "gem-32-silver-watch",
       "group": "literary-gems",
       "page": "website/literary-gems.md",
-      "heading": "### 32. 银色怀表",
+      "heading": "### 28. 银色怀表",
       "filename": "32-silver-watch.jpg",
       "alt": "粗糙手掌中嵌着家庭照片的磨损银怀表",
       "scene": "Extreme close-up of a rough hand holding an open, scratched silver pocket watch. Inside is a tiny faded warm-toned photograph of two adults and a baby with indistinct faces. Cold checkpoint wire and concrete blur in the background. The worn object carries the whole tragedy."
@@ -295,7 +232,7 @@
       "id": "fun-01-food",
       "group": "fun-rankings",
       "page": "website/fun-rankings.md",
-      "heading": "## 🍜 美食榜 · 出镜率最高的食物",
+      "heading": "## 🍜 美食榜 · 留在记忆里的味道",
       "filename": "01-food.jpg",
       "alt": "深夜街边冒热气的拌面奶茶与鸡蛋灌饼",
       "scene": "Editorial food still life in a humble late-night South China eatery: a steaming bowl of mixed noodles is the hero, with a red-bean milk tea, egg-filled flatbread and another bowl of pork-trotter noodles around it. Warm tungsten light, scratched tabletop, youthful memory, appetizing but not luxury food photography."

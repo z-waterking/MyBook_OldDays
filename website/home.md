@@ -37,7 +37,7 @@
       <p class="book-home-section-label">把文章放回地图</p>
       <h2>从河津到地中海</h2>
       <p>遍布中国的足迹、地中海沿岸的坐标。每一个标记，都能打开一段求学、工作、远行或人生选择。</p>
-      <p class="book-home-map-stats"><span><strong>31</strong> 中国地点</span><span><strong>3</strong> 西班牙地点</span></p>
+      <p class="book-home-map-stats"><span><strong>33</strong> 中国地点</span><span><strong>3</strong> 西班牙地点</span></p>
       <a href="#/website/footprints.md">打开足迹地图</a>
     </div>
   </section>
