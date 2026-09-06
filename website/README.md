@@ -9,6 +9,7 @@
 - `_sidebar.md`：侧边栏导航。
 - `../book/01-成书目录.md` 与 `../book/部*.md`：七部成书阅读入口，由侧边栏直接访问。
 - `catalog.md`：文章目录，由脚本自动生成。
+- `submissions.md`：粉丝投稿专栏，手工维护已发布投稿的编号、简介和入口。
 - `ranking.md`：评分排名。
 - `literary-gems.md`：佳句榜。
 - `fun-rankings.md`：趣味榜单。
@@ -18,7 +19,7 @@
 
 ## 路径约定
 
-网站正式入口位于根目录 `index.html`，用于 GitHub Pages 原地址。站点页按仓库根目录写路径：链接到文章使用 `articles/...`，链接到成书工作区使用 `book/...`。
+网站正式入口位于根目录 `index.html`，用于 GitHub Pages 原地址。站点页按仓库根目录写路径：链接到已发布文章使用 `articles/...`，链接到成书工作区使用 `book/...`。
 
 `website/index.html` 只负责把旧 `/website/` 地址跳回根入口，并保留 hash 路由。
 
@@ -66,3 +67,7 @@ node scripts/generate_image_index.mjs
 ## 维护日志
 
 每次影响网站结构、导航入口、目录生成、榜单统计、文章归档流程或 AI 改稿入口的大改动，都要在 `website/maintenance-log.md` 追加一条 Log。
+
+## 粉丝投稿
+
+粉丝投稿的公众号正式稿、专栏评价和编辑说明统一放在 `fan-submissions/粉丝投稿-编号-标题/`，并纳入公开搜索。发布时手工更新 `website/submissions.md`，同步侧边栏、站内搜索、图片索引与网站巡检；投稿专栏不并入作者个人评分总榜或成书结构。

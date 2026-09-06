@@ -2,6 +2,7 @@
 
 - [首页](/)
 - [全部文章](website/catalog.md)
+- [粉丝投稿](website/submissions.md)
 - [成书阅读](book/01-成书目录.md)
   - [第一部 · 小城与少年](book/部一-小城与少年.md)
   - [第二部 · 海风吹开的四年](book/部二-海风吹开的四年.md)

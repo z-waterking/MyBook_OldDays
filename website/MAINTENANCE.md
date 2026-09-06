@@ -18,11 +18,15 @@
 - `index.html`：Docsify 配置、全站样式和交互插件。
 - `website/maintenance-log.md`：影响读者入口、统计、生成流程或部署的变更记录。
 
+### 人工维护的投稿页
+
+- `website/submissions.md`：粉丝投稿专栏；手工维护投稿编号、摘要及正文、评价、编辑说明入口。
+
 ### 脚本生成的文件
 
 - `website/catalog.md`：文章目录。
 - `website/image-index.md`：图片索引。
-- `website/search-index.json`：覆盖原文、评价、AI 改稿、说明和成书页的全文搜索索引。
+- `website/search-index.json`：覆盖原文、评价、AI 改稿、粉丝投稿、说明和成书页的全文搜索索引。
 - `book/manuscript.md`：按阅读清单与当前 AI 修改稿拼合的连续工作书稿。
 - `assets/images/_generated/catalog-covers/`：目录封面 WebP。
 - `assets/images/_generated/article-covers/`：文章正文使用的轻量封面 WebP。
@@ -66,6 +70,7 @@ python scripts/check_site.py
 - `website/*.md` 中的本地页面、图片和 Docsify 路由目标存在。
 - `book/*.md` 本地链接有效，成书目录、八个分部页面与 `reading-order.json` 的章节集合和顺序一致。
 - 完整搜索索引覆盖原文、评价、AI 改稿和改稿说明；正文图片 WebP 派生图与原图一一对应。
+- 每篇粉丝投稿都有 `index.md`、`review.md`、`notes.md`，专栏编号与总数一致，且不改变作者个人文章统计。
 - 足迹 JSON 结构、坐标范围、来源链接和路线有效。
 - 插画清单、页面插画块、JPEG 原图和 WebP 派生图一一对应，并通过尺寸与像素差异检查确认派生图已同步。
 - 佳句榜按实际编号条目核对总数，并回查引文与原文来源；选句数量独立于插画数量，新选句可以暂不配图。
@@ -78,6 +83,7 @@ python scripts/check_site.py
 | 改动 | 必做维护 | 最低验证 |
 | --- | --- | --- |
 | 新增文章 | 补 `review.md`，复评三个榜单，刷新封面与目录 | `article_covers.mjs` + `check_site.py` |
+| 新增粉丝投稿 | 补正文、评价和编辑说明，更新专栏页与图片/搜索索引 | `generate_image_index.mjs` + `generate_search_index.py` + `check_site.py` |
 | 修改评价或评分 | 同步评分榜、佳句榜和受影响的趣味榜 | `check_site.py` + 人工核对统计 |
 | 新增或修改文章图片 | 更新共享图片路径，重建图片索引 | `generate_image_index.mjs` + `check_site.py` |
 | 新增 AI 改稿 | 更新映射与说明，刷新目录中的 AI 改稿入口 | `article_covers.mjs` + `check_site.py` |

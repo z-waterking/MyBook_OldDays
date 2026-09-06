@@ -20,6 +20,37 @@
 - 验证：重建目录、搜索索引与图片索引；检查 38 篇六节与分数、摘录出处、榜单排序和统计，运行全站巡检及脚本语法检查。
 - 发布：仅保留本地改动，未提交 Git。
 
+## 2026-09-02 · 建立粉丝投稿专栏
+
+- **类型：** 网站栏目 / 投稿归档 / 导航入口
+- **关联提交：** 本次“粉丝投稿专栏”提交（见 Git 历史）
+
+### 涉及范围
+
+- `fan-submissions/`：建立粉丝投稿公开成稿、专栏评价与编辑说明归档区。
+- `website/submissions.md`：新增粉丝投稿公开专栏。
+- `website/home.md` / `website/_sidebar.md`：增加专栏入口。
+- `scripts/generate_search_index.py` / `scripts/generate_image_index.mjs` / `scripts/check_site.py`：将投稿正文、评价、说明和图片纳入公开索引与网站巡检。
+- `README.md` / `website/README.md`：补充投稿目录职责和发布流程。
+
+### 改动摘要
+
+- 投稿专栏与作者个人文章、评分榜和成书结构分开维护，使用连续编号组织。
+- 首篇收录《二十三岁，我又去问了一次命》，保留投稿人口述、编辑整理和自述内容未经独立核实的说明。
+- 发布后的投稿由专栏页统一提供简介、站内全文、编辑评价、编辑说明和微信公众号原文入口；投稿不计入作者个人 38 篇文章、评分榜或成书时间线。
+
+### 验证
+
+- `node scripts/article_covers.mjs --mode markdown`
+- `node scripts/generate_image_index.mjs`
+- `python scripts/generate_search_index.py`
+- `python scripts/build_book_manuscript.py --check`
+- `python scripts/check_site.py`
+- `git diff --check`
+- 本地浏览器检查专栏、正文、三张图片及首页/侧栏入口。
+
+---
+
 ## 2026-07-14 · 修复评价页侧栏跳回首页
 
 - 评价页、AI 改稿和改稿说明统一归入对应原文条目，不再保留 Docsify 错加在“首页”上的选中态。

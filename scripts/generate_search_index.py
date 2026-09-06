@@ -43,6 +43,12 @@ def page_type(path: Path) -> str:
         return "改稿说明"
     if relative.startswith("ai-edited-articles/"):
         return "AI 改稿"
+    if relative.startswith("fan-submissions/") and path.name == "review.md":
+        return "投稿评价"
+    if relative.startswith("fan-submissions/") and path.name == "notes.md":
+        return "编辑说明"
+    if relative.startswith("fan-submissions/"):
+        return "粉丝投稿"
     if relative.startswith("book/"):
         return "成书阅读"
     return "网站栏目"
@@ -52,6 +58,9 @@ def source_pages() -> list[Path]:
     pages = [*ROOT.glob("articles/*/index.md"), *ROOT.glob("articles/*/review.md")]
     pages.extend(ROOT.glob("ai-edited-articles/*/*/index.md"))
     pages.extend(ROOT.glob("ai-edited-articles/*/*/notes.md"))
+    pages.extend(ROOT.glob("fan-submissions/*/index.md"))
+    pages.extend(ROOT.glob("fan-submissions/*/review.md"))
+    pages.extend(ROOT.glob("fan-submissions/*/notes.md"))
     pages.extend(path for path in (ROOT / "website").glob("*.md") if not path.name.startswith("_"))
     pages.extend(
         path

@@ -11,6 +11,7 @@ articles/                 原始文章归档，每篇文章一个目录
 assets/images/articles/   文章图片库，按文章目录分组
 assets/images/            其他跨文章复用图片
 ai-edited-articles/       AI 修改稿工作区，与 articles/ 一一对应
+fan-submissions/          粉丝投稿公开成稿、评价与编辑说明
 book/                     七部阅读结构、编辑规划与连续书稿
 website/                  Docsify 网站入口、侧边栏、榜单和目录
 scripts/                  抓取、目录生成、封面处理等脚本
@@ -60,6 +61,7 @@ node scripts/article_covers.mjs --mode markdown
 
 - `website/home.md`：读者首页与阅读导览。
 - `website/catalog.md`：文章目录，自动生成。
+- `website/submissions.md`：粉丝投稿专栏，手工维护。
 - `website/_sidebar.md`：Docsify 侧边栏。
 - `website/ranking.md`：评分排名。
 - `website/literary-gems.md`：佳句榜。
@@ -69,6 +71,10 @@ node scripts/article_covers.mjs --mode markdown
 - `website/MAINTENANCE.md`：网站生成、验证、发布、降级与回滚手册。
 
 完整 Docsify 站点入口是根目录 `index.html`，用于 GitHub Pages 原地址。网页相关 Markdown 仍统一放在 `website/`。`website/index.html` 只保留为旧 `/website/` 地址的兼容跳回页，并会保留当前 hash 路由。文章正文保留在 `articles/`，文章图片统一放在 `assets/images/articles/`。
+
+## 粉丝投稿
+
+粉丝投稿统一放在 `fan-submissions/粉丝投稿-编号-标题/`，每篇包含公众号正式稿 `index.md`、专栏评价 `review.md` 和编辑说明 `notes.md`。投稿由 `website/submissions.md` 建立公开入口并纳入站内搜索，但与作者个人文章的评分榜和成书结构分开维护。
 
 ## AI 修改稿
 
